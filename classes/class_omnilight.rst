@@ -7,66 +7,113 @@
 OmniLight
 =========
 
-**Inherits:** :ref:`Light<class_light>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-OmniDirectional Light, such as a light bulb or a candle.
+Omnidirectional light, such as a light bulb or a candle.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_shadow_detail<class_OmniLight_get_shadow_detail>`  **(** **)** const                         |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_shadow_mode<class_OmniLight_get_shadow_mode>`  **(** **)** const                             |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_shadow_detail<class_OmniLight_set_shadow_detail>`  **(** :ref:`int<class_int>` detail  **)** |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_shadow_mode<class_OmniLight_set_shadow_mode>`  **(** :ref:`int<class_int>` mode  **)**       |
-+------------------------+--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`omni_attenuation<class_OmniLight_property_omni_attenuation>`     |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`omni_range<class_OmniLight_property_omni_range>`                 |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` | :ref:`omni_shadow_detail<class_OmniLight_property_omni_shadow_detail>` |
++--------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`ShadowMode<enum_OmniLight_ShadowMode>`     | :ref:`omni_shadow_mode<class_OmniLight_property_omni_shadow_mode>`     |
++--------------------------------------------------+------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`float<class_float>` **omni_attenuation**
-- :ref:`float<class_float>` **omni_range**
-- :ref:`int<class_int>` **omni_shadow_detail**
-- :ref:`int<class_int>` **omni_shadow_mode**
+.. _enum_OmniLight_ShadowMode:
 
-Numeric Constants
------------------
+.. _class_OmniLight_constant_SHADOW_DUAL_PARABOLOID:
+
+.. _class_OmniLight_constant_SHADOW_CUBE:
+
+enum **ShadowMode**:
 
 - **SHADOW_DUAL_PARABOLOID** = **0**
+
 - **SHADOW_CUBE** = **1**
+
+.. _enum_OmniLight_ShadowDetail:
+
+.. _class_OmniLight_constant_SHADOW_DETAIL_VERTICAL:
+
+.. _class_OmniLight_constant_SHADOW_DETAIL_HORIZONTAL:
+
+enum **ShadowDetail**:
+
 - **SHADOW_DETAIL_VERTICAL** = **0**
+
 - **SHADOW_DETAIL_HORIZONTAL** = **1**
 
 Description
 -----------
 
-An OmniDirectional light is a type of :ref:`Light<class_light>` node that emits lights in all directions. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_light>`.
+An Omnidirectional light is a type of :ref:`Light<class_Light>` that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_OmniLight_get_shadow_detail:
+- :doc:`../tutorials/3d/lights_and_shadows`
 
-- :ref:`int<class_int>`  **get_shadow_detail**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_OmniLight_get_shadow_mode:
+.. _class_OmniLight_property_omni_attenuation:
 
-- :ref:`int<class_int>`  **get_shadow_mode**  **(** **)** const
+- :ref:`float<class_float>` **omni_attenuation**
 
-.. _class_OmniLight_set_shadow_detail:
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
-- void  **set_shadow_detail**  **(** :ref:`int<class_int>` detail  **)**
+The light's attenuation (drop-off) curve. A number of presets are available in the Inspector.
 
-.. _class_OmniLight_set_shadow_mode:
+.. _class_OmniLight_property_omni_range:
 
-- void  **set_shadow_mode**  **(** :ref:`int<class_int>` mode  **)**
+- :ref:`float<class_float>` **omni_range**
 
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+Maximum distance the light affects.
+
+.. _class_OmniLight_property_omni_shadow_detail:
+
+- :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>` **omni_shadow_detail**
+
++----------+--------------------------+
+| *Setter* | set_shadow_detail(value) |
++----------+--------------------------+
+| *Getter* | get_shadow_detail()      |
++----------+--------------------------+
+
+See :ref:`ShadowDetail<enum_OmniLight_ShadowDetail>`.
+
+.. _class_OmniLight_property_omni_shadow_mode:
+
+- :ref:`ShadowMode<enum_OmniLight_ShadowMode>` **omni_shadow_mode**
+
++----------+------------------------+
+| *Setter* | set_shadow_mode(value) |
++----------+------------------------+
+| *Getter* | get_shadow_mode()      |
++----------+------------------------+
+
+See :ref:`ShadowMode<enum_OmniLight_ShadowMode>`.
 

@@ -7,7 +7,7 @@
 VisualScriptYield
 =================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,49 +16,54 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_wait_time<class_VisualScriptYield_get_wait_time>`  **(** **)**                                |
-+----------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_yield_mode<class_VisualScriptYield_get_yield_mode>`  **(** **)**                              |
-+----------------------------+---------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_wait_time<class_VisualScriptYield_set_wait_time>`  **(** :ref:`float<class_float>` sec  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_yield_mode<class_VisualScriptYield_set_yield_mode>`  **(** :ref:`int<class_int>` mode  **)**  |
-+----------------------------+---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------+
+| :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` | :ref:`mode<class_VisualScriptYield_property_mode>`           |
++----------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`wait_time<class_VisualScriptYield_property_wait_time>` |
++----------------------------------------------------+--------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`int<class_int>` **mode**
-- :ref:`float<class_float>` **wait_time**
+.. _enum_VisualScriptYield_YieldMode:
 
-Numeric Constants
------------------
+.. _class_VisualScriptYield_constant_YIELD_FRAME:
+
+.. _class_VisualScriptYield_constant_YIELD_PHYSICS_FRAME:
+
+.. _class_VisualScriptYield_constant_YIELD_WAIT:
+
+enum **YieldMode**:
 
 - **YIELD_FRAME** = **1**
-- **YIELD_FIXED_FRAME** = **2**
+
+- **YIELD_PHYSICS_FRAME** = **2**
+
 - **YIELD_WAIT** = **3**
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptYield_get_wait_time:
+.. _class_VisualScriptYield_property_mode:
 
-- :ref:`float<class_float>`  **get_wait_time**  **(** **)**
+- :ref:`YieldMode<enum_VisualScriptYield_YieldMode>` **mode**
 
-.. _class_VisualScriptYield_get_yield_mode:
++----------+-----------------------+
+| *Setter* | set_yield_mode(value) |
++----------+-----------------------+
+| *Getter* | get_yield_mode()      |
++----------+-----------------------+
 
-- :ref:`int<class_int>`  **get_yield_mode**  **(** **)**
+.. _class_VisualScriptYield_property_wait_time:
 
-.. _class_VisualScriptYield_set_wait_time:
+- :ref:`float<class_float>` **wait_time**
 
-- void  **set_wait_time**  **(** :ref:`float<class_float>` sec  **)**
-
-.. _class_VisualScriptYield_set_yield_mode:
-
-- void  **set_yield_mode**  **(** :ref:`int<class_int>` mode  **)**
-
++----------+----------------------+
+| *Setter* | set_wait_time(value) |
++----------+----------------------+
+| *Getter* | get_wait_time()      |
++----------+----------------------+
 

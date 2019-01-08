@@ -7,7 +7,7 @@
 StreamPeerBuffer
 ================
 
-**Inherits:** :ref:`StreamPeer<class_streampeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`StreamPeer<class_StreamPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,60 +16,67 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`clear<class_StreamPeerBuffer_clear>`  **(** **)**                                                                   |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`StreamPeerBuffer<class_streampeerbuffer>`  | :ref:`duplicate<class_StreamPeerBuffer_duplicate>`  **(** **)** const                                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`        | :ref:`get_data_array<class_StreamPeerBuffer_get_data_array>`  **(** **)** const                                           |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_position<class_StreamPeerBuffer_get_position>`  **(** **)** const                                               |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_size<class_StreamPeerBuffer_get_size>`  **(** **)** const                                                       |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`resize<class_StreamPeerBuffer_resize>`  **(** :ref:`int<class_int>` size  **)**                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`seek<class_StreamPeerBuffer_seek>`  **(** :ref:`int<class_int>` position  **)**                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_data_array<class_StreamPeerBuffer_set_data_array>`  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)** |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------+---------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data_array<class_StreamPeerBuffer_property_data_array>` |
++-------------------------------------------+---------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Methods
+-------
 
-.. _class_StreamPeerBuffer_clear:
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear<class_StreamPeerBuffer_method_clear>` **(** **)**                              |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` | :ref:`duplicate<class_StreamPeerBuffer_method_duplicate>` **(** **)** const                |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_position<class_StreamPeerBuffer_method_get_position>` **(** **)** const          |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_size<class_StreamPeerBuffer_method_get_size>` **(** **)** const                  |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| void                                            | :ref:`resize<class_StreamPeerBuffer_method_resize>` **(** :ref:`int<class_int>` size **)** |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
+| void                                            | :ref:`seek<class_StreamPeerBuffer_method_seek>` **(** :ref:`int<class_int>` position **)** |
++-------------------------------------------------+--------------------------------------------------------------------------------------------+
 
-- void  **clear**  **(** **)**
+Property Descriptions
+---------------------
 
-.. _class_StreamPeerBuffer_duplicate:
+.. _class_StreamPeerBuffer_property_data_array:
 
-- :ref:`StreamPeerBuffer<class_streampeerbuffer>`  **duplicate**  **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **data_array**
 
-.. _class_StreamPeerBuffer_get_data_array:
++----------+-----------------------+
+| *Setter* | set_data_array(value) |
++----------+-----------------------+
+| *Getter* | get_data_array()      |
++----------+-----------------------+
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_data_array**  **(** **)** const
+Method Descriptions
+-------------------
 
-.. _class_StreamPeerBuffer_get_position:
+.. _class_StreamPeerBuffer_method_clear:
 
-- :ref:`int<class_int>`  **get_position**  **(** **)** const
+- void **clear** **(** **)**
 
-.. _class_StreamPeerBuffer_get_size:
+.. _class_StreamPeerBuffer_method_duplicate:
 
-- :ref:`int<class_int>`  **get_size**  **(** **)** const
+- :ref:`StreamPeerBuffer<class_StreamPeerBuffer>` **duplicate** **(** **)** const
 
-.. _class_StreamPeerBuffer_resize:
+.. _class_StreamPeerBuffer_method_get_position:
 
-- void  **resize**  **(** :ref:`int<class_int>` size  **)**
+- :ref:`int<class_int>` **get_position** **(** **)** const
 
-.. _class_StreamPeerBuffer_seek:
+.. _class_StreamPeerBuffer_method_get_size:
 
-- void  **seek**  **(** :ref:`int<class_int>` position  **)**
+- :ref:`int<class_int>` **get_size** **(** **)** const
 
-.. _class_StreamPeerBuffer_set_data_array:
+.. _class_StreamPeerBuffer_method_resize:
 
-- void  **set_data_array**  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**
+- void **resize** **(** :ref:`int<class_int>` size **)**
 
+.. _class_StreamPeerBuffer_method_seek:
+
+- void **seek** **(** :ref:`int<class_int>` position **)**
 

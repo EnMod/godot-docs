@@ -7,7 +7,7 @@
 GDScript
 ========
 
-**Inherits:** :ref:`Script<class_script>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,34 +16,39 @@ Brief Description
 
 A script implemented in the GDScript programming language.
 
-Member Functions
-----------------
+Methods
+-------
 
-+--------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_as_byte_code<class_GDScript_get_as_byte_code>`  **(** **)** const |
-+--------------------------------------------+-----------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                | :ref:`new<class_GDScript_new>`  **(** **)** vararg                          |
-+--------------------------------------------+-----------------------------------------------------------------------------+
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_as_byte_code<class_GDScript_method_get_as_byte_code>` **(** **)** const |
++-------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`               | :ref:`new<class_GDScript_method_new>` **(** **)** vararg                          |
++-------------------------------------------+-----------------------------------------------------------------------------------+
 
 Description
 -----------
 
 A script implemented in the GDScript programming language. The script exends the functionality of all objects that instance it.
 
-:ref:`new<class_GDScript_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
+:ref:`new<class_GDScript_method_new>` creates a new instance of the script. :ref:`Object.set_script<class_Object_method_set_script>` extends an existing object, if that object's class matches one of the script's base classes.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_GDScript_get_as_byte_code:
+- :doc:`../getting_started/scripting/gdscript/index`
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_as_byte_code**  **(** **)** const
+Method Descriptions
+-------------------
+
+.. _class_GDScript_method_get_as_byte_code:
+
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_as_byte_code** **(** **)** const
 
 Returns byte code for the script source code.
 
-.. _class_GDScript_new:
+.. _class_GDScript_method_new:
 
-- :ref:`Object<class_object>`  **new**  **(** **)** vararg
+- :ref:`Object<class_Object>` **new** **(** **)** vararg
 
 Returns a new instance of the script.
 
@@ -54,5 +59,4 @@ For example:
     var MyClass = load("myclass.gd")
     var instance = MyClass.new()
     assert(instance.get_script() == MyClass)
-
 

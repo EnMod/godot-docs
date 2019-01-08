@@ -7,9 +7,9 @@
 Popup
 =====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PopupPanel<class_popuppanel>`, :ref:`PopupDialog<class_popupdialog>`, :ref:`PopupMenu<class_popupmenu>`, :ref:`WindowDialog<class_windowdialog>`
+**Inherited By:** :ref:`PopupDialog<class_PopupDialog>`, :ref:`PopupMenu<class_PopupMenu>`, :ref:`PopupPanel<class_PopupPanel>`, :ref:`WindowDialog<class_WindowDialog>`
 
 **Category:** Core
 
@@ -18,86 +18,96 @@ Brief Description
 
 Base container control for popups and dialogs.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_exclusive<class_Popup_is_exclusive>`  **(** **)** const                                                                      |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup<class_Popup_popup>`  **(** :ref:`Rect2<class_rect2>` bounds=Rect2( 0, 0, 0, 0 )  **)**                                    |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered<class_Popup_popup_centered>`  **(** :ref:`Vector2<class_vector2>` size=Vector2( 0, 0 )  **)**                    |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_minsize<class_Popup_popup_centered_minsize>`  **(** :ref:`Vector2<class_vector2>` minsize=Vector2( 0, 0 )  **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`popup_centered_ratio<class_Popup_popup_centered_ratio>`  **(** :ref:`float<class_float>` ratio=0.75  **)**                      |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_exclusive<class_Popup_set_exclusive>`  **(** :ref:`bool<class_bool>` enable  **)**                                          |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`popup_exclusive<class_Popup_property_popup_exclusive>` |
++-------------------------+--------------------------------------------------------------+
+
+Methods
+-------
+
++------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup<class_Popup_method_popup>` **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**                                    |
++------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered<class_Popup_method_popup_centered>` **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**                    |
++------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered_minsize<class_Popup_method_popup_centered_minsize>` **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)** |
++------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`popup_centered_ratio<class_Popup_method_popup_centered_ratio>` **(** :ref:`float<class_float>` ratio=0.75 **)**                      |
++------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **about_to_show**  **(** **)**
-This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_popupmenu>` for clearing the list of options and creating a new one according to the current context).
+.. _class_Popup_signal_about_to_show:
 
--  **popup_hide**  **(** **)**
+- **about_to_show** **(** **)**
+
+This signal is emitted when a popup is about to be shown. (often used in :ref:`PopupMenu<class_PopupMenu>` for clearing the list of options and creating a new one according to the current context).
+
+.. _class_Popup_signal_popup_hide:
+
+- **popup_hide** **(** **)**
+
 This signal is emitted when a popup is hidden.
 
+Constants
+---------
 
-Member Variables
-----------------
+.. _class_Popup_constant_NOTIFICATION_POST_POPUP:
 
-- :ref:`bool<class_bool>` **popup_exclusive**
-
-Numeric Constants
------------------
+.. _class_Popup_constant_NOTIFICATION_POPUP_HIDE:
 
 - **NOTIFICATION_POST_POPUP** = **80** --- Notification sent right after the popup is shown.
+
 - **NOTIFICATION_POPUP_HIDE** = **81** --- Notification sent right after the popup is hidden.
 
 Description
 -----------
 
-Popup is a base :ref:`Control<class_control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_control>`) and has helpers for custom popup behavior.
+Popup is a base :ref:`Control<class_Control>` used to show dialogs and popups. It's a subwindow and modal by default (see :ref:`Control<class_Control>`) and has helpers for custom popup behavior.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Popup_is_exclusive:
+.. _class_Popup_property_popup_exclusive:
 
-- :ref:`bool<class_bool>`  **is_exclusive**  **(** **)** const
+- :ref:`bool<class_bool>` **popup_exclusive**
 
-Returns whether the popup will hide other popups when shown on the screen.
++----------+----------------------+
+| *Setter* | set_exclusive(value) |
++----------+----------------------+
+| *Getter* | is_exclusive()       |
++----------+----------------------+
 
-.. _class_Popup_popup:
+If ``true``, the popup will not be hidden when a click event occurs outside of it, or when it receives the ``ui_cancel`` action event.
 
-- void  **popup**  **(** :ref:`Rect2<class_rect2>` bounds=Rect2( 0, 0, 0, 0 )  **)**
+Method Descriptions
+-------------------
+
+.. _class_Popup_method_popup:
+
+- void **popup** **(** :ref:`Rect2<class_Rect2>` bounds=Rect2( 0, 0, 0, 0 ) **)**
 
 Popup (show the control in modal form).
 
-.. _class_Popup_popup_centered:
+.. _class_Popup_method_popup_centered:
 
-- void  **popup_centered**  **(** :ref:`Vector2<class_vector2>` size=Vector2( 0, 0 )  **)**
+- void **popup_centered** **(** :ref:`Vector2<class_Vector2>` size=Vector2( 0, 0 ) **)**
 
-Popup (show the control in modal form) in the center of the screen, at the current size, or at a size determined by "size".
+Popup (show the control in modal form) in the center of the screen relative to its current canvas transform, at the current size, or at a size determined by "size".
 
-.. _class_Popup_popup_centered_minsize:
+.. _class_Popup_method_popup_centered_minsize:
 
-- void  **popup_centered_minsize**  **(** :ref:`Vector2<class_vector2>` minsize=Vector2( 0, 0 )  **)**
+- void **popup_centered_minsize** **(** :ref:`Vector2<class_Vector2>` minsize=Vector2( 0, 0 ) **)**
 
-Popup (show the control in modal form) in the center of the screen, ensuring the size is never smaller than ``minsize``.
+Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, ensuring the size is never smaller than ``minsize``.
 
-.. _class_Popup_popup_centered_ratio:
+.. _class_Popup_method_popup_centered_ratio:
 
-- void  **popup_centered_ratio**  **(** :ref:`float<class_float>` ratio=0.75  **)**
+- void **popup_centered_ratio** **(** :ref:`float<class_float>` ratio=0.75 **)**
 
-Popup (show the control in modal form) in the center of the screen, scaled at a ratio of size of the screen.
-
-.. _class_Popup_set_exclusive:
-
-- void  **set_exclusive**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Make the popup hide other popups when shown on the screen.
-
+Popup (show the control in modal form) in the center of the screen relative to the current canvas transform, scaled at a ratio of size of the screen.
 

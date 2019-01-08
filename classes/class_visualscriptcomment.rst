@@ -7,64 +7,69 @@
 VisualScriptComment
 ===================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A Visual Script node used to annotate the script.
 
+Properties
+----------
 
-Member Functions
-----------------
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`description<class_VisualScriptComment_property_description>` |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_VisualScriptComment_property_size>`               |
++-------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`title<class_VisualScriptComment_property_title>`             |
++-------------------------------+--------------------------------------------------------------------+
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_description<class_VisualScriptComment_get_description>`  **(** **)** const                                    |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_size<class_VisualScriptComment_get_size>`  **(** **)** const                                                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_title<class_VisualScriptComment_get_title>`  **(** **)** const                                                |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_description<class_VisualScriptComment_set_description>`  **(** :ref:`String<class_string>` description  **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_size<class_VisualScriptComment_set_size>`  **(** :ref:`Vector2<class_vector2>` size  **)**                    |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_title<class_VisualScriptComment_set_title>`  **(** :ref:`String<class_string>` title  **)**                   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A Visual Script node used to display annotations in the script, so that code may be documented.
 
-- :ref:`String<class_string>` **description**
-- :ref:`Vector2<class_vector2>` **size**
-- :ref:`String<class_string>` **title**
+Comment nodes can be resized so they encompass a group of nodes.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptComment_get_description:
+.. _class_VisualScriptComment_property_description:
 
-- :ref:`String<class_string>`  **get_description**  **(** **)** const
+- :ref:`String<class_String>` **description**
 
-.. _class_VisualScriptComment_get_size:
++----------+------------------------+
+| *Setter* | set_description(value) |
++----------+------------------------+
+| *Getter* | get_description()      |
++----------+------------------------+
 
-- :ref:`Vector2<class_vector2>`  **get_size**  **(** **)** const
+The text inside the comment node.
 
-.. _class_VisualScriptComment_get_title:
+.. _class_VisualScriptComment_property_size:
 
-- :ref:`String<class_string>`  **get_title**  **(** **)** const
+- :ref:`Vector2<class_Vector2>` **size**
 
-.. _class_VisualScriptComment_set_description:
++----------+-----------------+
+| *Setter* | set_size(value) |
++----------+-----------------+
+| *Getter* | get_size()      |
++----------+-----------------+
 
-- void  **set_description**  **(** :ref:`String<class_string>` description  **)**
+The comment node's size (in pixels).
 
-.. _class_VisualScriptComment_set_size:
+.. _class_VisualScriptComment_property_title:
 
-- void  **set_size**  **(** :ref:`Vector2<class_vector2>` size  **)**
+- :ref:`String<class_String>` **title**
 
-.. _class_VisualScriptComment_set_title:
++----------+------------------+
+| *Setter* | set_title(value) |
++----------+------------------+
+| *Getter* | get_title()      |
++----------+------------------+
 
-- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
-
+The comment node's title.
 

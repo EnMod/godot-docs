@@ -7,7 +7,7 @@
 MultiMesh
 =========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,138 +16,189 @@ Brief Description
 
 Provides high performance mesh instancing.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`          | :ref:`get_aabb<class_MultiMesh_get_aabb>`  **(** **)** const                                                                                                    |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_color_format<class_MultiMesh_get_color_format>`  **(** **)** const                                                                                    |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`          | :ref:`get_instance_color<class_MultiMesh_get_instance_color>`  **(** :ref:`int<class_int>` instance  **)** const                                                |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_instance_count<class_MultiMesh_get_instance_count>`  **(** **)** const                                                                                |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_instance_transform<class_MultiMesh_get_instance_transform>`  **(** :ref:`int<class_int>` instance  **)** const                                        |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`            | :ref:`get_mesh<class_MultiMesh_get_mesh>`  **(** **)** const                                                                                                    |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_transform_format<class_MultiMesh_get_transform_format>`  **(** **)** const                                                                            |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_color_format<class_MultiMesh_set_color_format>`  **(** :ref:`int<class_int>` format  **)**                                                            |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_instance_color<class_MultiMesh_set_instance_color>`  **(** :ref:`int<class_int>` instance, :ref:`Color<class_color>` color  **)**                     |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_instance_count<class_MultiMesh_set_instance_count>`  **(** :ref:`int<class_int>` count  **)**                                                         |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_instance_transform<class_MultiMesh_set_instance_transform>`  **(** :ref:`int<class_int>` instance, :ref:`Transform<class_transform>` transform  **)** |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_mesh<class_MultiMesh_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                                                            |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_transform_format<class_MultiMesh_set_transform_format>`  **(** :ref:`int<class_int>` format  **)**                                                    |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`ColorFormat<enum_MultiMesh_ColorFormat>`           | :ref:`color_format<class_MultiMesh_property_color_format>`             |
++----------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` | :ref:`custom_data_format<class_MultiMesh_property_custom_data_format>` |
++----------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                    | :ref:`instance_count<class_MultiMesh_property_instance_count>`         |
++----------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                                  | :ref:`mesh<class_MultiMesh_property_mesh>`                             |
++----------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`TransformFormat<enum_MultiMesh_TransformFormat>`   | :ref:`transform_format<class_MultiMesh_property_transform_format>`     |
++----------------------------------------------------------+------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`PoolColorArray<class_poolcolorarray>` **color_array**
-- :ref:`int<class_int>` **color_format**
-- :ref:`int<class_int>` **instance_count**
-- :ref:`Mesh<class_mesh>` **mesh**
-- :ref:`PoolVector3Array<class_poolvector3array>` **transform_array**
-- :ref:`int<class_int>` **transform_format**
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`           | :ref:`get_aabb<class_MultiMesh_method_get_aabb>` **(** **)** const                                                                                                   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`get_instance_color<class_MultiMesh_method_get_instance_color>` **(** :ref:`int<class_int>` instance **)** const                                                |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`         | :ref:`get_instance_custom_data<class_MultiMesh_method_get_instance_custom_data>` **(** :ref:`int<class_int>` instance **)** const                                    |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`get_instance_transform<class_MultiMesh_method_get_instance_transform>` **(** :ref:`int<class_int>` instance **)** const                                        |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_instance_color<class_MultiMesh_method_set_instance_color>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**                     |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_instance_custom_data<class_MultiMesh_method_set_instance_custom_data>` **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**   |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_instance_transform<class_MultiMesh_method_set_instance_transform>` **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)** |
++-----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enumerations
+------------
+
+.. _enum_MultiMesh_TransformFormat:
+
+.. _class_MultiMesh_constant_TRANSFORM_2D:
+
+.. _class_MultiMesh_constant_TRANSFORM_3D:
+
+enum **TransformFormat**:
 
 - **TRANSFORM_2D** = **0**
+
 - **TRANSFORM_3D** = **1**
+
+.. _enum_MultiMesh_ColorFormat:
+
+.. _class_MultiMesh_constant_COLOR_NONE:
+
+.. _class_MultiMesh_constant_COLOR_8BIT:
+
+.. _class_MultiMesh_constant_COLOR_FLOAT:
+
+enum **ColorFormat**:
+
 - **COLOR_NONE** = **0**
+
 - **COLOR_8BIT** = **1**
+
 - **COLOR_FLOAT** = **2**
+
+.. _enum_MultiMesh_CustomDataFormat:
+
+.. _class_MultiMesh_constant_CUSTOM_DATA_NONE:
+
+.. _class_MultiMesh_constant_CUSTOM_DATA_8BIT:
+
+.. _class_MultiMesh_constant_CUSTOM_DATA_FLOAT:
+
+enum **CustomDataFormat**:
+
+- **CUSTOM_DATA_NONE** = **0**
+
+- **CUSTOM_DATA_8BIT** = **1**
+
+- **CUSTOM_DATA_FLOAT** = **2**
 
 Description
 -----------
 
-MultiMesh provides low level mesh instancing. If the amount of :ref:`Mesh<class_mesh>` instances needed goes from hundreds to thousands (and most need to be visible at close proximity) creating such a large amount of :ref:`MeshInstance<class_meshinstance>` nodes may affect performance by using too much CPU or video memory.
+MultiMesh provides low level mesh instancing. If the amount of :ref:`Mesh<class_Mesh>` instances needed goes from hundreds to thousands (and most need to be visible at close proximity) creating such a large amount of :ref:`MeshInstance<class_MeshInstance>` nodes may affect performance by using too much CPU or video memory.
 
 For this case a MultiMesh becomes very useful, as it can draw thousands of instances with little API overhead.
 
 As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object).
 
-Since instances may have any behavior, the Rect3 used for visibility must be provided by the user.
+Since instances may have any behavior, the AABB used for visibility must be provided by the user.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_MultiMesh_get_aabb:
+.. _class_MultiMesh_property_color_format:
 
-- :ref:`Rect3<class_rect3>`  **get_aabb**  **(** **)** const
+- :ref:`ColorFormat<enum_MultiMesh_ColorFormat>` **color_format**
 
-Return the visibility Rect3.
++----------+-------------------------+
+| *Setter* | set_color_format(value) |
++----------+-------------------------+
+| *Getter* | get_color_format()      |
++----------+-------------------------+
 
-.. _class_MultiMesh_get_color_format:
+.. _class_MultiMesh_property_custom_data_format:
 
-- :ref:`int<class_int>`  **get_color_format**  **(** **)** const
+- :ref:`CustomDataFormat<enum_MultiMesh_CustomDataFormat>` **custom_data_format**
 
-.. _class_MultiMesh_get_instance_color:
++----------+-------------------------------+
+| *Setter* | set_custom_data_format(value) |
++----------+-------------------------------+
+| *Getter* | get_custom_data_format()      |
++----------+-------------------------------+
 
-- :ref:`Color<class_color>`  **get_instance_color**  **(** :ref:`int<class_int>` instance  **)** const
+.. _class_MultiMesh_property_instance_count:
+
+- :ref:`int<class_int>` **instance_count**
+
++----------+---------------------------+
+| *Setter* | set_instance_count(value) |
++----------+---------------------------+
+| *Getter* | get_instance_count()      |
++----------+---------------------------+
+
+.. _class_MultiMesh_property_mesh:
+
+- :ref:`Mesh<class_Mesh>` **mesh**
+
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
+
+.. _class_MultiMesh_property_transform_format:
+
+- :ref:`TransformFormat<enum_MultiMesh_TransformFormat>` **transform_format**
+
++----------+-----------------------------+
+| *Setter* | set_transform_format(value) |
++----------+-----------------------------+
+| *Getter* | get_transform_format()      |
++----------+-----------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_MultiMesh_method_get_aabb:
+
+- :ref:`AABB<class_AABB>` **get_aabb** **(** **)** const
+
+Return the visibility AABB.
+
+.. _class_MultiMesh_method_get_instance_color:
+
+- :ref:`Color<class_Color>` **get_instance_color** **(** :ref:`int<class_int>` instance **)** const
 
 Get the color of a specific instance.
 
-.. _class_MultiMesh_get_instance_count:
+.. _class_MultiMesh_method_get_instance_custom_data:
 
-- :ref:`int<class_int>`  **get_instance_count**  **(** **)** const
+- :ref:`Color<class_Color>` **get_instance_custom_data** **(** :ref:`int<class_int>` instance **)** const
 
-Return the amount of instances that is going to be drawn.
+.. _class_MultiMesh_method_get_instance_transform:
 
-.. _class_MultiMesh_get_instance_transform:
-
-- :ref:`Transform<class_transform>`  **get_instance_transform**  **(** :ref:`int<class_int>` instance  **)** const
+- :ref:`Transform<class_Transform>` **get_instance_transform** **(** :ref:`int<class_int>` instance **)** const
 
 Return the transform of a specific instance.
 
-.. _class_MultiMesh_get_mesh:
+.. _class_MultiMesh_method_set_instance_color:
 
-- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
-
-Return the :ref:`Mesh<class_mesh>` resource drawn as multiple instances.
-
-.. _class_MultiMesh_get_transform_format:
-
-- :ref:`int<class_int>`  **get_transform_format**  **(** **)** const
-
-.. _class_MultiMesh_set_color_format:
-
-- void  **set_color_format**  **(** :ref:`int<class_int>` format  **)**
-
-.. _class_MultiMesh_set_instance_color:
-
-- void  **set_instance_color**  **(** :ref:`int<class_int>` instance, :ref:`Color<class_color>` color  **)**
+- void **set_instance_color** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` color **)**
 
 Set the color of a specific instance.
 
-.. _class_MultiMesh_set_instance_count:
+.. _class_MultiMesh_method_set_instance_custom_data:
 
-- void  **set_instance_count**  **(** :ref:`int<class_int>` count  **)**
+- void **set_instance_custom_data** **(** :ref:`int<class_int>` instance, :ref:`Color<class_Color>` custom_data **)**
 
-Set the amount of instances that is going to be drawn. Changing this number will erase all the existing instance transform and color data.
+.. _class_MultiMesh_method_set_instance_transform:
 
-.. _class_MultiMesh_set_instance_transform:
-
-- void  **set_instance_transform**  **(** :ref:`int<class_int>` instance, :ref:`Transform<class_transform>` transform  **)**
+- void **set_instance_transform** **(** :ref:`int<class_int>` instance, :ref:`Transform<class_Transform>` transform **)**
 
 Set the transform for a specific instance.
-
-.. _class_MultiMesh_set_mesh:
-
-- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
-
-Set the :ref:`Mesh<class_mesh>` resource to be drawn in multiple instances.
-
-.. _class_MultiMesh_set_transform_format:
-
-- void  **set_transform_format**  **(** :ref:`int<class_int>` format  **)**
-
 

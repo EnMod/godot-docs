@@ -7,7 +7,7 @@
 AudioStreamOGGVorbis
 ====================
 
-**Inherits:** :ref:`AudioStream<class_audiostream>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioStream<class_AudioStream>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,60 +16,54 @@ Brief Description
 
 OGG Vorbis audio stream driver.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_data<class_AudioStreamOGGVorbis_get_data>`  **(** **)** const                                            |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                  | :ref:`get_loop_offset<class_AudioStreamOGGVorbis_get_loop_offset>`  **(** **)** const                              |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`has_loop<class_AudioStreamOGGVorbis_has_loop>`  **(** **)** const                                            |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_data<class_AudioStreamOGGVorbis_set_data>`  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**  |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_loop<class_AudioStreamOGGVorbis_set_loop>`  **(** :ref:`bool<class_bool>` enable  **)**                  |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_loop_offset<class_AudioStreamOGGVorbis_set_loop_offset>`  **(** :ref:`float<class_float>` seconds  **)** |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`PoolByteArray<class_poolbytearray>` **data** - Raw audio data.
-- :ref:`bool<class_bool>` **loop** - If [code]true[/code], audio will loop continuously. Default value: [code]false[/code].
-- :ref:`float<class_float>` **loop_offset** - If loop is [code]true[/code], loop starts from this position, in seconds.
++-------------------------------------------+---------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`data<class_AudioStreamOGGVorbis_property_data>`               |
++-------------------------------------------+---------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                   | :ref:`loop<class_AudioStreamOGGVorbis_property_loop>`               |
++-------------------------------------------+---------------------------------------------------------------------+
+| :ref:`float<class_float>`                 | :ref:`loop_offset<class_AudioStreamOGGVorbis_property_loop_offset>` |
++-------------------------------------------+---------------------------------------------------------------------+
 
 Description
 -----------
 
 OGG Vorbis audio stream driver.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_AudioStreamOGGVorbis_get_data:
+.. _class_AudioStreamOGGVorbis_property_data:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_data**  **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **data**
 
-.. _class_AudioStreamOGGVorbis_get_loop_offset:
++----------+-----------------+
+| *Setter* | set_data(value) |
++----------+-----------------+
+| *Getter* | get_data()      |
++----------+-----------------+
 
-- :ref:`float<class_float>`  **get_loop_offset**  **(** **)** const
+Contains the audio data in bytes.
 
-.. _class_AudioStreamOGGVorbis_has_loop:
+.. _class_AudioStreamOGGVorbis_property_loop:
 
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
+- :ref:`bool<class_bool>` **loop**
 
-.. _class_AudioStreamOGGVorbis_set_data:
++----------+-----------------+
+| *Setter* | set_loop(value) |
++----------+-----------------+
+| *Getter* | has_loop()      |
++----------+-----------------+
 
-- void  **set_data**  **(** :ref:`PoolByteArray<class_poolbytearray>` data  **)**
+.. _class_AudioStreamOGGVorbis_property_loop_offset:
 
-.. _class_AudioStreamOGGVorbis_set_loop:
+- :ref:`float<class_float>` **loop_offset**
 
-- void  **set_loop**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_AudioStreamOGGVorbis_set_loop_offset:
-
-- void  **set_loop_offset**  **(** :ref:`float<class_float>` seconds  **)**
-
++----------+------------------------+
+| *Setter* | set_loop_offset(value) |
++----------+------------------------+
+| *Getter* | get_loop_offset()      |
++----------+------------------------+
 

@@ -7,52 +7,138 @@
 ConeTwistJoint
 ==============
 
-**Inherits:** :ref:`Joint<class_joint>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A twist joint between two 3D bodies.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`bias<class_ConeTwistJoint_property_bias>`             |
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`relaxation<class_ConeTwistJoint_property_relaxation>` |
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`softness<class_ConeTwistJoint_property_softness>`     |
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`swing_span<class_ConeTwistJoint_property_swing_span>` |
++---------------------------+-------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`twist_span<class_ConeTwistJoint_property_twist_span>` |
++---------------------------+-------------------------------------------------------------+
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param<class_ConeTwistJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_ConeTwistJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_ConeTwistJoint_Param:
+
+.. _class_ConeTwistJoint_constant_PARAM_SWING_SPAN:
+
+.. _class_ConeTwistJoint_constant_PARAM_TWIST_SPAN:
+
+.. _class_ConeTwistJoint_constant_PARAM_BIAS:
+
+.. _class_ConeTwistJoint_constant_PARAM_SOFTNESS:
+
+.. _class_ConeTwistJoint_constant_PARAM_RELAXATION:
+
+.. _class_ConeTwistJoint_constant_PARAM_MAX:
+
+enum **Param**:
+
+- **PARAM_SWING_SPAN** = **0** --- Swing is rotation from side to side, around the axis perpendicular to the twist axis.
+
+The swing span defines, how much rotation will not get corrected allong the swing axis.
+
+Could be defined as looseness in the ``ConeTwistJoint``.
+
+If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+
+- **PARAM_TWIST_SPAN** = **1** --- Twist is the rotation around the twist axis, this value defined how far the joint can twist.
+
+Twist is locked if below 0.05.
+
+- **PARAM_BIAS** = **2** --- The speed with which the swing or twist will take place.
+
+The higher, the faster.
+
+- **PARAM_SOFTNESS** = **3** --- The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
+
+- **PARAM_RELAXATION** = **4** --- Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+
+- **PARAM_MAX** = **5** --- End flag of PARAM\_\* constants, used internally.
+
+Description
+-----------
+
+The joint can rotate the bodies across an axis defined by the local x-axes of the :ref:`Joint<class_Joint>`.
+
+The twist axis is initiated as the x-axis of the :ref:`Joint<class_Joint>`.
+
+Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
+
+Property Descriptions
+---------------------
+
+.. _class_ConeTwistJoint_property_bias:
 
 - :ref:`float<class_float>` **bias**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The speed with which the swing or twist will take place.
+
+The higher, the faster.
+
+.. _class_ConeTwistJoint_property_relaxation:
+
 - :ref:`float<class_float>` **relaxation**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+Defines, how fast the swing- and twist-speed-difference on both sides gets synced.
+
+.. _class_ConeTwistJoint_property_softness:
+
 - :ref:`float<class_float>` **softness**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The ease with which the joint starts to twist. If it's too low, it takes more force to start twisting the joint.
+
+.. _class_ConeTwistJoint_property_swing_span:
+
 - :ref:`float<class_float>` **swing_span**
+
+Swing is rotation from side to side, around the axis perpendicular to the twist axis.
+
+The swing span defines, how much rotation will not get corrected allong the swing axis.
+
+Could be defined as looseness in the ``ConeTwistJoint``.
+
+If below 0.05, this behaviour is locked. Default value: ``PI/4``.
+
+.. _class_ConeTwistJoint_property_twist_span:
+
 - :ref:`float<class_float>` **twist_span**
 
-Numeric Constants
------------------
+Twist is the rotation around the twist axis, this value defined how far the joint can twist.
 
-- **PARAM_SWING_SPAN** = **0**
-- **PARAM_TWIST_SPAN** = **1**
-- **PARAM_BIAS** = **2**
-- **PARAM_SOFTNESS** = **3**
-- **PARAM_RELAXATION** = **4**
-- **PARAM_MAX** = **5**
-
-Member Function Description
----------------------------
-
-.. _class_ConeTwistJoint_get_param:
-
-- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
-
-.. _class_ConeTwistJoint_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
+Twist is locked if below 0.05.
 

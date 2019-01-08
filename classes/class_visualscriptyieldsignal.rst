@@ -7,7 +7,7 @@
 VisualScriptYieldSignal
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,75 +16,78 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_base_path<class_VisualScriptYieldSignal_get_base_path>`  **(** **)** const                                      |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_base_type<class_VisualScriptYieldSignal_get_base_type>`  **(** **)** const                                      |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_call_mode<class_VisualScriptYieldSignal_get_call_mode>`  **(** **)** const                                      |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_signal<class_VisualScriptYieldSignal_get_signal>`  **(** **)** const                                            |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_path<class_VisualScriptYieldSignal_set_base_path>`  **(** :ref:`NodePath<class_nodepath>` base_path  **)** |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_type<class_VisualScriptYieldSignal_set_base_type>`  **(** :ref:`String<class_string>` base_type  **)**     |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_call_mode<class_VisualScriptYieldSignal_set_call_mode>`  **(** :ref:`int<class_int>` mode  **)**                |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_signal<class_VisualScriptYieldSignal_set_signal>`  **(** :ref:`String<class_string>` signal  **)**              |
-+----------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptYieldSignal_property_base_type>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` | :ref:`call_mode<class_VisualScriptYieldSignal_property_call_mode>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptYieldSignal_property_node_path>` |
++--------------------------------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`signal<class_VisualScriptYieldSignal_property_signal>`       |
++--------------------------------------------------------+--------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`String<class_string>` **base_type**
-- :ref:`int<class_int>` **call_mode**
-- :ref:`NodePath<class_nodepath>` **node_path**
-- :ref:`String<class_string>` **signal**
+.. _enum_VisualScriptYieldSignal_CallMode:
 
-Numeric Constants
------------------
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_SELF:
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_NODE_PATH:
+
+.. _class_VisualScriptYieldSignal_constant_CALL_MODE_INSTANCE:
+
+enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
+
 - **CALL_MODE_NODE_PATH** = **1**
+
 - **CALL_MODE_INSTANCE** = **2**
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptYieldSignal_get_base_path:
+.. _class_VisualScriptYieldSignal_property_base_type:
 
-- :ref:`NodePath<class_nodepath>`  **get_base_path**  **(** **)** const
+- :ref:`String<class_String>` **base_type**
 
-.. _class_VisualScriptYieldSignal_get_base_type:
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
 
-- :ref:`String<class_string>`  **get_base_type**  **(** **)** const
+.. _class_VisualScriptYieldSignal_property_call_mode:
 
-.. _class_VisualScriptYieldSignal_get_call_mode:
+- :ref:`CallMode<enum_VisualScriptYieldSignal_CallMode>` **call_mode**
 
-- :ref:`int<class_int>`  **get_call_mode**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_call_mode(value) |
++----------+----------------------+
+| *Getter* | get_call_mode()      |
++----------+----------------------+
 
-.. _class_VisualScriptYieldSignal_get_signal:
+.. _class_VisualScriptYieldSignal_property_node_path:
 
-- :ref:`String<class_string>`  **get_signal**  **(** **)** const
+- :ref:`NodePath<class_NodePath>` **node_path**
 
-.. _class_VisualScriptYieldSignal_set_base_path:
++----------+----------------------+
+| *Setter* | set_base_path(value) |
++----------+----------------------+
+| *Getter* | get_base_path()      |
++----------+----------------------+
 
-- void  **set_base_path**  **(** :ref:`NodePath<class_nodepath>` base_path  **)**
+.. _class_VisualScriptYieldSignal_property_signal:
 
-.. _class_VisualScriptYieldSignal_set_base_type:
+- :ref:`String<class_String>` **signal**
 
-- void  **set_base_type**  **(** :ref:`String<class_string>` base_type  **)**
-
-.. _class_VisualScriptYieldSignal_set_call_mode:
-
-- void  **set_call_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_VisualScriptYieldSignal_set_signal:
-
-- void  **set_signal**  **(** :ref:`String<class_string>` signal  **)**
-
++----------+-------------------+
+| *Setter* | set_signal(value) |
++----------+-------------------+
+| *Getter* | get_signal()      |
++----------+-------------------+
 

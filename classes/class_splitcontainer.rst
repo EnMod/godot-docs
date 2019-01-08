@@ -7,9 +7,9 @@
 SplitContainer
 ==============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`HSplitContainer<class_hsplitcontainer>`, :ref:`VSplitContainer<class_vsplitcontainer>`
+**Inherited By:** :ref:`HSplitContainer<class_HSplitContainer>`, :ref:`VSplitContainer<class_VSplitContainer>`
 
 **Category:** Core
 
@@ -18,42 +18,50 @@ Brief Description
 
 Container for splitting and adjusting.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_dragger_visibility<class_SplitContainer_get_dragger_visibility>`  **(** **)** const                       |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_split_offset<class_SplitContainer_get_split_offset>`  **(** **)** const                                   |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_collapsed<class_SplitContainer_is_collapsed>`  **(** **)** const                                           |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_collapsed<class_SplitContainer_set_collapsed>`  **(** :ref:`bool<class_bool>` collapsed  **)**            |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_dragger_visibility<class_SplitContainer_set_dragger_visibility>`  **(** :ref:`int<class_int>` mode  **)** |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_split_offset<class_SplitContainer_set_split_offset>`  **(** :ref:`int<class_int>` offset  **)**           |
-+--------------------------+---------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                         | :ref:`collapsed<class_SplitContainer_property_collapsed>`                   |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` | :ref:`dragger_visibility<class_SplitContainer_property_dragger_visibility>` |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                           | :ref:`split_offset<class_SplitContainer_property_split_offset>`             |
++-----------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Methods
+-------
+
++------+---------------------------------------------------------------------------------------+
+| void | :ref:`clamp_split_offset<class_SplitContainer_method_clamp_split_offset>` **(** **)** |
++------+---------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **dragged**  **(** :ref:`int<class_int>` offset  **)**
+.. _class_SplitContainer_signal_dragged:
+
+- **dragged** **(** :ref:`int<class_int>` offset **)**
+
 Emitted when the dragger is dragged by user.
 
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_SplitContainer_DraggerVisibility:
 
-- :ref:`bool<class_bool>` **collapsed**
-- :ref:`int<class_int>` **dragger_visibility**
-- :ref:`int<class_int>` **split_offset**
+.. _class_SplitContainer_constant_DRAGGER_VISIBLE:
 
-Numeric Constants
------------------
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN:
+
+.. _class_SplitContainer_constant_DRAGGER_HIDDEN_COLLAPSED:
+
+enum **DraggerVisibility**:
 
 - **DRAGGER_VISIBLE** = **0** --- The split dragger is visible.
+
 - **DRAGGER_HIDDEN** = **1** --- The split dragger is invisible.
+
 - **DRAGGER_HIDDEN_COLLAPSED** = **2** --- The split dragger is invisible and collapsed.
 
 Description
@@ -61,43 +69,45 @@ Description
 
 Container for splitting two controls vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_SplitContainer_get_dragger_visibility:
+.. _class_SplitContainer_property_collapsed:
 
-- :ref:`int<class_int>`  **get_dragger_visibility**  **(** **)** const
+- :ref:`bool<class_bool>` **collapsed**
 
-Return visibility of the split dragger (one of DRAGGER_VISIBLE, DRAGGER_HIDDEN or DRAGGER_HIDDEN_COLLAPSED).
++----------+----------------------+
+| *Setter* | set_collapsed(value) |
++----------+----------------------+
+| *Getter* | is_collapsed()       |
++----------+----------------------+
 
-.. _class_SplitContainer_get_split_offset:
+.. _class_SplitContainer_property_dragger_visibility:
 
-- :ref:`int<class_int>`  **get_split_offset**  **(** **)** const
+- :ref:`DraggerVisibility<enum_SplitContainer_DraggerVisibility>` **dragger_visibility**
 
-Return the split offset.
++----------+-------------------------------+
+| *Setter* | set_dragger_visibility(value) |
++----------+-------------------------------+
+| *Getter* | get_dragger_visibility()      |
++----------+-------------------------------+
 
-.. _class_SplitContainer_is_collapsed:
+Determines whether the dragger is visible.
 
-- :ref:`bool<class_bool>`  **is_collapsed**  **(** **)** const
+.. _class_SplitContainer_property_split_offset:
 
-Return true if the split is collapsed.
+- :ref:`int<class_int>` **split_offset**
 
-.. _class_SplitContainer_set_collapsed:
++----------+-------------------------+
+| *Setter* | set_split_offset(value) |
++----------+-------------------------+
+| *Getter* | get_split_offset()      |
++----------+-------------------------+
 
-- void  **set_collapsed**  **(** :ref:`bool<class_bool>` collapsed  **)**
+Method Descriptions
+-------------------
 
-Set if the split must be collapsed.
+.. _class_SplitContainer_method_clamp_split_offset:
 
-.. _class_SplitContainer_set_dragger_visibility:
-
-- void  **set_dragger_visibility**  **(** :ref:`int<class_int>` mode  **)**
-
-Set visibility of the split dragger (*mode* must be one of DRAGGER_VISIBLE, DRAGGER_HIDDEN or DRAGGER_HIDDEN_COLLAPSED).
-
-.. _class_SplitContainer_set_split_offset:
-
-- void  **set_split_offset**  **(** :ref:`int<class_int>` offset  **)**
-
-Set the split offset.
-
+- void **clamp_split_offset** **(** **)**
 

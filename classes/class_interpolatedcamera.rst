@@ -7,70 +7,85 @@
 InterpolatedCamera
 ==================
 
-**Inherits:** :ref:`Camera<class_camera>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Camera<class_Camera>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Camera which moves toward another node.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------+-----------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`enabled<class_InterpolatedCamera_property_enabled>` |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>`       | :ref:`speed<class_InterpolatedCamera_property_speed>`     |
++---------------------------------+-----------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`target<class_InterpolatedCamera_property_target>`   |
++---------------------------------+-----------------------------------------------------------+
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`        | :ref:`get_speed<class_InterpolatedCamera_get_speed>`  **(** **)** const                                                                |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_target_path<class_InterpolatedCamera_get_target_path>`  **(** **)** const                                                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_interpolation_enabled<class_InterpolatedCamera_is_interpolation_enabled>`  **(** **)** const                                  |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_interpolation_enabled<class_InterpolatedCamera_set_interpolation_enabled>`  **(** :ref:`bool<class_bool>` target_path  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_speed<class_InterpolatedCamera_set_speed>`  **(** :ref:`float<class_float>` speed  **)**                                     |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_target<class_InterpolatedCamera_set_target>`  **(** :ref:`Object<class_object>` target  **)**                                |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_target_path<class_InterpolatedCamera_set_target_path>`  **(** :ref:`NodePath<class_nodepath>` target_path  **)**             |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+Methods
+-------
 
-Member Variables
-----------------
++------+--------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_target<class_InterpolatedCamera_method_set_target>` **(** :ref:`Object<class_Object>` target **)** |
++------+--------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
+InterpolatedCamera is a :ref:`Camera<class_Camera>` which smoothly moves to match a target node's position and rotation.
+
+If it is not :ref:`enabled<class_InterpolatedCamera_property_enabled>` or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
+
+Property Descriptions
+---------------------
+
+.. _class_InterpolatedCamera_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
+
++----------+----------------------------------+
+| *Setter* | set_interpolation_enabled(value) |
++----------+----------------------------------+
+| *Getter* | is_interpolation_enabled()       |
++----------+----------------------------------+
+
+If ``true``, and a target is set, the camera will move automatically.
+
+.. _class_InterpolatedCamera_property_speed:
+
 - :ref:`float<class_float>` **speed**
-- :ref:`NodePath<class_nodepath>` **target**
 
-Member Function Description
----------------------------
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
 
-.. _class_InterpolatedCamera_get_speed:
+How quickly the camera moves toward its target. Higher values will result in tighter camera motion.
 
-- :ref:`float<class_float>`  **get_speed**  **(** **)** const
+.. _class_InterpolatedCamera_property_target:
 
-.. _class_InterpolatedCamera_get_target_path:
+- :ref:`NodePath<class_NodePath>` **target**
 
-- :ref:`NodePath<class_nodepath>`  **get_target_path**  **(** **)** const
++----------+------------------------+
+| *Setter* | set_target_path(value) |
++----------+------------------------+
+| *Getter* | get_target_path()      |
++----------+------------------------+
 
-.. _class_InterpolatedCamera_is_interpolation_enabled:
+The target's :ref:`NodePath<class_NodePath>`.
 
-- :ref:`bool<class_bool>`  **is_interpolation_enabled**  **(** **)** const
+Method Descriptions
+-------------------
 
-.. _class_InterpolatedCamera_set_interpolation_enabled:
+.. _class_InterpolatedCamera_method_set_target:
 
-- void  **set_interpolation_enabled**  **(** :ref:`bool<class_bool>` target_path  **)**
+- void **set_target** **(** :ref:`Object<class_Object>` target **)**
 
-.. _class_InterpolatedCamera_set_speed:
-
-- void  **set_speed**  **(** :ref:`float<class_float>` speed  **)**
-
-.. _class_InterpolatedCamera_set_target:
-
-- void  **set_target**  **(** :ref:`Object<class_object>` target  **)**
-
-.. _class_InterpolatedCamera_set_target_path:
-
-- void  **set_target_path**  **(** :ref:`NodePath<class_nodepath>` target_path  **)**
-
+Sets the node to move toward and orient with.
 

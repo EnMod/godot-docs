@@ -7,9 +7,9 @@
 Reference
 =========
 
-**Inherits:** :ref:`Object<class_object>`
+**Inherits:** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`RegExMatch<class_regexmatch>`, :ref:`EncodedObjectAsID<class_encodedobjectasid>`, :ref:`SpatialGizmo<class_spatialgizmo>`, :ref:`TriangleMesh<class_trianglemesh>`, :ref:`GDFunctionState<class_gdfunctionstate>`, :ref:`PhysicsShapeQueryResult<class_physicsshapequeryresult>`, :ref:`Physics2DTestMotionResult<class_physics2dtestmotionresult>`, :ref:`FuncRef<class_funcref>`, :ref:`Marshalls<class_marshalls>`, :ref:`File<class_file>`, :ref:`TCP_Server<class_tcp_server>`, :ref:`Physics2DShapeQueryResult<class_physics2dshapequeryresult>`, :ref:`ConfigFile<class_configfile>`, :ref:`StreamPeer<class_streampeer>`, :ref:`HTTPClient<class_httpclient>`, :ref:`AudioStreamPlayback<class_audiostreamplayback>`, :ref:`VisualScriptFunctionState<class_visualscriptfunctionstate>`, :ref:`Resource<class_resource>`, :ref:`KinematicCollision<class_kinematiccollision>`, :ref:`SurfaceTool<class_surfacetool>`, :ref:`JSONParseResult<class_jsonparseresult>`, :ref:`SpatialVelocityTracker<class_spatialvelocitytracker>`, :ref:`EditorResourcePreviewGenerator<class_editorresourcepreviewgenerator>`, :ref:`Physics2DShapeQueryParameters<class_physics2dshapequeryparameters>`, :ref:`EditorExportPlugin<class_editorexportplugin>`, :ref:`ARVRInterface<class_arvrinterface>`, :ref:`EditorScript<class_editorscript>`, :ref:`Mutex<class_mutex>`, :ref:`PacketPeer<class_packetpeer>`, :ref:`Semaphore<class_semaphore>`, :ref:`XMLParser<class_xmlparser>`, :ref:`EditorImportPlugin<class_editorimportplugin>`, :ref:`Directory<class_directory>`, :ref:`WeakRef<class_weakref>`, :ref:`SceneState<class_scenestate>`, :ref:`GDNativeClass<class_gdnativeclass>`, :ref:`RegEx<class_regex>`, :ref:`PCKPacker<class_pckpacker>`, :ref:`MeshDataTool<class_meshdatatool>`, :ref:`AStar<class_astar>`, :ref:`ResourceImporter<class_resourceimporter>`, :ref:`EditorResourceConversionPlugin<class_editorresourceconversionplugin>`, :ref:`SceneTreeTimer<class_scenetreetimer>`, :ref:`Thread<class_thread>`, :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`, :ref:`PackedDataContainerRef<class_packeddatacontainerref>`, :ref:`KinematicCollision2D<class_kinematiccollision2d>`, :ref:`GDNative<class_gdnative>`, :ref:`PhysicsShapeQueryParameters<class_physicsshapequeryparameters>`
+**Inherited By:** :ref:`ARVRInterface<class_ARVRInterface>`, :ref:`AStar<class_AStar>`, :ref:`AnimationTrackEditPlugin<class_AnimationTrackEditPlugin>`, :ref:`AudioStreamPlayback<class_AudioStreamPlayback>`, :ref:`ConfigFile<class_ConfigFile>`, :ref:`Directory<class_Directory>`, :ref:`EditorExportPlugin<class_EditorExportPlugin>`, :ref:`EditorImportPlugin<class_EditorImportPlugin>`, :ref:`EditorInspectorPlugin<class_EditorInspectorPlugin>`, :ref:`EditorResourceConversionPlugin<class_EditorResourceConversionPlugin>`, :ref:`EditorResourcePreviewGenerator<class_EditorResourcePreviewGenerator>`, :ref:`EditorSceneImporter<class_EditorSceneImporter>`, :ref:`EditorScenePostImport<class_EditorScenePostImport>`, :ref:`EditorScript<class_EditorScript>`, :ref:`EncodedObjectAsID<class_EncodedObjectAsID>`, :ref:`Expression<class_Expression>`, :ref:`File<class_File>`, :ref:`FuncRef<class_FuncRef>`, :ref:`GDNative<class_GDNative>`, :ref:`GDScriptFunctionState<class_GDScriptFunctionState>`, :ref:`GDScriptNativeClass<class_GDScriptNativeClass>`, :ref:`HTTPClient<class_HTTPClient>`, :ref:`JSONParseResult<class_JSONParseResult>`, :ref:`KinematicCollision<class_KinematicCollision>`, :ref:`KinematicCollision2D<class_KinematicCollision2D>`, :ref:`Marshalls<class_Marshalls>`, :ref:`MeshDataTool<class_MeshDataTool>`, :ref:`MultiplayerAPI<class_MultiplayerAPI>`, :ref:`Mutex<class_Mutex>`, :ref:`PCKPacker<class_PCKPacker>`, :ref:`PackedDataContainerRef<class_PackedDataContainerRef>`, :ref:`PacketPeer<class_PacketPeer>`, :ref:`Physics2DShapeQueryParameters<class_Physics2DShapeQueryParameters>`, :ref:`Physics2DShapeQueryResult<class_Physics2DShapeQueryResult>`, :ref:`Physics2DTestMotionResult<class_Physics2DTestMotionResult>`, :ref:`PhysicsShapeQueryParameters<class_PhysicsShapeQueryParameters>`, :ref:`PhysicsShapeQueryResult<class_PhysicsShapeQueryResult>`, :ref:`RandomNumberGenerator<class_RandomNumberGenerator>`, :ref:`RegEx<class_RegEx>`, :ref:`RegExMatch<class_RegExMatch>`, :ref:`Resource<class_Resource>`, :ref:`ResourceFormatLoader<class_ResourceFormatLoader>`, :ref:`ResourceFormatSaver<class_ResourceFormatSaver>`, :ref:`ResourceImporter<class_ResourceImporter>`, :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>`, :ref:`SceneState<class_SceneState>`, :ref:`SceneTreeTimer<class_SceneTreeTimer>`, :ref:`Semaphore<class_Semaphore>`, :ref:`SpatialGizmo<class_SpatialGizmo>`, :ref:`SpatialVelocityTracker<class_SpatialVelocityTracker>`, :ref:`StreamPeer<class_StreamPeer>`, :ref:`SurfaceTool<class_SurfaceTool>`, :ref:`TCP_Server<class_TCP_Server>`, :ref:`Thread<class_Thread>`, :ref:`TriangleMesh<class_TriangleMesh>`, :ref:`UPNP<class_UPNP>`, :ref:`UPNPDevice<class_UPNPDevice>`, :ref:`VisualScriptFunctionState<class_VisualScriptFunctionState>`, :ref:`WeakRef<class_WeakRef>`, :ref:`XMLParser<class_XMLParser>`
 
 **Category:** Core
 
@@ -18,39 +18,38 @@ Brief Description
 
 Base class for anything that keeps a reference count.
 
-Member Functions
-----------------
+Methods
+-------
 
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`init_ref<class_Reference_init_ref>`  **(** **)**       |
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`reference<class_Reference_reference>`  **(** **)**     |
-+--------------------------+--------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`unreference<class_Reference_unreference>`  **(** **)** |
-+--------------------------+--------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`init_ref<class_Reference_method_init_ref>` **(** **)**       |
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`reference<class_Reference_method_reference>` **(** **)**     |
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`unreference<class_Reference_method_unreference>` **(** **)** |
++-------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
 
 Base class for anything that keeps a reference count. Resource and many other helper objects inherit this. References keep an internal reference counter so they are only released when no longer in use.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_Reference_init_ref:
+.. _class_Reference_method_init_ref:
 
-- :ref:`bool<class_bool>`  **init_ref**  **(** **)**
+- :ref:`bool<class_bool>` **init_ref** **(** **)**
 
-.. _class_Reference_reference:
+.. _class_Reference_method_reference:
 
-- :ref:`bool<class_bool>`  **reference**  **(** **)**
+- :ref:`bool<class_bool>` **reference** **(** **)**
 
 Increase the internal reference counter. Use this only if you really know what you are doing.
 
-.. _class_Reference_unreference:
+.. _class_Reference_method_unreference:
 
-- :ref:`bool<class_bool>`  **unreference**  **(** **)**
+- :ref:`bool<class_bool>` **unreference** **(** **)**
 
 Decrease the internal reference counter. Use this only if you really know what you are doing.
-
 

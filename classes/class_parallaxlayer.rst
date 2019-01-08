@@ -7,77 +7,71 @@
 ParallaxLayer
 =============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_parallaxbackground>`.
+A parallax scrolling layer to be used with :ref:`ParallaxBackground<class_ParallaxBackground>`.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_mirroring<class_ParallaxLayer_get_mirroring>`  **(** **)** const                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_offset<class_ParallaxLayer_get_motion_offset>`  **(** **)** const                                 |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_motion_scale<class_ParallaxLayer_get_motion_scale>`  **(** **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_mirroring<class_ParallaxLayer_set_mirroring>`  **(** :ref:`Vector2<class_vector2>` mirror  **)**         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_motion_offset<class_ParallaxLayer_set_motion_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_motion_scale<class_ParallaxLayer_set_motion_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**    |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Vector2<class_vector2>` **motion_mirroring**
-- :ref:`Vector2<class_vector2>` **motion_offset**
-- :ref:`Vector2<class_vector2>` **motion_scale**
++-------------------------------+------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_mirroring<class_ParallaxLayer_property_motion_mirroring>` |
++-------------------------------+------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_offset<class_ParallaxLayer_property_motion_offset>`       |
++-------------------------------+------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`motion_scale<class_ParallaxLayer_property_motion_scale>`         |
++-------------------------------+------------------------------------------------------------------------+
 
 Description
 -----------
 
-A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_parallaxbackground>` node. All child nodes will be affected by the parallax scrolling of this layer.
+A ParallaxLayer must be the child of a :ref:`ParallaxBackground<class_ParallaxBackground>` node. Each ParallaxLayer can be set to move at different speeds relative to the camera movement or the :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_property_scroll_offset>` value.
 
-Member Function Description
----------------------------
+This node's children will be affected by its scroll offset.
 
-.. _class_ParallaxLayer_get_mirroring:
+Note that any changes to this node's position and scale made after it enters the scene will be ignored.
 
-- :ref:`Vector2<class_vector2>`  **get_mirroring**  **(** **)** const
+Property Descriptions
+---------------------
 
-Return the mirroring of the ParallaxLayer.
+.. _class_ParallaxLayer_property_motion_mirroring:
 
-.. _class_ParallaxLayer_get_motion_offset:
+- :ref:`Vector2<class_Vector2>` **motion_mirroring**
 
-- :ref:`Vector2<class_vector2>`  **get_motion_offset**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_mirroring(value) |
++----------+----------------------+
+| *Getter* | get_mirroring()      |
++----------+----------------------+
 
-.. _class_ParallaxLayer_get_motion_scale:
+The ParallaxLayer's :ref:`Texture<class_Texture>` mirroring. Useful for creating an infinite scrolling background. If an axis is set to ``0`` the :ref:`Texture<class_Texture>` will not be mirrored. Default value: ``(0, 0)``.
 
-- :ref:`Vector2<class_vector2>`  **get_motion_scale**  **(** **)** const
+.. _class_ParallaxLayer_property_motion_offset:
 
-Return the motion scale of the ParallaxLayer.
+- :ref:`Vector2<class_Vector2>` **motion_offset**
 
-.. _class_ParallaxLayer_set_mirroring:
++----------+--------------------------+
+| *Setter* | set_motion_offset(value) |
++----------+--------------------------+
+| *Getter* | get_motion_offset()      |
++----------+--------------------------+
 
-- void  **set_mirroring**  **(** :ref:`Vector2<class_vector2>` mirror  **)**
+The ParallaxLayer's offset relative to the parent ParallaxBackground's :ref:`ParallaxBackground.scroll_offset<class_ParallaxBackground_property_scroll_offset>`.
 
-Set the mirroring of the ParallaxLayer. If an axis is set to 0 then that axis will have no mirroring.
+.. _class_ParallaxLayer_property_motion_scale:
 
-.. _class_ParallaxLayer_set_motion_offset:
+- :ref:`Vector2<class_Vector2>` **motion_scale**
 
-- void  **set_motion_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
++----------+-------------------------+
+| *Setter* | set_motion_scale(value) |
++----------+-------------------------+
+| *Getter* | get_motion_scale()      |
++----------+-------------------------+
 
-.. _class_ParallaxLayer_set_motion_scale:
-
-- void  **set_motion_scale**  **(** :ref:`Vector2<class_vector2>` scale  **)**
-
-Set the motion scale of the ParallaxLayer. If an axis is set to 0 then it will not move at all, it will stick with the camera.
-
+Multiplies the ParallaxLayer's motion. If an axis is set to ``0`` it will not scroll.
 

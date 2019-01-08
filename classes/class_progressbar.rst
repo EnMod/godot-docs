@@ -7,7 +7,7 @@
 ProgressBar
 ===========
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,34 +16,45 @@ Brief Description
 
 General purpose progress bar.
 
-Member Functions
+Properties
+----------
+
++-------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`percent_visible<class_ProgressBar_property_percent_visible>` |
++-------------------------+--------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_percent_visible<class_ProgressBar_is_percent_visible>`  **(** **)** const                              |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_percent_visible<class_ProgressBar_set_percent_visible>`  **(** :ref:`bool<class_bool>` visible  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **percent_visible**
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | bg                |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | fg                |
++---------------------------------+-------------------+
+| :ref:`Font<class_Font>`         | font              |
++---------------------------------+-------------------+
+| :ref:`Color<class_Color>`       | font_color        |
++---------------------------------+-------------------+
+| :ref:`Color<class_Color>`       | font_color_shadow |
++---------------------------------+-------------------+
 
 Description
 -----------
 
 General purpose progress bar. Shows fill percentage from right to left.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ProgressBar_is_percent_visible:
+.. _class_ProgressBar_property_percent_visible:
 
-- :ref:`bool<class_bool>`  **is_percent_visible**  **(** **)** const
+- :ref:`bool<class_bool>` **percent_visible**
 
-.. _class_ProgressBar_set_percent_visible:
++----------+----------------------------+
+| *Setter* | set_percent_visible(value) |
++----------+----------------------------+
+| *Getter* | is_percent_visible()       |
++----------+----------------------------+
 
-- void  **set_percent_visible**  **(** :ref:`bool<class_bool>` visible  **)**
-
+If ``true``, the fill percentage is displayed on the bar. Default value: ``true``.
 

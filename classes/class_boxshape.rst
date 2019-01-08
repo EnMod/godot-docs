@@ -7,7 +7,7 @@
 BoxShape
 ========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,30 @@ Brief Description
 
 Box shape resource.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_extents<class_BoxShape_get_extents>`  **(** **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_extents<class_BoxShape_set_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Vector3<class_vector3>` **extents** - The shape's half extents.
++-------------------------------+-------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`extents<class_BoxShape_property_extents>` |
++-------------------------------+-------------------------------------------------+
 
 Description
 -----------
 
-3D box shape that can be a child of a :ref:`PhysicsBody<class_physicsbody>` or :ref:`Area<class_area>`.
+3D box shape that can be a child of a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_BoxShape_get_extents:
+.. _class_BoxShape_property_extents:
 
-- :ref:`Vector3<class_vector3>`  **get_extents**  **(** **)** const
+- :ref:`Vector3<class_Vector3>` **extents**
 
-Return the half extents of the shape.
++----------+--------------------+
+| *Setter* | set_extents(value) |
++----------+--------------------+
+| *Getter* | get_extents()      |
++----------+--------------------+
 
-.. _class_BoxShape_set_extents:
-
-- void  **set_extents**  **(** :ref:`Vector3<class_vector3>` extents  **)**
-
-Set the half extents for the shape.
-
+The shape's half extents.
 

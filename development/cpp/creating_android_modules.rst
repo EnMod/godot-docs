@@ -10,7 +10,7 @@ Making video games portable is all fine and dandy, until mobile
 gaming monetization shows up.
 
 This area is complex, usually a mobile game that monetizes needs
-special connections to a server for stuff such as:
+special connections to a server for things like:
 
 -  Analytics
 -  In-app purchases
@@ -29,26 +29,18 @@ special connections to a server for stuff such as:
 -  Posting to Facebook, Twitter, etc.
 -  Push notifications
 
-Oh yeah, developing for mobile is a lot of work. On iOS, you can just
-write a C++ module and take advantage of the C++/ObjC
-intercommunication, so this is rather easy.
+On iOS, you can write a C++ module and take advantage of the C++/ObjC
+intercommunication.
 
-For C++ developers Java is a pain, the build system is severely bloated
-and interfacing it with C++ through JNI (Java Native Interface) is more
-pain that you don't want even for your worst enemy.
+On Android, interfacing with C++ through JNI (Java Native Interface) isn't as convenient.
 
 Maybe REST?
 -----------
 
-Most of these APIs allow communication via REST+JSON APIs. Godot has
+Most of these APIs allow communication via REST/JSON APIs. Godot has
 great support for HTTP, HTTPS and JSON, so consider this as an option
-that works in every platform. Only write the code once and you are set
+that works on every platform. Only write the code once and you are set
 to go.
-
-Popular engines that have half the share of apps published on mobile get
-special plugins written just for them. Godot does not have that luxury
-yet. So, if you write a REST implementation of a SDK for Godot, please
-share it with the community.
 
 Android module
 --------------
@@ -63,8 +55,8 @@ config.py
 ~~~~~~~~~
 
 In the config.py for the module, some extra functions are provided for
-convenience. First, it's often wise to detect if android is being built
-and only enable building in this case:
+convenience. First, it's often wise to detect if Android is the target platform
+being built for and only enable building in this case:
 
 .. code:: python
 
@@ -73,7 +65,7 @@ and only enable building in this case:
 
 If more than one platform can be built (typical if implementing the
 module also for iOS), check manually for Android in the configure
-functions:
+functions for Android (or other platform-specific) code:
 
 .. code:: python
 
@@ -87,7 +79,7 @@ functions:
 Java singleton
 --------------
 
-An android module will usually have a singleton class that will load it,
+An Android module will usually have a singleton class that will load it,
 this class inherits from ``Godot.SingletonBase``. Resource identifiers for
 any additional resources you have provided for the module will be in the
 ``com.godot.game.R`` class, so you'll likely want to import it.
@@ -96,32 +88,49 @@ A singleton object template follows:
 
 .. code:: java
 
-    // package com.android.godot; // for 1.1
-    package org.godotengine.godot; // for 2.0
-    
+    package org.godotengine.godot;
+
+    import android.app.Activity;
+    import android.content.Intent;
     import com.godot.game.R;
+    import javax.microedition.khronos.opengles.GL10;
 
     public class MySingleton extends Godot.SingletonBase {
 
+        protected Activity appActivity;
+        protected Context appContext;
+        private int instanceId = 0;
+
         public int myFunction(String p_str) {
             // a function to bind
+            return 1;
+        }
+
+        public void getInstanceId(int pInstanceId) {
+            // You will need to call this method from Godot and pass in the get_instance_id().
+            instanceId = pInstanceId;
         }
 
         static public Godot.SingletonBase initialize(Activity p_activity) {
             return new MySingleton(p_activity);
-        } 
+        }
 
         public MySingleton(Activity p_activity) {
             //register class name and functions to bind
-            registerClass("MySingleton", new String[]{"myFunction"});
-
+            registerClass("MySingleton", new String[]
+                {
+                    "myFunction",
+                    "getInstanceId"
+                });
+            this.appActivity = p_activity;
+            this.appContext = appActivity.getApplicationContext();
             // you might want to try initializing your singleton here, but android
-            // threads are weird and this runs in another thread, so you usually have to do
+            // threads are weird and this runs in another thread, so to interact with Godot you usually have to do
             activity.runOnUiThread(new Runnable() {
                     public void run() {
-                        //useful way to get config info from engine.cfg
+                        //useful way to get config info from project.godot
                         String key = GodotLib.getGlobal("plugin/api_key");
-                        SDK.initializeHere();
+                        //SDK.initializeHere();
                     }
             });
 
@@ -130,6 +139,7 @@ A singleton object template follows:
         // forwarded callbacks you can reimplement, as SDKs often need them
 
         protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
+        protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
 
         protected void onMainPause() {}
         protected void onMainResume() {}
@@ -155,22 +165,6 @@ Java will most likely run in a separate thread, so calls are deferred:
 Add this singleton to the build of the project by adding the following
 to config.py:
 
-(Before Version 2.0)
-
-.. code:: python
-
-    def can_build(plat):
-        return plat=="android" or plat=="iphone"
-
-    def configure(env):
-        if env['platform'] == 'android':
-            # will copy this to the java folder
-            env.android_module_file("MySingleton.java")
-            #env.android_module_file("MySingleton2.java") call again for more files
-
-
-(After Version 2.0)
-
 .. code:: python
 
     def can_build(plat):
@@ -187,14 +181,12 @@ AndroidManifest
 ---------------
 
 Some SDKs need custom values in AndroidManifest.xml. Permissions can be
-edited from the godot exporter so there is no need to add those, but
+edited from the Godot exporter so there is no need to add those, but
 maybe other functionalities are needed.
 
 Create the custom chunk of android manifest and put it inside the
 module, add it like this:
 
-(Before Version 2.0)
-
 .. code:: python
 
     def can_build(plat):
@@ -203,20 +195,7 @@ module, add it like this:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_module_file("MySingleton.java") 
-            env.android_module_manifest("AndroidManifestChunk.xml")
-
-(After Version 2.0)
-
-.. code:: python
-
-    def can_build(plat):
-        return plat=="android" or plat=="iphone"
-
-    def configure(env):
-        if env['platform'] == 'android':
-            # will copy this to the java folder
-            env.android_add_java_dir("Directory that contain MySingelton.java") 
+            env.android_add_java_dir("Directory that contains MySingleton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
 
 
@@ -232,19 +211,32 @@ add something like this:
     def configure(env):
         if env['platform'] == 'android':
             # [...]
-            env.android_add_res_dir("Directory that contains resource subdirectories (values, drawable, etc.)") 
-            
+            env.android_add_res_dir("Directory that contains resource subdirectories (values, drawable, etc.)")
+
 Now you can refer to those resources by their id (``R.string.my_string``, and the like)
 by importing the ``com.godot.game.R`` class in your Java code.
+
+Assets
+------
+
+Similarly, you can add any type of raw asset files to your app's asset directory like this:
+
+.. code:: python
+
+    def configure(env):
+        if env['platform'] == 'android':
+            # [...]
+            env.android_add_asset_dir("Directory that contains asset files for your app")
+
+Assets don't have resource ids, but can be read with their file name as streams of bytes with the help
+of the Android AssetManager class.
 
 SDK library
 -----------
 
 So, finally it's time to add the SDK library. The library can come in
 two flavors, a JAR file or an Android project for ant. JAR is the
-easiest to integrate, just put it in the module directory and add it:
-
-(Before Version 2.0)
+easiest to integrate, put it in the module directory and add it:
 
 .. code:: python
 
@@ -254,27 +246,12 @@ easiest to integrate, just put it in the module directory and add it:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_module_file("MySingleton.java") 
-            env.android_module_manifest("AndroidManifestChunk.xml")
-            env.android_module_library("MyLibrary-3.1.jar")
-            
-
-(After Version 2.0)  
-
-.. code:: python
-
-    def can_build(plat):
-        return plat=="android" or plat=="iphone"
-
-    def configure(env):
-        if env['platform'] == 'android':
-            # will copy this to the java folder
-            env.android_add_java_dir("Directory that contain MySingelton.java") 
+            env.android_add_java_dir("Directory that contains MySingleton.java")
             env.android_add_to_manifest("AndroidManifestChunk.xml")
             env.android_add_dependency("compile files('something_local.jar')") # if you have a jar, the path is relative to platform/android/java/gradlew, so it will start with ../../../modules/module_name/
             env.android_add_maven_repository("maven url") #add a maven url
             env.android_add_dependency("compile 'com.google.android.gms:play-services-ads:8'") #get dependency from maven repository
-           
+
 
 SDK project
 -----------
@@ -286,13 +263,11 @@ the project folder inside the module directory and configure it:
 
     c:\godot\modules\mymodule\sdk-1.2> android -p . -t 15
 
-As of this writing, Godot uses minsdk 10 and target sdk 15. If this ever
+As of this writing, Godot uses minsdk 18 and target sdk 27. If this ever
 changes, it should be reflected in the manifest template:
-`AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`
+`AndroidManifest.xml.template <https://github.com/godotengine/godot/blob/master/platform/android/AndroidManifest.xml.template>`__
 
 Then, add the module folder to the project:
-
-(Before Version 2.0)
 
 .. code:: python
 
@@ -302,13 +277,11 @@ Then, add the module folder to the project:
     def configure(env):
         if env['platform'] == 'android':
             # will copy this to the java folder
-            env.android_module_file("MySingleton.java") 
+            env.android_module_file("MySingleton.java")
             env.android_module_manifest("AndroidManifestChunk.xml")
             env.android_module_source("sdk-1.2","")
 
-(After Version 2.0)
-    
-    
+
 Building
 --------
 
@@ -324,13 +297,13 @@ This will cause your module to be included, the .jar will be copied to
 the java folder, the .java will be copied to the sources folder, etc.
 Each time you modify the .java, scons must be called.
 
-Afterwards, just continue the steps for compiling android  :ref:`doc_compiling_for_android`.
+Afterwards, continue the steps for compiling android  :ref:`doc_compiling_for_android`.
 
 Using the module
 ~~~~~~~~~~~~~~~~
 
 To use the module from GDScript, first enable the singleton by adding
-the following line to engine.cfg (Godot Engine 2.0 and greater):
+the following line to project.godot:
 
 ::
 
@@ -338,23 +311,15 @@ the following line to engine.cfg (Godot Engine 2.0 and greater):
 
     modules="org/godotengine/godot/MySingleton"
 
-For Godot Engine 1.1 is 
-
-::
-
-    [android]
-
-    modules="com/android/godot/MySingleton"
-
 More than one singleton module can be enabled by separating with commas:
 
 ::
 
     [android]
 
-    modules="com/android/godot/MySingleton,com/android/godot/MyOtherSingleton"
+    modules="org/godotengine/godot/MySingleton,corg/godotengine/godot/MyOtherSingleton"
 
-Then just request the singleton Java object from Globals like this:
+Then request the singleton Java object from Globals like this:
 
 ::
 
@@ -368,8 +333,6 @@ Then just request the singleton Java object from Globals like this:
 
 Troubleshooting
 ---------------
-
-(This section is a work in progress, report your problems here!)
 
 Godot crashes upon load
 ~~~~~~~~~~~~~~~~~~~~~~~

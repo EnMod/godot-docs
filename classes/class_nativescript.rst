@@ -7,7 +7,7 @@
 NativeScript
 ============
 
-**Inherits:** :ref:`Script<class_script>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Script<class_Script>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,48 +16,109 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_class_name<class_NativeScript_get_class_name>`  **(** **)** const                                            |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`GDNativeLibrary<class_gdnativelibrary>`  | :ref:`get_library<class_NativeScript_get_library>`  **(** **)** const                                                  |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`                    | :ref:`new<class_NativeScript_new>`  **(** **)** vararg                                                                 |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_class_name<class_NativeScript_set_class_name>`  **(** :ref:`String<class_string>` class_name  **)**          |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_library<class_NativeScript_set_library>`  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)** |
-+------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`class_name<class_NativeScript_property_class_name>`                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_NativeScript_property_library>`                               |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`script_class_icon_path<class_NativeScript_property_script_class_icon_path>` |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`script_class_name<class_NativeScript_property_script_class_name>`           |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`String<class_string>` **class_name**
-- :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_class_documentation<class_NativeScript_method_get_class_documentation>` **(** **)** const                                           |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_method_documentation<class_NativeScript_method_get_method_documentation>` **(** :ref:`String<class_String>` method **)** const      |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_property_documentation<class_NativeScript_method_get_property_documentation>` **(** :ref:`String<class_String>` path **)** const    |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_signal_documentation<class_NativeScript_method_get_signal_documentation>` **(** :ref:`String<class_String>` signal_name **)** const |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>` | :ref:`new<class_NativeScript_method_new>` **(** **)** vararg                                                                                  |
++-----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_NativeScript_get_class_name:
+.. _class_NativeScript_property_class_name:
 
-- :ref:`String<class_string>`  **get_class_name**  **(** **)** const
+- :ref:`String<class_String>` **class_name**
 
-.. _class_NativeScript_get_library:
++----------+-----------------------+
+| *Setter* | set_class_name(value) |
++----------+-----------------------+
+| *Getter* | get_class_name()      |
++----------+-----------------------+
 
-- :ref:`GDNativeLibrary<class_gdnativelibrary>`  **get_library**  **(** **)** const
+.. _class_NativeScript_property_library:
 
-.. _class_NativeScript_new:
+- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
-- :ref:`Object<class_object>`  **new**  **(** **)** vararg
++----------+--------------------+
+| *Setter* | set_library(value) |
++----------+--------------------+
+| *Getter* | get_library()      |
++----------+--------------------+
 
-.. _class_NativeScript_set_class_name:
+.. _class_NativeScript_property_script_class_icon_path:
 
-- void  **set_class_name**  **(** :ref:`String<class_string>` class_name  **)**
+- :ref:`String<class_String>` **script_class_icon_path**
 
-.. _class_NativeScript_set_library:
++----------+-----------------------------------+
+| *Setter* | set_script_class_icon_path(value) |
++----------+-----------------------------------+
+| *Getter* | get_script_class_icon_path()      |
++----------+-----------------------------------+
 
-- void  **set_library**  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)**
+.. _class_NativeScript_property_script_class_name:
 
+- :ref:`String<class_String>` **script_class_name**
+
++----------+------------------------------+
+| *Setter* | set_script_class_name(value) |
++----------+------------------------------+
+| *Getter* | get_script_class_name()      |
++----------+------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_NativeScript_method_get_class_documentation:
+
+- :ref:`String<class_String>` **get_class_documentation** **(** **)** const
+
+Returns the documentation string that was previously set with ``godot_nativescript_set_class_documentation``.
+
+.. _class_NativeScript_method_get_method_documentation:
+
+- :ref:`String<class_String>` **get_method_documentation** **(** :ref:`String<class_String>` method **)** const
+
+Returns the documentation string that was previously set with ``godot_nativescript_set_method_documentation``.
+
+.. _class_NativeScript_method_get_property_documentation:
+
+- :ref:`String<class_String>` **get_property_documentation** **(** :ref:`String<class_String>` path **)** const
+
+Returns the documentation string that was previously set with ``godot_nativescript_set_property_documentation``.
+
+.. _class_NativeScript_method_get_signal_documentation:
+
+- :ref:`String<class_String>` **get_signal_documentation** **(** :ref:`String<class_String>` signal_name **)** const
+
+Returns the documentation string that was previously set with ``godot_nativescript_set_signal_documentation``.
+
+.. _class_NativeScript_method_new:
+
+- :ref:`Object<class_Object>` **new** **(** **)** vararg
+
+Constructs a new object of the base type with a script of this type already attached.
+
+*Note*: Any arguments passed to this function will be ignored and not passed to the native constructor function. This will change with in a future API extension.
 

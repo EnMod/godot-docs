@@ -7,7 +7,7 @@
 PlaneShape
 ==========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,29 +16,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Plane<class_plane>`  | :ref:`get_plane<class_PlaneShape_get_plane>`  **(** **)** const                            |
-+----------------------------+--------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_plane<class_PlaneShape_set_plane>`  **(** :ref:`Plane<class_plane>` plane  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------+
+| :ref:`Plane<class_Plane>` | :ref:`plane<class_PlaneShape_property_plane>` |
++---------------------------+-----------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
-- :ref:`Plane<class_plane>` **plane**
+.. _class_PlaneShape_property_plane:
 
-Member Function Description
----------------------------
+- :ref:`Plane<class_Plane>` **plane**
 
-.. _class_PlaneShape_get_plane:
-
-- :ref:`Plane<class_plane>`  **get_plane**  **(** **)** const
-
-.. _class_PlaneShape_set_plane:
-
-- void  **set_plane**  **(** :ref:`Plane<class_plane>` plane  **)**
-
++----------+------------------+
+| *Setter* | set_plane(value) |
++----------+------------------+
+| *Getter* | get_plane()      |
++----------+------------------+
 

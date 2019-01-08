@@ -7,38 +7,39 @@
 SphereShape
 ===========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Sphere shape for 3D collisions.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+--------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_SphereShape_property_radius>` |
++---------------------------+--------------------------------------------------+
 
-+----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_SphereShape_get_radius>`  **(** **)** const                             |
-+----------------------------+------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_SphereShape_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Sphere shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. This shape is useful for modeling sphere-like 3D objects.
+
+Property Descriptions
+---------------------
+
+.. _class_SphereShape_property_radius:
 
 - :ref:`float<class_float>` **radius**
 
-Member Function Description
----------------------------
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
 
-.. _class_SphereShape_get_radius:
-
-- :ref:`float<class_float>`  **get_radius**  **(** **)** const
-
-.. _class_SphereShape_set_radius:
-
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
-
+The sphere's radius. The shape's diameter is double the radius.
 

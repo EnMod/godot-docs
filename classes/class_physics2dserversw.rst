@@ -7,17 +7,17 @@
 Physics2DServerSW
 =================
 
-**Inherits:** :ref:`Physics2DServer<class_physics2dserver>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Physics2DServer<class_Physics2DServer>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Software implementation of :ref:`Physics2DServer<class_physics2dserver>`.
+Software implementation of :ref:`Physics2DServer<class_Physics2DServer>`.
 
 Description
 -----------
 
-Software implementation of :ref:`Physics2DServer<class_physics2dserver>`. This class exposes no new methods or properties and should not be used, as :ref:`Physics2DServer<class_physics2dserver>` automatically selects the best implementation available.
+This class exposes no new methods or properties and should not be used, as :ref:`Physics2DServer<class_Physics2DServer>` automatically selects the best implementation available.
 

@@ -3,11 +3,12 @@
 Contribute to the Class Reference
 =================================
 
-Godot ships with many nodes and singletons to help you develop your games in GDscript. Each is a class, documented in the :ref:`class reference <toc-class-ref>`. This reference is essential for anyone learning the engine: it is available both online and in the engine. 
+Godot ships with many nodes and singletons to help you develop your games in GDscript. Each is a class, documented in the :ref:`class reference <toc-class-ref>`. This reference is essential for anyone learning the engine: it is available both online and in the engine.
 
-But it's incomplete. Many methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, all of us, to contribute.
+But it's incomplete. Some methods, variables and signals lack descriptions. Others changed with recent releases and need updates. The developers can't write the entire reference on their own. Godot needs you, and all of us, to contribute.
 
-**Important:** we use `a collaborative document <https://hackmd.io/s/H1es51Oeqb>`_ to track who's working on what class. Always notify other writers about what you are working on. You'll find the instructions in the doc.
+**Important:** If you are planning to make larger changes or a more substantial contribution, it is usually a good idea
+to create an issue (or a comment in an existing one) to let others know so they don't start working on the same thing too.
 
 .. note:: This guide is available as a `Youtube video <https://www.youtube.com/watch?v=mKKjOulm5XI>`_.
 
@@ -19,13 +20,13 @@ The class reference lies in the following XML files, in Godot's GitHub repositor
 
 There are 5 steps to update the class reference (full guide below):
 
-1. Fork `Godot's repository <https://github.com/godotengine/godot>`_ 
+1. Fork `Godot's repository <https://github.com/godotengine/godot>`_
 2. Clone your fork on your computer
 3. Edit the class file in ``doc/classes/`` to write documentation
 4. Commit your changes and push them to your fork
 5. Make a pull request on the Godot repository
 
-.. warning:: always use these XML files to edit the API reference. Do not edit the generated .rST files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
+.. warning:: Always use these XML files to edit the API reference. Do not edit the generated .rst files :ref:`in the online documentation <toc-class-ref>`, hosted in the `godot-docs <https://github.com/godotengine/godot-docs>`_ repository.
 
 Get started with GitHub
 -----------------------
@@ -74,7 +75,7 @@ You can check the list of all remote servers with:
 
     git remote -v
 
-You should have 2: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
+You should have two: ``origin``, your fork on github, that git adds by default, and ``upstream``, that you just added:
 
 
 ::
@@ -119,13 +120,13 @@ When classes are modified in the source code, the documentation template might b
 
 ::
 
-    ./bin/godot.x11.tools.64 -doctool doc/base/classes.xml
+    ./bin/godot.x11.tools.64 --doctool .
 
-The doc/base/classes.xml should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
+The xml files in doc/classes should then be up-to-date with current Godot Engine features. You can then check what changed using the ``git diff`` command. If there are changes to other classes than the one you are planning to document, please commit those changes first before starting to edit the template:
 
 ::
 
-    git add doc/base/classes.xml
+    git add doc/classes/*.xml
     git commit -m "Sync classes reference template with current code base"
 
 You are now ready to edit this file to add stuff.
@@ -169,12 +170,11 @@ Our job is to add the missing text between these marks:
 -  <description></description>
 -  <brief_description></brief_description>
 -  <constant></constant>
+-  <method></method>
 -  <member></member>
 -  <signal></signal>
 
-Write in a clear and simple language. Always follow the :ref:`class_reference_styleguide` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph. 
-
-.. warning:: In Godot 3.0, the <member> tags replace the old setters and getters. As soon as we moved all descriptions to the <member> tags, most methods starting with set\_ or get\_ will disappear. Skip them for now, and document all <member> tags.
+Write in a clear and simple language. Always follow the :ref:`writing guidelines <doc_docs_writing_guidelines>` to keep your descriptions short and easy to read. **Do not leave empty lines** in the descriptions: each line in the XML file will result in a new paragraph.
 
 Here's how a class looks like in XML:
 
@@ -223,25 +223,33 @@ Improve formatting with BBcode style tags
 
 Godot's class reference supports BBcode-like tags. They add nice formatting to the text. Here's the list of available tags:
 
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| Tag                       | Effect                         | Usage                             | Result                                     |
-+===========================+================================+===================================+============================================+
-| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.              |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method methodname]       | Link to a method in this class | See [method set_pos].             | See :ref:`set_pos <class_node2d_set_pos>`. |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [method Class.methodname] | Link to another class's method | See [method Node2D.set_pos].      | See :ref:`set_pos <class_node2d_set_pos>`. |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                        |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                        |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                   |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
-| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                               |
-+---------------------------+--------------------------------+-----------------------------------+--------------------------------------------+
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| Tag                       | Effect                         | Usage                             | Result                                            |
++===========================+================================+===================================+===================================================+
+| [Class]                   | Link a class                   | Move the [Sprite].                | Move the :ref:`class_sprite`.                     |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [method methodname]       | Link to a method in this class | Call [method hide].               | See :ref:`hide <class_spatial_method_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [method Class.methodname] | Link to another class's method | Call [method Spatial.hide].       | See :ref:`hide <class_spatial_method_hide>`.      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [member membername]       | Link to a member in this class | Get [member scale].               | Get :ref:`scale <class_node2d_property_scale>`.   |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [member Class.membername] | Link to another class's member | Get [member Node2D.scale].        | Get :ref:`scale <class_node2d_property_scale>`.   |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal signalname]       | Link to a signal in this class | Emit [signal renamed].            | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [signal Class.signalname] | Link to another class's signal | Emit [signal Node.renamed].       | Emit :ref:`renamed <class_node_signal_renamed>`.  |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [b] [/b]                  | Bold                           | Some [b]bold[/b] text.            | Some **bold** text.                               |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [i] [/i]                  | Italic                         | Some [i]italic[/i] text.          | Some *italic* text.                               |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [code] [/code]            | Monospace                      | Some [code]monospace[/code] text. | Some ``monospace`` text.                          |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
+| [codeblock] [/codeblock]  | Multiline preformatted block   | *See below.*                      | *See below.*                                      |
++---------------------------+--------------------------------+-----------------------------------+---------------------------------------------------+
 
-Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use spaces for indentation (the parser will delete tabs). Example:
+Use ``[codeblock]`` for pre-formatted code blocks. Inside ``[codeblock]``, always use **four spaces** for indentation (the parser will delete tabs). Example:
 
 .. code:: xml
 
@@ -269,6 +277,16 @@ You can still have a look at the methods' implementation in Godot's source code 
 
 
 Localization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
-Before we translate the documentation, we need to complete and proof-read it in English. We'll work on localization when we get past 90% completion.
+The documentation can be translated in any language on `Hosted Weblate
+<https://hosted.weblate.org/projects/godot-engine/godot-docs/>`__.
+
+Translated strings are synced manually by documentation maintainers in
+the `godot-docs-l10n <https://github.com/godotengine/godot-docs-l10n>`__
+repository.
+
+Languages with a good level of completion have their own localized
+instances of ReadTheDocs. Open an issue on the ``godot-docs-l10n``
+repository if you think that a new language is complete enough to get
+its own instance.

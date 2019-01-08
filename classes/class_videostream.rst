@@ -7,12 +7,14 @@
 VideoStream
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
+
+**Inherited By:** :ref:`VideoStreamTheora<class_VideoStreamTheora>`, :ref:`VideoStreamWebm<class_VideoStreamWebm>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-
+Base resource for video streams.
 

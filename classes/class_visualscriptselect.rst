@@ -7,38 +7,51 @@
 VisualScriptSelect
 ==================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Chooses between two input values.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------+-----------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptSelect_property_type>` |
++-----------------------------------------------------+-----------------------------------------------------+
 
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptSelect_get_typed>`  **(** **)** const                       |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_typed<class_VisualScriptSelect_set_typed>`  **(** :ref:`int<class_int>` type  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Chooses between two input values based on a Boolean condition.
 
-- :ref:`int<class_int>` **type**
+**Input Ports:**
 
-Member Function Description
----------------------------
+- Data (boolean): ``cond``
 
-.. _class_VisualScriptSelect_get_typed:
+- Data (variant): ``a``
 
-- :ref:`int<class_int>`  **get_typed**  **(** **)** const
+- Data (variant): ``b``
 
-.. _class_VisualScriptSelect_set_typed:
+**Output Ports:**
 
-- void  **set_typed**  **(** :ref:`int<class_int>` type  **)**
+- Data (variant): ``out``
 
+Property Descriptions
+---------------------
+
+.. _class_VisualScriptSelect_property_type:
+
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+
++----------+------------------+
+| *Setter* | set_typed(value) |
++----------+------------------+
+| *Getter* | get_typed()      |
++----------+------------------+
+
+The input variables' type.
 

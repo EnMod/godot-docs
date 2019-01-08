@@ -7,9 +7,9 @@
 VisibilityNotifier
 ==================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`VisibilityEnabler<class_visibilityenabler>`
+**Inherited By:** :ref:`VisibilityEnabler<class_VisibilityEnabler>`
 
 **Category:** Core
 
@@ -18,62 +18,73 @@ Brief Description
 
 Detects when the node is visible on screen.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`Rect3<class_rect3>`  | :ref:`get_aabb<class_VisibilityNotifier_get_aabb>`  **(** **)** const                           |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_on_screen<class_VisibilityNotifier_is_on_screen>`  **(** **)** const                   |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_aabb<class_VisibilityNotifier_set_aabb>`  **(** :ref:`Rect3<class_rect3>` rect  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------+
++-------------------------+-----------------------------------------------------+
+| :ref:`AABB<class_AABB>` | :ref:`aabb<class_VisibilityNotifier_property_aabb>` |
++-------------------------+-----------------------------------------------------+
+
+Methods
+-------
+
++-------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_on_screen<class_VisibilityNotifier_method_is_on_screen>` **(** **)** const |
++-------------------------+-------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **camera_entered**  **(** :ref:`Object<class_object>` camera  **)**
-Emitted when the VisibilityNotifier enters a :ref:`Camera<class_camera>`'s view.
+.. _class_VisibilityNotifier_signal_camera_entered:
 
--  **camera_exited**  **(** :ref:`Object<class_object>` camera  **)**
-Emitted when the VisibilityNotifier exits a :ref:`Camera<class_camera>`'s view.
+- **camera_entered** **(** :ref:`Camera<class_Camera>` camera **)**
 
--  **screen_entered**  **(** **)**
+Emitted when the VisibilityNotifier enters a :ref:`Camera<class_Camera>`'s view.
+
+.. _class_VisibilityNotifier_signal_camera_exited:
+
+- **camera_exited** **(** :ref:`Camera<class_Camera>` camera **)**
+
+Emitted when the VisibilityNotifier exits a :ref:`Camera<class_Camera>`'s view.
+
+.. _class_VisibilityNotifier_signal_screen_entered:
+
+- **screen_entered** **(** **)**
+
 Emitted when the VisibilityNotifier enters the screen.
 
--  **screen_exited**  **(** **)**
+.. _class_VisibilityNotifier_signal_screen_exited:
+
+- **screen_exited** **(** **)**
+
 Emitted when the VisibilityNotifier exits the screen.
-
-
-Member Variables
-----------------
-
-- :ref:`Rect3<class_rect3>` **aabb** - The VisibilityNotifier's bounding box.
 
 Description
 -----------
 
-The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_camera>`'s view.
+The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a :ref:`Camera<class_Camera>`'s view.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisibilityNotifier_get_aabb:
+.. _class_VisibilityNotifier_property_aabb:
 
-- :ref:`Rect3<class_rect3>`  **get_aabb**  **(** **)** const
+- :ref:`AABB<class_AABB>` **aabb**
 
-Returns the bounding box of the VisibilityNotifier.
++----------+-----------------+
+| *Setter* | set_aabb(value) |
++----------+-----------------+
+| *Getter* | get_aabb()      |
++----------+-----------------+
 
-.. _class_VisibilityNotifier_is_on_screen:
+The VisibilityNotifier's bounding box.
 
-- :ref:`bool<class_bool>`  **is_on_screen**  **(** **)** const
+Method Descriptions
+-------------------
 
-If ``true`` the bounding box is on the screen.
+.. _class_VisibilityNotifier_method_is_on_screen:
 
-.. _class_VisibilityNotifier_set_aabb:
+- :ref:`bool<class_bool>` **is_on_screen** **(** **)** const
 
-- void  **set_aabb**  **(** :ref:`Rect3<class_rect3>` rect  **)**
-
-Set the visibility bounding box of the VisibilityNotifier.
-
+If ``true``, the bounding box is on the screen.
 

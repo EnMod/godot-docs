@@ -7,9 +7,9 @@
 WindowDialog
 ============
 
-**Inherits:** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AcceptDialog<class_acceptdialog>`
+**Inherited By:** :ref:`AcceptDialog<class_AcceptDialog>`
 
 **Category:** Core
 
@@ -18,59 +18,83 @@ Brief Description
 
 Base class for window dialogs.
 
-Member Functions
+Properties
+----------
+
++-----------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`resizable<class_WindowDialog_property_resizable>`       |
++-----------------------------+---------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`window_title<class_WindowDialog_property_window_title>` |
++-----------------------------+---------------------------------------------------------------+
+
+Methods
+-------
+
++-------------------------------------------+---------------------------------------------------------------------------------+
+| :ref:`TextureButton<class_TextureButton>` | :ref:`get_close_button<class_WindowDialog_method_get_close_button>` **(** **)** |
++-------------------------------------------+---------------------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`TextureButton<class_texturebutton>`  | :ref:`get_close_button<class_WindowDialog_get_close_button>`  **(** **)**                              |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`get_resizable<class_WindowDialog_get_resizable>`  **(** **)** const                              |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                | :ref:`get_title<class_WindowDialog_get_title>`  **(** **)** const                                      |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_resizable<class_WindowDialog_set_resizable>`  **(** :ref:`bool<class_bool>` resizable  **)** |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_title<class_WindowDialog_set_title>`  **(** :ref:`String<class_string>` title  **)**         |
-+--------------------------------------------+--------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **resizable**
-- :ref:`String<class_string>` **window_title**
++---------------------------------+------------------+
+| :ref:`Texture<class_Texture>`   | close            |
++---------------------------------+------------------+
+| :ref:`int<class_int>`           | close_h_ofs      |
++---------------------------------+------------------+
+| :ref:`Texture<class_Texture>`   | close_highlight  |
++---------------------------------+------------------+
+| :ref:`int<class_int>`           | close_v_ofs      |
++---------------------------------+------------------+
+| :ref:`StyleBox<class_StyleBox>` | panel            |
++---------------------------------+------------------+
+| :ref:`int<class_int>`           | scaleborder_size |
++---------------------------------+------------------+
+| :ref:`Color<class_Color>`       | title_color      |
++---------------------------------+------------------+
+| :ref:`Font<class_Font>`         | title_font       |
++---------------------------------+------------------+
+| :ref:`int<class_int>`           | title_height     |
++---------------------------------+------------------+
 
 Description
 -----------
 
-Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_control>` that draws a window decoration and allows motion and resizing.
+Windowdialog is the base class for all window-based dialogs. It's a by-default toplevel :ref:`Control<class_Control>` that draws a window decoration and allows motion and resizing.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_WindowDialog_get_close_button:
+.. _class_WindowDialog_property_resizable:
 
-- :ref:`TextureButton<class_texturebutton>`  **get_close_button**  **(** **)**
+- :ref:`bool<class_bool>` **resizable**
 
-Return the close :ref:`TextureButton<class_texturebutton>`.
++----------+----------------------+
+| *Setter* | set_resizable(value) |
++----------+----------------------+
+| *Getter* | get_resizable()      |
++----------+----------------------+
 
-.. _class_WindowDialog_get_resizable:
+If ``true``, the user can resize the window. Default value: ``false``.
 
-- :ref:`bool<class_bool>`  **get_resizable**  **(** **)** const
+.. _class_WindowDialog_property_window_title:
 
-.. _class_WindowDialog_get_title:
+- :ref:`String<class_String>` **window_title**
 
-- :ref:`String<class_string>`  **get_title**  **(** **)** const
++----------+------------------+
+| *Setter* | set_title(value) |
++----------+------------------+
+| *Getter* | get_title()      |
++----------+------------------+
 
-Return the title of the window.
+The text displayed in the window's title bar.
 
-.. _class_WindowDialog_set_resizable:
+Method Descriptions
+-------------------
 
-- void  **set_resizable**  **(** :ref:`bool<class_bool>` resizable  **)**
+.. _class_WindowDialog_method_get_close_button:
 
-.. _class_WindowDialog_set_title:
+- :ref:`TextureButton<class_TextureButton>` **get_close_button** **(** **)**
 
-- void  **set_title**  **(** :ref:`String<class_string>` title  **)**
-
-Set the title of the window.
-
+Return the close :ref:`TextureButton<class_TextureButton>`.
 

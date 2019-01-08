@@ -7,39 +7,58 @@
 LinkButton
 ==========
 
-**Inherits:** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Simple button used to represent a link to some resource
+Simple button used to represent a link to some resource.
 
-Member Functions
+Properties
+----------
+
++-----------------------------------------------------+-------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`text<class_LinkButton_property_text>`           |
++-----------------------------------------------------+-------------------------------------------------------+
+| :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` | :ref:`underline<class_LinkButton_property_underline>` |
++-----------------------------------------------------+-------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_text<class_LinkButton_get_text>`  **(** **)** const                                                     |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_underline_mode<class_LinkButton_get_underline_mode>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_text<class_LinkButton_set_text>`  **(** :ref:`String<class_string>` text  **)**                         |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_underline_mode<class_LinkButton_set_underline_mode>`  **(** :ref:`int<class_int>` underline_mode  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus              |
++---------------------------------+--------------------+
+| :ref:`Font<class_Font>`         | font               |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color         |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color_hover   |
++---------------------------------+--------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed |
++---------------------------------+--------------------+
+| :ref:`int<class_int>`           | underline_spacing  |
++---------------------------------+--------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`String<class_string>` **text**
-- :ref:`int<class_int>` **underline**
+.. _enum_LinkButton_UnderlineMode:
 
-Numeric Constants
------------------
+.. _class_LinkButton_constant_UNDERLINE_MODE_ALWAYS:
+
+.. _class_LinkButton_constant_UNDERLINE_MODE_ON_HOVER:
+
+.. _class_LinkButton_constant_UNDERLINE_MODE_NEVER:
+
+enum **UnderlineMode**:
 
 - **UNDERLINE_MODE_ALWAYS** = **0** --- The LinkButton will always show an underline at the bottom of its text
+
 - **UNDERLINE_MODE_ON_HOVER** = **1** --- The LinkButton will show an underline at the bottom of its text when the mouse cursor is over it.
+
 - **UNDERLINE_MODE_NEVER** = **2** --- The LinkButton will never show an underline at the bottom of its text.
 
 Description
@@ -47,31 +66,26 @@ Description
 
 This kind of buttons are primarily used when the interaction with the button causes a context change (like linking to a web page).
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_LinkButton_get_text:
+.. _class_LinkButton_property_text:
 
-- :ref:`String<class_string>`  **get_text**  **(** **)** const
+- :ref:`String<class_String>` **text**
 
-Returns the text of the button.
++----------+-----------------+
+| *Setter* | set_text(value) |
++----------+-----------------+
+| *Getter* | get_text()      |
++----------+-----------------+
 
-.. _class_LinkButton_get_underline_mode:
+.. _class_LinkButton_property_underline:
 
-- :ref:`int<class_int>`  **get_underline_mode**  **(** **)** const
+- :ref:`UnderlineMode<enum_LinkButton_UnderlineMode>` **underline**
 
-Returns the underline mode for this button.
-
-.. _class_LinkButton_set_text:
-
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
-
-Sets the text of the button.
-
-.. _class_LinkButton_set_underline_mode:
-
-- void  **set_underline_mode**  **(** :ref:`int<class_int>` underline_mode  **)**
-
-Sets the underline mode for this button, the argument must be one of the :ref:`LinkButton<class_linkbutton>` constants (see constants section).
-
++----------+---------------------------+
+| *Setter* | set_underline_mode(value) |
++----------+---------------------------+
+| *Getter* | get_underline_mode()      |
++----------+---------------------------+
 

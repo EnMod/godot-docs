@@ -7,7 +7,7 @@
 VisibilityEnabler
 =================
 
-**Inherits:** :ref:`VisibilityNotifier<class_visibilitynotifier>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisibilityNotifier<class_VisibilityNotifier>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,46 +16,63 @@ Brief Description
 
 Enable certain nodes only when visible.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_enabler_enabled<class_VisibilityEnabler_is_enabler_enabled>`  **(** :ref:`int<class_int>` enabler  **)** const              |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enabler<class_VisibilityEnabler_set_enabler>`  **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled  **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`freeze_bodies<class_VisibilityEnabler_property_freeze_bodies>`       |
++-------------------------+----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pause_animations<class_VisibilityEnabler_property_pause_animations>` |
++-------------------------+----------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`bool<class_bool>` **freeze_bodies**
-- :ref:`bool<class_bool>` **pause_animations**
+.. _enum_VisibilityEnabler_Enabler:
 
-Numeric Constants
------------------
+.. _class_VisibilityEnabler_constant_ENABLER_PAUSE_ANIMATIONS:
 
-- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_rigidbody>` nodes.
-- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_animationplayer>` nodes.
+.. _class_VisibilityEnabler_constant_ENABLER_FREEZE_BODIES:
+
+.. _class_VisibilityEnabler_constant_ENABLER_MAX:
+
+enum **Enabler**:
+
+- **ENABLER_PAUSE_ANIMATIONS** = **0** --- This enabler will pause :ref:`AnimationPlayer<class_AnimationPlayer>` nodes.
+
+- **ENABLER_FREEZE_BODIES** = **1** --- This enabler will freeze :ref:`RigidBody<class_RigidBody>` nodes.
+
 - **ENABLER_MAX** = **2**
 
 Description
 -----------
 
-The VisibilityEnabler will disable :ref:`RigidBody<class_rigidbody>` and :ref:`AnimationPlayer<class_animationplayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
+The VisibilityEnabler will disable :ref:`RigidBody<class_RigidBody>` and :ref:`AnimationPlayer<class_AnimationPlayer>` nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisibilityEnabler_is_enabler_enabled:
+.. _class_VisibilityEnabler_property_freeze_bodies:
 
-- :ref:`bool<class_bool>`  **is_enabler_enabled**  **(** :ref:`int<class_int>` enabler  **)** const
+- :ref:`bool<class_bool>` **freeze_bodies**
 
-Returns whether the specified enabler was set to true or not.
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
 
-.. _class_VisibilityEnabler_set_enabler:
+If ``true``, :ref:`RigidBody<class_RigidBody>` nodes will be paused.
 
-- void  **set_enabler**  **(** :ref:`int<class_int>` enabler, :ref:`bool<class_bool>` enabled  **)**
+.. _class_VisibilityEnabler_property_pause_animations:
 
-Set an enabler to true for all nodes of its type to be disabled when the VisibilityEnabler is not in view. See the constants for enablers and what they affect.
+- :ref:`bool<class_bool>` **pause_animations**
 
++----------+----------------------+
+| *Setter* | set_enabler(value)   |
++----------+----------------------+
+| *Getter* | is_enabler_enabled() |
++----------+----------------------+
+
+If ``true``, :ref:`AnimationPlayer<class_AnimationPlayer>` nodes will be paused.
 

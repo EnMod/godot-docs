@@ -7,7 +7,7 @@
 ConvexPolygonShape2D
 ====================
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,48 +16,48 @@ Brief Description
 
 Convex Polygon Shape for 2D physics.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_points<class_ConvexPolygonShape2D_get_points>`  **(** **)** const                                                                  |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_point_cloud<class_ConvexPolygonShape2D_set_point_cloud>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` point_cloud  **)** |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_points<class_ConvexPolygonShape2D_set_points>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**                |
-+--------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`points<class_ConvexPolygonShape2D_property_points>` |
++-------------------------------------------------+-----------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`PoolVector2Array<class_poolvector2array>` **points**
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_point_cloud<class_ConvexPolygonShape2D_method_set_point_cloud>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)** |
++------+---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 Convex Polygon Shape for 2D physics. A convex polygon, whatever its shape, is internally decomposed into as many convex polygons as needed to ensure all collision checks against it are always done on convex polygons (which are faster to check).
 
-The main difference between a :ref:`ConvexPolygonShape2D<class_convexpolygonshape2d>` and a :ref:`ConcavePolygonShape2D<class_concavepolygonshape2d>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
+The main difference between a ``ConvexPolygonShape2D`` and a :ref:`ConcavePolygonShape2D<class_ConcavePolygonShape2D>` is that a concave polygon assumes it is concave and uses a more complex method of collision detection, and a convex one forces itself to be convex in order to speed up collision detection.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ConvexPolygonShape2D_get_points:
+.. _class_ConvexPolygonShape2D_property_points:
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_points**  **(** **)** const
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-Return a list of points in either clockwise or counter clockwise order, forming a convex polygon.
++----------+-------------------+
+| *Setter* | set_points(value) |
++----------+-------------------+
+| *Getter* | get_points()      |
++----------+-------------------+
 
-.. _class_ConvexPolygonShape2D_set_point_cloud:
+The polygon's list of vertices. Can be in either clockwise or counterclockwise order.
 
-- void  **set_point_cloud**  **(** :ref:`PoolVector2Array<class_poolvector2array>` point_cloud  **)**
+Method Descriptions
+-------------------
 
-Currently, this method does nothing.
+.. _class_ConvexPolygonShape2D_method_set_point_cloud:
 
-.. _class_ConvexPolygonShape2D_set_points:
+- void **set_point_cloud** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` point_cloud **)**
 
-- void  **set_points**  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**
-
-Set a list of points in either clockwise or counter clockwise order, forming a convex polygon.
-
+Based on the set of points provided, this creates and assigns the :ref:`points<class_ConvexPolygonShape2D_property_points>` property using the convex hull algorithm. Removing all unneeded points. See :ref:`Geometry.convex_hull_2d<class_Geometry_method_convex_hull_2d>` for details.
 

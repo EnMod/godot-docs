@@ -7,38 +7,47 @@
 VisualScriptVariableGet
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Gets a variable's value.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableGet_property_var_name>` |
++-----------------------------+------------------------------------------------------------------+
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_variable<class_VisualScriptVariableGet_get_variable>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_variable<class_VisualScriptVariableGet_set_variable>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Returns a variable's value. "Var Name" must be supplied, with an optional type.
 
-- :ref:`String<class_string>` **var_name**
+**Input Ports:**
 
-Member Function Description
----------------------------
+none
 
-.. _class_VisualScriptVariableGet_get_variable:
+**Output Ports:**
 
-- :ref:`String<class_string>`  **get_variable**  **(** **)** const
+- Data (variant): ``value``
 
-.. _class_VisualScriptVariableGet_set_variable:
+Property Descriptions
+---------------------
 
-- void  **set_variable**  **(** :ref:`String<class_string>` name  **)**
+.. _class_VisualScriptVariableGet_property_var_name:
 
+- :ref:`String<class_String>` **var_name**
+
++----------+---------------------+
+| *Setter* | set_variable(value) |
++----------+---------------------+
+| *Getter* | get_variable()      |
++----------+---------------------+
+
+The variable's name.
 

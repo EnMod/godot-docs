@@ -7,7 +7,7 @@
 NavigationPolygonInstance
 =========================
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,35 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationPolygon<class_navigationpolygon>`  | :ref:`get_navigation_polygon<class_NavigationPolygonInstance_get_navigation_polygon>`  **(** **)** const                                                      |
-+----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                            | :ref:`is_enabled<class_NavigationPolygonInstance_is_enabled>`  **(** **)** const                                                                              |
-+----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_enabled<class_NavigationPolygonInstance_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                                 |
-+----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                               | :ref:`set_navigation_polygon<class_NavigationPolygonInstance_set_navigation_polygon>`  **(** :ref:`NavigationPolygon<class_navigationpolygon>` navpoly  **)** |
-+----------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                           | :ref:`enabled<class_NavigationPolygonInstance_property_enabled>` |
++---------------------------------------------------+------------------------------------------------------------------+
+| :ref:`NavigationPolygon<class_NavigationPolygon>` | :ref:`navpoly<class_NavigationPolygonInstance_property_navpoly>` |
++---------------------------------------------------+------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
+
+.. _class_NavigationPolygonInstance_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
-- :ref:`NavigationPolygon<class_navigationpolygon>` **navpoly**
 
-Member Function Description
----------------------------
++----------+--------------------+
+| *Setter* | set_enabled(value) |
++----------+--------------------+
+| *Getter* | is_enabled()       |
++----------+--------------------+
 
-.. _class_NavigationPolygonInstance_get_navigation_polygon:
+.. _class_NavigationPolygonInstance_property_navpoly:
 
-- :ref:`NavigationPolygon<class_navigationpolygon>`  **get_navigation_polygon**  **(** **)** const
+- :ref:`NavigationPolygon<class_NavigationPolygon>` **navpoly**
 
-.. _class_NavigationPolygonInstance_is_enabled:
-
-- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
-
-.. _class_NavigationPolygonInstance_set_enabled:
-
-- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-.. _class_NavigationPolygonInstance_set_navigation_polygon:
-
-- void  **set_navigation_polygon**  **(** :ref:`NavigationPolygon<class_navigationpolygon>` navpoly  **)**
-
++----------+-------------------------------+
+| *Setter* | set_navigation_polygon(value) |
++----------+-------------------------------+
+| *Getter* | get_navigation_polygon()      |
++----------+-------------------------------+
 

@@ -7,51 +7,90 @@
 VisualScriptMathConstant
 ========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Commonly used mathematical constants.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------------------+-------------------------------------------------------------------+
+| :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` | :ref:`constant<class_VisualScriptMathConstant_property_constant>` |
++-----------------------------------------------------------------+-------------------------------------------------------------------+
 
-+------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_math_constant<class_VisualScriptMathConstant_get_math_constant>`  **(** **)**                              |
-+------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_math_constant<class_VisualScriptMathConstant_set_math_constant>`  **(** :ref:`int<class_int>` which  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_VisualScriptMathConstant_MathConstant:
 
-- :ref:`int<class_int>` **constant**
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_ONE:
 
-Numeric Constants
------------------
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_PI:
 
-- **MATH_CONSTANT_ONE** = **0**
-- **MATH_CONSTANT_PI** = **1**
-- **MATH_CONSTANT_2PI** = **2**
-- **MATH_CONSTANT_HALF_PI** = **3**
-- **MATH_CONSTANT_E** = **4**
-- **MATH_CONSTANT_SQRT2** = **5**
-- **MATH_CONSTANT_INF** = **6**
-- **MATH_CONSTANT_NAN** = **7**
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_HALF_PI:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_TAU:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_E:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_SQRT2:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_INF:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_NAN:
+
+.. _class_VisualScriptMathConstant_constant_MATH_CONSTANT_MAX:
+
+enum **MathConstant**:
+
+- **MATH_CONSTANT_ONE** = **0** --- Unity: ``1``
+
+- **MATH_CONSTANT_PI** = **1** --- Pi: ``3.141593``
+
+- **MATH_CONSTANT_HALF_PI** = **2** --- Pi divided by two: ``1.570796``
+
+- **MATH_CONSTANT_TAU** = **3** --- Tau: ``6.283185``
+
+- **MATH_CONSTANT_E** = **4** --- Mathematical constant ``e``, the natural log base: ``2.718282``
+
+- **MATH_CONSTANT_SQRT2** = **5** --- Square root of two: ``1.414214``
+
+- **MATH_CONSTANT_INF** = **6** --- Infinity: ``inf``
+
+- **MATH_CONSTANT_NAN** = **7** --- Not a number: ``nan``
+
 - **MATH_CONSTANT_MAX** = **8**
 
-Member Function Description
----------------------------
+Description
+-----------
 
-.. _class_VisualScriptMathConstant_get_math_constant:
+Provides common math constants, such as Pi, on an output Data port.
 
-- :ref:`int<class_int>`  **get_math_constant**  **(** **)**
+**Input Ports:**
 
-.. _class_VisualScriptMathConstant_set_math_constant:
+none
 
-- void  **set_math_constant**  **(** :ref:`int<class_int>` which  **)**
+**Output Ports:**
 
+- Data (variant): ``get``
+
+Property Descriptions
+---------------------
+
+.. _class_VisualScriptMathConstant_property_constant:
+
+- :ref:`MathConstant<enum_VisualScriptMathConstant_MathConstant>` **constant**
+
++----------+--------------------------+
+| *Setter* | set_math_constant(value) |
++----------+--------------------------+
+| *Getter* | get_math_constant()      |
++----------+--------------------------+
+
+The math constant.
 

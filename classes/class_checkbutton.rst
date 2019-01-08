@@ -7,7 +7,7 @@
 CheckButton
 ===========
 
-**Inherits:** :ref:`Button<class_button>` **<** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -15,6 +15,43 @@ Brief Description
 -----------------
 
 Checkable button.
+
+Theme Properties
+----------------
+
++---------------------------------+--------------------------+
+| :ref:`int<class_int>`           | check_vadjust            |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled                 |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus                    |
++---------------------------------+--------------------------+
+| :ref:`Font<class_Font>`         | font                     |
++---------------------------------+--------------------------+
+| :ref:`Color<class_Color>`       | font_color               |
++---------------------------------+--------------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled      |
++---------------------------------+--------------------------+
+| :ref:`Color<class_Color>`       | font_color_hover         |
++---------------------------------+--------------------------+
+| :ref:`Color<class_Color>`       | font_color_hover_pressed |
++---------------------------------+--------------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed       |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover                    |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover_pressed            |
++---------------------------------+--------------------------+
+| :ref:`int<class_int>`           | hseparation              |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal                   |
++---------------------------------+--------------------------+
+| :ref:`Texture<class_Texture>`   | off                      |
++---------------------------------+--------------------------+
+| :ref:`Texture<class_Texture>`   | on                       |
++---------------------------------+--------------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed                  |
++---------------------------------+--------------------------+
 
 Description
 -----------

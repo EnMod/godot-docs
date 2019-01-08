@@ -7,58 +7,72 @@
 InputEventJoypadButton
 ======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Input event type for joypad button events.
+Input event for gamepad buttons.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_button_index<class_InputEventJoypadButton_get_button_index>`  **(** **)** const                               |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_pressure<class_InputEventJoypadButton_get_pressure>`  **(** **)** const                                       |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_button_index<class_InputEventJoypadButton_set_button_index>`  **(** :ref:`int<class_int>` button_index  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_pressed<class_InputEventJoypadButton_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**              |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_pressure<class_InputEventJoypadButton_set_pressure>`  **(** :ref:`float<class_float>` pressure  **)**         |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`button_index<class_InputEventJoypadButton_property_button_index>` |
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`pressed<class_InputEventJoypadButton_property_pressed>`           |
++---------------------------+-------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pressure<class_InputEventJoypadButton_property_pressure>`         |
++---------------------------+-------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`int<class_int>` **button_index** - Joypad button identifier, one of the JOY_BUTTON_* constants in [@Global Scope].
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the joypad button.
-- :ref:`float<class_float>` **pressure** - Intensity of the button pressure, ranges from 0 to 1.0.
+Input event type for gamepad buttons. For joysticks see :ref:`InputEventJoypadMotion<class_InputEventJoypadMotion>`.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_InputEventJoypadButton_get_button_index:
+- :doc:`../tutorials/inputs/inputevent`
 
-- :ref:`int<class_int>`  **get_button_index**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_InputEventJoypadButton_get_pressure:
+.. _class_InputEventJoypadButton_property_button_index:
 
-- :ref:`float<class_float>`  **get_pressure**  **(** **)** const
+- :ref:`int<class_int>` **button_index**
 
-.. _class_InputEventJoypadButton_set_button_index:
++----------+-------------------------+
+| *Setter* | set_button_index(value) |
++----------+-------------------------+
+| *Getter* | get_button_index()      |
++----------+-------------------------+
 
-- void  **set_button_index**  **(** :ref:`int<class_int>` button_index  **)**
+Button identifier. One of the ``JOY_BUTTON_*`` constants from :ref:`@GlobalScope<class_@GlobalScope>`.
 
-.. _class_InputEventJoypadButton_set_pressed:
+.. _class_InputEventJoypadButton_property_pressed:
 
-- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
+- :ref:`bool<class_bool>` **pressed**
 
-.. _class_InputEventJoypadButton_set_pressure:
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
 
-- void  **set_pressure**  **(** :ref:`float<class_float>` pressure  **)**
+If ``true``, the button's state is pressed. If ``false``, the button's state is released.
 
+.. _class_InputEventJoypadButton_property_pressure:
+
+- :ref:`float<class_float>` **pressure**
+
++----------+---------------------+
+| *Setter* | set_pressure(value) |
++----------+---------------------+
+| *Getter* | get_pressure()      |
++----------+---------------------+
+
+Represents the pressure the user puts on the button with his finger, if the controller supports it. Ranges from ``0`` to ``1``.
 

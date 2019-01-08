@@ -7,7 +7,7 @@
 AnimatedSprite
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,175 +16,181 @@ Brief Description
 
 Sprite node that can use multiple textures for animation.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`              | :ref:`get_animation<class_AnimatedSprite_get_animation>`  **(** **)** const                                                          |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                    | :ref:`get_frame<class_AnimatedSprite_get_frame>`  **(** **)** const                                                                  |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`            | :ref:`get_offset<class_AnimatedSprite_get_offset>`  **(** **)** const                                                                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`SpriteFrames<class_spriteframes>`  | :ref:`get_sprite_frames<class_AnimatedSprite_get_sprite_frames>`  **(** **)** const                                                  |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_centered<class_AnimatedSprite_is_centered>`  **(** **)** const                                                              |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_flipped_h<class_AnimatedSprite_is_flipped_h>`  **(** **)** const                                                            |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_flipped_v<class_AnimatedSprite_is_flipped_v>`  **(** **)** const                                                            |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                  | :ref:`is_playing<class_AnimatedSprite_is_playing>`  **(** **)** const                                                                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`play<class_AnimatedSprite_play>`  **(** :ref:`String<class_string>` anim=""  **)**                                             |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_animation<class_AnimatedSprite_set_animation>`  **(** :ref:`String<class_string>` animation  **)**                         |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_centered<class_AnimatedSprite_set_centered>`  **(** :ref:`bool<class_bool>` centered  **)**                                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_flip_h<class_AnimatedSprite_set_flip_h>`  **(** :ref:`bool<class_bool>` flip_h  **)**                                      |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_flip_v<class_AnimatedSprite_set_flip_v>`  **(** :ref:`bool<class_bool>` flip_v  **)**                                      |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_frame<class_AnimatedSprite_set_frame>`  **(** :ref:`int<class_int>` frame  **)**                                           |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_offset<class_AnimatedSprite_set_offset>`  **(** :ref:`Vector2<class_vector2>` offset  **)**                                |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`set_sprite_frames<class_AnimatedSprite_set_sprite_frames>`  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)** |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                                     | :ref:`stop<class_AnimatedSprite_stop>`  **(** **)**                                                                                  |
-+------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`String<class_String>`             | :ref:`animation<class_AnimatedSprite_property_animation>`     |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`centered<class_AnimatedSprite_property_centered>`       |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`flip_h<class_AnimatedSprite_property_flip_h>`           |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`flip_v<class_AnimatedSprite_property_flip_v>`           |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`                   | :ref:`frame<class_AnimatedSprite_property_frame>`             |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`SpriteFrames<class_SpriteFrames>` | :ref:`frames<class_AnimatedSprite_property_frames>`           |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`           | :ref:`offset<class_AnimatedSprite_property_offset>`           |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                 | :ref:`playing<class_AnimatedSprite_property_playing>`         |
++-----------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`               | :ref:`speed_scale<class_AnimatedSprite_property_speed_scale>` |
++-----------------------------------------+---------------------------------------------------------------+
+
+Methods
+-------
+
++-------------------------+-----------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`is_playing<class_AnimatedSprite_method_is_playing>` **(** **)** const                   |
++-------------------------+-----------------------------------------------------------------------------------------------+
+| void                    | :ref:`play<class_AnimatedSprite_method_play>` **(** :ref:`String<class_String>` anim="" **)** |
++-------------------------+-----------------------------------------------------------------------------------------------+
+| void                    | :ref:`stop<class_AnimatedSprite_method_stop>` **(** **)**                                     |
++-------------------------+-----------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **animation_finished**  **(** **)**
-Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn, before looping.
+.. _class_AnimatedSprite_signal_animation_finished:
 
--  **frame_changed**  **(** **)**
-Emitted when frame is changed.
+- **animation_finished** **(** **)**
 
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn.
 
-Member Variables
-----------------
+.. _class_AnimatedSprite_signal_frame_changed:
 
-- :ref:`String<class_string>` **animation**
-- :ref:`bool<class_bool>` **centered**
-- :ref:`bool<class_bool>` **flip_h**
-- :ref:`bool<class_bool>` **flip_v**
-- :ref:`int<class_int>` **frame**
-- :ref:`SpriteFrames<class_spriteframes>` **frames**
-- :ref:`Vector2<class_vector2>` **offset**
-- :ref:`bool<class_bool>` **playing**
+- **frame_changed** **(** **)**
+
+Emitted when :ref:`frame<class_AnimatedSprite_property_frame>` changed.
 
 Description
 -----------
 
-Sprite node that can use multiple textures for animation.
+Animations are created using a :ref:`SpriteFrames<class_SpriteFrames>` resource, which can be configured in the editor via the SpriteFrames panel.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_AnimatedSprite_get_animation:
+.. _class_AnimatedSprite_property_animation:
 
-- :ref:`String<class_string>`  **get_animation**  **(** **)** const
+- :ref:`String<class_String>` **animation**
 
-Return the name of the current animation set to the node.
++----------+----------------------+
+| *Setter* | set_animation(value) |
++----------+----------------------+
+| *Getter* | get_animation()      |
++----------+----------------------+
 
-.. _class_AnimatedSprite_get_frame:
+The current animation from the ``frames`` resource. If this value changes, the ``frame`` counter is reset.
 
-- :ref:`int<class_int>`  **get_frame**  **(** **)** const
+.. _class_AnimatedSprite_property_centered:
 
-Return the visible frame index.
+- :ref:`bool<class_bool>` **centered**
 
-.. _class_AnimatedSprite_get_offset:
++----------+---------------------+
+| *Setter* | set_centered(value) |
++----------+---------------------+
+| *Getter* | is_centered()       |
++----------+---------------------+
 
-- :ref:`Vector2<class_vector2>`  **get_offset**  **(** **)** const
+If ``true``, texture will be centered. Default value: ``true``.
 
-Return the offset of the sprite in the node origin.
+.. _class_AnimatedSprite_property_flip_h:
 
-.. _class_AnimatedSprite_get_sprite_frames:
+- :ref:`bool<class_bool>` **flip_h**
 
-- :ref:`SpriteFrames<class_spriteframes>`  **get_sprite_frames**  **(** **)** const
++----------+-------------------+
+| *Setter* | set_flip_h(value) |
++----------+-------------------+
+| *Getter* | is_flipped_h()    |
++----------+-------------------+
 
-Get the :ref:`SpriteFrames<class_spriteframes>` resource, which contains all frames.
+If ``true``, texture is flipped horizontally. Default value: ``false``.
 
-.. _class_AnimatedSprite_is_centered:
+.. _class_AnimatedSprite_property_flip_v:
 
-- :ref:`bool<class_bool>`  **is_centered**  **(** **)** const
+- :ref:`bool<class_bool>` **flip_v**
 
-Return true when centered. See :ref:`set_centered<class_AnimatedSprite_set_centered>`.
++----------+-------------------+
+| *Setter* | set_flip_v(value) |
++----------+-------------------+
+| *Getter* | is_flipped_v()    |
++----------+-------------------+
 
-.. _class_AnimatedSprite_is_flipped_h:
+If ``true``, texture is flipped vertically. Default value: ``false``.
 
-- :ref:`bool<class_bool>`  **is_flipped_h**  **(** **)** const
+.. _class_AnimatedSprite_property_frame:
 
-Return true if sprite is flipped horizontally.
+- :ref:`int<class_int>` **frame**
 
-.. _class_AnimatedSprite_is_flipped_v:
++----------+------------------+
+| *Setter* | set_frame(value) |
++----------+------------------+
+| *Getter* | get_frame()      |
++----------+------------------+
 
-- :ref:`bool<class_bool>`  **is_flipped_v**  **(** **)** const
+The displayed animation frame's index.
 
-Return true if sprite is flipped vertically.
+.. _class_AnimatedSprite_property_frames:
 
-.. _class_AnimatedSprite_is_playing:
+- :ref:`SpriteFrames<class_SpriteFrames>` **frames**
 
-- :ref:`bool<class_bool>`  **is_playing**  **(** **)** const
++----------+--------------------------+
+| *Setter* | set_sprite_frames(value) |
++----------+--------------------------+
+| *Getter* | get_sprite_frames()      |
++----------+--------------------------+
+
+The :ref:`SpriteFrames<class_SpriteFrames>` resource containing the animation(s).
+
+.. _class_AnimatedSprite_property_offset:
+
+- :ref:`Vector2<class_Vector2>` **offset**
+
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
+
+The texture's drawing offset.
+
+.. _class_AnimatedSprite_property_playing:
+
+- :ref:`bool<class_bool>` **playing**
+
+If ``true``, the :ref:`animation<class_AnimatedSprite_property_animation>` is currently playing.
+
+.. _class_AnimatedSprite_property_speed_scale:
+
+- :ref:`float<class_float>` **speed_scale**
+
++----------+------------------------+
+| *Setter* | set_speed_scale(value) |
++----------+------------------------+
+| *Getter* | get_speed_scale()      |
++----------+------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_AnimatedSprite_method_is_playing:
+
+- :ref:`bool<class_bool>` **is_playing** **(** **)** const
 
 Return true if an animation if currently being played.
 
-.. _class_AnimatedSprite_play:
+.. _class_AnimatedSprite_method_play:
 
-- void  **play**  **(** :ref:`String<class_string>` anim=""  **)**
+- void **play** **(** :ref:`String<class_String>` anim="" **)**
 
 Play the animation set in parameter. If no parameter is provided, the current animation is played.
 
-.. _class_AnimatedSprite_set_animation:
+.. _class_AnimatedSprite_method_stop:
 
-- void  **set_animation**  **(** :ref:`String<class_string>` animation  **)**
-
-Set the current animation of the node and reinits the frame counter of the animation.
-
-.. _class_AnimatedSprite_set_centered:
-
-- void  **set_centered**  **(** :ref:`bool<class_bool>` centered  **)**
-
-When turned on, offset at (0,0) is the center of the sprite, when off, the top-left corner is.
-
-.. _class_AnimatedSprite_set_flip_h:
-
-- void  **set_flip_h**  **(** :ref:`bool<class_bool>` flip_h  **)**
-
-If true, sprite is flipped horizontally.
-
-.. _class_AnimatedSprite_set_flip_v:
-
-- void  **set_flip_v**  **(** :ref:`bool<class_bool>` flip_v  **)**
-
-If true, sprite is flipped vertically.
-
-.. _class_AnimatedSprite_set_frame:
-
-- void  **set_frame**  **(** :ref:`int<class_int>` frame  **)**
-
-Set the visible sprite frame index (from the list of frames inside the :ref:`SpriteFrames<class_spriteframes>` resource).
-
-.. _class_AnimatedSprite_set_offset:
-
-- void  **set_offset**  **(** :ref:`Vector2<class_vector2>` offset  **)**
-
-Set the offset of the sprite in the node origin. Position varies depending on whether it is centered or not.
-
-.. _class_AnimatedSprite_set_sprite_frames:
-
-- void  **set_sprite_frames**  **(** :ref:`SpriteFrames<class_spriteframes>` sprite_frames  **)**
-
-Set the :ref:`SpriteFrames<class_spriteframes>` resource, which contains all frames.
-
-.. _class_AnimatedSprite_stop:
-
-- void  **stop**  **(** **)**
+- void **stop** **(** **)**
 
 Stop the current animation (does not reset the frame counter).
-
 

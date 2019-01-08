@@ -7,38 +7,39 @@
 StreamTexture
 =============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A .stex texture.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`load_path<class_StreamTexture_property_load_path>` |
++-----------------------------+----------------------------------------------------------+
 
-+------------------------------+--------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_load_path<class_StreamTexture_get_load_path>`  **(** **)** const           |
-+------------------------------+--------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`load<class_StreamTexture_load>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+--------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A texture that is loaded from a .stex file.
 
-- :ref:`String<class_string>` **load_path**
+Property Descriptions
+---------------------
 
-Member Function Description
----------------------------
+.. _class_StreamTexture_property_load_path:
 
-.. _class_StreamTexture_get_load_path:
+- :ref:`String<class_String>` **load_path**
 
-- :ref:`String<class_string>`  **get_load_path**  **(** **)** const
++----------+-----------------+
+| *Setter* | load(value)     |
++----------+-----------------+
+| *Getter* | get_load_path() |
++----------+-----------------+
 
-.. _class_StreamTexture_load:
-
-- :ref:`int<class_int>`  **load**  **(** :ref:`String<class_string>` path  **)**
-
+The StreamTexture's filepath to a .stex file.
 

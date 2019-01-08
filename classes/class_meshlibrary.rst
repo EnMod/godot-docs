@@ -7,7 +7,7 @@
 MeshLibrary
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,131 +16,130 @@ Brief Description
 
 Library of meshes.
 
-Member Functions
-----------------
+Methods
+-------
 
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`clear<class_MeshLibrary_clear>`  **(** **)**                                                                                                      |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`create_item<class_MeshLibrary_create_item>`  **(** :ref:`int<class_int>` id  **)**                                                                |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`find_item_by_name<class_MeshLibrary_find_item_by_name>`  **(** :ref:`String<class_string>` name  **)** const                                      |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`      | :ref:`get_item_list<class_MeshLibrary_get_item_list>`  **(** **)** const                                                                                |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`                      | :ref:`get_item_mesh<class_MeshLibrary_get_item_mesh>`  **(** :ref:`int<class_int>` id  **)** const                                                      |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                  | :ref:`get_item_name<class_MeshLibrary_get_item_name>`  **(** :ref:`int<class_int>` id  **)** const                                                      |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationMesh<class_navigationmesh>`  | :ref:`get_item_navmesh<class_MeshLibrary_get_item_navmesh>`  **(** :ref:`int<class_int>` id  **)** const                                                |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`                | :ref:`get_item_preview<class_MeshLibrary_get_item_preview>`  **(** :ref:`int<class_int>` id  **)** const                                                |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`                    | :ref:`get_item_shapes<class_MeshLibrary_get_item_shapes>`  **(** :ref:`int<class_int>` id  **)** const                                                  |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                        | :ref:`get_last_unused_item_id<class_MeshLibrary_get_last_unused_item_id>`  **(** **)** const                                                            |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`remove_item<class_MeshLibrary_remove_item>`  **(** :ref:`int<class_int>` id  **)**                                                                |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_mesh<class_MeshLibrary_set_item_mesh>`  **(** :ref:`int<class_int>` id, :ref:`Mesh<class_mesh>` mesh  **)**                              |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_name<class_MeshLibrary_set_item_name>`  **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name  **)**                          |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_navmesh<class_MeshLibrary_set_item_navmesh>`  **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)** |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_preview<class_MeshLibrary_set_item_preview>`  **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` texture  **)**               |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_item_shapes<class_MeshLibrary_set_item_shapes>`  **(** :ref:`int<class_int>` id, :ref:`Array<class_array>` shapes  **)**                      |
-+----------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`clear<class_MeshLibrary_method_clear>` **(** **)**                                                                                                     |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`create_item<class_MeshLibrary_method_create_item>` **(** :ref:`int<class_int>` id **)**                                                                |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                       | :ref:`find_item_by_name<class_MeshLibrary_method_find_item_by_name>` **(** :ref:`String<class_String>` name **)** const                                      |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`     | :ref:`get_item_list<class_MeshLibrary_method_get_item_list>` **(** **)** const                                                                               |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`                     | :ref:`get_item_mesh<class_MeshLibrary_method_get_item_mesh>` **(** :ref:`int<class_int>` id **)** const                                                      |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                 | :ref:`get_item_name<class_MeshLibrary_method_get_item_name>` **(** :ref:`int<class_int>` id **)** const                                                      |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`get_item_navmesh<class_MeshLibrary_method_get_item_navmesh>` **(** :ref:`int<class_int>` id **)** const                                                |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`               | :ref:`get_item_preview<class_MeshLibrary_method_get_item_preview>` **(** :ref:`int<class_int>` id **)** const                                                |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`                   | :ref:`get_item_shapes<class_MeshLibrary_method_get_item_shapes>` **(** :ref:`int<class_int>` id **)** const                                                  |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                       | :ref:`get_last_unused_item_id<class_MeshLibrary_method_get_last_unused_item_id>` **(** **)** const                                                           |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`remove_item<class_MeshLibrary_method_remove_item>` **(** :ref:`int<class_int>` id **)**                                                                |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`set_item_mesh<class_MeshLibrary_method_set_item_mesh>` **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**                              |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`set_item_name<class_MeshLibrary_method_set_item_name>` **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**                          |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`set_item_navmesh<class_MeshLibrary_method_set_item_navmesh>` **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)** |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`set_item_preview<class_MeshLibrary_method_set_item_preview>` **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**               |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                        | :ref:`set_item_shapes<class_MeshLibrary_method_set_item_shapes>` **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**                      |
++---------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Library of meshes. Contains a list of :ref:`Mesh<class_mesh>` resources, each with name and ID. Useful for GridMap or painting Terrain.
+Library of meshes. Contains a list of :ref:`Mesh<class_Mesh>` resources, each with name and ID. Useful for GridMap or painting Terrain.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_MeshLibrary_clear:
+.. _class_MeshLibrary_method_clear:
 
-- void  **clear**  **(** **)**
+- void **clear** **(** **)**
 
 Clear the library.
 
-.. _class_MeshLibrary_create_item:
+.. _class_MeshLibrary_method_create_item:
 
-- void  **create_item**  **(** :ref:`int<class_int>` id  **)**
+- void **create_item** **(** :ref:`int<class_int>` id **)**
 
 Create a new item in the library, supplied an id.
 
-.. _class_MeshLibrary_find_item_by_name:
+.. _class_MeshLibrary_method_find_item_by_name:
 
-- :ref:`int<class_int>`  **find_item_by_name**  **(** :ref:`String<class_string>` name  **)** const
+- :ref:`int<class_int>` **find_item_by_name** **(** :ref:`String<class_String>` name **)** const
 
-.. _class_MeshLibrary_get_item_list:
+.. _class_MeshLibrary_method_get_item_list:
 
-- :ref:`PoolIntArray<class_poolintarray>`  **get_item_list**  **(** **)** const
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_item_list** **(** **)** const
 
 Return the list of items.
 
-.. _class_MeshLibrary_get_item_mesh:
+.. _class_MeshLibrary_method_get_item_mesh:
 
-- :ref:`Mesh<class_mesh>`  **get_item_mesh**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`Mesh<class_Mesh>` **get_item_mesh** **(** :ref:`int<class_int>` id **)** const
 
 Return the mesh of the item.
 
-.. _class_MeshLibrary_get_item_name:
+.. _class_MeshLibrary_method_get_item_name:
 
-- :ref:`String<class_string>`  **get_item_name**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`String<class_String>` **get_item_name** **(** :ref:`int<class_int>` id **)** const
 
 Return the name of the item.
 
-.. _class_MeshLibrary_get_item_navmesh:
+.. _class_MeshLibrary_method_get_item_navmesh:
 
-- :ref:`NavigationMesh<class_navigationmesh>`  **get_item_navmesh**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`NavigationMesh<class_NavigationMesh>` **get_item_navmesh** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_MeshLibrary_get_item_preview:
+.. _class_MeshLibrary_method_get_item_preview:
 
-- :ref:`Texture<class_texture>`  **get_item_preview**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`Texture<class_Texture>` **get_item_preview** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_MeshLibrary_get_item_shapes:
+.. _class_MeshLibrary_method_get_item_shapes:
 
-- :ref:`Array<class_array>`  **get_item_shapes**  **(** :ref:`int<class_int>` id  **)** const
+- :ref:`Array<class_Array>` **get_item_shapes** **(** :ref:`int<class_int>` id **)** const
 
-.. _class_MeshLibrary_get_last_unused_item_id:
+.. _class_MeshLibrary_method_get_last_unused_item_id:
 
-- :ref:`int<class_int>`  **get_last_unused_item_id**  **(** **)** const
+- :ref:`int<class_int>` **get_last_unused_item_id** **(** **)** const
 
 Get an unused id for a new item.
 
-.. _class_MeshLibrary_remove_item:
+.. _class_MeshLibrary_method_remove_item:
 
-- void  **remove_item**  **(** :ref:`int<class_int>` id  **)**
+- void **remove_item** **(** :ref:`int<class_int>` id **)**
 
 Remove the item.
 
-.. _class_MeshLibrary_set_item_mesh:
+.. _class_MeshLibrary_method_set_item_mesh:
 
-- void  **set_item_mesh**  **(** :ref:`int<class_int>` id, :ref:`Mesh<class_mesh>` mesh  **)**
+- void **set_item_mesh** **(** :ref:`int<class_int>` id, :ref:`Mesh<class_Mesh>` mesh **)**
 
 Set the mesh of the item.
 
-.. _class_MeshLibrary_set_item_name:
+.. _class_MeshLibrary_method_set_item_name:
 
-- void  **set_item_name**  **(** :ref:`int<class_int>` id, :ref:`String<class_string>` name  **)**
+- void **set_item_name** **(** :ref:`int<class_int>` id, :ref:`String<class_String>` name **)**
 
 Set the name of the item.
 
-.. _class_MeshLibrary_set_item_navmesh:
+.. _class_MeshLibrary_method_set_item_navmesh:
 
-- void  **set_item_navmesh**  **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)**
+- void **set_item_navmesh** **(** :ref:`int<class_int>` id, :ref:`NavigationMesh<class_NavigationMesh>` navmesh **)**
 
-.. _class_MeshLibrary_set_item_preview:
+.. _class_MeshLibrary_method_set_item_preview:
 
-- void  **set_item_preview**  **(** :ref:`int<class_int>` id, :ref:`Texture<class_texture>` texture  **)**
+- void **set_item_preview** **(** :ref:`int<class_int>` id, :ref:`Texture<class_Texture>` texture **)**
 
-.. _class_MeshLibrary_set_item_shapes:
+.. _class_MeshLibrary_method_set_item_shapes:
 
-- void  **set_item_shapes**  **(** :ref:`int<class_int>` id, :ref:`Array<class_array>` shapes  **)**
-
+- void **set_item_shapes** **(** :ref:`int<class_int>` id, :ref:`Array<class_Array>` shapes **)**
 

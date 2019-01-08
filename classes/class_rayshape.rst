@@ -7,38 +7,53 @@
 RayShape
 ========
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Ray shape for 3D collisions.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape_property_length>`                 |
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape_property_slips_on_slope>` |
++---------------------------+---------------------------------------------------------------+
 
-+----------------------------+---------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_RayShape_get_length>`  **(** **)** const                             |
-+----------------------------+---------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_RayShape_set_length>`  **(** :ref:`float<class_float>` length  **)** |
-+----------------------------+---------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Ray shape for 3D collisions, which can be set into a :ref:`PhysicsBody<class_PhysicsBody>` or :ref:`Area<class_Area>`. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
+
+Property Descriptions
+---------------------
+
+.. _class_RayShape_property_length:
 
 - :ref:`float<class_float>` **length**
 
-Member Function Description
----------------------------
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
 
-.. _class_RayShape_get_length:
+The ray's length.
 
-- :ref:`float<class_float>`  **get_length**  **(** **)** const
+.. _class_RayShape_property_slips_on_slope:
 
-.. _class_RayShape_set_length:
+- :ref:`bool<class_bool>` **slips_on_slope**
 
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
++----------+---------------------------+
+| *Setter* | set_slips_on_slope(value) |
++----------+---------------------------+
+| *Getter* | get_slips_on_slope()      |
++----------+---------------------------+
 
+If ``true``, allow the shape to return the correct normal. Default value: ``false``.
 

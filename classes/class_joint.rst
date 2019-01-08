@@ -7,79 +7,83 @@
 Joint
 =====
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`ConeTwistJoint<class_conetwistjoint>`, :ref:`Generic6DOFJoint<class_generic6dofjoint>`, :ref:`SliderJoint<class_sliderjoint>`, :ref:`HingeJoint<class_hingejoint>`, :ref:`PinJoint<class_pinjoint>`
+**Inherited By:** :ref:`ConeTwistJoint<class_ConeTwistJoint>`, :ref:`Generic6DOFJoint<class_Generic6DOFJoint>`, :ref:`HingeJoint<class_HingeJoint>`, :ref:`PinJoint<class_PinJoint>`, :ref:`SliderJoint<class_SliderJoint>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Base class for all 3D joints
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`collision/exclude_nodes<class_Joint_property_collision/exclude_nodes>` |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_a<class_Joint_property_nodes/node_a>`                       |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`nodes/node_b<class_Joint_property_nodes/node_b>`                       |
++---------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`solver/priority<class_Joint_property_solver/priority>`                 |
++---------------------------------+------------------------------------------------------------------------------+
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`get_exclude_nodes_from_collision<class_Joint_get_exclude_nodes_from_collision>`  **(** **)** const                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_a<class_Joint_get_node_a>`  **(** **)** const                                                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_b<class_Joint_get_node_b>`  **(** **)** const                                                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_solver_priority<class_Joint_get_solver_priority>`  **(** **)** const                                                     |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_exclude_nodes_from_collision<class_Joint_set_exclude_nodes_from_collision>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_a<class_Joint_set_node_a>`  **(** :ref:`NodePath<class_nodepath>` node  **)**                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_b<class_Joint_set_node_b>`  **(** :ref:`NodePath<class_nodepath>` node  **)**                                       |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_solver_priority<class_Joint_set_solver_priority>`  **(** :ref:`int<class_int>` priority  **)**                           |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Joints are used to bind together two physics bodies. They have a solver priority and can define if the bodies of the two attached nodes should be able to collide with each other.
+
+Property Descriptions
+---------------------
+
+.. _class_Joint_property_collision/exclude_nodes:
 
 - :ref:`bool<class_bool>` **collision/exclude_nodes**
-- :ref:`NodePath<class_nodepath>` **nodes/node_a**
-- :ref:`NodePath<class_nodepath>` **nodes/node_b**
+
++----------+-----------------------------------------+
+| *Setter* | set_exclude_nodes_from_collision(value) |
++----------+-----------------------------------------+
+| *Getter* | get_exclude_nodes_from_collision()      |
++----------+-----------------------------------------+
+
+If ``true``, the two bodies of the nodes are not able to collide with each other.
+
+.. _class_Joint_property_nodes/node_a:
+
+- :ref:`NodePath<class_NodePath>` **nodes/node_a**
+
++----------+-------------------+
+| *Setter* | set_node_a(value) |
++----------+-------------------+
+| *Getter* | get_node_a()      |
++----------+-------------------+
+
+The node attached to the first side (A) of the joint.
+
+.. _class_Joint_property_nodes/node_b:
+
+- :ref:`NodePath<class_NodePath>` **nodes/node_b**
+
++----------+-------------------+
+| *Setter* | set_node_b(value) |
++----------+-------------------+
+| *Getter* | get_node_b()      |
++----------+-------------------+
+
+The node attached to the second side (B) of the joint.
+
+.. _class_Joint_property_solver/priority:
+
 - :ref:`int<class_int>` **solver/priority**
 
-Member Function Description
----------------------------
++----------+----------------------------+
+| *Setter* | set_solver_priority(value) |
++----------+----------------------------+
+| *Getter* | get_solver_priority()      |
++----------+----------------------------+
 
-.. _class_Joint_get_exclude_nodes_from_collision:
-
-- :ref:`bool<class_bool>`  **get_exclude_nodes_from_collision**  **(** **)** const
-
-.. _class_Joint_get_node_a:
-
-- :ref:`NodePath<class_nodepath>`  **get_node_a**  **(** **)** const
-
-.. _class_Joint_get_node_b:
-
-- :ref:`NodePath<class_nodepath>`  **get_node_b**  **(** **)** const
-
-.. _class_Joint_get_solver_priority:
-
-- :ref:`int<class_int>`  **get_solver_priority**  **(** **)** const
-
-.. _class_Joint_set_exclude_nodes_from_collision:
-
-- void  **set_exclude_nodes_from_collision**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Joint_set_node_a:
-
-- void  **set_node_a**  **(** :ref:`NodePath<class_nodepath>` node  **)**
-
-.. _class_Joint_set_node_b:
-
-- void  **set_node_b**  **(** :ref:`NodePath<class_nodepath>` node  **)**
-
-.. _class_Joint_set_solver_priority:
-
-- void  **set_solver_priority**  **(** :ref:`int<class_int>` priority  **)**
-
+The priority used to define which solver is executed first for multiple joints. The lower the value, the higher the priority.
 

@@ -7,7 +7,7 @@
 RayShape2D
 ==========
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,44 @@ Brief Description
 
 Ray shape for 2D collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_RayShape2D_get_length>`  **(** **)** const                             |
-+----------------------------+-----------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_RayShape2D_set_length>`  **(** :ref:`float<class_float>` length  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **length** - The ray's length.
++---------------------------+-----------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_RayShape2D_property_length>`                 |
++---------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`slips_on_slope<class_RayShape2D_property_slips_on_slope>` |
++---------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
 
 Ray shape for 2D collisions. A ray is not really a collision body, instead it tries to separate itself from whatever is touching its far endpoint. It's often useful for characters.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_RayShape2D_get_length:
+.. _class_RayShape2D_property_length:
 
-- :ref:`float<class_float>`  **get_length**  **(** **)** const
+- :ref:`float<class_float>` **length**
 
-Return the length of the ray.
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
 
-.. _class_RayShape2D_set_length:
+The ray's length.
 
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
+.. _class_RayShape2D_property_slips_on_slope:
 
-Set the length of the ray.
+- :ref:`bool<class_bool>` **slips_on_slope**
 
++----------+---------------------------+
+| *Setter* | set_slips_on_slope(value) |
++----------+---------------------------+
+| *Getter* | get_slips_on_slope()      |
++----------+---------------------------+
+
+If ``true``, allow the shape to return the correct normal. Default value: ``false``.
 

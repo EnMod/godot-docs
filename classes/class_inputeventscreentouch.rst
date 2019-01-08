@@ -7,7 +7,7 @@
 InputEventScreenTouch
 =====================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,49 +16,65 @@ Brief Description
 
 Input event type for screen touch events.
 
-Member Functions
-----------------
+(only available on mobile devices)
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_index<class_InputEventScreenTouch_get_index>`  **(** **)** const                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_position<class_InputEventScreenTouch_get_position>`  **(** **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_index<class_InputEventScreenTouch_set_index>`  **(** :ref:`int<class_int>` index  **)**                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_position<class_InputEventScreenTouch_set_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_pressed<class_InputEventScreenTouch_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
+Properties
+----------
 
-Member Variables
-----------------
++-------------------------------+----------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenTouch_property_index>`       |
++-------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenTouch_property_position>` |
++-------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`pressed<class_InputEventScreenTouch_property_pressed>`   |
++-------------------------------+----------------------------------------------------------------+
 
-- :ref:`int<class_int>` **index** - Touch event index in the case of a multi-touch event.
-- :ref:`Vector2<class_vector2>` **position** - Position of the touch event.
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the touch event.
+Description
+-----------
 
-Member Function Description
----------------------------
+Stores multi-touch press/release information. Supports touch press, touch release and :ref:`index<class_InputEventScreenTouch_property_index>` for multi-touch count and order.
 
-.. _class_InputEventScreenTouch_get_index:
+Tutorials
+---------
 
-- :ref:`int<class_int>`  **get_index**  **(** **)** const
+- :doc:`../tutorials/inputs/inputevent`
 
-.. _class_InputEventScreenTouch_get_position:
+Property Descriptions
+---------------------
 
-- :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
+.. _class_InputEventScreenTouch_property_index:
 
-.. _class_InputEventScreenTouch_set_index:
+- :ref:`int<class_int>` **index**
 
-- void  **set_index**  **(** :ref:`int<class_int>` index  **)**
++----------+------------------+
+| *Setter* | set_index(value) |
++----------+------------------+
+| *Getter* | get_index()      |
++----------+------------------+
 
-.. _class_InputEventScreenTouch_set_position:
+Touch index in the case of a multi-touch event. One index = one finger.
 
-- void  **set_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
+.. _class_InputEventScreenTouch_property_position:
 
-.. _class_InputEventScreenTouch_set_pressed:
+- :ref:`Vector2<class_Vector2>` **position**
 
-- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
++----------+---------------------+
+| *Setter* | set_position(value) |
++----------+---------------------+
+| *Getter* | get_position()      |
++----------+---------------------+
 
+Touch position.
+
+.. _class_InputEventScreenTouch_property_pressed:
+
+- :ref:`bool<class_bool>` **pressed**
+
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
+
+If ``true``, the touch's state is pressed. If ``false``, the touch's state is released.
 

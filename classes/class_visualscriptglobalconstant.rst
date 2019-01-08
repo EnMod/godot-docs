@@ -7,7 +7,7 @@
 VisualScriptGlobalConstant
 ==========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,29 +16,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_global_constant<class_VisualScriptGlobalConstant_get_global_constant>`  **(** **)**                              |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_global_constant<class_VisualScriptGlobalConstant_set_global_constant>`  **(** :ref:`int<class_int>` index  **)** |
-+------------------------+----------------------------------------------------------------------------------------------------------------------------+
++-----------------------+---------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`constant<class_VisualScriptGlobalConstant_property_constant>` |
++-----------------------+---------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
+
+.. _class_VisualScriptGlobalConstant_property_constant:
 
 - :ref:`int<class_int>` **constant**
 
-Member Function Description
----------------------------
-
-.. _class_VisualScriptGlobalConstant_get_global_constant:
-
-- :ref:`int<class_int>`  **get_global_constant**  **(** **)**
-
-.. _class_VisualScriptGlobalConstant_set_global_constant:
-
-- void  **set_global_constant**  **(** :ref:`int<class_int>` index  **)**
-
++----------+----------------------------+
+| *Setter* | set_global_constant(value) |
++----------+----------------------------+
+| *Getter* | get_global_constant()      |
++----------+----------------------------+
 

@@ -7,7 +7,7 @@
 VisualScriptResourcePath
 ========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,29 +16,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_resource_path<class_VisualScriptResourcePath_get_resource_path>`  **(** **)**                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_resource_path<class_VisualScriptResourcePath_set_resource_path>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`path<class_VisualScriptResourcePath_property_path>` |
++-----------------------------+-----------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
-- :ref:`String<class_string>` **path**
+.. _class_VisualScriptResourcePath_property_path:
 
-Member Function Description
----------------------------
+- :ref:`String<class_String>` **path**
 
-.. _class_VisualScriptResourcePath_get_resource_path:
-
-- :ref:`String<class_string>`  **get_resource_path**  **(** **)**
-
-.. _class_VisualScriptResourcePath_set_resource_path:
-
-- void  **set_resource_path**  **(** :ref:`String<class_string>` path  **)**
-
++----------+--------------------------+
+| *Setter* | set_resource_path(value) |
++----------+--------------------------+
+| *Getter* | get_resource_path()      |
++----------+--------------------------+
 

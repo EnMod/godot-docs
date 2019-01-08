@@ -7,52 +7,76 @@
 ResourceSaver
 =============
 
-**Inherits:** :ref:`Object<class_object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Resource Saving Interface.
+Resource saving interface.
 
-Member Functions
-----------------
+Methods
+-------
 
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_recognized_extensions<class_ResourceSaver_get_recognized_extensions>`  **(** :ref:`Resource<class_resource>` type  **)**                            |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`save<class_ResourceSaver_save>`  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)** |
-+------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_recognized_extensions<class_ResourceSaver_method_get_recognized_extensions>` **(** :ref:`Resource<class_Resource>` type **)**                            |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`         | :ref:`save<class_ResourceSaver_method_save>` **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)** |
++-----------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enumerations
+------------
+
+.. _enum_ResourceSaver_SaverFlags:
+
+.. _class_ResourceSaver_constant_FLAG_RELATIVE_PATHS:
+
+.. _class_ResourceSaver_constant_FLAG_BUNDLE_RESOURCES:
+
+.. _class_ResourceSaver_constant_FLAG_CHANGE_PATH:
+
+.. _class_ResourceSaver_constant_FLAG_OMIT_EDITOR_PROPERTIES:
+
+.. _class_ResourceSaver_constant_FLAG_SAVE_BIG_ENDIAN:
+
+.. _class_ResourceSaver_constant_FLAG_COMPRESS:
+
+.. _class_ResourceSaver_constant_FLAG_REPLACE_SUBRESOURCE_PATHS:
+
+enum **SaverFlags**:
 
 - **FLAG_RELATIVE_PATHS** = **1**
+
 - **FLAG_BUNDLE_RESOURCES** = **2**
+
 - **FLAG_CHANGE_PATH** = **4**
+
 - **FLAG_OMIT_EDITOR_PROPERTIES** = **8**
+
 - **FLAG_SAVE_BIG_ENDIAN** = **16**
+
 - **FLAG_COMPRESS** = **32**
+
+- **FLAG_REPLACE_SUBRESOURCE_PATHS** = **64**
 
 Description
 -----------
 
-Resource Saving Interface. This interface is used for saving resources to disk.
+Resource saving interface, used for saving resources to disk.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_ResourceSaver_get_recognized_extensions:
+.. _class_ResourceSaver_method_get_recognized_extensions:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_recognized_extensions**  **(** :ref:`Resource<class_resource>` type  **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions** **(** :ref:`Resource<class_Resource>` type **)**
 
-Return the list of extensions available for saving a resource of a given type.
+Returns the list of extensions available for saving a resource of a given type.
 
-.. _class_ResourceSaver_save:
+.. _class_ResourceSaver_method_save:
 
-- :ref:`int<class_int>`  **save**  **(** :ref:`String<class_string>` path, :ref:`Resource<class_resource>` resource, :ref:`int<class_int>` flags=0  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **save** **(** :ref:`String<class_String>` path, :ref:`Resource<class_Resource>` resource, :ref:`int<class_int>` flags=0 **)**
 
-Save a resource to disk, to a given path.
-
+Saves a resource to disk.
 

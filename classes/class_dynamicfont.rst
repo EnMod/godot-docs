@@ -7,131 +7,232 @@
 DynamicFont
 ===========
 
-**Inherits:** :ref:`Font<class_font>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Font<class_Font>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+DynamicFont renders vector font files at runtime.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_bottom<class_DynamicFont_property_extra_spacing_bottom>` |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_char<class_DynamicFont_property_extra_spacing_char>`     |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_space<class_DynamicFont_property_extra_spacing_space>`   |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`extra_spacing_top<class_DynamicFont_property_extra_spacing_top>`       |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`font_data<class_DynamicFont_property_font_data>`                       |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                     | :ref:`outline_color<class_DynamicFont_property_outline_color>`               |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`outline_size<class_DynamicFont_property_outline_size>`                 |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`size<class_DynamicFont_property_size>`                                 |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`use_filter<class_DynamicFont_property_use_filter>`                     |
++-----------------------------------------------+------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                       | :ref:`use_mipmaps<class_DynamicFont_property_use_mipmaps>`                   |
++-----------------------------------------------+------------------------------------------------------------------------------+
 
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_fallback<class_DynamicFont_add_fallback>`  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**                            |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`DynamicFontData<class_dynamicfontdata>`  | :ref:`get_fallback<class_DynamicFont_get_fallback>`  **(** :ref:`int<class_int>` idx  **)** const                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_fallback_count<class_DynamicFont_get_fallback_count>`  **(** **)** const                                                              |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`DynamicFontData<class_dynamicfontdata>`  | :ref:`get_font_data<class_DynamicFont_get_font_data>`  **(** **)** const                                                                        |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_size<class_DynamicFont_get_size>`  **(** **)** const                                                                                  |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_spacing<class_DynamicFont_get_spacing>`  **(** :ref:`int<class_int>` type  **)** const                                                |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`get_use_filter<class_DynamicFont_get_use_filter>`  **(** **)** const                                                                      |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`get_use_mipmaps<class_DynamicFont_get_use_mipmaps>`  **(** **)** const                                                                    |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`remove_fallback<class_DynamicFont_remove_fallback>`  **(** :ref:`int<class_int>` idx  **)**                                               |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_fallback<class_DynamicFont_set_fallback>`  **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` data  **)** |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_font_data<class_DynamicFont_set_font_data>`  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_size<class_DynamicFont_set_size>`  **(** :ref:`int<class_int>` data  **)**                                                            |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_spacing<class_DynamicFont_set_spacing>`  **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value  **)**                         |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_use_filter<class_DynamicFont_set_use_filter>`  **(** :ref:`bool<class_bool>` enable  **)**                                            |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_use_mipmaps<class_DynamicFont_set_use_mipmaps>`  **(** :ref:`bool<class_bool>` enable  **)**                                          |
-+------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+Methods
+-------
 
-Member Variables
-----------------
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`add_fallback<class_DynamicFont_method_add_fallback>` **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**                            |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`DynamicFontData<class_DynamicFontData>` | :ref:`get_fallback<class_DynamicFont_method_get_fallback>` **(** :ref:`int<class_int>` idx **)** const                                               |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_fallback_count<class_DynamicFont_method_get_fallback_count>` **(** **)** const                                                             |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`remove_fallback<class_DynamicFont_method_remove_fallback>` **(** :ref:`int<class_int>` idx **)**                                               |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`set_fallback<class_DynamicFont_method_set_fallback>` **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)** |
++-----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enumerations
+------------
+
+.. _enum_DynamicFont_SpacingType:
+
+.. _class_DynamicFont_constant_SPACING_TOP:
+
+.. _class_DynamicFont_constant_SPACING_BOTTOM:
+
+.. _class_DynamicFont_constant_SPACING_CHAR:
+
+.. _class_DynamicFont_constant_SPACING_SPACE:
+
+enum **SpacingType**:
+
+- **SPACING_TOP** = **0** --- Spacing at the top.
+
+- **SPACING_BOTTOM** = **1** --- Spacing at the bottom.
+
+- **SPACING_CHAR** = **2** --- Character spacing.
+
+- **SPACING_SPACE** = **3** --- Space spacing.
+
+Description
+-----------
+
+DynamicFont renders vector font files (such as TTF or OTF) dynamically at runtime instead of using a prerendered texture atlas like :ref:`BitmapFont<class_BitmapFont>`. This trades the faster loading time of :ref:`BitmapFont<class_BitmapFont>`\ s for the ability to change font parameters like size and spacing during runtime. :ref:`DynamicFontData<class_DynamicFontData>` is used for referencing the font file paths.
+
+Property Descriptions
+---------------------
+
+.. _class_DynamicFont_property_extra_spacing_bottom:
 
 - :ref:`int<class_int>` **extra_spacing_bottom**
+
++----------+--------------------+
+| *Setter* | set_spacing(value) |
++----------+--------------------+
+| *Getter* | get_spacing()      |
++----------+--------------------+
+
+Extra spacing at the bottom in pixels.
+
+.. _class_DynamicFont_property_extra_spacing_char:
+
 - :ref:`int<class_int>` **extra_spacing_char**
+
++----------+--------------------+
+| *Setter* | set_spacing(value) |
++----------+--------------------+
+| *Getter* | get_spacing()      |
++----------+--------------------+
+
+Extra character spacing in pixels.
+
+.. _class_DynamicFont_property_extra_spacing_space:
+
 - :ref:`int<class_int>` **extra_spacing_space**
+
++----------+--------------------+
+| *Setter* | set_spacing(value) |
++----------+--------------------+
+| *Getter* | get_spacing()      |
++----------+--------------------+
+
+Extra space spacing in pixels.
+
+.. _class_DynamicFont_property_extra_spacing_top:
+
 - :ref:`int<class_int>` **extra_spacing_top**
-- :ref:`DynamicFontData<class_dynamicfontdata>` **font_data**
+
++----------+--------------------+
+| *Setter* | set_spacing(value) |
++----------+--------------------+
+| *Getter* | get_spacing()      |
++----------+--------------------+
+
+Extra spacing at the top in pixels.
+
+.. _class_DynamicFont_property_font_data:
+
+- :ref:`DynamicFontData<class_DynamicFontData>` **font_data**
+
++----------+----------------------+
+| *Setter* | set_font_data(value) |
++----------+----------------------+
+| *Getter* | get_font_data()      |
++----------+----------------------+
+
+The font data.
+
+.. _class_DynamicFont_property_outline_color:
+
+- :ref:`Color<class_Color>` **outline_color**
+
++----------+--------------------------+
+| *Setter* | set_outline_color(value) |
++----------+--------------------------+
+| *Getter* | get_outline_color()      |
++----------+--------------------------+
+
+.. _class_DynamicFont_property_outline_size:
+
+- :ref:`int<class_int>` **outline_size**
+
++----------+-------------------------+
+| *Setter* | set_outline_size(value) |
++----------+-------------------------+
+| *Getter* | get_outline_size()      |
++----------+-------------------------+
+
+.. _class_DynamicFont_property_size:
+
 - :ref:`int<class_int>` **size**
+
++----------+-----------------+
+| *Setter* | set_size(value) |
++----------+-----------------+
+| *Getter* | get_size()      |
++----------+-----------------+
+
+The font size.
+
+.. _class_DynamicFont_property_use_filter:
+
 - :ref:`bool<class_bool>` **use_filter**
+
++----------+-----------------------+
+| *Setter* | set_use_filter(value) |
++----------+-----------------------+
+| *Getter* | get_use_filter()      |
++----------+-----------------------+
+
+If ``true``, filtering is used.
+
+.. _class_DynamicFont_property_use_mipmaps:
+
 - :ref:`bool<class_bool>` **use_mipmaps**
 
-Numeric Constants
------------------
++----------+------------------------+
+| *Setter* | set_use_mipmaps(value) |
++----------+------------------------+
+| *Getter* | get_use_mipmaps()      |
++----------+------------------------+
 
-- **SPACING_TOP** = **0**
-- **SPACING_BOTTOM** = **1**
-- **SPACING_CHAR** = **2**
-- **SPACING_SPACE** = **3**
+If ``true``, mipmapping is used.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_DynamicFont_add_fallback:
+.. _class_DynamicFont_method_add_fallback:
 
-- void  **add_fallback**  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
+- void **add_fallback** **(** :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
-.. _class_DynamicFont_get_fallback:
+Adds a fallback font.
 
-- :ref:`DynamicFontData<class_dynamicfontdata>`  **get_fallback**  **(** :ref:`int<class_int>` idx  **)** const
+.. _class_DynamicFont_method_get_fallback:
 
-.. _class_DynamicFont_get_fallback_count:
+- :ref:`DynamicFontData<class_DynamicFontData>` **get_fallback** **(** :ref:`int<class_int>` idx **)** const
 
-- :ref:`int<class_int>`  **get_fallback_count**  **(** **)** const
+Returns the fallback font at index ``idx``.
 
-.. _class_DynamicFont_get_font_data:
+.. _class_DynamicFont_method_get_fallback_count:
 
-- :ref:`DynamicFontData<class_dynamicfontdata>`  **get_font_data**  **(** **)** const
+- :ref:`int<class_int>` **get_fallback_count** **(** **)** const
 
-.. _class_DynamicFont_get_size:
+Returns the number of fallback fonts.
 
-- :ref:`int<class_int>`  **get_size**  **(** **)** const
+.. _class_DynamicFont_method_remove_fallback:
 
-.. _class_DynamicFont_get_spacing:
+- void **remove_fallback** **(** :ref:`int<class_int>` idx **)**
 
-- :ref:`int<class_int>`  **get_spacing**  **(** :ref:`int<class_int>` type  **)** const
+Removes the fallback font at index ``idx``.
 
-.. _class_DynamicFont_get_use_filter:
+.. _class_DynamicFont_method_set_fallback:
 
-- :ref:`bool<class_bool>`  **get_use_filter**  **(** **)** const
+- void **set_fallback** **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_DynamicFontData>` data **)**
 
-.. _class_DynamicFont_get_use_mipmaps:
-
-- :ref:`bool<class_bool>`  **get_use_mipmaps**  **(** **)** const
-
-.. _class_DynamicFont_remove_fallback:
-
-- void  **remove_fallback**  **(** :ref:`int<class_int>` idx  **)**
-
-.. _class_DynamicFont_set_fallback:
-
-- void  **set_fallback**  **(** :ref:`int<class_int>` idx, :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
-
-.. _class_DynamicFont_set_font_data:
-
-- void  **set_font_data**  **(** :ref:`DynamicFontData<class_dynamicfontdata>` data  **)**
-
-.. _class_DynamicFont_set_size:
-
-- void  **set_size**  **(** :ref:`int<class_int>` data  **)**
-
-.. _class_DynamicFont_set_spacing:
-
-- void  **set_spacing**  **(** :ref:`int<class_int>` type, :ref:`int<class_int>` value  **)**
-
-.. _class_DynamicFont_set_use_filter:
-
-- void  **set_use_filter**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_DynamicFont_set_use_mipmaps:
-
-- void  **set_use_mipmaps**  **(** :ref:`bool<class_bool>` enable  **)**
-
+Sets the fallback font at index ``idx``.
 

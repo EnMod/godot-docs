@@ -7,7 +7,7 @@
 LineShape2D
 ===========
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,55 +16,44 @@ Brief Description
 
 Line shape for 2D collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_d<class_LineShape2D_get_d>`  **(** **)** const                                           |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_normal<class_LineShape2D_get_normal>`  **(** **)** const                                 |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_d<class_LineShape2D_set_d>`  **(** :ref:`float<class_float>` d  **)**                    |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_normal<class_LineShape2D_set_normal>`  **(** :ref:`Vector2<class_vector2>` normal  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **d** - The line's distance from the origin.
-- :ref:`Vector2<class_vector2>` **normal** - The line's normal.
++-------------------------------+--------------------------------------------------+
+| :ref:`float<class_float>`     | :ref:`d<class_LineShape2D_property_d>`           |
++-------------------------------+--------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`normal<class_LineShape2D_property_normal>` |
++-------------------------------+--------------------------------------------------+
 
 Description
 -----------
 
 Line shape for 2D collisions. It works like a 2D plane and will not allow any body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_LineShape2D_get_d:
+.. _class_LineShape2D_property_d:
 
-- :ref:`float<class_float>`  **get_d**  **(** **)** const
+- :ref:`float<class_float>` **d**
 
-Return the line distance from the origin.
++----------+--------------+
+| *Setter* | set_d(value) |
++----------+--------------+
+| *Getter* | get_d()      |
++----------+--------------+
 
-.. _class_LineShape2D_get_normal:
+The line's distance from the origin.
 
-- :ref:`Vector2<class_vector2>`  **get_normal**  **(** **)** const
+.. _class_LineShape2D_property_normal:
 
-Return the line normal.
+- :ref:`Vector2<class_Vector2>` **normal**
 
-.. _class_LineShape2D_set_d:
++----------+-------------------+
+| *Setter* | set_normal(value) |
++----------+-------------------+
+| *Getter* | get_normal()      |
++----------+-------------------+
 
-- void  **set_d**  **(** :ref:`float<class_float>` d  **)**
-
-Set the line distance from the origin.
-
-.. _class_LineShape2D_set_normal:
-
-- void  **set_normal**  **(** :ref:`Vector2<class_vector2>` normal  **)**
-
-Set the line normal.
-
+The line's normal.
 

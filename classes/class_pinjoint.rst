@@ -7,47 +7,94 @@
 PinJoint
 ========
 
-**Inherits:** :ref:`Joint<class_joint>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Joint<class_Joint>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Pin Joint for 3D Shapes.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/bias<class_PinJoint_property_params/bias>`                   |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/damping<class_PinJoint_property_params/damping>`             |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`params/impulse_clamp<class_PinJoint_property_params/impulse_clamp>` |
++---------------------------+---------------------------------------------------------------------------+
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_param<class_PinJoint_get_param>`  **(** :ref:`int<class_int>` param  **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_param<class_PinJoint_set_param>`  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_PinJoint_Param:
+
+.. _class_PinJoint_constant_PARAM_BIAS:
+
+.. _class_PinJoint_constant_PARAM_DAMPING:
+
+.. _class_PinJoint_constant_PARAM_IMPULSE_CLAMP:
+
+enum **Param**:
+
+- **PARAM_BIAS** = **0** --- The force with which the pinned objects stay in positional relation to each other.
+
+The higher, the stronger.
+
+- **PARAM_DAMPING** = **1** --- The force with which the pinned objects stay in velocity relation to each other.
+
+The higher, the stronger.
+
+- **PARAM_IMPULSE_CLAMP** = **2** --- If above 0, this value is the maximum value for an impulse that this Joint produces.
+
+Description
+-----------
+
+Pin Joint for 3D Rigid Bodies. It pins 2 bodies (rigid or static) together.
+
+Property Descriptions
+---------------------
+
+.. _class_PinJoint_property_params/bias:
 
 - :ref:`float<class_float>` **params/bias**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The force with which the pinned objects stay in positional relation to each other.
+
+The higher, the stronger.
+
+.. _class_PinJoint_property_params/damping:
+
 - :ref:`float<class_float>` **params/damping**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+The force with which the pinned objects stay in velocity relation to each other.
+
+The higher, the stronger.
+
+.. _class_PinJoint_property_params/impulse_clamp:
+
 - :ref:`float<class_float>` **params/impulse_clamp**
 
-Numeric Constants
------------------
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 
-- **PARAM_BIAS** = **0**
-- **PARAM_DAMPING** = **1**
-- **PARAM_IMPULSE_CLAMP** = **2**
-
-Member Function Description
----------------------------
-
-.. _class_PinJoint_get_param:
-
-- :ref:`float<class_float>`  **get_param**  **(** :ref:`int<class_int>` param  **)** const
-
-.. _class_PinJoint_set_param:
-
-- void  **set_param**  **(** :ref:`int<class_int>` param, :ref:`float<class_float>` value  **)**
-
+If above 0, this value is the maximum value for an impulse that this Joint produces.
 

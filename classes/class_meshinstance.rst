@@ -7,7 +7,9 @@
 MeshInstance
 ============
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
+
+**Inherited By:** :ref:`SoftBody<class_SoftBody>`
 
 **Category:** Core
 
@@ -16,87 +18,98 @@ Brief Description
 
 Node that instances meshes into a scenario.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_convex_collision<class_MeshInstance_create_convex_collision>`  **(** **)**                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_debug_tangents<class_MeshInstance_create_debug_tangents>`  **(** **)**                                                                        |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`create_trimesh_collision<class_MeshInstance_create_trimesh_collision>`  **(** **)**                                                                  |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Mesh<class_mesh>`          | :ref:`get_mesh<class_MeshInstance_get_mesh>`  **(** **)** const                                                                                            |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_skeleton_path<class_MeshInstance_get_skeleton_path>`  **(** **)**                                                                                |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_surface_material<class_MeshInstance_get_surface_material>`  **(** :ref:`int<class_int>` surface  **)** const                                     |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_mesh<class_MeshInstance_set_mesh>`  **(** :ref:`Mesh<class_mesh>` mesh  **)**                                                                    |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_skeleton_path<class_MeshInstance_set_skeleton_path>`  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**                                 |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_surface_material<class_MeshInstance_set_surface_material>`  **(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` material  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-------------------------------------------------------+
+| :ref:`Mesh<class_Mesh>`         | :ref:`mesh<class_MeshInstance_property_mesh>`         |
++---------------------------------+-------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`skeleton<class_MeshInstance_property_skeleton>` |
++---------------------------------+-------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`Mesh<class_mesh>` **mesh** - The [Mesh] resource for the instance.
-- :ref:`NodePath<class_nodepath>` **skeleton** - [NodePath] to the [Skeleton] associated with the instance.
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_convex_collision<class_MeshInstance_method_create_convex_collision>` **(** **)**                                                                   |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_debug_tangents<class_MeshInstance_method_create_debug_tangents>` **(** **)**                                                                       |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`create_trimesh_collision<class_MeshInstance_method_create_trimesh_collision>` **(** **)**                                                                 |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`get_surface_material<class_MeshInstance_method_get_surface_material>` **(** :ref:`int<class_int>` surface **)** const                                     |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`get_surface_material_count<class_MeshInstance_method_get_surface_material_count>` **(** **)** const                                                       |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                            | :ref:`set_surface_material<class_MeshInstance_method_set_surface_material>` **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)** |
++---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-MeshInstance is a :ref:`Node<class_node>` that takes a :ref:`Mesh<class_mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_multimesh>` in a :ref:`MultiMeshInstance<class_multimeshinstance>` instead.
+MeshInstance is a node that takes a :ref:`Mesh<class_Mesh>` resource and adds it to the current scenario by creating an instance of it. This is the class most often used to get 3D geometry rendered and can be used to instance a single :ref:`Mesh<class_Mesh>` in many places. This allows to reuse geometry and save on resources. When a :ref:`Mesh<class_Mesh>` has to be instanced more than thousands of times at close proximity, consider using a :ref:`MultiMesh<class_MultiMesh>` in a :ref:`MultiMeshInstance<class_MultiMeshInstance>` instead.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_MeshInstance_create_convex_collision:
+.. _class_MeshInstance_property_mesh:
 
-- void  **create_convex_collision**  **(** **)**
+- :ref:`Mesh<class_Mesh>` **mesh**
 
-This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` with a :ref:`ConvexPolygonShape<class_convexpolygonshape>` :ref:`CollisionShape<class_collisionshape>` calculated from the mesh geometry. It's mainly used for testing.
++----------+-----------------+
+| *Setter* | set_mesh(value) |
++----------+-----------------+
+| *Getter* | get_mesh()      |
++----------+-----------------+
 
-.. _class_MeshInstance_create_debug_tangents:
+The :ref:`Mesh<class_Mesh>` resource for the instance.
 
-- void  **create_debug_tangents**  **(** **)**
+.. _class_MeshInstance_property_skeleton:
 
-.. _class_MeshInstance_create_trimesh_collision:
+- :ref:`NodePath<class_NodePath>` **skeleton**
 
-- void  **create_trimesh_collision**  **(** **)**
++----------+--------------------------+
+| *Setter* | set_skeleton_path(value) |
++----------+--------------------------+
+| *Getter* | get_skeleton_path()      |
++----------+--------------------------+
 
-This helper creates a :ref:`StaticBody<class_staticbody>` child :ref:`Node<class_node>` with a :ref:`ConcavePolygonShape<class_concavepolygonshape>` :ref:`CollisionShape<class_collisionshape>` calculated from the mesh geometry. It's mainly used for testing.
+:ref:`NodePath<class_NodePath>` to the :ref:`Skeleton<class_Skeleton>` associated with the instance.
 
-.. _class_MeshInstance_get_mesh:
+Method Descriptions
+-------------------
 
-- :ref:`Mesh<class_mesh>`  **get_mesh**  **(** **)** const
+.. _class_MeshInstance_method_create_convex_collision:
 
-Returns the current :ref:`Mesh<class_mesh>` resource for the instance.
+- void **create_convex_collision** **(** **)**
 
-.. _class_MeshInstance_get_skeleton_path:
+This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConvexPolygonShape<class_ConvexPolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-- :ref:`NodePath<class_nodepath>`  **get_skeleton_path**  **(** **)**
+.. _class_MeshInstance_method_create_debug_tangents:
 
-.. _class_MeshInstance_get_surface_material:
+- void **create_debug_tangents** **(** **)**
 
-- :ref:`Material<class_material>`  **get_surface_material**  **(** :ref:`int<class_int>` surface  **)** const
+This helper creates a :ref:`MeshInstance<class_MeshInstance>` child node with gizmos at every vertex calculated from the mesh geometry. It's mainly used for testing.
 
-Returns the :ref:`Material<class_material>` for a surface of the :ref:`Mesh<class_mesh>` resource.
+.. _class_MeshInstance_method_create_trimesh_collision:
 
-.. _class_MeshInstance_set_mesh:
+- void **create_trimesh_collision** **(** **)**
 
-- void  **set_mesh**  **(** :ref:`Mesh<class_mesh>` mesh  **)**
+This helper creates a :ref:`StaticBody<class_StaticBody>` child node with a :ref:`ConcavePolygonShape<class_ConcavePolygonShape>` collision shape calculated from the mesh geometry. It's mainly used for testing.
 
-.. _class_MeshInstance_set_skeleton_path:
+.. _class_MeshInstance_method_get_surface_material:
 
-- void  **set_skeleton_path**  **(** :ref:`NodePath<class_nodepath>` skeleton_path  **)**
+- :ref:`Material<class_Material>` **get_surface_material** **(** :ref:`int<class_int>` surface **)** const
 
-.. _class_MeshInstance_set_surface_material:
+Returns the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 
-- void  **set_surface_material**  **(** :ref:`int<class_int>` surface, :ref:`Material<class_material>` material  **)**
+.. _class_MeshInstance_method_get_surface_material_count:
 
-Sets the :ref:`Material<class_material>` for a surface of the :ref:`Mesh<class_mesh>` resource.
+- :ref:`int<class_int>` **get_surface_material_count** **(** **)** const
 
+.. _class_MeshInstance_method_set_surface_material:
+
+- void **set_surface_material** **(** :ref:`int<class_int>` surface, :ref:`Material<class_Material>` material **)**
+
+Sets the :ref:`Material<class_Material>` for a surface of the :ref:`Mesh<class_Mesh>` resource.
 

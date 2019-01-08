@@ -7,7 +7,7 @@
 RectangleShape2D
 ================
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,30 @@ Brief Description
 
 Rectangle shape for 2D collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_extents<class_RectangleShape2D_get_extents>`  **(** **)** const                                  |
-+--------------------------------+------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_extents<class_RectangleShape2D_set_extents>`  **(** :ref:`Vector2<class_vector2>` extents  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Vector2<class_vector2>` **extents** - The rectangle's half extents. The width and height of this shape is twice the half extents.
++-------------------------------+---------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`extents<class_RectangleShape2D_property_extents>` |
++-------------------------------+---------------------------------------------------------+
 
 Description
 -----------
 
 Rectangle shape for 2D collisions. This shape is useful for modeling box-like 2D objects.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_RectangleShape2D_get_extents:
+.. _class_RectangleShape2D_property_extents:
 
-- :ref:`Vector2<class_vector2>`  **get_extents**  **(** **)** const
+- :ref:`Vector2<class_Vector2>` **extents**
 
-Return the half extents, the actual width and height of this shape is twice the half extents.
++----------+--------------------+
+| *Setter* | set_extents(value) |
++----------+--------------------+
+| *Getter* | get_extents()      |
++----------+--------------------+
 
-.. _class_RectangleShape2D_set_extents:
-
-- void  **set_extents**  **(** :ref:`Vector2<class_vector2>` extents  **)**
-
-Set the half extents, the actual width and height of this shape is twice the half extents.
-
+The rectangle's half extents. The width and height of this shape is twice the half extents.
 

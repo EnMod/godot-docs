@@ -7,7 +7,7 @@
 VisualScriptInputAction
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,50 +16,58 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_action_mode<class_VisualScriptInputAction_get_action_mode>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action_name<class_VisualScriptInputAction_get_action_name>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action_mode<class_VisualScriptInputAction_set_action_mode>`  **(** :ref:`int<class_int>` mode  **)**       |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action_name<class_VisualScriptInputAction_set_action_name>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------+--------------------------------------------------------------+
+| :ref:`String<class_String>`                    | :ref:`action<class_VisualScriptInputAction_property_action>` |
++------------------------------------------------+--------------------------------------------------------------+
+| :ref:`Mode<enum_VisualScriptInputAction_Mode>` | :ref:`mode<class_VisualScriptInputAction_property_mode>`     |
++------------------------------------------------+--------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`String<class_string>` **action**
-- :ref:`int<class_int>` **mode**
+.. _enum_VisualScriptInputAction_Mode:
 
-Numeric Constants
------------------
+.. _class_VisualScriptInputAction_constant_MODE_PRESSED:
+
+.. _class_VisualScriptInputAction_constant_MODE_RELEASED:
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_PRESSED:
+
+.. _class_VisualScriptInputAction_constant_MODE_JUST_RELEASED:
+
+enum **Mode**:
 
 - **MODE_PRESSED** = **0**
+
 - **MODE_RELEASED** = **1**
+
 - **MODE_JUST_PRESSED** = **2**
+
 - **MODE_JUST_RELEASED** = **3**
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptInputAction_get_action_mode:
+.. _class_VisualScriptInputAction_property_action:
 
-- :ref:`int<class_int>`  **get_action_mode**  **(** **)** const
+- :ref:`String<class_String>` **action**
 
-.. _class_VisualScriptInputAction_get_action_name:
++----------+------------------------+
+| *Setter* | set_action_name(value) |
++----------+------------------------+
+| *Getter* | get_action_name()      |
++----------+------------------------+
 
-- :ref:`String<class_string>`  **get_action_name**  **(** **)** const
+.. _class_VisualScriptInputAction_property_mode:
 
-.. _class_VisualScriptInputAction_set_action_mode:
+- :ref:`Mode<enum_VisualScriptInputAction_Mode>` **mode**
 
-- void  **set_action_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_VisualScriptInputAction_set_action_name:
-
-- void  **set_action_name**  **(** :ref:`String<class_string>` name  **)**
-
++----------+------------------------+
+| *Setter* | set_action_mode(value) |
++----------+------------------------+
+| *Getter* | get_action_mode()      |
++----------+------------------------+
 

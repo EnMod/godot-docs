@@ -7,38 +7,39 @@
 VisualScriptEngineSingleton
 ===========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptEngineSingleton_property_constant>` |
++-----------------------------+----------------------------------------------------------------------+
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_singleton<class_VisualScriptEngineSingleton_get_singleton>`  **(** **)**                                   |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_singleton<class_VisualScriptEngineSingleton_set_singleton>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A Visual Script node returning a singleton from :ref:`@GlobalScope<class_@GlobalScope>`
 
-- :ref:`String<class_string>` **constant**
+Property Descriptions
+---------------------
 
-Member Function Description
----------------------------
+.. _class_VisualScriptEngineSingleton_property_constant:
 
-.. _class_VisualScriptEngineSingleton_get_singleton:
+- :ref:`String<class_String>` **constant**
 
-- :ref:`String<class_string>`  **get_singleton**  **(** **)**
++----------+----------------------+
+| *Setter* | set_singleton(value) |
++----------+----------------------+
+| *Getter* | get_singleton()      |
++----------+----------------------+
 
-.. _class_VisualScriptEngineSingleton_set_singleton:
-
-- void  **set_singleton**  **(** :ref:`String<class_string>` name  **)**
-
+The singleton's name.
 

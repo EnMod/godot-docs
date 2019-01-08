@@ -7,7 +7,7 @@
 HSplitContainer
 ===============
 
-**Inherits:** :ref:`SplitContainer<class_splitcontainer>` **<** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`SplitContainer<class_SplitContainer>` **<** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,8 +16,21 @@ Brief Description
 
 Horizontal split container.
 
+Theme Properties
+----------------
+
++---------------------------------+------------+
+| :ref:`int<class_int>`           | autohide   |
++---------------------------------+------------+
+| :ref:`StyleBox<class_StyleBox>` | bg         |
++---------------------------------+------------+
+| :ref:`Texture<class_Texture>`   | grabber    |
++---------------------------------+------------+
+| :ref:`int<class_int>`           | separation |
++---------------------------------+------------+
+
 Description
 -----------
 
-Horizontal split container. See :ref:`SplitContainer<class_splitcontainer>`. This goes from left to right.
+Horizontal split container. See :ref:`SplitContainer<class_SplitContainer>`. This goes from left to right.
 

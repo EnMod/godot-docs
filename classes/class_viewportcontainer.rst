@@ -7,38 +7,51 @@
 ViewportContainer
 =================
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Control for holding :ref:`Viewport<class_Viewport>`\ s.
 
+Properties
+----------
 
-Member Functions
-----------------
++-------------------------+------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`stretch<class_ViewportContainer_property_stretch>`               |
++-------------------------+------------------------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`stretch_shrink<class_ViewportContainer_property_stretch_shrink>` |
++-------------------------+------------------------------------------------------------------------+
 
-+--------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_stretch_enabled<class_ViewportContainer_is_stretch_enabled>`  **(** **)** const             |
-+--------------------------+------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_stretch<class_ViewportContainer_set_stretch>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A :ref:`Container<class_Container>` node that holds a :ref:`Viewport<class_Viewport>`, automatically setting its size.
+
+Property Descriptions
+---------------------
+
+.. _class_ViewportContainer_property_stretch:
 
 - :ref:`bool<class_bool>` **stretch**
 
-Member Function Description
----------------------------
++----------+----------------------+
+| *Setter* | set_stretch(value)   |
++----------+----------------------+
+| *Getter* | is_stretch_enabled() |
++----------+----------------------+
 
-.. _class_ViewportContainer_is_stretch_enabled:
+If ``true``, the viewport will be scaled to the control's size. Default value:``false``.
 
-- :ref:`bool<class_bool>`  **is_stretch_enabled**  **(** **)** const
+.. _class_ViewportContainer_property_stretch_shrink:
 
-.. _class_ViewportContainer_set_stretch:
+- :ref:`int<class_int>` **stretch_shrink**
 
-- void  **set_stretch**  **(** :ref:`bool<class_bool>` enable  **)**
-
++----------+---------------------------+
+| *Setter* | set_stretch_shrink(value) |
++----------+---------------------------+
+| *Getter* | get_stretch_shrink()      |
++----------+---------------------------+
 

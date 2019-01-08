@@ -7,38 +7,47 @@
 VisualScriptSceneNode
 =====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Node reference.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------+------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`node_path<class_VisualScriptSceneNode_property_node_path>` |
++---------------------------------+------------------------------------------------------------------+
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_node_path<class_VisualScriptSceneNode_get_node_path>`  **(** **)**                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_node_path<class_VisualScriptSceneNode_set_node_path>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A direct reference to a node.
 
-- :ref:`NodePath<class_nodepath>` **node_path**
+**Input Ports:**
 
-Member Function Description
----------------------------
+none
 
-.. _class_VisualScriptSceneNode_get_node_path:
+**Output Ports:**
 
-- :ref:`NodePath<class_nodepath>`  **get_node_path**  **(** **)**
+- Data: ``node`` (obj)
 
-.. _class_VisualScriptSceneNode_set_node_path:
+Property Descriptions
+---------------------
 
-- void  **set_node_path**  **(** :ref:`NodePath<class_nodepath>` path  **)**
+.. _class_VisualScriptSceneNode_property_node_path:
 
+- :ref:`NodePath<class_NodePath>` **node_path**
+
++----------+----------------------+
+| *Setter* | set_node_path(value) |
++----------+----------------------+
+| *Getter* | get_node_path()      |
++----------+----------------------+
+
+The node's path in the scene tree.
 

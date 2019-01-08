@@ -7,38 +7,86 @@
 DynamicFontData
 ===============
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a font file.
 
+Properties
+----------
 
-Member Functions
-----------------
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                      | :ref:`antialiased<class_DynamicFontData_property_antialiased>` |
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`String<class_String>`                  | :ref:`font_path<class_DynamicFontData_property_font_path>`     |
++----------------------------------------------+----------------------------------------------------------------+
+| :ref:`Hinting<enum_DynamicFontData_Hinting>` | :ref:`hinting<class_DynamicFontData_property_hinting>`         |
++----------------------------------------------+----------------------------------------------------------------+
 
-+------------------------------+----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_font_path<class_DynamicFontData_get_font_path>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_font_path<class_DynamicFontData_set_font_path>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_DynamicFontData_Hinting:
 
-- :ref:`String<class_string>` **font_path**
+.. _class_DynamicFontData_constant_HINTING_NONE:
 
-Member Function Description
----------------------------
+.. _class_DynamicFontData_constant_HINTING_LIGHT:
 
-.. _class_DynamicFontData_get_font_path:
+.. _class_DynamicFontData_constant_HINTING_NORMAL:
 
-- :ref:`String<class_string>`  **get_font_path**  **(** **)** const
+enum **Hinting**:
 
-.. _class_DynamicFontData_set_font_path:
+- **HINTING_NONE** = **0** --- Disable font hinting (smoother but less crisp).
 
-- void  **set_font_path**  **(** :ref:`String<class_string>` path  **)**
+- **HINTING_LIGHT** = **1** --- Use the light font hinting mode.
 
+- **HINTING_NORMAL** = **2** --- Use the default font hinting mode (crisper but less smooth).
+
+Description
+-----------
+
+Used with :ref:`DynamicFont<class_DynamicFont>` to describe the location of a vector font file for dynamic rendering at runtime.
+
+Property Descriptions
+---------------------
+
+.. _class_DynamicFontData_property_antialiased:
+
+- :ref:`bool<class_bool>` **antialiased**
+
++----------+------------------------+
+| *Setter* | set_antialiased(value) |
++----------+------------------------+
+| *Getter* | is_antialiased()       |
++----------+------------------------+
+
+Controls whether the font should be rendered with anti-aliasing.
+
+.. _class_DynamicFontData_property_font_path:
+
+- :ref:`String<class_String>` **font_path**
+
++----------+----------------------+
+| *Setter* | set_font_path(value) |
++----------+----------------------+
+| *Getter* | get_font_path()      |
++----------+----------------------+
+
+The path to the vector font file.
+
+.. _class_DynamicFontData_property_hinting:
+
+- :ref:`Hinting<enum_DynamicFontData_Hinting>` **hinting**
+
++----------+--------------------+
+| *Setter* | set_hinting(value) |
++----------+--------------------+
+| *Getter* | get_hinting()      |
++----------+--------------------+
+
+The font hinting mode used by FreeType.
 

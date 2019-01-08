@@ -7,7 +7,7 @@
 EditorResourceConversionPlugin
 ==============================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,24 +16,23 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`  | :ref:`_convert<class_EditorResourceConversionPlugin__convert>`  **(** :ref:`Resource<class_resource>` resource  **)** virtual |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`_converts_to<class_EditorResourceConversionPlugin__converts_to>`  **(** **)** virtual                                   |
-+----------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`_convert<class_EditorResourceConversionPlugin_method__convert>` **(** :ref:`Resource<class_Resource>` resource **)** virtual |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`     | :ref:`_converts_to<class_EditorResourceConversionPlugin_method__converts_to>` **(** **)** virtual                                  |
++---------------------------------+------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_EditorResourceConversionPlugin__convert:
+.. _class_EditorResourceConversionPlugin_method__convert:
 
-- :ref:`Resource<class_resource>`  **_convert**  **(** :ref:`Resource<class_resource>` resource  **)** virtual
+- :ref:`Resource<class_Resource>` **_convert** **(** :ref:`Resource<class_Resource>` resource **)** virtual
 
-.. _class_EditorResourceConversionPlugin__converts_to:
+.. _class_EditorResourceConversionPlugin_method__converts_to:
 
-- :ref:`bool<class_bool>`  **_converts_to**  **(** **)** virtual
-
+- :ref:`String<class_String>` **_converts_to** **(** **)** virtual
 

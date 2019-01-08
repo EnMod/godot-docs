@@ -7,9 +7,9 @@
 Slider
 ======
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`HSlider<class_hslider>`, :ref:`VSlider<class_vslider>`
+**Inherited By:** :ref:`HSlider<class_HSlider>`, :ref:`VSlider<class_VSlider>`
 
 **Category:** Core
 
@@ -18,69 +18,76 @@ Brief Description
 
 Base class for GUI Sliders.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_ticks<class_Slider_get_ticks>`  **(** **)** const                                                          |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_ticks_on_borders<class_Slider_get_ticks_on_borders>`  **(** **)** const                                    |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_editable<class_Slider_is_editable>`  **(** **)** const                                                      |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_editable<class_Slider_set_editable>`  **(** :ref:`bool<class_bool>` editable  **)**                        |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_ticks<class_Slider_set_ticks>`  **(** :ref:`int<class_int>` count  **)**                                   |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_ticks_on_borders<class_Slider_set_ticks_on_borders>`  **(** :ref:`bool<class_bool>` ticks_on_border  **)** |
-+--------------------------+----------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **editable**
-- :ref:`int<class_int>` **focus_mode**
-- :ref:`int<class_int>` **tick_count**
-- :ref:`bool<class_bool>` **ticks_on_borders**
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`editable<class_Slider_property_editable>`                 |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`FocusMode<enum_Control_FocusMode>` | :ref:`focus_mode<class_Slider_property_focus_mode>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`scrollable<class_Slider_property_scrollable>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`int<class_int>`                    | :ref:`tick_count<class_Slider_property_tick_count>`             |
++------------------------------------------+-----------------------------------------------------------------+
+| :ref:`bool<class_bool>`                  | :ref:`ticks_on_borders<class_Slider_property_ticks_on_borders>` |
++------------------------------------------+-----------------------------------------------------------------+
 
 Description
 -----------
 
 Base class for GUI Sliders.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Slider_get_ticks:
+.. _class_Slider_property_editable:
 
-- :ref:`int<class_int>`  **get_ticks**  **(** **)** const
+- :ref:`bool<class_bool>` **editable**
 
-Return amounts of ticks to display on slider.
++----------+---------------------+
+| *Setter* | set_editable(value) |
++----------+---------------------+
+| *Getter* | is_editable()       |
++----------+---------------------+
 
-.. _class_Slider_get_ticks_on_borders:
+.. _class_Slider_property_focus_mode:
 
-- :ref:`bool<class_bool>`  **get_ticks_on_borders**  **(** **)** const
+- :ref:`FocusMode<enum_Control_FocusMode>` **focus_mode**
 
-Return true if ticks are visible on borders.
++----------+-----------------------+
+| *Setter* | set_focus_mode(value) |
++----------+-----------------------+
+| *Getter* | get_focus_mode()      |
++----------+-----------------------+
 
-.. _class_Slider_is_editable:
+.. _class_Slider_property_scrollable:
 
-- :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
+- :ref:`bool<class_bool>` **scrollable**
 
-.. _class_Slider_set_editable:
++----------+-----------------------+
+| *Setter* | set_scrollable(value) |
++----------+-----------------------+
+| *Getter* | is_scrollable()       |
++----------+-----------------------+
 
-- void  **set_editable**  **(** :ref:`bool<class_bool>` editable  **)**
+.. _class_Slider_property_tick_count:
 
-.. _class_Slider_set_ticks:
+- :ref:`int<class_int>` **tick_count**
 
-- void  **set_ticks**  **(** :ref:`int<class_int>` count  **)**
++----------+------------------+
+| *Setter* | set_ticks(value) |
++----------+------------------+
+| *Getter* | get_ticks()      |
++----------+------------------+
 
-Set amount of ticks to display in slider.
+.. _class_Slider_property_ticks_on_borders:
 
-.. _class_Slider_set_ticks_on_borders:
+- :ref:`bool<class_bool>` **ticks_on_borders**
 
-- void  **set_ticks_on_borders**  **(** :ref:`bool<class_bool>` ticks_on_border  **)**
-
-Set true if ticks are visible on borders.
-
++----------+-----------------------------+
+| *Setter* | set_ticks_on_borders(value) |
++----------+-----------------------------+
+| *Getter* | get_ticks_on_borders()      |
++----------+-----------------------------+
 

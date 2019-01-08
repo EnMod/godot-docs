@@ -7,7 +7,7 @@
 ButtonGroup
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,25 +16,34 @@ Brief Description
 
 Group of Buttons.
 
-Member Functions
-----------------
+Methods
+-------
 
-+--------------------------------------+------------------------------------------------------------------------------+
-| :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>`  **(** **)** |
-+--------------------------------------+------------------------------------------------------------------------------+
++-------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`           | :ref:`get_buttons<class_ButtonGroup_method_get_buttons>` **(** **)**               |
++-------------------------------------+------------------------------------------------------------------------------------+
+| :ref:`BaseButton<class_BaseButton>` | :ref:`get_pressed_button<class_ButtonGroup_method_get_pressed_button>` **(** **)** |
++-------------------------------------+------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Group of :ref:`Button<class_button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
+Group of :ref:`Button<class_Button>`. All direct and indirect children buttons become radios. Only one allows being pressed.
 
-Member Function Description
----------------------------
+:ref:`BaseButton.toggle_mode<class_BaseButton_property_toggle_mode>` should be ``true``.
 
-.. _class_ButtonGroup_get_pressed_button:
+Method Descriptions
+-------------------
 
-- :ref:`BaseButton<class_basebutton>`  **get_pressed_button**  **(** **)**
+.. _class_ButtonGroup_method_get_buttons:
 
-Return the pressed button.
+- :ref:`Array<class_Array>` **get_buttons** **(** **)**
 
+Returns an :ref:`Array<class_Array>` of :ref:`Button<class_Button>`\ s who have this as their ``ButtonGroup`` (see :ref:`BaseButton.group<class_BaseButton_property_group>`).
+
+.. _class_ButtonGroup_method_get_pressed_button:
+
+- :ref:`BaseButton<class_BaseButton>` **get_pressed_button** **(** **)**
+
+Returns the current pressed button.
 

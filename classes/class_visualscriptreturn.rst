@@ -7,51 +7,63 @@
 VisualScriptReturn
 ==================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Exits a function and returns an optional value.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                             | :ref:`return_enabled<class_VisualScriptReturn_property_return_enabled>` |
++-----------------------------------------------------+-------------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`return_type<class_VisualScriptReturn_property_return_type>`       |
++-----------------------------------------------------+-------------------------------------------------------------------------+
 
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`    | :ref:`get_return_type<class_VisualScriptReturn_get_return_type>`  **(** **)** const                                           |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_return_value_enabled<class_VisualScriptReturn_is_return_value_enabled>`  **(** **)** const                           |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_enable_return_value<class_VisualScriptReturn_set_enable_return_value>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_return_type<class_VisualScriptReturn_set_return_type>`  **(** :ref:`int<class_int>` type  **)**                     |
-+--------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Ends the execution of a function and returns control to the calling function. Optionally, it can return a :ref:`Variant<class_Variant>` value.
+
+**Input Ports:**
+
+- Sequence
+
+- Data (variant): ``result`` (optional)
+
+**Output Ports:**
+
+none
+
+Property Descriptions
+---------------------
+
+.. _class_VisualScriptReturn_property_return_enabled:
 
 - :ref:`bool<class_bool>` **return_enabled**
-- :ref:`int<class_int>` **return_type**
 
-Member Function Description
----------------------------
++----------+--------------------------------+
+| *Setter* | set_enable_return_value(value) |
++----------+--------------------------------+
+| *Getter* | is_return_value_enabled()      |
++----------+--------------------------------+
 
-.. _class_VisualScriptReturn_get_return_type:
+If ``true``, the ``return`` input port is available.
 
-- :ref:`int<class_int>`  **get_return_type**  **(** **)** const
+.. _class_VisualScriptReturn_property_return_type:
 
-.. _class_VisualScriptReturn_is_return_value_enabled:
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **return_type**
 
-- :ref:`bool<class_bool>`  **is_return_value_enabled**  **(** **)** const
++----------+------------------------+
+| *Setter* | set_return_type(value) |
++----------+------------------------+
+| *Getter* | get_return_type()      |
++----------+------------------------+
 
-.. _class_VisualScriptReturn_set_enable_return_value:
-
-- void  **set_enable_return_value**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_VisualScriptReturn_set_return_type:
-
-- void  **set_return_type**  **(** :ref:`int<class_int>` type  **)**
-
+The return value's data type.
 

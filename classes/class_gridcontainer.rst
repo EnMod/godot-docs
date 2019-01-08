@@ -7,47 +7,48 @@
 GridContainer
 =============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Grid container used to arrange elements in a grid like layout
+Grid container used to arrange elements in a grid like layout.
 
-Member Functions
+Properties
+----------
+
++-----------------------+------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`columns<class_GridContainer_property_columns>` |
++-----------------------+------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_columns<class_GridContainer_get_columns>`  **(** **)** const                          |
-+------------------------+-------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_columns<class_GridContainer_set_columns>`  **(** :ref:`int<class_int>` columns  **)** |
-+------------------------+-------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`int<class_int>` **columns**
++-----------------------+-------------+
+| :ref:`int<class_int>` | hseparation |
++-----------------------+-------------+
+| :ref:`int<class_int>` | vseparation |
++-----------------------+-------------+
 
 Description
 -----------
 
-Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`set_columns<class_GridContainer_set_columns>` method and the number of rows will be equal to the number of children in the container divided by the number of columns, for example: if the container has 5 children, and 2 columns, there will be 3 rows in the container. Notice that grid layout will preserve the columns and rows for every size of the container.
+Grid container will arrange its children in a grid like structure, the grid columns are specified using the :ref:`columns<class_GridContainer_property_columns>` property and the number of rows will be equal to the number of children in the container divided by the number of columns, for example: if the container has 5 children, and 2 columns, there will be 3 rows in the container. Notice that grid layout will preserve the columns and rows for every size of the container.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_GridContainer_get_columns:
+.. _class_GridContainer_property_columns:
 
-- :ref:`int<class_int>`  **get_columns**  **(** **)** const
+- :ref:`int<class_int>` **columns**
 
-Returns the number of columns in this container
++----------+--------------------+
+| *Setter* | set_columns(value) |
++----------+--------------------+
+| *Getter* | get_columns()      |
++----------+--------------------+
 
-.. _class_GridContainer_set_columns:
-
-- void  **set_columns**  **(** :ref:`int<class_int>` columns  **)**
-
-Sets the numbers of columns in the container, then reorder its children to accommodate the new layout
-
+The number of columns in the ``GridContainer``. If modified, ``GridContainer`` reorders its children to accommodate the new layout.
 

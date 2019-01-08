@@ -7,64 +7,118 @@
 PackedScene
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+An abstraction of a serialized scene.
 
+Properties
+----------
 
-Member Functions
-----------------
++-------------------------------------+------------------------------------------------------+
+| :ref:`Dictionary<class_Dictionary>` | :ref:`_bundled<class_PackedScene_property__bundled>` |
++-------------------------------------+------------------------------------------------------+
 
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`              | :ref:`can_instance<class_PackedScene_can_instance>`  **(** **)** const                             |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`SceneState<class_scenestate>`  | :ref:`get_state<class_PackedScene_get_state>`  **(** **)**                                         |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`Node<class_node>`              | :ref:`instance<class_PackedScene_instance>`  **(** :ref:`int<class_int>` edit_state=0  **)** const |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                | :ref:`pack<class_PackedScene_pack>`  **(** :ref:`Node<class_node>` path  **)**                     |
-+--------------------------------------+----------------------------------------------------------------------------------------------------+
+Methods
+-------
 
-Member Variables
-----------------
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`can_instance<class_PackedScene_method_can_instance>` **(** **)** const                                                         |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`SceneState<class_SceneState>`   | :ref:`get_state<class_PackedScene_method_get_state>` **(** **)**                                                                     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Node<class_Node>`               | :ref:`instance<class_PackedScene_method_instance>` **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedScene_method_pack>` **(** :ref:`Node<class_Node>` path **)**                                                  |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
 
-- :ref:`Dictionary<class_dictionary>` **_bundled**
+Enumerations
+------------
 
-Numeric Constants
------------------
+.. _enum_PackedScene_GenEditState:
 
-- **GEN_EDIT_STATE_DISABLED** = **0**
-- **GEN_EDIT_STATE_INSTANCE** = **1**
-- **GEN_EDIT_STATE_MAIN** = **2**
+.. _class_PackedScene_constant_GEN_EDIT_STATE_DISABLED:
+
+.. _class_PackedScene_constant_GEN_EDIT_STATE_INSTANCE:
+
+.. _class_PackedScene_constant_GEN_EDIT_STATE_MAIN:
+
+enum **GenEditState**:
+
+- **GEN_EDIT_STATE_DISABLED** = **0** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, blocks edits to the scene state.
+
+- **GEN_EDIT_STATE_INSTANCE** = **1** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Requires tools compiled.
+
+- **GEN_EDIT_STATE_MAIN** = **2** --- If passed to :ref:`instance<class_PackedScene_method_instance>`, provides local scene resources to the local scene. Only the main scene should receive the main edit state. Requires tools compiled.
 
 Description
 -----------
 
-TODO: explain ownership, and that node does not need to own itself
+A simplified interface to a scene file. Provides access to operations and checks that can be performed on the scene resource itself.
 
-Member Function Description
----------------------------
+Can be used to save a node to a file. When saving, the node as well as all the node it owns get saved (see ``owner`` property on :ref:`Node<class_Node>`). Note that the node doesn't need to own itself.
 
-.. _class_PackedScene_can_instance:
+Example of saving a node with different owners: The following example creates 3 objects: ``Node2D`` (``node``), ``RigidBody2D`` (``rigid``) and ``CollisionObject2D`` (``collision``). ``collision`` is a child of ``rigid`` which is a child of ``node``. Only ``rigid`` is owned by ``node`` and ``pack`` will therefore only save those two nodes, but not ``collision``.
 
-- :ref:`bool<class_bool>`  **can_instance**  **(** **)** const
+::
 
-.. _class_PackedScene_get_state:
+    # create the objects
+    var node = Node2D.new()
+    var rigid = RigidBody2D.new()
+    var collision = CollisionShape2D.new()
+    
+    # create the object hierarchy
+    rigid.add_child(collision)
+    node.add_child(rigid)
+    
+    # change owner of rigid, but not of collision
+    rigid.owner = node
+    
+    var scene = PackedScene.new()
+    # only node and rigid are now packed
+    var result = scene.pack(node)
+    if result == OK:
+        ResourceSaver.save("res://path/name.scn", scene) # or user://...
 
-- :ref:`SceneState<class_scenestate>`  **get_state**  **(** **)**
+Property Descriptions
+---------------------
 
-.. _class_PackedScene_instance:
+.. _class_PackedScene_property__bundled:
 
-- :ref:`Node<class_node>`  **instance**  **(** :ref:`int<class_int>` edit_state=0  **)** const
+- :ref:`Dictionary<class_Dictionary>` **_bundled**
 
-.. _class_PackedScene_pack:
+A dictionary representation of the scene contents.
 
-- :ref:`int<class_int>`  **pack**  **(** :ref:`Node<class_node>` path  **)**
+Available keys include "rnames" and "variants" for resources, "node_count", "nodes", "node_paths" for nodes, "editable_instances" for base scene children overrides, "conn_count" and "conns" for signal connections, and "version" for the format style of the PackedScene.
 
-Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.set_owner<class_Node_set_owner>`.
+Method Descriptions
+-------------------
 
+.. _class_PackedScene_method_can_instance:
+
+- :ref:`bool<class_bool>` **can_instance** **(** **)** const
+
+Returns ``true`` if the scene file has nodes.
+
+.. _class_PackedScene_method_get_state:
+
+- :ref:`SceneState<class_SceneState>` **get_state** **(** **)**
+
+Returns the ``SceneState`` representing the scene file contents.
+
+.. _class_PackedScene_method_instance:
+
+- :ref:`Node<class_Node>` **instance** **(** :ref:`GenEditState<enum_PackedScene_GenEditState>` edit_state=0 **)** const
+
+Instantiates the scene's node hierarchy. Triggers child scene instantiation(s). Triggers :ref:`Node<class_Node>`'s ``NOTIFICATION_INSTANCED`` notification on the root node.
+
+.. _class_PackedScene_method_pack:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Node<class_Node>` path **)**
+
+Pack will ignore any sub-nodes not owned by given node. See :ref:`Node.owner<class_Node_property_owner>`.
 

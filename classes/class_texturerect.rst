@@ -7,81 +7,106 @@
 TextureRect
 ===========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Draws a sprite or a texture inside a User Interface. The texture can tile or not.
+Control for drawing textures.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureRect_get_stretch_mode>`  **(** **)** const                               |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_texture<class_TextureRect_get_texture>`  **(** **)** const                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`has_expand<class_TextureRect_has_expand>`  **(** **)** const                                           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_expand<class_TextureRect_set_expand>`  **(** :ref:`bool<class_bool>` enable  **)**                 |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_stretch_mode<class_TextureRect_set_stretch_mode>`  **(** :ref:`int<class_int>` stretch_mode  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_texture<class_TextureRect_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**        |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`expand<class_TextureRect_property_expand>`             |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`StretchMode<enum_TextureRect_StretchMode>` | :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                    | :ref:`texture<class_TextureRect_property_texture>`           |
++--------------------------------------------------+--------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`bool<class_bool>` **expand** - If [code]true[/code], the texture scales to fit its bounding rectangle. Default value: [code]false[/code].
-- :ref:`int<class_int>` **stretch_mode** - Controls the texture's behavior when you resize the node's bounding rectangle. Set it to one of the [code]STRETCH_*[/code] constants. See the constants to learn more.
-- :ref:`Texture<class_texture>` **texture** - The node's [Texture] resource.
+.. _enum_TextureRect_StretchMode:
 
-Numeric Constants
------------------
+.. _class_TextureRect_constant_STRETCH_SCALE_ON_EXPAND:
+
+.. _class_TextureRect_constant_STRETCH_SCALE:
+
+.. _class_TextureRect_constant_STRETCH_TILE:
+
+.. _class_TextureRect_constant_STRETCH_KEEP:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_CENTERED:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_CENTERED:
+
+.. _class_TextureRect_constant_STRETCH_KEEP_ASPECT_COVERED:
+
+enum **StretchMode**:
 
 - **STRETCH_SCALE_ON_EXPAND** = **0** --- Scale to fit the node's bounding rectangle, only if ``expand`` is ``true``. Default ``stretch_mode``, for backwards compatibility. Until you set ``expand`` to ``true``, the texture will behave like ``STRETCH_KEEP``.
+
 - **STRETCH_SCALE** = **1** --- Scale to fit the node's bounding rectangle.
+
 - **STRETCH_TILE** = **2** --- Tile inside the node's bounding rectangle.
+
 - **STRETCH_KEEP** = **3** --- The texture keeps its original size and stays in the bounding rectangle's top-left corner.
+
 - **STRETCH_KEEP_CENTERED** = **4** --- The texture keeps its original size and stays centered in the node's bounding rectangle.
+
 - **STRETCH_KEEP_ASPECT** = **5** --- Scale the texture to fit the node's bounding rectangle, but maintain the texture's aspect ratio.
+
 - **STRETCH_KEEP_ASPECT_CENTERED** = **6** --- Scale the texture to fit the node's bounding rectangle, center it and maintain its aspect ratio.
+
 - **STRETCH_KEEP_ASPECT_COVERED** = **7** --- Scale the texture so that the shorter side fits the bounding rectangle. The other side clips to the node's limits.
 
 Description
 -----------
 
-Use TextureRect to draw icons and sprites in your User Interfaces. To create panels and menu boxes, take a look at NinePatchFrame. Its Stretch Mode property controls the texture's scale and placement. It can scale, tile and stay centered inside its bounding rectangle. TextureRect is one of the 5 most common nodes to create game UI.
+Used to draw icons and sprites in a user interface. The texture's placement can be controlled with the :ref:`stretch_mode<class_TextureRect_property_stretch_mode>` property. It can scale, tile, or stay centered inside its bounding rectangle.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_TextureRect_get_stretch_mode:
+.. _class_TextureRect_property_expand:
 
-- :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
+- :ref:`bool<class_bool>` **expand**
 
-.. _class_TextureRect_get_texture:
++----------+-------------------+
+| *Setter* | set_expand(value) |
++----------+-------------------+
+| *Getter* | has_expand()      |
++----------+-------------------+
 
-- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
+If ``true``, the texture scales to fit its bounding rectangle. Default value: ``false``.
 
-.. _class_TextureRect_has_expand:
+.. _class_TextureRect_property_stretch_mode:
 
-- :ref:`bool<class_bool>`  **has_expand**  **(** **)** const
+- :ref:`StretchMode<enum_TextureRect_StretchMode>` **stretch_mode**
 
-.. _class_TextureRect_set_expand:
++----------+-------------------------+
+| *Setter* | set_stretch_mode(value) |
++----------+-------------------------+
+| *Getter* | get_stretch_mode()      |
++----------+-------------------------+
 
-- void  **set_expand**  **(** :ref:`bool<class_bool>` enable  **)**
+Controls the texture's behavior when resizing the node's bounding rectangle. See :ref:`StretchMode<enum_TextureRect_StretchMode>`.
 
-.. _class_TextureRect_set_stretch_mode:
+.. _class_TextureRect_property_texture:
 
-- void  **set_stretch_mode**  **(** :ref:`int<class_int>` stretch_mode  **)**
+- :ref:`Texture<class_Texture>` **texture**
 
-.. _class_TextureRect_set_texture:
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
-- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
-
+The node's :ref:`Texture<class_Texture>` resource.
 

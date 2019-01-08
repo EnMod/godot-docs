@@ -7,7 +7,7 @@
 CenterContainer
 ===============
 
-**Inherits:** :ref:`Container<class_container>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,30 @@ Brief Description
 
 Keeps children controls centered.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_using_top_left<class_CenterContainer_is_using_top_left>`  **(** **)** const                         |
-+--------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_use_top_left<class_CenterContainer_set_use_top_left>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+--------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **use_top_left**
++-------------------------+------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`use_top_left<class_CenterContainer_property_use_top_left>` |
++-------------------------+------------------------------------------------------------------+
 
 Description
 -----------
 
 CenterContainer Keeps children controls centered. This container keeps all children to their minimum size, in the center.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_CenterContainer_is_using_top_left:
+.. _class_CenterContainer_property_use_top_left:
 
-- :ref:`bool<class_bool>`  **is_using_top_left**  **(** **)** const
+- :ref:`bool<class_bool>` **use_top_left**
 
-Should put children to the top left corner instead of center of the container.
++----------+-------------------------+
+| *Setter* | set_use_top_left(value) |
++----------+-------------------------+
+| *Getter* | is_using_top_left()     |
++----------+-------------------------+
 
-.. _class_CenterContainer_set_use_top_left:
-
-- void  **set_use_top_left**  **(** :ref:`bool<class_bool>` enable  **)**
-
-This function will anchor the container children to the top left corner of the the container boundaries, moving all its children to that position, (the children new center will be the top left corner of the container).
-
+If ``true``, centers children relative to the ``CenterContainer``'s top left corner. Default value: ``false``.
 

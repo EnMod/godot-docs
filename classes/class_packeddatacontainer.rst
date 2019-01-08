@@ -7,7 +7,7 @@
 PackedDataContainer
 ===================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,29 +16,37 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`pack<class_PackedDataContainer_pack>`  **(** :ref:`Variant<class_variant>` value  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`size<class_PackedDataContainer_size>`  **(** **)** const                                |
-+------------------------+-----------------------------------------------------------------------------------------------+
++-------------------------------------------+--------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`__data__<class_PackedDataContainer_property___data__>` |
++-------------------------------------------+--------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`PoolByteArray<class_poolbytearray>` **__data__**
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pack<class_PackedDataContainer_method_pack>` **(** :ref:`Variant<class_Variant>` value **)** |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`size<class_PackedDataContainer_method_size>` **(** **)** const                               |
++---------------------------------------+----------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_PackedDataContainer_pack:
+.. _class_PackedDataContainer_property___data__:
 
-- :ref:`int<class_int>`  **pack**  **(** :ref:`Variant<class_variant>` value  **)**
+- :ref:`PoolByteArray<class_PoolByteArray>` **__data__**
 
-.. _class_PackedDataContainer_size:
+Method Descriptions
+-------------------
 
-- :ref:`int<class_int>`  **size**  **(** **)** const
+.. _class_PackedDataContainer_method_pack:
 
+- :ref:`Error<enum_@GlobalScope_Error>` **pack** **(** :ref:`Variant<class_Variant>` value **)**
+
+.. _class_PackedDataContainer_method_size:
+
+- :ref:`int<class_int>` **size** **(** **)** const
 

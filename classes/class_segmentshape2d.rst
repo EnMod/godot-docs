@@ -7,7 +7,7 @@
 SegmentShape2D
 ==============
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,55 +16,44 @@ Brief Description
 
 Segment shape for 2D collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_a<class_SegmentShape2D_get_a>`  **(** **)** const                            |
-+--------------------------------+----------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_b<class_SegmentShape2D_get_b>`  **(** **)** const                            |
-+--------------------------------+----------------------------------------------------------------------------------------+
-| void                           | :ref:`set_a<class_SegmentShape2D_set_a>`  **(** :ref:`Vector2<class_vector2>` a  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------+
-| void                           | :ref:`set_b<class_SegmentShape2D_set_b>`  **(** :ref:`Vector2<class_vector2>` b  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Vector2<class_vector2>` **a** - The segment's first point position.
-- :ref:`Vector2<class_vector2>` **b** - The segment's second point position.
++-------------------------------+-------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`a<class_SegmentShape2D_property_a>` |
++-------------------------------+-------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`b<class_SegmentShape2D_property_b>` |
++-------------------------------+-------------------------------------------+
 
 Description
 -----------
 
 Segment shape for 2D collisions. Consists of two points, ``a`` and ``b``.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_SegmentShape2D_get_a:
+.. _class_SegmentShape2D_property_a:
 
-- :ref:`Vector2<class_vector2>`  **get_a**  **(** **)** const
+- :ref:`Vector2<class_Vector2>` **a**
 
-Return the first point's position.
++----------+--------------+
+| *Setter* | set_a(value) |
++----------+--------------+
+| *Getter* | get_a()      |
++----------+--------------+
 
-.. _class_SegmentShape2D_get_b:
+The segment's first point position.
 
-- :ref:`Vector2<class_vector2>`  **get_b**  **(** **)** const
+.. _class_SegmentShape2D_property_b:
 
-Return the second point's position.
+- :ref:`Vector2<class_Vector2>` **b**
 
-.. _class_SegmentShape2D_set_a:
++----------+--------------+
+| *Setter* | set_b(value) |
++----------+--------------+
+| *Getter* | get_b()      |
++----------+--------------+
 
-- void  **set_a**  **(** :ref:`Vector2<class_vector2>` a  **)**
-
-Set the first point's position.
-
-.. _class_SegmentShape2D_set_b:
-
-- void  **set_b**  **(** :ref:`Vector2<class_vector2>` b  **)**
-
-Set the second point's position.
-
+The segment's second point position.
 

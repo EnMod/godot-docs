@@ -33,7 +33,8 @@ positive to the engine, regardless of their skill set:
    code via pull requests, testing the development snapshots or directly the
    git *master* branch, report bugs or suggest enhancements on the issue
    tracker, improve the official documentation (both the class reference and
-   tutorials). The following sections will cover each of those "direct" ways
+   tutorials) and its translations.
+   The following sections will cover each of those "direct" ways
    of contributing to the engine.
 
 -  **Donate.** Godot is a non-profit project, but it can still benefit from
@@ -42,18 +43,19 @@ positive to the engine, regardless of their skill set:
    acquire hardware when necessary (e.g. we used donation money to buy a
    Macbook Pro to implement Retina/HiDPI support and various other
    macOS-related features).
-   Most importantly, we also used donation money to hire our lead developer
-   Juan Linietsky, so that he can work full-time on the engine. Even with a low
+   Most importantly, we also used donation money to hire core developers so they
+   can work full-time on the engine. Even with a low
    monthly wage, we need a steady donation income to continue doing this, which
    has been very beneficial to the project so far. So if you want to donate
-   some money to the project, check `our website <http://godotengine.org/donate>`_
+   some money to the project, check `our website <https://godotengine.org/donate>`_
    for details.
 
 Contributing code
 -----------------
 
 The possibility to study, use, modify and redistribute modifications of the
-engine's source code are the fundamental rights that Godot's license grant you,
+engine's source code are the fundamental rights that
+Godot's `MIT <https://tldrlegal.com/license/mit-license>`_ license grants you,
 making it `free and open source software <https://en.wikipedia.org/wiki/Free_and_open-source_software>`_.
 
 As such, everyone is entitled to modify
@@ -68,7 +70,7 @@ Contributing code changes upstream has two big advantages:
 -  Your own code will be reviewed and improved by other developers, and will be
    further maintained directly in the upstream project, so you won't have to
    reapply your own changes every time you move to a newer version. On the
-   other hand it comes with a responsability, as your changes have to be
+   other hand it comes with a responsibility, as your changes have to be
    generic enough to be beneficial to all users, and not just your project; so
    in some cases it might still be relevant to keep your changes only for your
    own project, if they are too specific.
@@ -81,6 +83,8 @@ Contributing code changes upstream has two big advantages:
 To ensure good collaboration and overall quality, the Godot developers
 enforce some rules for code contributions, for example regarding the style to
 use in the C++ code (indentation, brackets, etc.) or the git and PR workflow.
+
+A good place to start is by searching for issues tagged as `junior jobs <https://github.com/godotengine/godot/issues?q=is%3Aissue+is%3Aopen+label%3A%22junior+job%22>`_ (or `Hacktoberfest <https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+label%3AHacktoberfest+>`_ during October) on GitHub.
 
 .. seealso:: Technical details about the PR workflow are outlined in a
              specific section, :ref:`doc_pr_workflow`.
@@ -106,8 +110,7 @@ To help with the testing, you have several possibilities:
    :ref:`Compiling <toc-devel-compiling>` page for your platform.
 
 -  Test official pre-release binaries when they are announced (usually on the
-   blog and other community platforms), such as alpha, beta and RC (release
-   candidate) builds.
+   blog and other community platforms), such as alpha, beta and release candidate (RC) builds.
 
 -  Test "trusted" unofficial builds of the development branch; just ask
    community members for reliable providers. Whenever possible, it's best to
@@ -126,7 +129,7 @@ Godot uses `GitHub's issue tracker <https://github.com/godotengine/godot/issues>
 for bug reports and enhancement suggestions. You will need a GitHub account to
 be able to open a new issue there, and click on the "New issue" button.
 
-When you report a bug, you should keep in mind that the process is very similar
+When you report a bug, you should keep in mind that the process is similar
 to an appointment with your doctor. You noticed *symptoms* that make you think
 that something might be wrong (the engine crashes, some features don't work as
 expected, etc.). It's the role of the bug triaging team and the developers to
@@ -146,7 +149,7 @@ always provide:
 -  **Hardware.** Sometimes bugs are hardware-specific, i.e. they happen
    only on certain processors, graphic cards, etc. If you are able to,
    it can be helpful to include information on your hardware.
-   
+
 -  **Godot version.** This is a must have. Some issues might be relevant in the
    current stable release, but fixed in the development branch, or the other
    way around. You might also be using an obsolete version of Godot and
@@ -181,7 +184,7 @@ There are two separate resources referred to as "documentation" in Godot:
    `doc/base/classes.xml` in Godot's git repository, and make a pull request.
    See :ref:`doc_updating_the_class_reference` for more details.
 
--  **The tutorials and engine documentation.** This is the part you are reading
+-  **The tutorials and engine documentation and its translations.** This is the part you are reading
    now, which is distributed in the HTML, PDF and EPUB formats. Its contents
    are generated from plain text files in the reStructured Text (rst) format,
    to which you can contribute via pull requests on the

@@ -7,7 +7,7 @@
 GradientTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,41 +16,44 @@ Brief Description
 
 Gradient filled texture.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`Gradient<class_gradient>`  | :ref:`get_gradient<class_GradientTexture_get_gradient>`  **(** **)** const                                     |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_gradient<class_GradientTexture_set_gradient>`  **(** :ref:`Gradient<class_gradient>` gradient  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_width<class_GradientTexture_set_width>`  **(** :ref:`int<class_int>` width  **)**                    |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Gradient<class_gradient>` **gradient** - The [Gradient] that will be used to fill the texture.
-- :ref:`int<class_int>` **width** - The number of color samples that will be obtained from the [Gradient].
++---------------------------------+----------------------------------------------------------+
+| :ref:`Gradient<class_Gradient>` | :ref:`gradient<class_GradientTexture_property_gradient>` |
++---------------------------------+----------------------------------------------------------+
+| :ref:`int<class_int>`           | :ref:`width<class_GradientTexture_property_width>`       |
++---------------------------------+----------------------------------------------------------+
 
 Description
 -----------
 
-Uses a :ref:`Gradient<class_gradient>` to fill the texture data, the gradient will be filled from left to right using colors obtained from the gradient, this means that the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`set_width<class_GradientTexture_set_width>`).
+Uses a :ref:`Gradient<class_Gradient>` to fill the texture data, the gradient will be filled from left to right using colors obtained from the gradient, this means that the texture does not necessarily represent an exact copy of the gradient, but instead an interpolation of samples obtained from the gradient at fixed steps (see :ref:`width<class_GradientTexture_property_width>`).
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_GradientTexture_get_gradient:
+.. _class_GradientTexture_property_gradient:
 
-- :ref:`Gradient<class_gradient>`  **get_gradient**  **(** **)** const
+- :ref:`Gradient<class_Gradient>` **gradient**
 
-.. _class_GradientTexture_set_gradient:
++----------+---------------------+
+| *Setter* | set_gradient(value) |
++----------+---------------------+
+| *Getter* | get_gradient()      |
++----------+---------------------+
 
-- void  **set_gradient**  **(** :ref:`Gradient<class_gradient>` gradient  **)**
+The :ref:`Gradient<class_Gradient>` that will be used to fill the texture.
 
-.. _class_GradientTexture_set_width:
+.. _class_GradientTexture_property_width:
 
-- void  **set_width**  **(** :ref:`int<class_int>` width  **)**
+- :ref:`int<class_int>` **width**
 
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
+
+The number of color samples that will be obtained from the :ref:`Gradient<class_Gradient>`.
 

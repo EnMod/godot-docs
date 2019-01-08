@@ -7,9 +7,9 @@
 Range
 =====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`SpinBox<class_spinbox>`, :ref:`ScrollBar<class_scrollbar>`, :ref:`ProgressBar<class_progressbar>`, :ref:`TextureProgress<class_textureprogress>`, :ref:`Slider<class_slider>`
+**Inherited By:** :ref:`ProgressBar<class_ProgressBar>`, :ref:`ScrollBar<class_ScrollBar>`, :ref:`Slider<class_Slider>`, :ref:`SpinBox<class_SpinBox>`, :ref:`TextureProgress<class_TextureProgress>`
 
 **Category:** Core
 
@@ -18,164 +18,195 @@ Brief Description
 
 Abstract base class for range-based controls.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_as_ratio<class_Range_get_as_ratio>`  **(** **)** const                                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_max<class_Range_get_max>`  **(** **)** const                                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_min<class_Range_get_min>`  **(** **)** const                                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_page<class_Range_get_page>`  **(** **)** const                                                        |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_step<class_Range_get_step>`  **(** **)** const                                                        |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_value<class_Range_get_value>`  **(** **)** const                                                      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_ratio_exp<class_Range_is_ratio_exp>`  **(** **)** const                                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_using_rounded_values<class_Range_is_using_rounded_values>`  **(** **)** const                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_as_ratio<class_Range_set_as_ratio>`  **(** :ref:`float<class_float>` value  **)**                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_exp_ratio<class_Range_set_exp_ratio>`  **(** :ref:`bool<class_bool>` enabled  **)**                   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_max<class_Range_set_max>`  **(** :ref:`float<class_float>` maximum  **)**                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_min<class_Range_set_min>`  **(** :ref:`float<class_float>` minimum  **)**                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_page<class_Range_set_page>`  **(** :ref:`float<class_float>` pagesize  **)**                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_step<class_Range_set_step>`  **(** :ref:`float<class_float>` step  **)**                              |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_use_rounded_values<class_Range_set_use_rounded_values>`  **(** :ref:`bool<class_bool>` enabled  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_value<class_Range_set_value>`  **(** :ref:`float<class_float>` value  **)**                           |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`share<class_Range_share>`  **(** :ref:`Node<class_node>` with  **)**                                      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`unshare<class_Range_unshare>`  **(** **)**                                                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`allow_greater<class_Range_property_allow_greater>` |
++---------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`allow_lesser<class_Range_property_allow_lesser>`   |
++---------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`exp_edit<class_Range_property_exp_edit>`           |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`max_value<class_Range_property_max_value>`         |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`min_value<class_Range_property_min_value>`         |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`page<class_Range_property_page>`                   |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`ratio<class_Range_property_ratio>`                 |
++---------------------------+----------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`rounded<class_Range_property_rounded>`             |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`step<class_Range_property_step>`                   |
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`value<class_Range_property_value>`                 |
++---------------------------+----------------------------------------------------------+
+
+Methods
+-------
+
++------+---------------------------------------------------------------------------------+
+| void | :ref:`share<class_Range_method_share>` **(** :ref:`Node<class_Node>` with **)** |
++------+---------------------------------------------------------------------------------+
+| void | :ref:`unshare<class_Range_method_unshare>` **(** **)**                          |
++------+---------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **changed**  **(** **)**
-This signal is emitted when min, max, range or step change.
+.. _class_Range_signal_changed:
 
--  **value_changed**  **(** :ref:`float<class_float>` value  **)**
-This signal is emitted when value changes.
+- **changed** **(** **)**
 
+Emitted when :ref:`min_value<class_Range_property_min_value>`, :ref:`max_value<class_Range_property_max_value>`, :ref:`page<class_Range_property_page>`, or :ref:`step<class_Range_property_step>` change.
 
-Member Variables
-----------------
+.. _class_Range_signal_value_changed:
 
-- :ref:`bool<class_bool>` **exp_edit**
-- :ref:`float<class_float>` **max_value**
-- :ref:`float<class_float>` **min_value**
-- :ref:`float<class_float>` **page**
-- :ref:`bool<class_bool>` **rounded**
-- :ref:`float<class_float>` **step**
-- :ref:`float<class_float>` **value**
+- **value_changed** **(** :ref:`float<class_float>` value **)**
+
+Emitted when :ref:`value<class_Range_property_value>` changes.
 
 Description
 -----------
 
-Range is a base class for :ref:`Control<class_control>` nodes that change a floating point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_scrollbar>`.
+Range is a base class for :ref:`Control<class_Control>` nodes that change a floating point *value* between a *minimum* and a *maximum*, using *step* and *page*, for example a :ref:`ScrollBar<class_ScrollBar>`.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Range_get_as_ratio:
+.. _class_Range_property_allow_greater:
 
-- :ref:`float<class_float>`  **get_as_ratio**  **(** **)** const
+- :ref:`bool<class_bool>` **allow_greater**
 
-Return value mapped to 0 to 1 range.
++----------+--------------------------+
+| *Setter* | set_allow_greater(value) |
++----------+--------------------------+
+| *Getter* | is_greater_allowed()     |
++----------+--------------------------+
 
-.. _class_Range_get_max:
+If ``true``, :ref:`value<class_Range_property_value>` may be greater than :ref:`max_value<class_Range_property_max_value>`. Default value: ``false``.
 
-- :ref:`float<class_float>`  **get_max**  **(** **)** const
+.. _class_Range_property_allow_lesser:
 
-Return the maximum value.
+- :ref:`bool<class_bool>` **allow_lesser**
 
-.. _class_Range_get_min:
++----------+-------------------------+
+| *Setter* | set_allow_lesser(value) |
++----------+-------------------------+
+| *Getter* | is_lesser_allowed()     |
++----------+-------------------------+
 
-- :ref:`float<class_float>`  **get_min**  **(** **)** const
+If ``true``, :ref:`value<class_Range_property_value>` may be less than :ref:`min_value<class_Range_property_min_value>`. Default value: ``false``.
 
-Return the minimum value.
+.. _class_Range_property_exp_edit:
 
-.. _class_Range_get_page:
+- :ref:`bool<class_bool>` **exp_edit**
 
-- :ref:`float<class_float>`  **get_page**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_exp_ratio(value) |
++----------+----------------------+
+| *Getter* | is_ratio_exp()       |
++----------+----------------------+
 
-Return the page size, if page is 0, paging is disabled.
+If ``true``, and ``min_value`` is greater than 0, ``value`` will be represented exponentially rather than linearly.
 
-.. _class_Range_get_step:
+.. _class_Range_property_max_value:
 
-- :ref:`float<class_float>`  **get_step**  **(** **)** const
+- :ref:`float<class_float>` **max_value**
 
-Return the stepping, if step is 0, stepping is disabled.
++----------+----------------+
+| *Setter* | set_max(value) |
++----------+----------------+
+| *Getter* | get_max()      |
++----------+----------------+
 
-.. _class_Range_get_value:
+Maximum value. Range is clamped if ``value`` is greater than ``max_value``. Default value: ``100``.
 
-- :ref:`float<class_float>`  **get_value**  **(** **)** const
+.. _class_Range_property_min_value:
 
-.. _class_Range_is_ratio_exp:
+- :ref:`float<class_float>` **min_value**
 
-- :ref:`bool<class_bool>`  **is_ratio_exp**  **(** **)** const
++----------+----------------+
+| *Setter* | set_min(value) |
++----------+----------------+
+| *Getter* | get_min()      |
++----------+----------------+
 
-.. _class_Range_is_using_rounded_values:
+Minimum value. Range is clamped if ``value`` is less than ``min_value``. Default value: ``0``.
 
-- :ref:`bool<class_bool>`  **is_using_rounded_values**  **(** **)** const
+.. _class_Range_property_page:
 
-.. _class_Range_set_as_ratio:
+- :ref:`float<class_float>` **page**
 
-- void  **set_as_ratio**  **(** :ref:`float<class_float>` value  **)**
++----------+-----------------+
+| *Setter* | set_page(value) |
++----------+-----------------+
+| *Getter* | get_page()      |
++----------+-----------------+
 
-Set value mapped to 0 to 1 (unit) range, it will then be converted to the actual value within min and max.
+Page size. Used mainly for :ref:`ScrollBar<class_ScrollBar>`. ScrollBar's length is its size multiplied by ``page`` over the difference between ``min_value`` and ``max_value``.
 
-.. _class_Range_set_exp_ratio:
+.. _class_Range_property_ratio:
 
-- void  **set_exp_ratio**  **(** :ref:`bool<class_bool>` enabled  **)**
+- :ref:`float<class_float>` **ratio**
 
-.. _class_Range_set_max:
++----------+---------------------+
+| *Setter* | set_as_ratio(value) |
++----------+---------------------+
+| *Getter* | get_as_ratio()      |
++----------+---------------------+
 
-- void  **set_max**  **(** :ref:`float<class_float>` maximum  **)**
+The value mapped between 0 and 1.
 
-.. _class_Range_set_min:
+.. _class_Range_property_rounded:
 
-- void  **set_min**  **(** :ref:`float<class_float>` minimum  **)**
+- :ref:`bool<class_bool>` **rounded**
 
-Set minimum value, clamped range value to it if it's less.
++----------+-------------------------------+
+| *Setter* | set_use_rounded_values(value) |
++----------+-------------------------------+
+| *Getter* | is_using_rounded_values()     |
++----------+-------------------------------+
 
-.. _class_Range_set_page:
+If ``true``, ``value`` will always be rounded to the nearest integer. Default value: ``false``.
 
-- void  **set_page**  **(** :ref:`float<class_float>` pagesize  **)**
+.. _class_Range_property_step:
 
-Set page size. Page is mainly used for scrollbars or anything that controls text scrolling.
+- :ref:`float<class_float>` **step**
 
-.. _class_Range_set_step:
++----------+-----------------+
+| *Setter* | set_step(value) |
++----------+-----------------+
+| *Getter* | get_step()      |
++----------+-----------------+
 
-- void  **set_step**  **(** :ref:`float<class_float>` step  **)**
+If greater than 0, ``value`` will always be rounded to a multiple of ``step``. If ``rounded`` is also ``true``, ``value`` will first be rounded to a multiple of ``step`` then rounded to the nearest integer.
 
-Set step value. If step is 0, stepping will be disabled.
+.. _class_Range_property_value:
 
-.. _class_Range_set_use_rounded_values:
+- :ref:`float<class_float>` **value**
 
-- void  **set_use_rounded_values**  **(** :ref:`bool<class_bool>` enabled  **)**
++----------+------------------+
+| *Setter* | set_value(value) |
++----------+------------------+
+| *Getter* | get_value()      |
++----------+------------------+
 
-.. _class_Range_set_value:
+Range's current value.
 
-- void  **set_value**  **(** :ref:`float<class_float>` value  **)**
+Method Descriptions
+-------------------
 
-.. _class_Range_share:
+.. _class_Range_method_share:
 
-- void  **share**  **(** :ref:`Node<class_node>` with  **)**
+- void **share** **(** :ref:`Node<class_Node>` with **)**
 
-.. _class_Range_unshare:
+Binds two ranges together along with any ranges previously grouped with either of them. When any of range's member variables change, it will share the new value with all other ranges in its group.
 
-- void  **unshare**  **(** **)**
+.. _class_Range_method_unshare:
 
+- void **unshare** **(** **)**
+
+Stop range from sharing its member variables with any other.
 

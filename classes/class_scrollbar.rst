@@ -7,9 +7,9 @@
 ScrollBar
 =========
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`HScrollBar<class_hscrollbar>`, :ref:`VScrollBar<class_vscrollbar>`
+**Inherited By:** :ref:`HScrollBar<class_HScrollBar>`, :ref:`VScrollBar<class_VScrollBar>`
 
 **Category:** Core
 
@@ -18,39 +18,37 @@ Brief Description
 
 Base class for scroll bars.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_custom_step<class_ScrollBar_get_custom_step>`  **(** **)** const                           |
-+----------------------------+------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_custom_step<class_ScrollBar_set_custom_step>`  **(** :ref:`float<class_float>` step  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`custom_step<class_ScrollBar_property_custom_step>` |
++---------------------------+----------------------------------------------------------+
 
 Signals
 -------
 
--  **scrolling**  **(** **)**
+.. _class_ScrollBar_signal_scrolling:
 
-Member Variables
-----------------
+- **scrolling** **(** **)**
 
-- :ref:`float<class_float>` **custom_step**
+Emitted whenever the scrollbar is being scrolled.
 
 Description
 -----------
 
-Scrollbars are a :ref:`Range<class_range>` based :ref:`Control<class_control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_hscrollbar>`) and Vertical (:ref:`VScrollBar<class_vscrollbar>`) versions are available.
+Scrollbars are a :ref:`Range<class_Range>` based :ref:`Control<class_Control>`, that display a draggable area (the size of the page). Horizontal (:ref:`HScrollBar<class_HScrollBar>`) and Vertical (:ref:`VScrollBar<class_VScrollBar>`) versions are available.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ScrollBar_get_custom_step:
+.. _class_ScrollBar_property_custom_step:
 
-- :ref:`float<class_float>`  **get_custom_step**  **(** **)** const
+- :ref:`float<class_float>` **custom_step**
 
-.. _class_ScrollBar_set_custom_step:
-
-- void  **set_custom_step**  **(** :ref:`float<class_float>` step  **)**
-
++----------+------------------------+
+| *Setter* | set_custom_step(value) |
++----------+------------------------+
+| *Getter* | get_custom_step()      |
++----------+------------------------+
 

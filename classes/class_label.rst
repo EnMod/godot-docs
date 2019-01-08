@@ -7,241 +7,273 @@
 Label
 =====
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_richtextlabel>`.
+Displays plain text in a line or wrapped inside a rectangle. For formatted text, use :ref:`RichTextLabel<class_RichTextLabel>`.
 
-Member Functions
+Properties
+----------
+
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`Align<enum_Label_Align>`   | :ref:`align<class_Label_property_align>`                           |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`autowrap<class_Label_property_autowrap>`                     |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`clip_text<class_Label_property_clip_text>`                   |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`lines_skipped<class_Label_property_lines_skipped>`           |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`max_lines_visible<class_Label_property_max_lines_visible>`   |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>`        | :ref:`percent_visible<class_Label_property_percent_visible>`       |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`String<class_String>`      | :ref:`text<class_Label_property_text>`                             |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`bool<class_bool>`          | :ref:`uppercase<class_Label_property_uppercase>`                   |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`VAlign<enum_Label_VAlign>` | :ref:`valign<class_Label_property_valign>`                         |
++----------------------------------+--------------------------------------------------------------------+
+| :ref:`int<class_int>`            | :ref:`visible_characters<class_Label_property_visible_characters>` |
++----------------------------------+--------------------------------------------------------------------+
+
+Methods
+-------
+
++-----------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_count<class_Label_method_get_line_count>` **(** **)** const                       |
++-----------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_line_height<class_Label_method_get_line_height>` **(** **)** const                     |
++-----------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_total_character_count<class_Label_method_get_total_character_count>` **(** **)** const |
++-----------------------+--------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_visible_line_count<class_Label_method_get_visible_line_count>` **(** **)** const       |
++-----------------------+--------------------------------------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_align<class_Label_get_align>`  **(** **)** const                                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_line_count<class_Label_get_line_count>`  **(** **)** const                                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_line_height<class_Label_get_line_height>`  **(** **)** const                                              |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_lines_skipped<class_Label_get_lines_skipped>`  **(** **)** const                                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_max_lines_visible<class_Label_get_max_lines_visible>`  **(** **)** const                                  |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_percent_visible<class_Label_get_percent_visible>`  **(** **)** const                                      |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_text<class_Label_get_text>`  **(** **)** const                                                            |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_total_character_count<class_Label_get_total_character_count>`  **(** **)** const                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_valign<class_Label_get_valign>`  **(** **)** const                                                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_visible_characters<class_Label_get_visible_characters>`  **(** **)** const                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_visible_line_count<class_Label_get_visible_line_count>`  **(** **)** const                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`has_autowrap<class_Label_has_autowrap>`  **(** **)** const                                                    |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_clipping_text<class_Label_is_clipping_text>`  **(** **)** const                                            |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_uppercase<class_Label_is_uppercase>`  **(** **)** const                                                    |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_align<class_Label_set_align>`  **(** :ref:`int<class_int>` align  **)**                                   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_autowrap<class_Label_set_autowrap>`  **(** :ref:`bool<class_bool>` enable  **)**                          |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_clip_text<class_Label_set_clip_text>`  **(** :ref:`bool<class_bool>` enable  **)**                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_lines_skipped<class_Label_set_lines_skipped>`  **(** :ref:`int<class_int>` lines_skipped  **)**           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_max_lines_visible<class_Label_set_max_lines_visible>`  **(** :ref:`int<class_int>` lines_visible  **)**   |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_percent_visible<class_Label_set_percent_visible>`  **(** :ref:`float<class_float>` percent_visible  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_text<class_Label_set_text>`  **(** :ref:`String<class_string>` text  **)**                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_uppercase<class_Label_set_uppercase>`  **(** :ref:`bool<class_bool>` enable  **)**                        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_valign<class_Label_set_valign>`  **(** :ref:`int<class_int>` valign  **)**                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_visible_characters<class_Label_set_visible_characters>`  **(** :ref:`int<class_int>` amount  **)**        |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------+
++---------------------------------+-----------------------+
+| :ref:`Font<class_Font>`         | font                  |
++---------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | font_color            |
++---------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | font_color_shadow     |
++---------------------------------+-----------------------+
+| :ref:`Color<class_Color>`       | font_outline_modulate |
++---------------------------------+-----------------------+
+| :ref:`int<class_int>`           | line_spacing          |
++---------------------------------+-----------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal                |
++---------------------------------+-----------------------+
+| :ref:`int<class_int>`           | shadow_as_outline     |
++---------------------------------+-----------------------+
+| :ref:`int<class_int>`           | shadow_offset_x       |
++---------------------------------+-----------------------+
+| :ref:`int<class_int>`           | shadow_offset_y       |
++---------------------------------+-----------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`int<class_int>` **align** - Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the [code]ALIGN_*[/code] constants.
-- :ref:`bool<class_bool>` **autowrap** - If [code]true[/code], wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
-- :ref:`bool<class_bool>` **clip_text** - If [code]true[/code], the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
-- :ref:`int<class_int>` **lines_skipped** - The node ignores the first [code]lines_skipped[/code] lines before it starts to display text.
-- :ref:`int<class_int>` **max_lines_visible** - Limits the lines of text the node shows on screen.
-- :ref:`float<class_float>` **percent_visible** - Limits the count of visible characters. If you set [code]percent_visible[/code] to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
-- :ref:`String<class_string>` **text** - The text to display on screen.
-- :ref:`bool<class_bool>` **uppercase** - If [code]true[/code], all the text displays as UPPERCASE.
-- :ref:`int<class_int>` **valign** - Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the [code]VALIGN_*[/code] constants.
+.. _enum_Label_Align:
 
-Numeric Constants
------------------
+.. _class_Label_constant_ALIGN_LEFT:
+
+.. _class_Label_constant_ALIGN_CENTER:
+
+.. _class_Label_constant_ALIGN_RIGHT:
+
+.. _class_Label_constant_ALIGN_FILL:
+
+enum **Align**:
 
 - **ALIGN_LEFT** = **0** --- Align rows to the left (default).
+
 - **ALIGN_CENTER** = **1** --- Align rows centered.
+
 - **ALIGN_RIGHT** = **2** --- Align rows to the right (default).
+
 - **ALIGN_FILL** = **3** --- Expand row whitespaces to fit the width.
+
+.. _enum_Label_VAlign:
+
+.. _class_Label_constant_VALIGN_TOP:
+
+.. _class_Label_constant_VALIGN_CENTER:
+
+.. _class_Label_constant_VALIGN_BOTTOM:
+
+.. _class_Label_constant_VALIGN_FILL:
+
+enum **VAlign**:
+
 - **VALIGN_TOP** = **0** --- Align the whole text to the top.
+
 - **VALIGN_CENTER** = **1** --- Align the whole text to the center.
+
 - **VALIGN_BOTTOM** = **2** --- Align the whole text to the bottom.
+
 - **VALIGN_FILL** = **3** --- Align the whole text by spreading the rows.
 
 Description
 -----------
 
-Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment, and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics or other formatting. For that, use :ref:`RichTextLabel<class_richtextlabel>` instead.
+Label displays plain text on the screen. It gives you control over the horizontal and vertical alignment, and can wrap the text inside the node's bounding rectangle. It doesn't support bold, italics or other formatting. For that, use :ref:`RichTextLabel<class_RichTextLabel>` instead.
 
-Member Function Description
----------------------------
+Note that contrarily to most other :ref:`Control<class_Control>`\ s, Label's :ref:`Control.mouse_filter<class_Control_property_mouse_filter>` defaults to MOUSE_FILTER_IGNORE (i.e. it doesn't react to mouse input events).
 
-.. _class_Label_get_align:
+Property Descriptions
+---------------------
 
-- :ref:`int<class_int>`  **get_align**  **(** **)** const
+.. _class_Label_property_align:
 
-Return the alignment mode (any of the ALIGN\_\* enumeration values).
+- :ref:`Align<enum_Label_Align>` **align**
 
-.. _class_Label_get_line_count:
++----------+------------------+
+| *Setter* | set_align(value) |
++----------+------------------+
+| *Getter* | get_align()      |
++----------+------------------+
 
-- :ref:`int<class_int>`  **get_line_count**  **(** **)** const
+Controls the text's horizontal align. Supports left, center, right, and fill, or justify. Set it to one of the ``ALIGN_*`` constants.
 
-Returns the amount of lines of text the Label has.
+.. _class_Label_property_autowrap:
 
-.. _class_Label_get_line_height:
+- :ref:`bool<class_bool>` **autowrap**
 
-- :ref:`int<class_int>`  **get_line_height**  **(** **)** const
++----------+---------------------+
+| *Setter* | set_autowrap(value) |
++----------+---------------------+
+| *Getter* | has_autowrap()      |
++----------+---------------------+
 
-Returns the font size in pixels.
+If ``true``, wraps the text inside the node's bounding rectangle. If you resize the node, it will change its height automatically to show all the text. Default: false.
 
-.. _class_Label_get_lines_skipped:
+.. _class_Label_property_clip_text:
 
-- :ref:`int<class_int>`  **get_lines_skipped**  **(** **)** const
+- :ref:`bool<class_bool>` **clip_text**
 
-Return the the number of lines to skipped before displaying.
++----------+----------------------+
+| *Setter* | set_clip_text(value) |
++----------+----------------------+
+| *Getter* | is_clipping_text()   |
++----------+----------------------+
 
-.. _class_Label_get_max_lines_visible:
+If ``true``, the Label only shows the text that fits inside its bounding rectangle. It also lets you scale the node down freely.
 
-- :ref:`int<class_int>`  **get_max_lines_visible**  **(** **)** const
+.. _class_Label_property_lines_skipped:
 
-Return the restricted number of lines to display. Returns -1 if unrestricted.
+- :ref:`int<class_int>` **lines_skipped**
 
-.. _class_Label_get_percent_visible:
++----------+--------------------------+
+| *Setter* | set_lines_skipped(value) |
++----------+--------------------------+
+| *Getter* | get_lines_skipped()      |
++----------+--------------------------+
 
-- :ref:`float<class_float>`  **get_percent_visible**  **(** **)** const
+The node ignores the first ``lines_skipped`` lines before it starts to display text.
 
-Return the restricted number of characters to display (as a percentage of the total text).
+.. _class_Label_property_max_lines_visible:
 
-.. _class_Label_get_text:
+- :ref:`int<class_int>` **max_lines_visible**
 
-- :ref:`String<class_string>`  **get_text**  **(** **)** const
++----------+------------------------------+
+| *Setter* | set_max_lines_visible(value) |
++----------+------------------------------+
+| *Getter* | get_max_lines_visible()      |
++----------+------------------------------+
 
-Return the label text. Text can contain newlines.
+Limits the lines of text the node shows on screen.
 
-.. _class_Label_get_total_character_count:
+.. _class_Label_property_percent_visible:
 
-- :ref:`int<class_int>`  **get_total_character_count**  **(** **)** const
+- :ref:`float<class_float>` **percent_visible**
 
-Return the total length of the text.
++----------+----------------------------+
+| *Setter* | set_percent_visible(value) |
++----------+----------------------------+
+| *Getter* | get_percent_visible()      |
++----------+----------------------------+
 
-.. _class_Label_get_valign:
+Limits the count of visible characters. If you set ``percent_visible`` to 50, only up to half of the text's characters will display on screen. Useful to animate the text in a dialog box.
 
-- :ref:`int<class_int>`  **get_valign**  **(** **)** const
+.. _class_Label_property_text:
 
-Return the vertical alignment mode (any of the VALIGN\_\* enumeration values).
+- :ref:`String<class_String>` **text**
 
-.. _class_Label_get_visible_characters:
++----------+-----------------+
+| *Setter* | set_text(value) |
++----------+-----------------+
+| *Getter* | get_text()      |
++----------+-----------------+
 
-- :ref:`int<class_int>`  **get_visible_characters**  **(** **)** const
+The text to display on screen.
 
-Return the restricted number of characters to display. Returns -1 if unrestricted.
+.. _class_Label_property_uppercase:
 
-.. _class_Label_get_visible_line_count:
+- :ref:`bool<class_bool>` **uppercase**
 
-- :ref:`int<class_int>`  **get_visible_line_count**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_uppercase(value) |
++----------+----------------------+
+| *Getter* | is_uppercase()       |
++----------+----------------------+
 
-.. _class_Label_has_autowrap:
+If ``true``, all the text displays as UPPERCASE.
 
-- :ref:`bool<class_bool>`  **has_autowrap**  **(** **)** const
+.. _class_Label_property_valign:
 
-Return the state of the *autowrap* mode (see :ref:`set_autowrap<class_Label_set_autowrap>`).
+- :ref:`VAlign<enum_Label_VAlign>` **valign**
 
-.. _class_Label_is_clipping_text:
++----------+-------------------+
+| *Setter* | set_valign(value) |
++----------+-------------------+
+| *Getter* | get_valign()      |
++----------+-------------------+
 
-- :ref:`bool<class_bool>`  **is_clipping_text**  **(** **)** const
+Controls the text's vertical align. Supports top, center, bottom, and fill. Set it to one of the ``VALIGN_*`` constants.
 
-Return ``true`` if text would be cut off if it is too wide.
+.. _class_Label_property_visible_characters:
 
-.. _class_Label_is_uppercase:
+- :ref:`int<class_int>` **visible_characters**
 
-- :ref:`bool<class_bool>`  **is_uppercase**  **(** **)** const
-
-Return ``true`` if text is displayed in all capitals.
-
-.. _class_Label_set_align:
-
-- void  **set_align**  **(** :ref:`int<class_int>` align  **)**
-
-Sets the alignment mode to any of the ALIGN\_\* enumeration values.
-
-.. _class_Label_set_autowrap:
-
-- void  **set_autowrap**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set *autowrap* mode. When enabled, autowrap will fit text to the control width, breaking sentences when they exceed the available horizontal space. When disabled, the label minimum width becomes the width of the longest row, and the minimum height large enough to fit all rows.
-
-.. _class_Label_set_clip_text:
-
-- void  **set_clip_text**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Cuts off the rest of the text if it is too wide.
-
-.. _class_Label_set_lines_skipped:
-
-- void  **set_lines_skipped**  **(** :ref:`int<class_int>` lines_skipped  **)**
-
-Sets the number of lines to skip before displaying. Useful for scrolling text.
-
-.. _class_Label_set_max_lines_visible:
-
-- void  **set_max_lines_visible**  **(** :ref:`int<class_int>` lines_visible  **)**
-
-Restricts the number of lines to display. Set to -1 to disable.
-
-.. _class_Label_set_percent_visible:
-
-- void  **set_percent_visible**  **(** :ref:`float<class_float>` percent_visible  **)**
-
-Restricts the number of characters to display (as a percentage of the total text).
-
-.. _class_Label_set_text:
-
-- void  **set_text**  **(** :ref:`String<class_string>` text  **)**
-
-Set the label text. Text can contain newlines.
-
-.. _class_Label_set_uppercase:
-
-- void  **set_uppercase**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Display text in all capitals.
-
-.. _class_Label_set_valign:
-
-- void  **set_valign**  **(** :ref:`int<class_int>` valign  **)**
-
-Sets the vertical alignment mode to any of the VALIGN\_\* enumeration values.
-
-.. _class_Label_set_visible_characters:
-
-- void  **set_visible_characters**  **(** :ref:`int<class_int>` amount  **)**
++----------+-------------------------------+
+| *Setter* | set_visible_characters(value) |
++----------+-------------------------------+
+| *Getter* | get_visible_characters()      |
++----------+-------------------------------+
 
 Restricts the number of characters to display. Set to -1 to disable.
 
+Method Descriptions
+-------------------
+
+.. _class_Label_method_get_line_count:
+
+- :ref:`int<class_int>` **get_line_count** **(** **)** const
+
+Returns the amount of lines of text the Label has.
+
+.. _class_Label_method_get_line_height:
+
+- :ref:`int<class_int>` **get_line_height** **(** **)** const
+
+Returns the font size in pixels.
+
+.. _class_Label_method_get_total_character_count:
+
+- :ref:`int<class_int>` **get_total_character_count** **(** **)** const
+
+Returns the total number of printable characters in the text (excluding spaces and newlines).
+
+.. _class_Label_method_get_visible_line_count:
+
+- :ref:`int<class_int>` **get_visible_line_count** **(** **)** const
+
+Returns the number of lines shown. Useful if the ``Label`` 's height cannot currently display all lines.
 

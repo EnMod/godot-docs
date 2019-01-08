@@ -7,243 +7,282 @@
 ProceduralSky
 =============
 
-**Inherits:** :ref:`Sky<class_sky>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Sky<class_Sky>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Type of :ref:`Sky<class_Sky>` that is generated procedurally based on user input parameters.
 
+Properties
+----------
 
-Member Functions
-----------------
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`ground_bottom_color<class_ProceduralSky_property_ground_bottom_color>`   |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`ground_curve<class_ProceduralSky_property_ground_curve>`                 |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`ground_energy<class_ProceduralSky_property_ground_energy>`               |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`ground_horizon_color<class_ProceduralSky_property_ground_horizon_color>` |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sky_curve<class_ProceduralSky_property_sky_curve>`                       |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sky_energy<class_ProceduralSky_property_sky_energy>`                     |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`sky_horizon_color<class_ProceduralSky_property_sky_horizon_color>`       |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`sky_top_color<class_ProceduralSky_property_sky_top_color>`               |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_angle_max<class_ProceduralSky_property_sun_angle_max>`               |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_angle_min<class_ProceduralSky_property_sun_angle_min>`               |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>`                          | :ref:`sun_color<class_ProceduralSky_property_sun_color>`                       |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_curve<class_ProceduralSky_property_sun_curve>`                       |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_energy<class_ProceduralSky_property_sun_energy>`                     |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_latitude<class_ProceduralSky_property_sun_latitude>`                 |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                          | :ref:`sun_longitude<class_ProceduralSky_property_sun_longitude>`               |
++----------------------------------------------------+--------------------------------------------------------------------------------+
+| :ref:`TextureSize<enum_ProceduralSky_TextureSize>` | :ref:`texture_size<class_ProceduralSky_property_texture_size>`                 |
++----------------------------------------------------+--------------------------------------------------------------------------------+
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_ground_bottom_color<class_ProceduralSky_get_ground_bottom_color>`  **(** **)** const                              |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_ground_curve<class_ProceduralSky_get_ground_curve>`  **(** **)** const                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_ground_energy<class_ProceduralSky_get_ground_energy>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_ground_horizon_color<class_ProceduralSky_get_ground_horizon_color>`  **(** **)** const                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sky_curve<class_ProceduralSky_get_sky_curve>`  **(** **)** const                                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sky_energy<class_ProceduralSky_get_sky_energy>`  **(** **)** const                                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_sky_horizon_color<class_ProceduralSky_get_sky_horizon_color>`  **(** **)** const                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_sky_top_color<class_ProceduralSky_get_sky_top_color>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_angle_max<class_ProceduralSky_get_sun_angle_max>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_angle_min<class_ProceduralSky_get_sun_angle_min>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_sun_color<class_ProceduralSky_get_sun_color>`  **(** **)** const                                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_curve<class_ProceduralSky_get_sun_curve>`  **(** **)** const                                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_energy<class_ProceduralSky_get_sun_energy>`  **(** **)** const                                                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_latitude<class_ProceduralSky_get_sun_latitude>`  **(** **)** const                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_sun_longitude<class_ProceduralSky_get_sun_longitude>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_texture_size<class_ProceduralSky_get_texture_size>`  **(** **)** const                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ground_bottom_color<class_ProceduralSky_set_ground_bottom_color>`  **(** :ref:`Color<class_color>` color  **)**   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ground_curve<class_ProceduralSky_set_ground_curve>`  **(** :ref:`float<class_float>` curve  **)**                 |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ground_energy<class_ProceduralSky_set_ground_energy>`  **(** :ref:`float<class_float>` energy  **)**              |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ground_horizon_color<class_ProceduralSky_set_ground_horizon_color>`  **(** :ref:`Color<class_color>` color  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sky_curve<class_ProceduralSky_set_sky_curve>`  **(** :ref:`float<class_float>` curve  **)**                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sky_energy<class_ProceduralSky_set_sky_energy>`  **(** :ref:`float<class_float>` energy  **)**                    |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sky_horizon_color<class_ProceduralSky_set_sky_horizon_color>`  **(** :ref:`Color<class_color>` color  **)**       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sky_top_color<class_ProceduralSky_set_sky_top_color>`  **(** :ref:`Color<class_color>` color  **)**               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_angle_max<class_ProceduralSky_set_sun_angle_max>`  **(** :ref:`float<class_float>` degrees  **)**             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_angle_min<class_ProceduralSky_set_sun_angle_min>`  **(** :ref:`float<class_float>` degrees  **)**             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_color<class_ProceduralSky_set_sun_color>`  **(** :ref:`Color<class_color>` color  **)**                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_curve<class_ProceduralSky_set_sun_curve>`  **(** :ref:`float<class_float>` curve  **)**                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_energy<class_ProceduralSky_set_sun_energy>`  **(** :ref:`float<class_float>` energy  **)**                    |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_latitude<class_ProceduralSky_set_sun_latitude>`  **(** :ref:`float<class_float>` degrees  **)**               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_sun_longitude<class_ProceduralSky_set_sun_longitude>`  **(** :ref:`float<class_float>` degrees  **)**             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_texture_size<class_ProceduralSky_set_texture_size>`  **(** :ref:`int<class_int>` size  **)**                      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_ProceduralSky_TextureSize:
 
-- :ref:`Color<class_color>` **ground_bottom_color**
-- :ref:`float<class_float>` **ground_curve**
-- :ref:`float<class_float>` **ground_energy**
-- :ref:`Color<class_color>` **ground_horizon_color**
-- :ref:`float<class_float>` **sky_curve**
-- :ref:`float<class_float>` **sky_energy**
-- :ref:`Color<class_color>` **sky_horizon_color**
-- :ref:`Color<class_color>` **sky_top_color**
-- :ref:`float<class_float>` **sun_angle_max**
-- :ref:`float<class_float>` **sun_angle_min**
-- :ref:`Color<class_color>` **sun_color**
-- :ref:`float<class_float>` **sun_curve**
-- :ref:`float<class_float>` **sun_energy**
-- :ref:`float<class_float>` **sun_latitude**
-- :ref:`float<class_float>` **sun_longitude**
-- :ref:`int<class_int>` **texture_size**
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_256:
 
-Numeric Constants
------------------
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_512:
+
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_1024:
+
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_2048:
+
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_4096:
+
+.. _class_ProceduralSky_constant_TEXTURE_SIZE_MAX:
+
+enum **TextureSize**:
 
 - **TEXTURE_SIZE_256** = **0**
+
 - **TEXTURE_SIZE_512** = **1**
+
 - **TEXTURE_SIZE_1024** = **2**
+
 - **TEXTURE_SIZE_2048** = **3**
+
 - **TEXTURE_SIZE_4096** = **4**
+
 - **TEXTURE_SIZE_MAX** = **5**
 
-Member Function Description
----------------------------
+Description
+-----------
 
-.. _class_ProceduralSky_get_ground_bottom_color:
+ProceduralSky provides a way to create an effective background quickly by defining procedural parameters for the sun, the sky and the ground. The sky and ground are very similar, they are defined by a color at the horizon, another color, and finally an easing curve to interpolate between these two colors. Similarly the sun is described by a position in the sky, a color, and an easing curve. However, the sun also defines a minimum and maximum angle, these two values define at what distance the easing curve begins and ends from the sun, and thus end up defining the size of the sun in the sky.
 
-- :ref:`Color<class_color>`  **get_ground_bottom_color**  **(** **)** const
+The ProceduralSky is updated on the CPU after the parameters change and stored in a texture and then displayed as a background in the scene. This makes it relatively unsuitable for realtime updates during gameplay. But with a small texture size it is still feasible to update relatively frequently because it is updated on a background thread when multi-threading is available.
 
-.. _class_ProceduralSky_get_ground_curve:
+Property Descriptions
+---------------------
 
-- :ref:`float<class_float>`  **get_ground_curve**  **(** **)** const
+.. _class_ProceduralSky_property_ground_bottom_color:
 
-.. _class_ProceduralSky_get_ground_energy:
+- :ref:`Color<class_Color>` **ground_bottom_color**
 
-- :ref:`float<class_float>`  **get_ground_energy**  **(** **)** const
++----------+--------------------------------+
+| *Setter* | set_ground_bottom_color(value) |
++----------+--------------------------------+
+| *Getter* | get_ground_bottom_color()      |
++----------+--------------------------------+
 
-.. _class_ProceduralSky_get_ground_horizon_color:
+Color of the ground at the bottom.
 
-- :ref:`Color<class_color>`  **get_ground_horizon_color**  **(** **)** const
+.. _class_ProceduralSky_property_ground_curve:
 
-.. _class_ProceduralSky_get_sky_curve:
+- :ref:`float<class_float>` **ground_curve**
 
-- :ref:`float<class_float>`  **get_sky_curve**  **(** **)** const
++----------+-------------------------+
+| *Setter* | set_ground_curve(value) |
++----------+-------------------------+
+| *Getter* | get_ground_curve()      |
++----------+-------------------------+
 
-.. _class_ProceduralSky_get_sky_energy:
+How quickly the :ref:`ground_horizon_color<class_ProceduralSky_property_ground_horizon_color>` fades into the :ref:`ground_bottom_color<class_ProceduralSky_property_ground_bottom_color>`.
 
-- :ref:`float<class_float>`  **get_sky_energy**  **(** **)** const
+.. _class_ProceduralSky_property_ground_energy:
 
-.. _class_ProceduralSky_get_sky_horizon_color:
+- :ref:`float<class_float>` **ground_energy**
 
-- :ref:`Color<class_color>`  **get_sky_horizon_color**  **(** **)** const
++----------+--------------------------+
+| *Setter* | set_ground_energy(value) |
++----------+--------------------------+
+| *Getter* | get_ground_energy()      |
++----------+--------------------------+
 
-.. _class_ProceduralSky_get_sky_top_color:
+Amount of energy contribution from the ground.
 
-- :ref:`Color<class_color>`  **get_sky_top_color**  **(** **)** const
+.. _class_ProceduralSky_property_ground_horizon_color:
 
-.. _class_ProceduralSky_get_sun_angle_max:
+- :ref:`Color<class_Color>` **ground_horizon_color**
 
-- :ref:`float<class_float>`  **get_sun_angle_max**  **(** **)** const
++----------+---------------------------------+
+| *Setter* | set_ground_horizon_color(value) |
++----------+---------------------------------+
+| *Getter* | get_ground_horizon_color()      |
++----------+---------------------------------+
 
-.. _class_ProceduralSky_get_sun_angle_min:
+Color of the ground at the horizon.
 
-- :ref:`float<class_float>`  **get_sun_angle_min**  **(** **)** const
+.. _class_ProceduralSky_property_sky_curve:
 
-.. _class_ProceduralSky_get_sun_color:
+- :ref:`float<class_float>` **sky_curve**
 
-- :ref:`Color<class_color>`  **get_sun_color**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_sky_curve(value) |
++----------+----------------------+
+| *Getter* | get_sky_curve()      |
++----------+----------------------+
 
-.. _class_ProceduralSky_get_sun_curve:
+How quickly the :ref:`sky_horizon_color<class_ProceduralSky_property_sky_horizon_color>` fades into the :ref:`sky_top_color<class_ProceduralSky_property_sky_top_color>`.
 
-- :ref:`float<class_float>`  **get_sun_curve**  **(** **)** const
+.. _class_ProceduralSky_property_sky_energy:
 
-.. _class_ProceduralSky_get_sun_energy:
+- :ref:`float<class_float>` **sky_energy**
 
-- :ref:`float<class_float>`  **get_sun_energy**  **(** **)** const
++----------+-----------------------+
+| *Setter* | set_sky_energy(value) |
++----------+-----------------------+
+| *Getter* | get_sky_energy()      |
++----------+-----------------------+
 
-.. _class_ProceduralSky_get_sun_latitude:
+Amount of energy contribution from the sky.
 
-- :ref:`float<class_float>`  **get_sun_latitude**  **(** **)** const
+.. _class_ProceduralSky_property_sky_horizon_color:
 
-.. _class_ProceduralSky_get_sun_longitude:
+- :ref:`Color<class_Color>` **sky_horizon_color**
 
-- :ref:`float<class_float>`  **get_sun_longitude**  **(** **)** const
++----------+------------------------------+
+| *Setter* | set_sky_horizon_color(value) |
++----------+------------------------------+
+| *Getter* | get_sky_horizon_color()      |
++----------+------------------------------+
 
-.. _class_ProceduralSky_get_texture_size:
+Color of the sky at the horizon.
 
-- :ref:`int<class_int>`  **get_texture_size**  **(** **)** const
+.. _class_ProceduralSky_property_sky_top_color:
 
-.. _class_ProceduralSky_set_ground_bottom_color:
+- :ref:`Color<class_Color>` **sky_top_color**
 
-- void  **set_ground_bottom_color**  **(** :ref:`Color<class_color>` color  **)**
++----------+--------------------------+
+| *Setter* | set_sky_top_color(value) |
++----------+--------------------------+
+| *Getter* | get_sky_top_color()      |
++----------+--------------------------+
 
-.. _class_ProceduralSky_set_ground_curve:
+Color of the sky at the top.
 
-- void  **set_ground_curve**  **(** :ref:`float<class_float>` curve  **)**
+.. _class_ProceduralSky_property_sun_angle_max:
 
-.. _class_ProceduralSky_set_ground_energy:
+- :ref:`float<class_float>` **sun_angle_max**
 
-- void  **set_ground_energy**  **(** :ref:`float<class_float>` energy  **)**
++----------+--------------------------+
+| *Setter* | set_sun_angle_max(value) |
++----------+--------------------------+
+| *Getter* | get_sun_angle_max()      |
++----------+--------------------------+
 
-.. _class_ProceduralSky_set_ground_horizon_color:
+Distance from center of sun where it fades out completely.
 
-- void  **set_ground_horizon_color**  **(** :ref:`Color<class_color>` color  **)**
+.. _class_ProceduralSky_property_sun_angle_min:
 
-.. _class_ProceduralSky_set_sky_curve:
+- :ref:`float<class_float>` **sun_angle_min**
 
-- void  **set_sky_curve**  **(** :ref:`float<class_float>` curve  **)**
++----------+--------------------------+
+| *Setter* | set_sun_angle_min(value) |
++----------+--------------------------+
+| *Getter* | get_sun_angle_min()      |
++----------+--------------------------+
 
-.. _class_ProceduralSky_set_sky_energy:
+Distance from sun where it goes from solid to starting to fade.
 
-- void  **set_sky_energy**  **(** :ref:`float<class_float>` energy  **)**
+.. _class_ProceduralSky_property_sun_color:
 
-.. _class_ProceduralSky_set_sky_horizon_color:
+- :ref:`Color<class_Color>` **sun_color**
 
-- void  **set_sky_horizon_color**  **(** :ref:`Color<class_color>` color  **)**
++----------+----------------------+
+| *Setter* | set_sun_color(value) |
++----------+----------------------+
+| *Getter* | get_sun_color()      |
++----------+----------------------+
 
-.. _class_ProceduralSky_set_sky_top_color:
+Color of the sun.
 
-- void  **set_sky_top_color**  **(** :ref:`Color<class_color>` color  **)**
+.. _class_ProceduralSky_property_sun_curve:
 
-.. _class_ProceduralSky_set_sun_angle_max:
+- :ref:`float<class_float>` **sun_curve**
 
-- void  **set_sun_angle_max**  **(** :ref:`float<class_float>` degrees  **)**
++----------+----------------------+
+| *Setter* | set_sun_curve(value) |
++----------+----------------------+
+| *Getter* | get_sun_curve()      |
++----------+----------------------+
 
-.. _class_ProceduralSky_set_sun_angle_min:
+How quickly the sun fades away between :ref:`sun_angle_min<class_ProceduralSky_property_sun_angle_min>` and :ref:`sun_angle_max<class_ProceduralSky_property_sun_angle_max>`
 
-- void  **set_sun_angle_min**  **(** :ref:`float<class_float>` degrees  **)**
+.. _class_ProceduralSky_property_sun_energy:
 
-.. _class_ProceduralSky_set_sun_color:
+- :ref:`float<class_float>` **sun_energy**
 
-- void  **set_sun_color**  **(** :ref:`Color<class_color>` color  **)**
++----------+-----------------------+
+| *Setter* | set_sun_energy(value) |
++----------+-----------------------+
+| *Getter* | get_sun_energy()      |
++----------+-----------------------+
 
-.. _class_ProceduralSky_set_sun_curve:
+Amount of energy contribution from the sun.
 
-- void  **set_sun_curve**  **(** :ref:`float<class_float>` curve  **)**
+.. _class_ProceduralSky_property_sun_latitude:
 
-.. _class_ProceduralSky_set_sun_energy:
+- :ref:`float<class_float>` **sun_latitude**
 
-- void  **set_sun_energy**  **(** :ref:`float<class_float>` energy  **)**
++----------+-------------------------+
+| *Setter* | set_sun_latitude(value) |
++----------+-------------------------+
+| *Getter* | get_sun_latitude()      |
++----------+-------------------------+
 
-.. _class_ProceduralSky_set_sun_latitude:
+The suns height using polar coordinates.
 
-- void  **set_sun_latitude**  **(** :ref:`float<class_float>` degrees  **)**
+.. _class_ProceduralSky_property_sun_longitude:
 
-.. _class_ProceduralSky_set_sun_longitude:
+- :ref:`float<class_float>` **sun_longitude**
 
-- void  **set_sun_longitude**  **(** :ref:`float<class_float>` degrees  **)**
++----------+--------------------------+
+| *Setter* | set_sun_longitude(value) |
++----------+--------------------------+
+| *Getter* | get_sun_longitude()      |
++----------+--------------------------+
 
-.. _class_ProceduralSky_set_texture_size:
+The direction of the sun using polar coordinates.
 
-- void  **set_texture_size**  **(** :ref:`int<class_int>` size  **)**
+.. _class_ProceduralSky_property_texture_size:
 
+- :ref:`TextureSize<enum_ProceduralSky_TextureSize>` **texture_size**
+
++----------+-------------------------+
+| *Setter* | set_texture_size(value) |
++----------+-------------------------+
+| *Getter* | get_texture_size()      |
++----------+-------------------------+
+
+Size of :ref:`Texture<class_Texture>` that the ProceduralSky will generate.
 

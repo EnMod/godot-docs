@@ -7,38 +7,41 @@
 ViewportTexture
 ===============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Texture which displays the content of a :ref:`Viewport<class_Viewport>`.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------+--------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>` | :ref:`viewport_path<class_ViewportTexture_property_viewport_path>` |
++---------------------------------+--------------------------------------------------------------------+
 
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_viewport_path_in_scene<class_ViewportTexture_get_viewport_path_in_scene>`  **(** **)** const                                 |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_viewport_path_in_scene<class_ViewportTexture_set_viewport_path_in_scene>`  **(** :ref:`NodePath<class_nodepath>` path  **)** |
-+----------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Displays the content of a :ref:`Viewport<class_Viewport>` node as a dynamic :ref:`Texture<class_Texture>`. This can be used to mix controls, 2D, and 3D elements in the same scene.
 
-- :ref:`NodePath<class_nodepath>` **viewport_path**
+To create a ViewportTexture in code, use the :ref:`Viewport.get_texture<class_Viewport_method_get_texture>` method on the target viewport.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ViewportTexture_get_viewport_path_in_scene:
+.. _class_ViewportTexture_property_viewport_path:
 
-- :ref:`NodePath<class_nodepath>`  **get_viewport_path_in_scene**  **(** **)** const
+- :ref:`NodePath<class_NodePath>` **viewport_path**
 
-.. _class_ViewportTexture_set_viewport_path_in_scene:
++----------+-----------------------------------+
+| *Setter* | set_viewport_path_in_scene(value) |
++----------+-----------------------------------+
+| *Getter* | get_viewport_path_in_scene()      |
++----------+-----------------------------------+
 
-- void  **set_viewport_path_in_scene**  **(** :ref:`NodePath<class_nodepath>` path  **)**
-
+The path to the :ref:`Viewport<class_Viewport>` node to display. This is relative to the scene root, not to the node which uses the texture.
 

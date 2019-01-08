@@ -7,51 +7,58 @@
 InputEventJoypadMotion
 ======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Input event type for joypad motion/axis events.
+Input event type for gamepad joysticks and other motions. For buttons see ``InputEventJoypadButton``.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_axis<class_InputEventJoypadMotion_get_axis>`  **(** **)** const                                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_axis_value<class_InputEventJoypadMotion_get_axis_value>`  **(** **)** const                                 |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis<class_InputEventJoypadMotion_set_axis>`  **(** :ref:`int<class_int>` axis  **)**                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_axis_value<class_InputEventJoypadMotion_set_axis_value>`  **(** :ref:`float<class_float>` axis_value  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`axis<class_InputEventJoypadMotion_property_axis>`             |
++---------------------------+---------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`axis_value<class_InputEventJoypadMotion_property_axis_value>` |
++---------------------------+---------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`int<class_int>` **axis** - Joypad axis identifier, one of the JOY_AXIS_* constants in [@Global Scope].
-- :ref:`float<class_float>` **axis_value** - Position of the axis, ranging from -1.0 to 1.0. A value of 0 means that the axis is in its neutral position.
+Stores information about joystick motions. One ``InputEventJoypadMotion`` represents one axis at a time.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_InputEventJoypadMotion_get_axis:
+- :doc:`../tutorials/inputs/inputevent`
 
-- :ref:`int<class_int>`  **get_axis**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_InputEventJoypadMotion_get_axis_value:
+.. _class_InputEventJoypadMotion_property_axis:
 
-- :ref:`float<class_float>`  **get_axis_value**  **(** **)** const
+- :ref:`int<class_int>` **axis**
 
-.. _class_InputEventJoypadMotion_set_axis:
++----------+-----------------+
+| *Setter* | set_axis(value) |
++----------+-----------------+
+| *Getter* | get_axis()      |
++----------+-----------------+
 
-- void  **set_axis**  **(** :ref:`int<class_int>` axis  **)**
+Axis identifier. Use one of the ``JOY_AXIS_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
 
-.. _class_InputEventJoypadMotion_set_axis_value:
+.. _class_InputEventJoypadMotion_property_axis_value:
 
-- void  **set_axis_value**  **(** :ref:`float<class_float>` axis_value  **)**
+- :ref:`float<class_float>` **axis_value**
 
++----------+-----------------------+
+| *Setter* | set_axis_value(value) |
++----------+-----------------------+
+| *Getter* | get_axis_value()      |
++----------+-----------------------+
+
+Current position of the joystick on the given axis. The value ranges from ``-1.0`` to ``1.0``. A value of ``0`` means the axis is in its resting position.
 

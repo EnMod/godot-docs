@@ -7,38 +7,49 @@
 VisualScriptVariableSet
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Changes a variable's value.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`var_name<class_VisualScriptVariableSet_property_var_name>` |
++-----------------------------+------------------------------------------------------------------+
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_variable<class_VisualScriptVariableSet_get_variable>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_variable<class_VisualScriptVariableSet_set_variable>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Changes a variable's value to the given input.
 
-- :ref:`String<class_string>` **var_name**
+**Input Ports:**
 
-Member Function Description
----------------------------
+- Sequence
 
-.. _class_VisualScriptVariableSet_get_variable:
+- Data (variant): ``set``
 
-- :ref:`String<class_string>`  **get_variable**  **(** **)** const
+**Output Ports:**
 
-.. _class_VisualScriptVariableSet_set_variable:
+- Sequence
 
-- void  **set_variable**  **(** :ref:`String<class_string>` name  **)**
+Property Descriptions
+---------------------
 
+.. _class_VisualScriptVariableSet_property_var_name:
+
+- :ref:`String<class_String>` **var_name**
+
++----------+---------------------+
+| *Setter* | set_variable(value) |
++----------+---------------------+
+| *Getter* | get_variable()      |
++----------+---------------------+
+
+The variable's name.
 

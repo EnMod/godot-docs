@@ -7,7 +7,7 @@
 InputEventScreenDrag
 ====================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,68 +16,79 @@ Brief Description
 
 Input event type for screen drag events.
 
-Member Functions
-----------------
+(only available on mobile devices)
 
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_index<class_InputEventScreenDrag_get_index>`  **(** **)** const                                         |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_position<class_InputEventScreenDrag_get_position>`  **(** **)** const                                   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventScreenDrag_get_relative>`  **(** **)** const                                   |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventScreenDrag_get_speed>`  **(** **)** const                                         |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_index<class_InputEventScreenDrag_set_index>`  **(** :ref:`int<class_int>` index  **)**                  |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_position<class_InputEventScreenDrag_set_position>`  **(** :ref:`Vector2<class_vector2>` position  **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_relative<class_InputEventScreenDrag_set_relative>`  **(** :ref:`Vector2<class_vector2>` relative  **)** |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_speed<class_InputEventScreenDrag_set_speed>`  **(** :ref:`Vector2<class_vector2>` speed  **)**          |
-+--------------------------------+-------------------------------------------------------------------------------------------------------------------+
+Properties
+----------
 
-Member Variables
-----------------
++-------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`index<class_InputEventScreenDrag_property_index>`       |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`position<class_InputEventScreenDrag_property_position>` |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventScreenDrag_property_relative>` |
++-------------------------------+---------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventScreenDrag_property_speed>`       |
++-------------------------------+---------------------------------------------------------------+
 
-- :ref:`int<class_int>` **index** - Drag event index in the case of a multi-drag event.
-- :ref:`Vector2<class_vector2>` **position** - Position of the drag event.
-- :ref:`Vector2<class_vector2>` **relative** - Position of the drag event relative to its start position.
-- :ref:`Vector2<class_vector2>` **speed** - Speed of the drag event.
+Description
+-----------
 
-Member Function Description
----------------------------
+Contains screen drag information. See :ref:`Node._input<class_Node_method__input>`.
 
-.. _class_InputEventScreenDrag_get_index:
+Tutorials
+---------
 
-- :ref:`int<class_int>`  **get_index**  **(** **)** const
+- :doc:`../tutorials/inputs/inputevent`
 
-.. _class_InputEventScreenDrag_get_position:
+Property Descriptions
+---------------------
 
-- :ref:`Vector2<class_vector2>`  **get_position**  **(** **)** const
+.. _class_InputEventScreenDrag_property_index:
 
-.. _class_InputEventScreenDrag_get_relative:
+- :ref:`int<class_int>` **index**
 
-- :ref:`Vector2<class_vector2>`  **get_relative**  **(** **)** const
++----------+------------------+
+| *Setter* | set_index(value) |
++----------+------------------+
+| *Getter* | get_index()      |
++----------+------------------+
 
-.. _class_InputEventScreenDrag_get_speed:
+Drag event index in the case of a multi-drag event.
 
-- :ref:`Vector2<class_vector2>`  **get_speed**  **(** **)** const
+.. _class_InputEventScreenDrag_property_position:
 
-.. _class_InputEventScreenDrag_set_index:
+- :ref:`Vector2<class_Vector2>` **position**
 
-- void  **set_index**  **(** :ref:`int<class_int>` index  **)**
++----------+---------------------+
+| *Setter* | set_position(value) |
++----------+---------------------+
+| *Getter* | get_position()      |
++----------+---------------------+
 
-.. _class_InputEventScreenDrag_set_position:
+Drag position.
 
-- void  **set_position**  **(** :ref:`Vector2<class_vector2>` position  **)**
+.. _class_InputEventScreenDrag_property_relative:
 
-.. _class_InputEventScreenDrag_set_relative:
+- :ref:`Vector2<class_Vector2>` **relative**
 
-- void  **set_relative**  **(** :ref:`Vector2<class_vector2>` relative  **)**
++----------+---------------------+
+| *Setter* | set_relative(value) |
++----------+---------------------+
+| *Getter* | get_relative()      |
++----------+---------------------+
 
-.. _class_InputEventScreenDrag_set_speed:
+Drag position relative to its start position.
 
-- void  **set_speed**  **(** :ref:`Vector2<class_vector2>` speed  **)**
+.. _class_InputEventScreenDrag_property_speed:
 
+- :ref:`Vector2<class_Vector2>` **speed**
+
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
+
+Drag speed.
 

@@ -7,7 +7,7 @@
 HSlider
 =======
 
-**Inherits:** :ref:`Slider<class_slider>` **<** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Slider<class_Slider>` **<** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,8 +16,31 @@ Brief Description
 
 Horizontal slider.
 
+Theme Properties
+----------------
+
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus             |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber           |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_area      |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber_disabled  |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_disabled  |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | grabber_highlight |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | grabber_highlight |
++---------------------------------+-------------------+
+| :ref:`StyleBox<class_StyleBox>` | slider            |
++---------------------------------+-------------------+
+| :ref:`Texture<class_Texture>`   | tick              |
++---------------------------------+-------------------+
+
 Description
 -----------
 
-Horizontal slider. See :ref:`Slider<class_slider>`. This one goes from left (min) to right (max).
+Horizontal slider. See :ref:`Slider<class_Slider>`. This one goes from left (min) to right (max).
 

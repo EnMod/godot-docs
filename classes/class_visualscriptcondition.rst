@@ -7,12 +7,31 @@
 VisualScriptCondition
 =====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A Visual Script node which branches the flow.
 
+Description
+-----------
+
+A Visual Script node that checks a :ref:`bool<class_bool>` input port. If ``true``, it will exit via the “true” sequence port. If ``false``, it will exit via the "false" sequence port. After exiting either, it exits via the “done” port. Sequence ports may be left disconnected.
+
+**Input Ports:**
+
+- Sequence: ``if (cond) is``
+
+- Data (boolean): ``cond``
+
+**Output Ports:**
+
+- Sequence: ``true``
+
+- Sequence: ``false``
+
+- Sequence: ``done``
 

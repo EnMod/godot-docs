@@ -7,77 +7,81 @@
 AudioEffectLimiter
 ==================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Adds a soft clip Limiter audio effect to an Audio bus.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`ceiling_db<class_AudioEffectLimiter_property_ceiling_db>`           |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`soft_clip_db<class_AudioEffectLimiter_property_soft_clip_db>`       |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`soft_clip_ratio<class_AudioEffectLimiter_property_soft_clip_ratio>` |
++---------------------------+---------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`threshold_db<class_AudioEffectLimiter_property_threshold_db>`       |
++---------------------------+---------------------------------------------------------------------------+
 
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_ceiling_db<class_AudioEffectLimiter_get_ceiling_db>`  **(** **)** const                                          |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_soft_clip_db<class_AudioEffectLimiter_get_soft_clip_db>`  **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_soft_clip_ratio<class_AudioEffectLimiter_get_soft_clip_ratio>`  **(** **)** const                                |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_threshold_db<class_AudioEffectLimiter_get_threshold_db>`  **(** **)** const                                      |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_ceiling_db<class_AudioEffectLimiter_set_ceiling_db>`  **(** :ref:`float<class_float>` ceiling  **)**             |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_soft_clip_db<class_AudioEffectLimiter_set_soft_clip_db>`  **(** :ref:`float<class_float>` soft_clip  **)**       |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_soft_clip_ratio<class_AudioEffectLimiter_set_soft_clip_ratio>`  **(** :ref:`float<class_float>` soft_clip  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_threshold_db<class_AudioEffectLimiter_set_threshold_db>`  **(** :ref:`float<class_float>` threshold  **)**       |
-+----------------------------+----------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A limiter is similar to a compressor, but it’s less flexible and designed to disallow sound going over a given dB threshold. Adding one in the Master Bus is always recommended to reduce the effects of clipping.
+
+Soft clipping starts to reduce the peaks a little below the threshold level and progressively increases its effect as the input level increases such that the threshold is never exceeded.
+
+Property Descriptions
+---------------------
+
+.. _class_AudioEffectLimiter_property_ceiling_db:
 
 - :ref:`float<class_float>` **ceiling_db**
+
++----------+-----------------------+
+| *Setter* | set_ceiling_db(value) |
++----------+-----------------------+
+| *Getter* | get_ceiling_db()      |
++----------+-----------------------+
+
+The waveform's maximum allowed value. Value can range from -20 to -0.1. Default value: ``-0.1dB``.
+
+.. _class_AudioEffectLimiter_property_soft_clip_db:
+
 - :ref:`float<class_float>` **soft_clip_db**
+
++----------+-------------------------+
+| *Setter* | set_soft_clip_db(value) |
++----------+-------------------------+
+| *Getter* | get_soft_clip_db()      |
++----------+-------------------------+
+
+Applies a gain to the limited waves. Value can range from 0 to 6. Default value: ``2dB``.
+
+.. _class_AudioEffectLimiter_property_soft_clip_ratio:
+
 - :ref:`float<class_float>` **soft_clip_ratio**
+
++----------+----------------------------+
+| *Setter* | set_soft_clip_ratio(value) |
++----------+----------------------------+
+| *Getter* | get_soft_clip_ratio()      |
++----------+----------------------------+
+
+.. _class_AudioEffectLimiter_property_threshold_db:
+
 - :ref:`float<class_float>` **threshold_db**
 
-Member Function Description
----------------------------
++----------+-------------------------+
+| *Setter* | set_threshold_db(value) |
++----------+-------------------------+
+| *Getter* | get_threshold_db()      |
++----------+-------------------------+
 
-.. _class_AudioEffectLimiter_get_ceiling_db:
-
-- :ref:`float<class_float>`  **get_ceiling_db**  **(** **)** const
-
-.. _class_AudioEffectLimiter_get_soft_clip_db:
-
-- :ref:`float<class_float>`  **get_soft_clip_db**  **(** **)** const
-
-.. _class_AudioEffectLimiter_get_soft_clip_ratio:
-
-- :ref:`float<class_float>`  **get_soft_clip_ratio**  **(** **)** const
-
-.. _class_AudioEffectLimiter_get_threshold_db:
-
-- :ref:`float<class_float>`  **get_threshold_db**  **(** **)** const
-
-.. _class_AudioEffectLimiter_set_ceiling_db:
-
-- void  **set_ceiling_db**  **(** :ref:`float<class_float>` ceiling  **)**
-
-.. _class_AudioEffectLimiter_set_soft_clip_db:
-
-- void  **set_soft_clip_db**  **(** :ref:`float<class_float>` soft_clip  **)**
-
-.. _class_AudioEffectLimiter_set_soft_clip_ratio:
-
-- void  **set_soft_clip_ratio**  **(** :ref:`float<class_float>` soft_clip  **)**
-
-.. _class_AudioEffectLimiter_set_threshold_db:
-
-- void  **set_threshold_db**  **(** :ref:`float<class_float>` threshold  **)**
-
+Threshold from which the limiter begins to be active. Value can range from -30 to 0. Default value: ``0dB``.
 

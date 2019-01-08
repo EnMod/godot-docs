@@ -7,112 +7,158 @@
 NavigationPolygon
 =================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A node that has methods to draw outlines or use indices of vertices to create navigation polygons.
 
+Methods
+-------
 
-Member Functions
-----------------
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_outline<class_NavigationPolygon_method_add_outline>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` outline **)**                                                |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_outline_at_index<class_NavigationPolygon_method_add_outline_at_index>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` outline, :ref:`int<class_int>` index **)** |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**                                                        |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear_outlines<class_NavigationPolygon_method_clear_outlines>` **(** **)**                                                                                                  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`clear_polygons<class_NavigationPolygon_method_clear_polygons>` **(** **)**                                                                                                  |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_outline<class_NavigationPolygon_method_get_outline>` **(** :ref:`int<class_int>` idx **)** const                                                                        |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_outline_count<class_NavigationPolygon_method_get_outline_count>` **(** **)** const                                                                                      |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolIntArray<class_PoolIntArray>`         | :ref:`get_polygon<class_NavigationPolygon_method_get_polygon>` **(** :ref:`int<class_int>` idx **)**                                                                              |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`get_polygon_count<class_NavigationPolygon_method_get_polygon_count>` **(** **)** const                                                                                      |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>` | :ref:`get_vertices<class_NavigationPolygon_method_get_vertices>` **(** **)** const                                                                                                |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` **(** **)**                                                                        |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`remove_outline<class_NavigationPolygon_method_remove_outline>` **(** :ref:`int<class_int>` idx **)**                                                                        |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_outline<class_NavigationPolygon_method_set_outline>` **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_PoolVector2Array>` outline **)**                     |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                            | :ref:`set_vertices<class_NavigationPolygon_method_set_vertices>` **(** :ref:`PoolVector2Array<class_PoolVector2Array>` vertices **)**                                             |
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_outline<class_NavigationPolygon_add_outline>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**                                                |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_outline_at_index<class_NavigationPolygon_add_outline_at_index>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline, :ref:`int<class_int>` index  **)** |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_polygon<class_NavigationPolygon_add_polygon>`  **(** :ref:`PoolIntArray<class_poolintarray>` polygon  **)**                                                        |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`clear_outlines<class_NavigationPolygon_clear_outlines>`  **(** **)**                                                                                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`clear_polygons<class_NavigationPolygon_clear_polygons>`  **(** **)**                                                                                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_outline<class_NavigationPolygon_get_outline>`  **(** :ref:`int<class_int>` idx  **)** const                                                                        |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_outline_count<class_NavigationPolygon_get_outline_count>`  **(** **)** const                                                                                       |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolIntArray<class_poolintarray>`          | :ref:`get_polygon<class_NavigationPolygon_get_polygon>`  **(** :ref:`int<class_int>` idx  **)**                                                                              |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_polygon_count<class_NavigationPolygon_get_polygon_count>`  **(** **)** const                                                                                       |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_vertices<class_NavigationPolygon_get_vertices>`  **(** **)** const                                                                                                 |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`make_polygons_from_outlines<class_NavigationPolygon_make_polygons_from_outlines>`  **(** **)**                                                                         |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`remove_outline<class_NavigationPolygon_remove_outline>`  **(** :ref:`int<class_int>` idx  **)**                                                                        |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_outline<class_NavigationPolygon_set_outline>`  **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**                     |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_vertices<class_NavigationPolygon_set_vertices>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices  **)**                                             |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+There are two ways to create polygons. Either by using the :ref:`add_outline<class_NavigationPolygon_method_add_outline>` method or using the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
 
-- :ref:`Array<class_array>` **outlines**
-- :ref:`Array<class_array>` **polygons**
-- :ref:`PoolVector2Array<class_poolvector2array>` **vertices**
+Using :ref:`add_outline<class_NavigationPolygon_method_add_outline>`:
 
-Member Function Description
----------------------------
+::
 
-.. _class_NavigationPolygon_add_outline:
+    var polygon = NavigationPolygon.new()
+    var outline = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    polygon.add_outline(outline)
+    polygon.make_polygons_from_outlines()
+    $NavigationPolygonInstance.navpoly = polygon
 
-- void  **add_outline**  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**
+Using :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` and indices of the vertices array.
 
-.. _class_NavigationPolygon_add_outline_at_index:
+::
 
-- void  **add_outline_at_index**  **(** :ref:`PoolVector2Array<class_poolvector2array>` outline, :ref:`int<class_int>` index  **)**
+    var polygon = NavigationPolygon.new()
+    var vertices = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)])
+    polygon.set_vertices(vertices)
+    var indices = PoolIntArray(0, 3, 1)
+    polygon.add_polygon(indices)
+    $NavigationPolygonInstance.navpoly = polygon
 
-.. _class_NavigationPolygon_add_polygon:
+Method Descriptions
+-------------------
 
-- void  **add_polygon**  **(** :ref:`PoolIntArray<class_poolintarray>` polygon  **)**
+.. _class_NavigationPolygon_method_add_outline:
 
-.. _class_NavigationPolygon_clear_outlines:
+- void **add_outline** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` outline **)**
 
-- void  **clear_outlines**  **(** **)**
+Appends a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
 
-.. _class_NavigationPolygon_clear_polygons:
+.. _class_NavigationPolygon_method_add_outline_at_index:
 
-- void  **clear_polygons**  **(** **)**
+- void **add_outline_at_index** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` outline, :ref:`int<class_int>` index **)**
 
-.. _class_NavigationPolygon_get_outline:
+Adds a :ref:`PoolVector2Array<class_PoolVector2Array>` that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` in order for this array to be converted to polygons that the engine will use.
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_outline**  **(** :ref:`int<class_int>` idx  **)** const
+.. _class_NavigationPolygon_method_add_polygon:
 
-.. _class_NavigationPolygon_get_outline_count:
+- void **add_polygon** **(** :ref:`PoolIntArray<class_PoolIntArray>` polygon **)**
 
-- :ref:`int<class_int>`  **get_outline_count**  **(** **)** const
+Adds a polygon using the indices of the vertices you get when calling :ref:`get_vertices<class_NavigationPolygon_method_get_vertices>`.
 
-.. _class_NavigationPolygon_get_polygon:
+.. _class_NavigationPolygon_method_clear_outlines:
 
-- :ref:`PoolIntArray<class_poolintarray>`  **get_polygon**  **(** :ref:`int<class_int>` idx  **)**
+- void **clear_outlines** **(** **)**
 
-.. _class_NavigationPolygon_get_polygon_count:
+Clears the array of the outlines, but it doesn't clear the vertices and the polygons that were created by them.
 
-- :ref:`int<class_int>`  **get_polygon_count**  **(** **)** const
+.. _class_NavigationPolygon_method_clear_polygons:
 
-.. _class_NavigationPolygon_get_vertices:
+- void **clear_polygons** **(** **)**
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_vertices**  **(** **)** const
+Clears the array of polygons, but it doesn't clear the array of outlines and vertices.
 
-.. _class_NavigationPolygon_make_polygons_from_outlines:
+.. _class_NavigationPolygon_method_get_outline:
 
-- void  **make_polygons_from_outlines**  **(** **)**
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_outline** **(** :ref:`int<class_int>` idx **)** const
 
-.. _class_NavigationPolygon_remove_outline:
+Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing the vertices of an outline that was created in the editor or by script.
 
-- void  **remove_outline**  **(** :ref:`int<class_int>` idx  **)**
+.. _class_NavigationPolygon_method_get_outline_count:
 
-.. _class_NavigationPolygon_set_outline:
+- :ref:`int<class_int>` **get_outline_count** **(** **)** const
 
-- void  **set_outline**  **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_poolvector2array>` outline  **)**
+Returns the number of outlines that were created in the editor or by script.
 
-.. _class_NavigationPolygon_set_vertices:
+.. _class_NavigationPolygon_method_get_polygon:
 
-- void  **set_vertices**  **(** :ref:`PoolVector2Array<class_poolvector2array>` vertices  **)**
+- :ref:`PoolIntArray<class_PoolIntArray>` **get_polygon** **(** :ref:`int<class_int>` idx **)**
 
+Returns a :ref:`PoolIntArray<class_PoolIntArray>` containing the indices of the vertices of a created polygon.
+
+.. _class_NavigationPolygon_method_get_polygon_count:
+
+- :ref:`int<class_int>` **get_polygon_count** **(** **)** const
+
+Returns the count of all polygons.
+
+.. _class_NavigationPolygon_method_get_vertices:
+
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **get_vertices** **(** **)** const
+
+Returns a :ref:`PoolVector2Array<class_PoolVector2Array>` containing all the vertices being used to create the polygons.
+
+.. _class_NavigationPolygon_method_make_polygons_from_outlines:
+
+- void **make_polygons_from_outlines** **(** **)**
+
+Creates polygons from the outlines added in the editor or by script.
+
+.. _class_NavigationPolygon_method_remove_outline:
+
+- void **remove_outline** **(** :ref:`int<class_int>` idx **)**
+
+Removes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+
+.. _class_NavigationPolygon_method_set_outline:
+
+- void **set_outline** **(** :ref:`int<class_int>` idx, :ref:`PoolVector2Array<class_PoolVector2Array>` outline **)**
+
+Changes an outline created in the editor or by script. You have to call :ref:`make_polygons_from_outlines<class_NavigationPolygon_method_make_polygons_from_outlines>` for the polygons to update.
+
+.. _class_NavigationPolygon_method_set_vertices:
+
+- void **set_vertices** **(** :ref:`PoolVector2Array<class_PoolVector2Array>` vertices **)**
+
+Sets the vertices that can be then indexed to create polygons with the :ref:`add_polygon<class_NavigationPolygon_method_add_polygon>` method.
 

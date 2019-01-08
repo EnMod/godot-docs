@@ -7,146 +7,143 @@
 PathFollow2D
 ============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Point sampler for a :ref:`Path2D<class_path2d>`.
+Point sampler for a :ref:`Path2D<class_Path2D>`.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_cubic_interpolation<class_PathFollow2D_get_cubic_interpolation>`  **(** **)** const                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_h_offset<class_PathFollow2D_get_h_offset>`  **(** **)** const                                                 |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_offset<class_PathFollow2D_get_offset>`  **(** **)** const                                                     |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_unit_offset<class_PathFollow2D_get_unit_offset>`  **(** **)** const                                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_v_offset<class_PathFollow2D_get_v_offset>`  **(** **)** const                                                 |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`has_loop<class_PathFollow2D_has_loop>`  **(** **)** const                                                         |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_rotating<class_PathFollow2D_is_rotating>`  **(** **)** const                                                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_cubic_interpolation<class_PathFollow2D_set_cubic_interpolation>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_h_offset<class_PathFollow2D_set_h_offset>`  **(** :ref:`float<class_float>` h_offset  **)**                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_loop<class_PathFollow2D_set_loop>`  **(** :ref:`bool<class_bool>` loop  **)**                                 |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_offset<class_PathFollow2D_set_offset>`  **(** :ref:`float<class_float>` offset  **)**                         |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rotate<class_PathFollow2D_set_rotate>`  **(** :ref:`bool<class_bool>` enable  **)**                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_unit_offset<class_PathFollow2D_set_unit_offset>`  **(** :ref:`float<class_float>` unit_offset  **)**          |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_v_offset<class_PathFollow2D_set_v_offset>`  **(** :ref:`float<class_float>` v_offset  **)**                   |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------+
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`cubic_interp<class_PathFollow2D_property_cubic_interp>` |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`h_offset<class_PathFollow2D_property_h_offset>`         |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`lookahead<class_PathFollow2D_property_lookahead>`       |
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`loop<class_PathFollow2D_property_loop>`                 |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`offset<class_PathFollow2D_property_offset>`             |
++---------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`rotate<class_PathFollow2D_property_rotate>`             |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`unit_offset<class_PathFollow2D_property_unit_offset>`   |
++---------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`v_offset<class_PathFollow2D_property_v_offset>`         |
++---------------------------+---------------------------------------------------------------+
 
 Description
 -----------
 
-This node takes its parent :ref:`Path2D<class_path2d>`, and returns the coordinates of a point within it, given a distance from the first vertex.
+This node takes its parent :ref:`Path2D<class_Path2D>`, and returns the coordinates of a point within it, given a distance from the first vertex.
 
 It is useful for making other nodes follow a path, without coding the movement pattern. For that, the nodes must be descendants of this node. Then, when setting an offset in this node, the descendant nodes will move accordingly.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_PathFollow2D_get_cubic_interpolation:
+.. _class_PathFollow2D_property_cubic_interp:
 
-- :ref:`bool<class_bool>`  **get_cubic_interpolation**  **(** **)** const
+- :ref:`bool<class_bool>` **cubic_interp**
 
-This method returns whether the position between two cached points (see :ref:`set_cubic_interpolation<class_PathFollow2D_set_cubic_interpolation>`) is interpolated linearly, or cubicly.
++----------+--------------------------------+
+| *Setter* | set_cubic_interpolation(value) |
++----------+--------------------------------+
+| *Getter* | get_cubic_interpolation()      |
++----------+--------------------------------+
 
-.. _class_PathFollow2D_get_h_offset:
+If ``true``, the position between two cached points is interpolated cubically, and linearly otherwise.
 
-- :ref:`float<class_float>`  **get_h_offset**  **(** **)** const
-
-Returns the horizontal displacement this node has from its parent :ref:`Path2D<class_path2d>`.
-
-.. _class_PathFollow2D_get_offset:
-
-- :ref:`float<class_float>`  **get_offset**  **(** **)** const
-
-Returns the distance along the path in pixels.
-
-.. _class_PathFollow2D_get_unit_offset:
-
-- :ref:`float<class_float>`  **get_unit_offset**  **(** **)** const
-
-Returns the distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last).
-
-.. _class_PathFollow2D_get_v_offset:
-
-- :ref:`float<class_float>`  **get_v_offset**  **(** **)** const
-
-Returns the vertical displacement this node has from its parent :ref:`Path2D<class_path2d>`.
-
-.. _class_PathFollow2D_has_loop:
-
-- :ref:`bool<class_bool>`  **has_loop**  **(** **)** const
-
-Returns whether this node wraps its offsets around, or truncates them to the path ends.
-
-.. _class_PathFollow2D_is_rotating:
-
-- :ref:`bool<class_bool>`  **is_rotating**  **(** **)** const
-
-Returns whether this node rotates to follow the path.
-
-.. _class_PathFollow2D_set_cubic_interpolation:
-
-- void  **set_cubic_interpolation**  **(** :ref:`bool<class_bool>` enable  **)**
-
-The points along the :ref:`Curve2D<class_curve2d>` of the :ref:`Path2D<class_path2d>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
+The points along the :ref:`Curve2D<class_Curve2D>` of the :ref:`Path2D<class_Path2D>` are precomputed before use, for faster calculations. The point at the requested offset is then calculated interpolating between two adjacent cached points. This may present a problem if the curve makes sharp turns, as the cached points may not follow the curve closely enough.
 
 There are two answers to this problem: Either increase the number of cached points and increase memory consumption, or make a cubic interpolation between two points at the cost of (slightly) slower calculations.
 
-This method controls whether the position between two cached points is interpolated linearly, or cubicly.
+.. _class_PathFollow2D_property_h_offset:
 
-.. _class_PathFollow2D_set_h_offset:
+- :ref:`float<class_float>` **h_offset**
 
-- void  **set_h_offset**  **(** :ref:`float<class_float>` h_offset  **)**
++----------+---------------------+
+| *Setter* | set_h_offset(value) |
++----------+---------------------+
+| *Getter* | get_h_offset()      |
++----------+---------------------+
 
-Moves this node horizontally. As this node's position will be set every time its offset is set, this allows many PathFollow2D to share the same curve (and thus the same movement pattern), yet not return the same position for a given path offset.
+The node's offset along the curve.
 
-A similar effect may be achieved moving this node's descendants.
+.. _class_PathFollow2D_property_lookahead:
 
-.. _class_PathFollow2D_set_loop:
+- :ref:`float<class_float>` **lookahead**
 
-- void  **set_loop**  **(** :ref:`bool<class_bool>` loop  **)**
++----------+----------------------+
+| *Setter* | set_lookahead(value) |
++----------+----------------------+
+| *Getter* | get_lookahead()      |
++----------+----------------------+
 
-If set, any offset outside the path's length (whether set by :ref:`set_offset<class_PathFollow2D_set_offset>` or :ref:`set_unit_offset<class_PathFollow2D_set_unit_offset>` will wrap around, instead of stopping at the ends. Set it for cyclic paths.
+How far to look ahead of the curve to calculate the tangent if the node is rotating. E.g. shorter lookaheads will lead to faster rotations. Default value: ``4``.
 
-.. _class_PathFollow2D_set_offset:
+.. _class_PathFollow2D_property_loop:
 
-- void  **set_offset**  **(** :ref:`float<class_float>` offset  **)**
+- :ref:`bool<class_bool>` **loop**
 
-Sets the distance from the first vertex, measured in pixels along the path. This sets this node's position to a point within the path.
++----------+-----------------+
+| *Setter* | set_loop(value) |
++----------+-----------------+
+| *Getter* | has_loop()      |
++----------+-----------------+
 
-.. _class_PathFollow2D_set_rotate:
+If ``true``, any offset outside the path's length will wrap around, instead of stopping at the ends. Use it for cyclic paths.
 
-- void  **set_rotate**  **(** :ref:`bool<class_bool>` enable  **)**
+.. _class_PathFollow2D_property_offset:
 
-If set, this node rotates to follow the path, making its descendants rotate.
+- :ref:`float<class_float>` **offset**
 
-.. _class_PathFollow2D_set_unit_offset:
++----------+-------------------+
+| *Setter* | set_offset(value) |
++----------+-------------------+
+| *Getter* | get_offset()      |
++----------+-------------------+
 
-- void  **set_unit_offset**  **(** :ref:`float<class_float>` unit_offset  **)**
+The distance along the path in pixels.
 
-Sets the distance from the first vertex, considering 0.0 as the first vertex and 1.0 as the last. This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
+.. _class_PathFollow2D_property_rotate:
 
-.. _class_PathFollow2D_set_v_offset:
+- :ref:`bool<class_bool>` **rotate**
 
-- void  **set_v_offset**  **(** :ref:`float<class_float>` v_offset  **)**
++----------+-------------------+
+| *Setter* | set_rotate(value) |
++----------+-------------------+
+| *Getter* | is_rotating()     |
++----------+-------------------+
 
-Moves the PathFollow2D vertically, for the same reasons of :ref:`set_h_offset<class_PathFollow2D_set_h_offset>`.
+If ``true``, this node rotates to follow the path, making its descendants rotate.
 
+.. _class_PathFollow2D_property_unit_offset:
+
+- :ref:`float<class_float>` **unit_offset**
+
++----------+------------------------+
+| *Setter* | set_unit_offset(value) |
++----------+------------------------+
+| *Getter* | get_unit_offset()      |
++----------+------------------------+
+
+The distance along the path as a number in the range 0.0 (for the first vertex) to 1.0 (for the last). This is just another way of expressing the offset within the path, as the offset supplied is multiplied internally by the path's length.
+
+.. _class_PathFollow2D_property_v_offset:
+
+- :ref:`float<class_float>` **v_offset**
+
++----------+---------------------+
+| *Setter* | set_v_offset(value) |
++----------+---------------------+
+| *Getter* | get_v_offset()      |
++----------+---------------------+
+
+The node's offset perpendicular to the curve.
 

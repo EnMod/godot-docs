@@ -7,12 +7,17 @@
 IP_Unix
 =======
 
-**Inherits:** :ref:`IP<class_ip>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`IP<class_IP>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Unix IP support. See :ref:`IP<class_IP>`.
 
+Description
+-----------
+
+Unix-specific implementation of IP support functions. See :ref:`IP<class_IP>`.
 

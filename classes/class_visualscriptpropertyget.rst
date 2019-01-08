@@ -7,7 +7,7 @@
 VisualScriptPropertyGet
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,115 +16,114 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NodePath<class_nodepath>`  | :ref:`get_base_path<class_VisualScriptPropertyGet_get_base_path>`  **(** **)** const                                        |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_base_script<class_VisualScriptPropertyGet_get_base_script>`  **(** **)** const                                    |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_base_type<class_VisualScriptPropertyGet_get_base_type>`  **(** **)** const                                        |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_basic_type<class_VisualScriptPropertyGet_get_basic_type>`  **(** **)** const                                      |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`            | :ref:`get_call_mode<class_VisualScriptPropertyGet_get_call_mode>`  **(** **)** const                                        |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_index<class_VisualScriptPropertyGet_get_index>`  **(** **)** const                                                |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_property<class_VisualScriptPropertyGet_get_property>`  **(** **)** const                                          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_path<class_VisualScriptPropertyGet_set_base_path>`  **(** :ref:`NodePath<class_nodepath>` base_path  **)**   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_script<class_VisualScriptPropertyGet_set_base_script>`  **(** :ref:`String<class_string>` base_script  **)** |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_base_type<class_VisualScriptPropertyGet_set_base_type>`  **(** :ref:`String<class_string>` base_type  **)**       |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_basic_type<class_VisualScriptPropertyGet_set_basic_type>`  **(** :ref:`int<class_int>` basic_type  **)**          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_call_mode<class_VisualScriptPropertyGet_set_call_mode>`  **(** :ref:`int<class_int>` mode  **)**                  |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_index<class_VisualScriptPropertyGet_set_index>`  **(** :ref:`String<class_string>` index  **)**                   |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_property<class_VisualScriptPropertyGet_set_property>`  **(** :ref:`String<class_string>` property  **)**          |
-+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_script<class_VisualScriptPropertyGet_property_base_script>` |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`base_type<class_VisualScriptPropertyGet_property_base_type>`     |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`    | :ref:`basic_type<class_VisualScriptPropertyGet_property_basic_type>`   |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`index<class_VisualScriptPropertyGet_property_index>`             |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`NodePath<class_NodePath>`                        | :ref:`node_path<class_VisualScriptPropertyGet_property_node_path>`     |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`String<class_String>`                            | :ref:`property<class_VisualScriptPropertyGet_property_property>`       |
++--------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` | :ref:`set_mode<class_VisualScriptPropertyGet_property_set_mode>`       |
++--------------------------------------------------------+------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Enumerations
+------------
 
-- :ref:`String<class_string>` **base_script**
-- :ref:`String<class_string>` **base_type**
-- :ref:`int<class_int>` **basic_type**
-- :ref:`String<class_string>` **index**
-- :ref:`NodePath<class_nodepath>` **node_path**
-- :ref:`String<class_string>` **property**
-- :ref:`int<class_int>` **set_mode**
-- :ref:`int<class_int>` **type_cache**
+.. _enum_VisualScriptPropertyGet_CallMode:
 
-Numeric Constants
------------------
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_SELF:
+
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_NODE_PATH:
+
+.. _class_VisualScriptPropertyGet_constant_CALL_MODE_INSTANCE:
+
+enum **CallMode**:
 
 - **CALL_MODE_SELF** = **0**
+
 - **CALL_MODE_NODE_PATH** = **1**
+
 - **CALL_MODE_INSTANCE** = **2**
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptPropertyGet_get_base_path:
+.. _class_VisualScriptPropertyGet_property_base_script:
 
-- :ref:`NodePath<class_nodepath>`  **get_base_path**  **(** **)** const
+- :ref:`String<class_String>` **base_script**
 
-.. _class_VisualScriptPropertyGet_get_base_script:
++----------+------------------------+
+| *Setter* | set_base_script(value) |
++----------+------------------------+
+| *Getter* | get_base_script()      |
++----------+------------------------+
 
-- :ref:`String<class_string>`  **get_base_script**  **(** **)** const
+.. _class_VisualScriptPropertyGet_property_base_type:
 
-.. _class_VisualScriptPropertyGet_get_base_type:
+- :ref:`String<class_String>` **base_type**
 
-- :ref:`String<class_string>`  **get_base_type**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
 
-.. _class_VisualScriptPropertyGet_get_basic_type:
+.. _class_VisualScriptPropertyGet_property_basic_type:
 
-- :ref:`int<class_int>`  **get_basic_type**  **(** **)** const
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **basic_type**
 
-.. _class_VisualScriptPropertyGet_get_call_mode:
++----------+-----------------------+
+| *Setter* | set_basic_type(value) |
++----------+-----------------------+
+| *Getter* | get_basic_type()      |
++----------+-----------------------+
 
-- :ref:`int<class_int>`  **get_call_mode**  **(** **)** const
+.. _class_VisualScriptPropertyGet_property_index:
 
-.. _class_VisualScriptPropertyGet_get_index:
+- :ref:`String<class_String>` **index**
 
-- :ref:`String<class_string>`  **get_index**  **(** **)** const
++----------+------------------+
+| *Setter* | set_index(value) |
++----------+------------------+
+| *Getter* | get_index()      |
++----------+------------------+
 
-.. _class_VisualScriptPropertyGet_get_property:
+.. _class_VisualScriptPropertyGet_property_node_path:
 
-- :ref:`String<class_string>`  **get_property**  **(** **)** const
+- :ref:`NodePath<class_NodePath>` **node_path**
 
-.. _class_VisualScriptPropertyGet_set_base_path:
++----------+----------------------+
+| *Setter* | set_base_path(value) |
++----------+----------------------+
+| *Getter* | get_base_path()      |
++----------+----------------------+
 
-- void  **set_base_path**  **(** :ref:`NodePath<class_nodepath>` base_path  **)**
+.. _class_VisualScriptPropertyGet_property_property:
 
-.. _class_VisualScriptPropertyGet_set_base_script:
+- :ref:`String<class_String>` **property**
 
-- void  **set_base_script**  **(** :ref:`String<class_string>` base_script  **)**
++----------+---------------------+
+| *Setter* | set_property(value) |
++----------+---------------------+
+| *Getter* | get_property()      |
++----------+---------------------+
 
-.. _class_VisualScriptPropertyGet_set_base_type:
+.. _class_VisualScriptPropertyGet_property_set_mode:
 
-- void  **set_base_type**  **(** :ref:`String<class_string>` base_type  **)**
+- :ref:`CallMode<enum_VisualScriptPropertyGet_CallMode>` **set_mode**
 
-.. _class_VisualScriptPropertyGet_set_basic_type:
-
-- void  **set_basic_type**  **(** :ref:`int<class_int>` basic_type  **)**
-
-.. _class_VisualScriptPropertyGet_set_call_mode:
-
-- void  **set_call_mode**  **(** :ref:`int<class_int>` mode  **)**
-
-.. _class_VisualScriptPropertyGet_set_index:
-
-- void  **set_index**  **(** :ref:`String<class_string>` index  **)**
-
-.. _class_VisualScriptPropertyGet_set_property:
-
-- void  **set_property**  **(** :ref:`String<class_string>` property  **)**
-
++----------+----------------------+
+| *Setter* | set_call_mode(value) |
++----------+----------------------+
+| *Getter* | get_call_mode()      |
++----------+----------------------+
 

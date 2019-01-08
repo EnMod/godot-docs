@@ -7,7 +7,7 @@
 TabContainer
 ============
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Container<class_Container>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,176 +16,279 @@ Brief Description
 
 Tabbed Container.
 
-Member Functions
+Properties
+----------
+
++---------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                       | :ref:`current_tab<class_TabContainer_property_current_tab>`                             |
++---------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`drag_to_rearrange_enabled<class_TabContainer_property_drag_to_rearrange_enabled>` |
++---------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`TabAlign<enum_TabContainer_TabAlign>` | :ref:`tab_align<class_TabContainer_property_tab_align>`                                 |
++---------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`tabs_visible<class_TabContainer_property_tabs_visible>`                           |
++---------------------------------------------+-----------------------------------------------------------------------------------------+
+
+Methods
+-------
+
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_Control>` | :ref:`get_current_tab_control<class_TabContainer_method_get_current_tab_control>` **(** **)** const                                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Popup<class_Popup>`     | :ref:`get_popup<class_TabContainer_method_get_popup>` **(** **)** const                                                                         |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_previous_tab<class_TabContainer_method_get_previous_tab>` **(** **)** const                                                           |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Control<class_Control>` | :ref:`get_tab_control<class_TabContainer_method_get_tab_control>` **(** :ref:`int<class_int>` idx **)** const                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_tab_count<class_TabContainer_method_get_tab_count>` **(** **)** const                                                                 |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`get_tab_disabled<class_TabContainer_method_get_tab_disabled>` **(** :ref:`int<class_int>` tab_idx **)** const                             |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`get_tab_icon<class_TabContainer_method_get_tab_icon>` **(** :ref:`int<class_int>` tab_idx **)** const                                     |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`   | :ref:`get_tab_title<class_TabContainer_method_get_tab_title>` **(** :ref:`int<class_int>` tab_idx **)** const                                   |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_tabs_rearrange_group<class_TabContainer_method_get_tabs_rearrange_group>` **(** **)** const                                           |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_popup<class_TabContainer_method_set_popup>` **(** :ref:`Node<class_Node>` popup **)**                                                 |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_tab_disabled<class_TabContainer_method_set_tab_disabled>` **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)** |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_tab_icon<class_TabContainer_method_set_tab_icon>` **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**       |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**      |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_tabs_rearrange_group<class_TabContainer_method_set_tabs_rearrange_group>` **(** :ref:`int<class_int>` group_id **)**                  |
++-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`are_tabs_visible<class_TabContainer_are_tabs_visible>`  **(** **)** const                                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_current_tab<class_TabContainer_get_current_tab>`  **(** **)** const                                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_control>`  | :ref:`get_current_tab_control<class_TabContainer_get_current_tab_control>`  **(** **)** const                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Popup<class_popup>`      | :ref:`get_popup<class_TabContainer_get_popup>`  **(** **)** const                                                                          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_previous_tab<class_TabContainer_get_previous_tab>`  **(** **)** const                                                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tab_align<class_TabContainer_get_tab_align>`  **(** **)** const                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Control<class_control>`  | :ref:`get_tab_control<class_TabContainer_get_tab_control>`  **(** :ref:`int<class_int>` idx  **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_tab_count<class_TabContainer_get_tab_count>`  **(** **)** const                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_tab_disabled<class_TabContainer_get_tab_disabled>`  **(** :ref:`int<class_int>` tab_idx  **)** const                             |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_tab_icon<class_TabContainer_get_tab_icon>`  **(** :ref:`int<class_int>` tab_idx  **)** const                                     |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_tab_title<class_TabContainer_get_tab_title>`  **(** :ref:`int<class_int>` tab_idx  **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_current_tab<class_TabContainer_set_current_tab>`  **(** :ref:`int<class_int>` tab_idx  **)**                                     |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_popup<class_TabContainer_set_popup>`  **(** :ref:`Node<class_node>` popup  **)**                                                 |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_align<class_TabContainer_set_tab_align>`  **(** :ref:`int<class_int>` align  **)**                                           |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_disabled<class_TabContainer_set_tab_disabled>`  **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_icon<class_TabContainer_set_tab_icon>`  **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon  **)**       |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tab_title<class_TabContainer_set_tab_title>`  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)**      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_tabs_visible<class_TabContainer_set_tabs_visible>`  **(** :ref:`bool<class_bool>` visible  **)**                                 |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | decrement           |
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | decrement_highlight |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_bg       |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_fg       |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | increment           |
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | increment_highlight |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | label_valign_bg     |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | label_valign_fg     |
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | menu                |
++---------------------------------+---------------------+
+| :ref:`Texture<class_Texture>`   | menu_highlight      |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | panel               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | side_margin         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | tab_bg              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | tab_fg              |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | top_margin          |
++---------------------------------+---------------------+
 
 Signals
 -------
 
--  **pre_popup_pressed**  **(** **)**
--  **tab_changed**  **(** :ref:`int<class_int>` tab  **)**
-Emitted only when the current tab changes.
+.. _class_TabContainer_signal_pre_popup_pressed:
 
--  **tab_selected**  **(** :ref:`int<class_int>` tab  **)**
-Emitted when a tab is being selected, even if it is the same tab.
+- **pre_popup_pressed** **(** **)**
 
+Emitted when the ``TabContainer``'s :ref:`Popup<class_Popup>` button is clicked. See :ref:`set_popup<class_TabContainer_method_set_popup>` for details.
 
-Member Variables
-----------------
+.. _class_TabContainer_signal_tab_changed:
 
-- :ref:`int<class_int>` **current_tab**
-- :ref:`int<class_int>` **tab_align**
-- :ref:`bool<class_bool>` **tabs_visible**
+- **tab_changed** **(** :ref:`int<class_int>` tab **)**
 
-Numeric Constants
------------------
+Emitted when switching to another tab.
 
-- **ALIGN_LEFT** = **0**
-- **ALIGN_CENTER** = **1**
-- **ALIGN_RIGHT** = **2**
+.. _class_TabContainer_signal_tab_selected:
+
+- **tab_selected** **(** :ref:`int<class_int>` tab **)**
+
+Emitted when a tab is selected, even if it is the current tab.
+
+Enumerations
+------------
+
+.. _enum_TabContainer_TabAlign:
+
+.. _class_TabContainer_constant_ALIGN_LEFT:
+
+.. _class_TabContainer_constant_ALIGN_CENTER:
+
+.. _class_TabContainer_constant_ALIGN_RIGHT:
+
+enum **TabAlign**:
+
+- **ALIGN_LEFT** = **0** --- Align the tabs to the left.
+
+- **ALIGN_CENTER** = **1** --- Align the tabs to the center.
+
+- **ALIGN_RIGHT** = **2** --- Align the tabs to the right.
 
 Description
 -----------
 
-Tabbed Container. Contains several children controls, but shows only one at the same time. Clicking on the top tabs allows to change the currently visible one.
+Sets the active tab's ``visible`` property to the value ``true``. Sets all other children's to ``false``.
 
-Children controls of this one automatically.
+Ignores non-:ref:`Control<class_Control>` children.
 
-Member Function Description
----------------------------
+Individual tabs are always visible unless you use :ref:`set_tab_disabled<class_TabContainer_method_set_tab_disabled>` and :ref:`set_tab_title<class_TabContainer_method_set_tab_title>` to hide it.
 
-.. _class_TabContainer_are_tabs_visible:
+To hide only a tab's content, nest the content inside a child :ref:`Control<class_Control>`, so it receives the ``TabContainer``'s visibility setting instead.
 
-- :ref:`bool<class_bool>`  **are_tabs_visible**  **(** **)** const
+Property Descriptions
+---------------------
 
-Return whether the tabs should be visible or hidden.
+.. _class_TabContainer_property_current_tab:
 
-.. _class_TabContainer_get_current_tab:
+- :ref:`int<class_int>` **current_tab**
 
-- :ref:`int<class_int>`  **get_current_tab**  **(** **)** const
++----------+------------------------+
+| *Setter* | set_current_tab(value) |
++----------+------------------------+
+| *Getter* | get_current_tab()      |
++----------+------------------------+
 
-Return the current tab index that is being shown.
+The current tab index. When set, this index's :ref:`Control<class_Control>` node's ``visible`` property is set to ``true`` and all others are set to ``false``.
 
-.. _class_TabContainer_get_current_tab_control:
+.. _class_TabContainer_property_drag_to_rearrange_enabled:
 
-- :ref:`Control<class_control>`  **get_current_tab_control**  **(** **)** const
+- :ref:`bool<class_bool>` **drag_to_rearrange_enabled**
 
-.. _class_TabContainer_get_popup:
++----------+--------------------------------------+
+| *Setter* | set_drag_to_rearrange_enabled(value) |
++----------+--------------------------------------+
+| *Getter* | get_drag_to_rearrange_enabled()      |
++----------+--------------------------------------+
 
-- :ref:`Popup<class_popup>`  **get_popup**  **(** **)** const
+If ``true``, tabs can be rearranged with mouse drag.
 
-.. _class_TabContainer_get_previous_tab:
+.. _class_TabContainer_property_tab_align:
 
-- :ref:`int<class_int>`  **get_previous_tab**  **(** **)** const
+- :ref:`TabAlign<enum_TabContainer_TabAlign>` **tab_align**
 
-Return the previous tab index that was being shown.
++----------+----------------------+
+| *Setter* | set_tab_align(value) |
++----------+----------------------+
+| *Getter* | get_tab_align()      |
++----------+----------------------+
 
-.. _class_TabContainer_get_tab_align:
+The alignment of all tabs in the tab container. See the ``ALIGN_*`` constants for details.
 
-- :ref:`int<class_int>`  **get_tab_align**  **(** **)** const
+.. _class_TabContainer_property_tabs_visible:
 
-Return tab alignment, from the ALIGN\_\* enum.
+- :ref:`bool<class_bool>` **tabs_visible**
 
-.. _class_TabContainer_get_tab_control:
++----------+-------------------------+
+| *Setter* | set_tabs_visible(value) |
++----------+-------------------------+
+| *Getter* | are_tabs_visible()      |
++----------+-------------------------+
 
-- :ref:`Control<class_control>`  **get_tab_control**  **(** :ref:`int<class_int>` idx  **)** const
+If ``true``, tabs are visible. If ``false``, tabs' content and titles are hidden. Default value: ``true``.
 
-Return the current tab control that is being shown.
+Method Descriptions
+-------------------
 
-.. _class_TabContainer_get_tab_count:
+.. _class_TabContainer_method_get_current_tab_control:
 
-- :ref:`int<class_int>`  **get_tab_count**  **(** **)** const
+- :ref:`Control<class_Control>` **get_current_tab_control** **(** **)** const
 
-Return the amount of tabs.
+Returns the child :ref:`Control<class_Control>` node located at the active tab index.
 
-.. _class_TabContainer_get_tab_disabled:
+.. _class_TabContainer_method_get_popup:
 
-- :ref:`bool<class_bool>`  **get_tab_disabled**  **(** :ref:`int<class_int>` tab_idx  **)** const
+- :ref:`Popup<class_Popup>` **get_popup** **(** **)** const
 
-.. _class_TabContainer_get_tab_icon:
+Returns the :ref:`Popup<class_Popup>` node instance if one has been set already with :ref:`set_popup<class_TabContainer_method_set_popup>`.
 
-- :ref:`Texture<class_texture>`  **get_tab_icon**  **(** :ref:`int<class_int>` tab_idx  **)** const
+.. _class_TabContainer_method_get_previous_tab:
 
-.. _class_TabContainer_get_tab_title:
+- :ref:`int<class_int>` **get_previous_tab** **(** **)** const
 
-- :ref:`String<class_string>`  **get_tab_title**  **(** :ref:`int<class_int>` tab_idx  **)** const
+Returns the previously active tab index.
 
-Return the title for the tab. Tab titles are by default the children node name, but this can be overridden.
+.. _class_TabContainer_method_get_tab_control:
 
-.. _class_TabContainer_set_current_tab:
+- :ref:`Control<class_Control>` **get_tab_control** **(** :ref:`int<class_int>` idx **)** const
 
-- void  **set_current_tab**  **(** :ref:`int<class_int>` tab_idx  **)**
+Returns the currently visible tab's :ref:`Control<class_Control>` node.
 
-Bring a tab (and the Control it represents) to the front, and hide the rest.
+.. _class_TabContainer_method_get_tab_count:
 
-.. _class_TabContainer_set_popup:
+- :ref:`int<class_int>` **get_tab_count** **(** **)** const
 
-- void  **set_popup**  **(** :ref:`Node<class_node>` popup  **)**
+Returns the number of tabs.
 
-.. _class_TabContainer_set_tab_align:
+.. _class_TabContainer_method_get_tab_disabled:
 
-- void  **set_tab_align**  **(** :ref:`int<class_int>` align  **)**
+- :ref:`bool<class_bool>` **get_tab_disabled** **(** :ref:`int<class_int>` tab_idx **)** const
 
-Set tab alignment, from the ALIGN\_\* enum. Moves tabs to the left, right or center.
+Returns ``true`` if the tab at index ``tab_idx`` is disabled.
 
-.. _class_TabContainer_set_tab_disabled:
+.. _class_TabContainer_method_get_tab_icon:
 
-- void  **set_tab_disabled**  **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled  **)**
+- :ref:`Texture<class_Texture>` **get_tab_icon** **(** :ref:`int<class_int>` tab_idx **)** const
 
-.. _class_TabContainer_set_tab_icon:
+Returns the :ref:`Texture<class_Texture>` for the tab at index ``tab_idx`` or null if the tab has no :ref:`Texture<class_Texture>`.
 
-- void  **set_tab_icon**  **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_texture>` icon  **)**
+.. _class_TabContainer_method_get_tab_title:
 
-Set an icon for a tab.
+- :ref:`String<class_String>` **get_tab_title** **(** :ref:`int<class_int>` tab_idx **)** const
 
-.. _class_TabContainer_set_tab_title:
+Returns the title of the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
 
-- void  **set_tab_title**  **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_string>` title  **)**
+.. _class_TabContainer_method_get_tabs_rearrange_group:
 
-Set a title for the tab. Tab titles are by default the children node name, but this can be overridden.
+- :ref:`int<class_int>` **get_tabs_rearrange_group** **(** **)** const
 
-.. _class_TabContainer_set_tabs_visible:
+Returns the ``TabContainer`` rearrange group id.
 
-- void  **set_tabs_visible**  **(** :ref:`bool<class_bool>` visible  **)**
+.. _class_TabContainer_method_set_popup:
 
-Set whether the tabs should be visible or hidden.
+- void **set_popup** **(** :ref:`Node<class_Node>` popup **)**
 
+If set on a :ref:`Popup<class_Popup>` node instance, a popup menu icon appears in the top-right corner of the ``TabContainer``. Clicking it will expand the :ref:`Popup<class_Popup>` node.
+
+.. _class_TabContainer_method_set_tab_disabled:
+
+- void **set_tab_disabled** **(** :ref:`int<class_int>` tab_idx, :ref:`bool<class_bool>` disabled **)**
+
+If ``disabled`` is false, hides the tab at index ``tab_idx``. Note that its title text will remain, unless also removed with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+
+.. _class_TabContainer_method_set_tab_icon:
+
+- void **set_tab_icon** **(** :ref:`int<class_int>` tab_idx, :ref:`Texture<class_Texture>` icon **)**
+
+Sets an icon for the tab at index ``tab_idx``.
+
+.. _class_TabContainer_method_set_tab_title:
+
+- void **set_tab_title** **(** :ref:`int<class_int>` tab_idx, :ref:`String<class_String>` title **)**
+
+Sets a title for the tab at index ``tab_idx``. Tab titles default to the name of the indexed child node, but this can be overridden with :ref:`set_tab_title<class_TabContainer_method_set_tab_title>`.
+
+.. _class_TabContainer_method_set_tabs_rearrange_group:
+
+- void **set_tabs_rearrange_group** **(** :ref:`int<class_int>` group_id **)**
+
+Defines rearrange group id, choose for each ``TabContainer`` the same value to enable tab drag between ``TabContainer``. Enable drag with ``set_drag_to_rearrange_enabled(true)``.
 

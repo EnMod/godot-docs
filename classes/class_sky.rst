@@ -7,52 +7,84 @@
 Sky
 ===
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PanoramaSky<class_panoramasky>`, :ref:`ProceduralSky<class_proceduralsky>`
+**Inherited By:** :ref:`PanoramaSky<class_PanoramaSky>`, :ref:`ProceduralSky<class_ProceduralSky>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
 
+Properties
+----------
 
-Member Functions
-----------------
++--------------------------------------------+--------------------------------------------------------+
+| :ref:`RadianceSize<enum_Sky_RadianceSize>` | :ref:`radiance_size<class_Sky_property_radiance_size>` |
++--------------------------------------------+--------------------------------------------------------+
 
-+------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_radiance_size<class_Sky_get_radiance_size>`  **(** **)** const                       |
-+------------------------+------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_radiance_size<class_Sky_set_radiance_size>`  **(** :ref:`int<class_int>` size  **)** |
-+------------------------+------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_Sky_RadianceSize:
 
-- :ref:`int<class_int>` **radiance_size**
+.. _class_Sky_constant_RADIANCE_SIZE_32:
 
-Numeric Constants
------------------
+.. _class_Sky_constant_RADIANCE_SIZE_64:
 
-- **RADIANCE_SIZE_32** = **0**
-- **RADIANCE_SIZE_64** = **1**
-- **RADIANCE_SIZE_128** = **2**
-- **RADIANCE_SIZE_256** = **3**
-- **RADIANCE_SIZE_512** = **4**
-- **RADIANCE_SIZE_1024** = **5**
-- **RADIANCE_SIZE_2048** = **6**
-- **RADIANCE_SIZE_MAX** = **7**
+.. _class_Sky_constant_RADIANCE_SIZE_128:
 
-Member Function Description
----------------------------
+.. _class_Sky_constant_RADIANCE_SIZE_256:
 
-.. _class_Sky_get_radiance_size:
+.. _class_Sky_constant_RADIANCE_SIZE_512:
 
-- :ref:`int<class_int>`  **get_radiance_size**  **(** **)** const
+.. _class_Sky_constant_RADIANCE_SIZE_1024:
 
-.. _class_Sky_set_radiance_size:
+.. _class_Sky_constant_RADIANCE_SIZE_2048:
 
-- void  **set_radiance_size**  **(** :ref:`int<class_int>` size  **)**
+.. _class_Sky_constant_RADIANCE_SIZE_MAX:
 
+enum **RadianceSize**:
+
+- **RADIANCE_SIZE_32** = **0** --- Radiance texture size is 32x32 pixels.
+
+- **RADIANCE_SIZE_64** = **1** --- Radiance texture size is 64x64 pixels.
+
+- **RADIANCE_SIZE_128** = **2** --- Radiance texture size is 128x128 pixels.
+
+- **RADIANCE_SIZE_256** = **3** --- Radiance texture size is 256x256 pixels.
+
+- **RADIANCE_SIZE_512** = **4** --- Radiance texture size is 512x512 pixels.
+
+- **RADIANCE_SIZE_1024** = **5** --- Radiance texture size is 1024x1024 pixels.
+
+- **RADIANCE_SIZE_2048** = **6** --- Radiance texture size is 2048x2048 pixels.
+
+- **RADIANCE_SIZE_MAX** = **7** --- Radiance texture size is the largest size it can be.
+
+Description
+-----------
+
+The base class for :ref:`PanoramaSky<class_PanoramaSky>` and :ref:`ProceduralSky<class_ProceduralSky>`.
+
+Property Descriptions
+---------------------
+
+.. _class_Sky_property_radiance_size:
+
+- :ref:`RadianceSize<enum_Sky_RadianceSize>` **radiance_size**
+
++----------+--------------------------+
+| *Setter* | set_radiance_size(value) |
++----------+--------------------------+
+| *Getter* | get_radiance_size()      |
++----------+--------------------------+
+
+The Sky's radiance map size.
+
+The higher the radiance map size, the more detailed the lighting from the Sky will be.
+
+See RADIANCE_SIZE\_\* constants for values. Default size is RADIANCE_SIZE_512.
 

@@ -7,7 +7,7 @@
 DampedSpringJoint2D
 ===================
 
-**Inherits:** :ref:`Joint2D<class_joint2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Joint2D<class_Joint2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,89 +16,72 @@ Brief Description
 
 Damped spring constraint for 2D physics.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_damping<class_DampedSpringJoint2D_get_damping>`  **(** **)** const                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_length<class_DampedSpringJoint2D_get_length>`  **(** **)** const                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_rest_length<class_DampedSpringJoint2D_get_rest_length>`  **(** **)** const                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_stiffness<class_DampedSpringJoint2D_get_stiffness>`  **(** **)** const                                      |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_damping<class_DampedSpringJoint2D_set_damping>`  **(** :ref:`float<class_float>` damping  **)**             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_length<class_DampedSpringJoint2D_set_length>`  **(** :ref:`float<class_float>` length  **)**                |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_rest_length<class_DampedSpringJoint2D_set_rest_length>`  **(** :ref:`float<class_float>` rest_length  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_stiffness<class_DampedSpringJoint2D_set_stiffness>`  **(** :ref:`float<class_float>` stiffness  **)**       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **damping**
-- :ref:`float<class_float>` **length**
-- :ref:`float<class_float>` **rest_length**
-- :ref:`float<class_float>` **stiffness**
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`damping<class_DampedSpringJoint2D_property_damping>`         |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`length<class_DampedSpringJoint2D_property_length>`           |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`rest_length<class_DampedSpringJoint2D_property_rest_length>` |
++---------------------------+--------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`stiffness<class_DampedSpringJoint2D_property_stiffness>`     |
++---------------------------+--------------------------------------------------------------------+
 
 Description
 -----------
 
 Damped spring constraint for 2D physics. This resembles a spring joint that always wants to go back to a given length.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_DampedSpringJoint2D_get_damping:
+.. _class_DampedSpringJoint2D_property_damping:
 
-- :ref:`float<class_float>`  **get_damping**  **(** **)** const
+- :ref:`float<class_float>` **damping**
 
-Return the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
++----------+--------------------+
+| *Setter* | set_damping(value) |
++----------+--------------------+
+| *Getter* | get_damping()      |
++----------+--------------------+
 
-.. _class_DampedSpringJoint2D_get_length:
+The spring joint's damping ratio. A value between ``0`` and ``1``. When the two bodies move into different directions the system tries to align them to the spring axis again. A high ``damping`` value forces the attached bodies to align faster. Default value: ``1``
 
-- :ref:`float<class_float>`  **get_length**  **(** **)** const
+.. _class_DampedSpringJoint2D_property_length:
 
-Return the maximum length of the spring joint.
+- :ref:`float<class_float>` **length**
 
-.. _class_DampedSpringJoint2D_get_rest_length:
++----------+-------------------+
+| *Setter* | set_length(value) |
++----------+-------------------+
+| *Getter* | get_length()      |
++----------+-------------------+
 
-- :ref:`float<class_float>`  **get_rest_length**  **(** **)** const
+The spring joint's maximum length. The two attached bodies cannot stretch it past this value. Default value: ``50``
 
-Return the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
+.. _class_DampedSpringJoint2D_property_rest_length:
 
-.. _class_DampedSpringJoint2D_get_stiffness:
+- :ref:`float<class_float>` **rest_length**
 
-- :ref:`float<class_float>`  **get_stiffness**  **(** **)** const
++----------+------------------------+
+| *Setter* | set_rest_length(value) |
++----------+------------------------+
+| *Getter* | get_rest_length()      |
++----------+------------------------+
 
-Return the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
+When the bodies attached to the spring joint move they stretch or squash it. The joint always tries to resize towards this length. Default value: ``0``
 
-.. _class_DampedSpringJoint2D_set_damping:
+.. _class_DampedSpringJoint2D_property_stiffness:
 
-- void  **set_damping**  **(** :ref:`float<class_float>` damping  **)**
+- :ref:`float<class_float>` **stiffness**
 
-Set the damping ratio of the spring joint. A value of 0 indicates an undamped spring, while 1 causes the system to reach equilibrium as fast as possible (critical damping).
++----------+----------------------+
+| *Setter* | set_stiffness(value) |
++----------+----------------------+
+| *Getter* | get_stiffness()      |
++----------+----------------------+
 
-.. _class_DampedSpringJoint2D_set_length:
-
-- void  **set_length**  **(** :ref:`float<class_float>` length  **)**
-
-Set the maximum length of the spring joint.
-
-.. _class_DampedSpringJoint2D_set_rest_length:
-
-- void  **set_rest_length**  **(** :ref:`float<class_float>` rest_length  **)**
-
-Set the resting length of the spring joint. The joint will always try to go to back this length when pulled apart.
-
-.. _class_DampedSpringJoint2D_set_stiffness:
-
-- void  **set_stiffness**  **(** :ref:`float<class_float>` stiffness  **)**
-
-Set the stiffness of the spring joint. The joint applies a force equal to the stiffness times the distance from its resting length.
-
+The higher the value, the less the bodies attached to the joint will deform it. The joint applies an opposing force to the bodies, the product of the stiffness multiplied by the size difference from its resting length. Default value: ``20``
 

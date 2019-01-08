@@ -7,7 +7,7 @@
 SceneTreeTimer
 ==============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,29 +16,30 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_time_left<class_SceneTreeTimer_get_time_left>`  **(** **)** const                           |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_time_left<class_SceneTreeTimer_set_time_left>`  **(** :ref:`float<class_float>` time  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`time_left<class_SceneTreeTimer_property_time_left>` |
++---------------------------+-----------------------------------------------------------+
 
 Signals
 -------
 
--  **timeout**  **(** **)**
+.. _class_SceneTreeTimer_signal_timeout:
 
-Member Function Description
----------------------------
+- **timeout** **(** **)**
 
-.. _class_SceneTreeTimer_get_time_left:
+Property Descriptions
+---------------------
 
-- :ref:`float<class_float>`  **get_time_left**  **(** **)** const
+.. _class_SceneTreeTimer_property_time_left:
 
-.. _class_SceneTreeTimer_set_time_left:
+- :ref:`float<class_float>` **time_left**
 
-- void  **set_time_left**  **(** :ref:`float<class_float>` time  **)**
-
++----------+----------------------+
+| *Setter* | set_time_left(value) |
++----------+----------------------+
+| *Getter* | get_time_left()      |
++----------+----------------------+
 

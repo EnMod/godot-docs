@@ -7,7 +7,7 @@
 SpinBox
 =======
 
-**Inherits:** :ref:`Range<class_range>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Range<class_Range>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,76 +16,85 @@ Brief Description
 
 Numerical input text field.
 
-Member Functions
+Properties
+----------
+
++-----------------------------------+--------------------------------------------------+
+| :ref:`Align<enum_LineEdit_Align>` | :ref:`align<class_SpinBox_property_align>`       |
++-----------------------------------+--------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`editable<class_SpinBox_property_editable>` |
++-----------------------------------+--------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`prefix<class_SpinBox_property_prefix>`     |
++-----------------------------------+--------------------------------------------------+
+| :ref:`String<class_String>`       | :ref:`suffix<class_SpinBox_property_suffix>`     |
++-----------------------------------+--------------------------------------------------+
+
+Methods
+-------
+
++---------------------------------+----------------------------------------------------------------------+
+| :ref:`LineEdit<class_LineEdit>` | :ref:`get_line_edit<class_SpinBox_method_get_line_edit>` **(** **)** |
++---------------------------------+----------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`LineEdit<class_lineedit>`  | :ref:`get_line_edit<class_SpinBox_get_line_edit>`  **(** **)**                                 |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_prefix<class_SpinBox_get_prefix>`  **(** **)** const                                 |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`      | :ref:`get_suffix<class_SpinBox_get_suffix>`  **(** **)** const                                 |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`          | :ref:`is_editable<class_SpinBox_is_editable>`  **(** **)** const                               |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_editable<class_SpinBox_set_editable>`  **(** :ref:`bool<class_bool>` editable  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_prefix<class_SpinBox_set_prefix>`  **(** :ref:`String<class_string>` prefix  **)**   |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_suffix<class_SpinBox_set_suffix>`  **(** :ref:`String<class_string>` suffix  **)**   |
-+----------------------------------+------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **editable**
-- :ref:`String<class_string>` **prefix**
-- :ref:`String<class_string>` **suffix**
++-------------------------------+--------+
+| :ref:`Texture<class_Texture>` | updown |
++-------------------------------+--------+
 
 Description
 -----------
 
 SpinBox is a numerical input text field. It allows entering integers and floats.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_SpinBox_get_line_edit:
+.. _class_SpinBox_property_align:
 
-- :ref:`LineEdit<class_lineedit>`  **get_line_edit**  **(** **)**
+- :ref:`Align<enum_LineEdit_Align>` **align**
 
-.. _class_SpinBox_get_prefix:
++----------+------------------+
+| *Setter* | set_align(value) |
++----------+------------------+
+| *Getter* | get_align()      |
++----------+------------------+
 
-- :ref:`String<class_string>`  **get_prefix**  **(** **)** const
+.. _class_SpinBox_property_editable:
 
-.. _class_SpinBox_get_suffix:
+- :ref:`bool<class_bool>` **editable**
 
-- :ref:`String<class_string>`  **get_suffix**  **(** **)** const
++----------+---------------------+
+| *Setter* | set_editable(value) |
++----------+---------------------+
+| *Getter* | is_editable()       |
++----------+---------------------+
 
-Return the specific suffix.
+.. _class_SpinBox_property_prefix:
 
-.. _class_SpinBox_is_editable:
+- :ref:`String<class_String>` **prefix**
 
-- :ref:`bool<class_bool>`  **is_editable**  **(** **)** const
++----------+-------------------+
+| *Setter* | set_prefix(value) |
++----------+-------------------+
+| *Getter* | get_prefix()      |
++----------+-------------------+
 
-Return if the spinbox is editable.
+.. _class_SpinBox_property_suffix:
 
-.. _class_SpinBox_set_editable:
+- :ref:`String<class_String>` **suffix**
 
-- void  **set_editable**  **(** :ref:`bool<class_bool>` editable  **)**
++----------+-------------------+
+| *Setter* | set_suffix(value) |
++----------+-------------------+
+| *Getter* | get_suffix()      |
++----------+-------------------+
 
-Set whether the spinbox is editable.
+Method Descriptions
+-------------------
 
-.. _class_SpinBox_set_prefix:
+.. _class_SpinBox_method_get_line_edit:
 
-- void  **set_prefix**  **(** :ref:`String<class_string>` prefix  **)**
-
-Set a prefix.
-
-.. _class_SpinBox_set_suffix:
-
-- void  **set_suffix**  **(** :ref:`String<class_string>` suffix  **)**
-
-Set a specific suffix.
-
+- :ref:`LineEdit<class_LineEdit>` **get_line_edit** **(** **)**
 

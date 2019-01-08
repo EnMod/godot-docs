@@ -7,7 +7,7 @@
 VisualScriptTypeCast
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,35 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_script<class_VisualScriptTypeCast_get_base_script>`  **(** **)** const                             |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_type<class_VisualScriptTypeCast_get_base_type>`  **(** **)** const                                 |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_script<class_VisualScriptTypeCast_set_base_script>`  **(** :ref:`String<class_string>` path  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_type<class_VisualScriptTypeCast_set_base_type>`  **(** :ref:`String<class_string>` type  **)**     |
-+------------------------------+-------------------------------------------------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`base_script<class_VisualScriptTypeCast_property_base_script>` |
++-----------------------------+---------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptTypeCast_property_base_type>`     |
++-----------------------------+---------------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
 
-- :ref:`String<class_string>` **base_script**
-- :ref:`String<class_string>` **base_type**
+.. _class_VisualScriptTypeCast_property_base_script:
 
-Member Function Description
----------------------------
+- :ref:`String<class_String>` **base_script**
 
-.. _class_VisualScriptTypeCast_get_base_script:
++----------+------------------------+
+| *Setter* | set_base_script(value) |
++----------+------------------------+
+| *Getter* | get_base_script()      |
++----------+------------------------+
 
-- :ref:`String<class_string>`  **get_base_script**  **(** **)** const
+.. _class_VisualScriptTypeCast_property_base_type:
 
-.. _class_VisualScriptTypeCast_get_base_type:
+- :ref:`String<class_String>` **base_type**
 
-- :ref:`String<class_string>`  **get_base_type**  **(** **)** const
-
-.. _class_VisualScriptTypeCast_set_base_script:
-
-- void  **set_base_script**  **(** :ref:`String<class_string>` path  **)**
-
-.. _class_VisualScriptTypeCast_set_base_type:
-
-- void  **set_base_type**  **(** :ref:`String<class_string>` type  **)**
-
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
 

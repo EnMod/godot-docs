@@ -4,7 +4,7 @@ Bug triage guidelines
 =====================
 
 This page describes the typical workflow of the bug triage team aka
-bugsquad when handling issues and pull requests on Godot's GitHub
+bugsquad when handling issues and pull requests on Godot's `GitHub <https://github.com/godotengine/godot>`_
 repository. It is bound to evolve together with the bugsquad, so do not
 hesitate to propose modifications to the following guidelines.
 
@@ -63,16 +63,16 @@ The following labels are currently defined in the Godot repository:
    it a great fit for junior contributors who need to become familiar with
    the code base.
 -  *Needs rebase*: the issue need a git rebase to be merged.
--  *Needs testing*: the issue/pull request could not be completely tested 
+-  *Needs testing*: the issue/pull request could not be completely tested
    and thus need further testing. This can mean that it needs to be tested
-   on different hardware/software configurations or even that the steps to 
+   on different hardware/software configurations or even that the steps to
    reproduce are not certain.
--  *PR welcome*: you are welcome to work on this issue and propose a pull
-   request. Note that this **doesn't** mean you can't work on bugs without
-   this label.
+-  *PR welcome / hero wanted!*: Contributions for issues with these labels are especially welcome.
+   Note that this **doesn't** mean you can't work on issues without
+   these labels.
 -  *Tracker*: issue used to track other issues (like all issues related to
    the plugin system).
--  *Usability*: issue that directly impact user usability.
+-  *Usability*: issues that directly impact user usability.
 
 The categories are used for general triage of the issues. They can be
 combined in some way when relevant, e.g. an issue can be labelled
@@ -92,8 +92,10 @@ feature request, or one that is not precise enough to be worked on.
 -  *Editor*: relates to issues in the editor (mainly UI).
 -  *GDNative*: relates to the GDNative module.
 -  *GDScript*: relates to GDScript.
+-  *Mono*: relates to the C# / Mono bindings.
+-  *Network*: relates to networking.
 -  *Physics*: relates to the physics engine (2D/3D).
--  *Plugin*: relates to problems encountered while writing plugins. 
+-  *Plugin*: relates to problems encountered while writing plugins.
 -  *Porting*: relates to some specific platforms.
 -  *Rendering*: relates to the 2D and 3D rendering engines.
 -  *VisualScript*: relates to issues with the visual scripting language.
@@ -103,9 +105,11 @@ unthinkable to see issues that fit two bills. The general idea is that
 there will be specialized contributors teams behind all topics, so they
 can focus on the issues labelled with their team's topic.
 
-**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *UWP*
+**Platforms:**
 
-By default, it is assumed that a given issue applies to all platforms. 
+*Android*, *HTML5*, *iOS*, *Linux*, *macOS*, *Windows*, *UWP*
+
+By default, it is assumed that a given issue applies to all platforms.
 If one of the platform labels is used, it is then exclusive and the
 previous assumption doesn't stand anymore (so if it's a bug on e.g.
 Android and Linux exclusively, select those two platforms).
@@ -113,7 +117,7 @@ Android and Linux exclusively, select those two platforms).
 Milestones
 ~~~~~~~~~~
 
-Milestones correspond to planned future versions of Godot for which
+`Milestones <https://github.com/godotengine/godot/milestones>`_ correspond to planned future versions of Godot for which
 there is an existing roadmap. Issues that fit in the said roadmap should
 be filed under the corresponding milestone; if they don't correspond to
 any current roadmap, they should be left without milestone. As a rule of

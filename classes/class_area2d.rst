@@ -7,388 +7,371 @@
 Area2D
 ======
 
-**Inherits:** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-2D area that detects nodes that enter or exit it. Can override 2D physics properties within range.
+2D area for detection and 2D physics influence.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_angular_damp<class_Area2D_get_angular_damp>`  **(** **)** const                                                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_audio_bus_name<class_Area2D_get_audio_bus_name>`  **(** **)** const                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collision_layer<class_Area2D_get_collision_layer>`  **(** **)** const                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_collision_layer_bit<class_Area2D_get_collision_layer_bit>`  **(** :ref:`int<class_int>` bit  **)** const                          |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_collision_mask<class_Area2D_get_collision_mask>`  **(** **)** const                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`get_collision_mask_bit<class_Area2D_get_collision_mask_bit>`  **(** :ref:`int<class_int>` bit  **)** const                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_gravity<class_Area2D_get_gravity>`  **(** **)** const                                                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_gravity_distance_scale<class_Area2D_get_gravity_distance_scale>`  **(** **)** const                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_gravity_vector<class_Area2D_get_gravity_vector>`  **(** **)** const                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_linear_damp<class_Area2D_get_linear_damp>`  **(** **)** const                                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`get_overlapping_areas<class_Area2D_get_overlapping_areas>`  **(** **)** const                                                         |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`      | :ref:`get_overlapping_bodies<class_Area2D_get_overlapping_bodies>`  **(** **)** const                                                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_priority<class_Area2D_get_priority>`  **(** **)** const                                                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_space_override_mode<class_Area2D_get_space_override_mode>`  **(** **)** const                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`  **(** **)** const                                                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_monitorable<class_Area2D_is_monitorable>`  **(** **)** const                                                                       |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_monitoring<class_Area2D_is_monitoring>`  **(** **)** const                                                                         |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_overriding_audio_bus<class_Area2D_is_overriding_audio_bus>`  **(** **)** const                                                     |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_area<class_Area2D_overlaps_area>`  **(** :ref:`Node<class_node>` area  **)** const                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`overlaps_body<class_Area2D_overlaps_body>`  **(** :ref:`Node<class_node>` body  **)** const                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_angular_damp<class_Area2D_set_angular_damp>`  **(** :ref:`float<class_float>` angular_damp  **)**                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_audio_bus_name<class_Area2D_set_audio_bus_name>`  **(** :ref:`String<class_string>` name  **)**                                   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_audio_bus_override<class_Area2D_set_audio_bus_override>`  **(** :ref:`bool<class_bool>` enable  **)**                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_layer<class_Area2D_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**                            |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_layer_bit<class_Area2D_set_collision_layer_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_mask<class_Area2D_set_collision_mask>`  **(** :ref:`int<class_int>` collision_mask  **)**                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_collision_mask_bit<class_Area2D_set_collision_mask_bit>`  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**   |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity<class_Area2D_set_gravity>`  **(** :ref:`float<class_float>` gravity  **)**                                                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_distance_scale<class_Area2D_set_gravity_distance_scale>`  **(** :ref:`float<class_float>` distance_scale  **)**           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_is_point<class_Area2D_set_gravity_is_point>`  **(** :ref:`bool<class_bool>` enable  **)**                                 |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_gravity_vector<class_Area2D_set_gravity_vector>`  **(** :ref:`Vector2<class_vector2>` vector  **)**                               |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_linear_damp<class_Area2D_set_linear_damp>`  **(** :ref:`float<class_float>` linear_damp  **)**                                    |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_monitorable<class_Area2D_set_monitorable>`  **(** :ref:`bool<class_bool>` enable  **)**                                           |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_monitoring<class_Area2D_set_monitoring>`  **(** :ref:`bool<class_bool>` enable  **)**                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_priority<class_Area2D_set_priority>`  **(** :ref:`float<class_float>` priority  **)**                                             |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_space_override_mode<class_Area2D_set_space_override_mode>`  **(** :ref:`int<class_int>` space_override_mode  **)**                |
-+--------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`angular_damp<class_Area2D_property_angular_damp>`                     |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`String<class_String>`                     | :ref:`audio_bus_name<class_Area2D_property_audio_bus_name>`                 |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`audio_bus_override<class_Area2D_property_audio_bus_override>`         |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`collision_layer<class_Area2D_property_collision_layer>`               |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`int<class_int>`                           | :ref:`collision_mask<class_Area2D_property_collision_mask>`                 |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`gravity<class_Area2D_property_gravity>`                               |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`gravity_distance_scale<class_Area2D_property_gravity_distance_scale>` |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`gravity_point<class_Area2D_property_gravity_point>`                   |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                   | :ref:`gravity_vec<class_Area2D_property_gravity_vec>`                       |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`linear_damp<class_Area2D_property_linear_damp>`                       |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitorable<class_Area2D_property_monitorable>`                       |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                         | :ref:`monitoring<class_Area2D_property_monitoring>`                         |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`float<class_float>`                       | :ref:`priority<class_Area2D_property_priority>`                             |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+| :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` | :ref:`space_override<class_Area2D_property_space_override>`                 |
++-------------------------------------------------+-----------------------------------------------------------------------------+
+
+Methods
+-------
+
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_collision_layer_bit<class_Area2D_method_get_collision_layer_bit>` **(** :ref:`int<class_int>` bit **)** const                          |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`get_collision_mask_bit<class_Area2D_method_get_collision_mask_bit>` **(** :ref:`int<class_int>` bit **)** const                            |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_overlapping_areas<class_Area2D_method_get_overlapping_areas>` **(** **)** const                                                        |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_overlapping_bodies<class_Area2D_method_get_overlapping_bodies>` **(** **)** const                                                      |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`overlaps_area<class_Area2D_method_overlaps_area>` **(** :ref:`Node<class_Node>` area **)** const                                           |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`overlaps_body<class_Area2D_method_overlaps_body>` **(** :ref:`Node<class_Node>` body **)** const                                           |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_collision_layer_bit<class_Area2D_method_set_collision_layer_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)** |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_collision_mask_bit<class_Area2D_method_set_collision_mask_bit>` **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**   |
++---------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
-This signal is triggered only once when an area enters this area. The only parameter passed is the area that entered this area.
+.. _class_Area2D_signal_area_entered:
 
--  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
-This signal is triggered only once when an area exits this area. The only parameter passed is the area that exited this area.
+- **area_entered** **(** :ref:`Area2D<class_Area2D>` area **)**
 
--  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
-This signal triggers only once when an area enters this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+Emitted when another area enters.
 
--  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
-This signal triggers only once when an area exits this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
+.. _class_Area2D_signal_area_exited:
 
--  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
-This signal is triggered only once when a body enters this area. The only parameter passed is the body that entered this area.
+- **area_exited** **(** :ref:`Area2D<class_Area2D>` area **)**
 
--  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
-This signal is triggered only once when a body exits this area. The only parameter passed is the body that exited this area.
+Emitted when another area exits.
 
--  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
-This signal triggers only once when a body enters this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape of the body that entered this area, and the fourth one is the index of the shape in this area that reported the entering.
+.. _class_Area2D_signal_area_shape_entered:
 
--  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
-This signal triggers only once when a body exits this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape exiting this area, and the fourth one is the index of the shape in this area that reported the exit.
+- **area_shape_entered** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
+Emitted when another area enters, reporting which shapes overlapped.
 
-Member Variables
-----------------
+.. _class_Area2D_signal_area_shape_exited:
 
-- :ref:`float<class_float>` **angular_damp** - The rate at which objects stop spinning in this area. Represents the amount of speed lost per second. If 1.0, physics bodies in the area stop rotating immediately. If 0.0, they never slow down. Does not incorporate external forces. The physics-update's rate affects 'angular_damp'.
-- :ref:`String<class_string>` **audio_bus_name** - The name of the Area2D's audio bus.
-- :ref:`bool<class_bool>` **audio_bus_override** - If [code]true[/code], overrides the default audio bus with the Area2D's. Defaults to [code]false[/code].
-- :ref:`int<class_int>` **collision_layer** - The physics layer this Area2D is in.
-			Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using [method set_collision_mask].
-			A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans.
-- :ref:`int<class_int>` **collision_mask** - The physics layers this Area2D scans to determine collision detections.
-- :ref:`float<class_float>` **gravity** - The gravity intensity within the Area2D (ranges -1024 to 1024). This is useful to alter the force of gravity without altering its direction.
-			This value multiplies the gravity vector, whether it is the given vector ([method set_gravity_vector]), or a calculated one (when using a center of gravity).
-- :ref:`float<class_float>` **gravity_distance_scale** - The falloff factor for point gravity. The greater this value is, the faster the strength of gravity decreases with the square of distance.
-- :ref:`bool<class_bool>` **gravity_point** - If [code]true[/code], calculates gravity from a particular point during a space override (see [method set_space_override_mode]). If a point, [Vector2] position is set with [method set_gravity_vector]. Defaults to [code]false[/code].
-- :ref:`Vector2<class_vector2>` **gravity_vec** - The gravitational direction/strength as a vector (not normalized). If gravity is a point (see [method is_gravity_a_point]), this will be the attraction center.
-- :ref:`float<class_float>` **linear_damp** - The rate at which objects stop spinning in this area. Represents the amount of speed lost per second. If 1.0, physics bodies in the area stop rotating immediately. If 0.0, they never slow down. Does not incorporate external forces. The physics-update's rate affects 'angular_damp'.
-- :ref:`bool<class_bool>` **monitorable** - If [code]true[/code], other monitoring areas can detect this Area2D (is it undetectable at the moment?). Defaults to [code]true[/code].
-- :ref:`bool<class_bool>` **monitoring** - If [code]true[/code], this detects bodies/areas entering/exiting it (can it detect others at the moment?). Defaults to [code]true[/code].
-- :ref:`float<class_float>` **priority** - The processing order for this priority. Ranges from 0 to 128. Defaults to 0. Higher priorities are processed first.
-- :ref:`int<class_int>` **space_override** - How to override gravity and damping calculations within this Area2D, if at all. Consult the SPACE_OVERRIDE_* constants for available options.
+- **area_shape_exited** **(** :ref:`int<class_int>` area_id, :ref:`Area2D<class_Area2D>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape **)**
 
-Numeric Constants
------------------
+Emitted when another area exits, reporting which shapes were overlapping.
 
-- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damp. These are areas that exist only to detect collisions and objects entering or exiting them.
-- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
-- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
-- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
-- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
+.. _class_Area2D_signal_body_entered:
+
+- **body_entered** **(** :ref:`PhysicsBody2D<class_PhysicsBody2D>` body **)**
+
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object enters.
+
+.. _class_Area2D_signal_body_exited:
+
+- **body_exited** **(** :ref:`PhysicsBody2D<class_PhysicsBody2D>` body **)**
+
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object exits.
+
+.. _class_Area2D_signal_body_shape_entered:
+
+- **body_shape_entered** **(** :ref:`int<class_int>` body_id, :ref:`PhysicsBody2D<class_PhysicsBody2D>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object enters, reporting which shapes overlapped.
+
+.. _class_Area2D_signal_body_shape_exited:
+
+- **body_shape_exited** **(** :ref:`int<class_int>` body_id, :ref:`PhysicsBody2D<class_PhysicsBody2D>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape **)**
+
+Emitted when a :ref:`PhysicsBody2D<class_PhysicsBody2D>` object exits, reporting which shapes were overlapping.
+
+Enumerations
+------------
+
+.. _enum_Area2D_SpaceOverride:
+
+.. _class_Area2D_constant_SPACE_OVERRIDE_DISABLED:
+
+.. _class_Area2D_constant_SPACE_OVERRIDE_COMBINE:
+
+.. _class_Area2D_constant_SPACE_OVERRIDE_COMBINE_REPLACE:
+
+.. _class_Area2D_constant_SPACE_OVERRIDE_REPLACE:
+
+.. _class_Area2D_constant_SPACE_OVERRIDE_REPLACE_COMBINE:
+
+enum **SpaceOverride**:
+
+- **SPACE_OVERRIDE_DISABLED** = **0** --- This area does not affect gravity/damping.
+
+- **SPACE_OVERRIDE_COMBINE** = **1** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area2D_property_priority>` order).
+
+- **SPACE_OVERRIDE_COMBINE_REPLACE** = **2** --- This area adds its gravity/damping values to whatever has been calculated so far (in :ref:`priority<class_Area2D_property_priority>` order), ignoring any lower priority areas.
+
+- **SPACE_OVERRIDE_REPLACE** = **3** --- This area replaces any gravity/damping, even the defaults, ignoring any lower priority areas.
+
+- **SPACE_OVERRIDE_REPLACE_COMBINE** = **4** --- This area replaces any gravity/damping calculated so far (in :ref:`priority<class_Area2D_property_priority>` order), but keeps calculating the rest of the areas.
 
 Description
 -----------
 
-2D area that detects nodes that enter or exit it. Change  the 'space_override' property SPACE_OVERRIDE\_\* to override physics parameters for nodes like Rigidbody2D. E.g. gravity, damping... See :ref:`CollisionObject2D<class_collisionobject2d>` for usage.
+2D area that detects :ref:`CollisionObject2D<class_CollisionObject2D>` nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Area2D_get_angular_damp:
+.. _class_Area2D_property_angular_damp:
 
-- :ref:`float<class_float>`  **get_angular_damp**  **(** **)** const
+- :ref:`float<class_float>` **angular_damp**
 
-Return the angular damp rate.
++----------+-------------------------+
+| *Setter* | set_angular_damp(value) |
++----------+-------------------------+
+| *Getter* | get_angular_damp()      |
++----------+-------------------------+
 
-.. _class_Area2D_get_audio_bus_name:
+The rate at which objects stop spinning in this area. Represents the angular velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
 
-- :ref:`String<class_string>`  **get_audio_bus_name**  **(** **)** const
+.. _class_Area2D_property_audio_bus_name:
 
-.. _class_Area2D_get_collision_layer:
+- :ref:`String<class_String>` **audio_bus_name**
 
-- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
++----------+---------------------------+
+| *Setter* | set_audio_bus_name(value) |
++----------+---------------------------+
+| *Getter* | get_audio_bus_name()      |
++----------+---------------------------+
 
-Return the physics layer this area is in.
+The name of the area's audio bus.
 
-.. _class_Area2D_get_collision_layer_bit:
+.. _class_Area2D_property_audio_bus_override:
 
-- :ref:`bool<class_bool>`  **get_collision_layer_bit**  **(** :ref:`int<class_int>` bit  **)** const
+- :ref:`bool<class_bool>` **audio_bus_override**
+
++----------+-------------------------------+
+| *Setter* | set_audio_bus_override(value) |
++----------+-------------------------------+
+| *Getter* | is_overriding_audio_bus()     |
++----------+-------------------------------+
+
+If ``true``, the area's audio bus overrides the default audio bus. Default value: ``false``.
+
+.. _class_Area2D_property_collision_layer:
+
+- :ref:`int<class_int>` **collision_layer**
+
++----------+----------------------------+
+| *Setter* | set_collision_layer(value) |
++----------+----------------------------+
+| *Getter* | get_collision_layer()      |
++----------+----------------------------+
+
+The area's physics layer(s). Collidable objects can exist in any of 32 different layers. A contact is detected if object A is in any of the layers that object B scans, or object B is in any layers that object A scans. See also :ref:`collision_mask<class_Area2D_property_collision_mask>`.
+
+.. _class_Area2D_property_collision_mask:
+
+- :ref:`int<class_int>` **collision_mask**
+
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
+
+The physics layers this area scans to determine collision detection.
+
+.. _class_Area2D_property_gravity:
+
+- :ref:`float<class_float>` **gravity**
+
++----------+--------------------+
+| *Setter* | set_gravity(value) |
++----------+--------------------+
+| *Getter* | get_gravity()      |
++----------+--------------------+
+
+The area's gravity intensity (ranges from -1024 to 1024). This value multiplies the gravity vector. This is useful to alter the force of gravity without altering its direction.
+
+.. _class_Area2D_property_gravity_distance_scale:
+
+- :ref:`float<class_float>` **gravity_distance_scale**
+
++----------+-----------------------------------+
+| *Setter* | set_gravity_distance_scale(value) |
++----------+-----------------------------------+
+| *Getter* | get_gravity_distance_scale()      |
++----------+-----------------------------------+
+
+The falloff factor for point gravity. The greater the value, the faster gravity decreases with distance.
+
+.. _class_Area2D_property_gravity_point:
+
+- :ref:`bool<class_bool>` **gravity_point**
+
++----------+-----------------------------+
+| *Setter* | set_gravity_is_point(value) |
++----------+-----------------------------+
+| *Getter* | is_gravity_a_point()        |
++----------+-----------------------------+
+
+If ``true``, gravity is calculated from a point (set via :ref:`gravity_vec<class_Area2D_property_gravity_vec>`). Also see :ref:`space_override<class_Area2D_property_space_override>`. Default value: ``false``.
+
+.. _class_Area2D_property_gravity_vec:
+
+- :ref:`Vector2<class_Vector2>` **gravity_vec**
+
++----------+---------------------------+
+| *Setter* | set_gravity_vector(value) |
++----------+---------------------------+
+| *Getter* | get_gravity_vector()      |
++----------+---------------------------+
+
+The area's gravity vector (not normalized). If gravity is a point (see :ref:`gravity_point<class_Area2D_property_gravity_point>`), this will be the point of attraction.
+
+.. _class_Area2D_property_linear_damp:
+
+- :ref:`float<class_float>` **linear_damp**
+
++----------+------------------------+
+| *Setter* | set_linear_damp(value) |
++----------+------------------------+
+| *Getter* | get_linear_damp()      |
++----------+------------------------+
+
+The rate at which objects stop moving in this area. Represents the linear velocity lost per second. Values range from ``0`` (no damping) to ``1`` (full damping).
+
+.. _class_Area2D_property_monitorable:
+
+- :ref:`bool<class_bool>` **monitorable**
+
++----------+------------------------+
+| *Setter* | set_monitorable(value) |
++----------+------------------------+
+| *Getter* | is_monitorable()       |
++----------+------------------------+
+
+If ``true``, other monitoring areas can detect this area. Default value: ``true``.
+
+.. _class_Area2D_property_monitoring:
+
+- :ref:`bool<class_bool>` **monitoring**
+
++----------+-----------------------+
+| *Setter* | set_monitoring(value) |
++----------+-----------------------+
+| *Getter* | is_monitoring()       |
++----------+-----------------------+
+
+If ``true``, the area detects bodies or areas entering and exiting it. Default value: ``true``.
+
+.. _class_Area2D_property_priority:
+
+- :ref:`float<class_float>` **priority**
+
++----------+---------------------+
+| *Setter* | set_priority(value) |
++----------+---------------------+
+| *Getter* | get_priority()      |
++----------+---------------------+
+
+The area's priority. Higher priority areas are processed first. Default value: 0.
+
+.. _class_Area2D_property_space_override:
+
+- :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` **space_override**
+
++----------+--------------------------------+
+| *Setter* | set_space_override_mode(value) |
++----------+--------------------------------+
+| *Getter* | get_space_override_mode()      |
++----------+--------------------------------+
+
+Override mode for gravity and damping calculations within this area. See :ref:`SpaceOverride<enum_Area2D_SpaceOverride>` for possible values.
+
+Method Descriptions
+-------------------
+
+.. _class_Area2D_method_get_collision_layer_bit:
+
+- :ref:`bool<class_bool>` **get_collision_layer_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Return an individual bit on the layer mask. Describes whether other areas will collide with this one on the given layer.
 
-.. _class_Area2D_get_collision_mask:
+.. _class_Area2D_method_get_collision_mask_bit:
 
-- :ref:`int<class_int>`  **get_collision_mask**  **(** **)** const
-
-Return the physics layers this area will scan to determine collisions.
-
-.. _class_Area2D_get_collision_mask_bit:
-
-- :ref:`bool<class_bool>`  **get_collision_mask_bit**  **(** :ref:`int<class_int>` bit  **)** const
+- :ref:`bool<class_bool>` **get_collision_mask_bit** **(** :ref:`int<class_int>` bit **)** const
 
 Return an individual bit on the collision mask. Describes whether this area will collide with others on the given layer.
 
-.. _class_Area2D_get_gravity:
+.. _class_Area2D_method_get_overlapping_areas:
 
-- :ref:`float<class_float>`  **get_gravity**  **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_areas** **(** **)** const
 
-Return the gravity intensity.
+Returns a list of intersecting ``Area2D``\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-.. _class_Area2D_get_gravity_distance_scale:
+.. _class_Area2D_method_get_overlapping_bodies:
 
-- :ref:`float<class_float>`  **get_gravity_distance_scale**  **(** **)** const
+- :ref:`Array<class_Array>` **get_overlapping_bodies** **(** **)** const
 
-Return the falloff factor for point gravity.
+Returns a list of intersecting :ref:`PhysicsBody2D<class_PhysicsBody2D>`\ s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
 
-.. _class_Area2D_get_gravity_vector:
+.. _class_Area2D_method_overlaps_area:
 
-- :ref:`Vector2<class_vector2>`  **get_gravity_vector**  **(** **)** const
+- :ref:`bool<class_bool>` **overlaps_area** **(** :ref:`Node<class_Node>` area **)** const
 
-Return the gravity vector. If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the attraction center.
+If ``true``, the given area overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-.. _class_Area2D_get_linear_damp:
+.. _class_Area2D_method_overlaps_body:
 
-- :ref:`float<class_float>`  **get_linear_damp**  **(** **)** const
+- :ref:`bool<class_bool>` **overlaps_body** **(** :ref:`Node<class_Node>` body **)** const
 
-Return the linear damp rate.
+If ``true``, the given body overlaps the Area2D. Note that the result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
 
-.. _class_Area2D_get_overlapping_areas:
+.. _class_Area2D_method_set_collision_layer_bit:
 
-- :ref:`Array<class_array>`  **get_overlapping_areas**  **(** **)** const
-
-Returns a list of the :ref:`Area2D<class_area2d>`s that intersect with this area.
-
-.. _class_Area2D_get_overlapping_bodies:
-
-- :ref:`Array<class_array>`  **get_overlapping_bodies**  **(** **)** const
-
-Return a list of the :ref:`PhysicsBody2D<class_physicsbody2d>`s that intersect with this area.
-
-.. _class_Area2D_get_priority:
-
-- :ref:`float<class_float>`  **get_priority**  **(** **)** const
-
-Return the processing order of this area.
-
-.. _class_Area2D_get_space_override_mode:
-
-- :ref:`int<class_int>`  **get_space_override_mode**  **(** **)** const
-
-Return the space override mode.
-
-.. _class_Area2D_is_gravity_a_point:
-
-- :ref:`bool<class_bool>`  **is_gravity_a_point**  **(** **)** const
-
-Return whether gravity is a point. A point gravity will attract objects towards it, as opposed to a gravity vector, which moves them in a given direction.
-
-.. _class_Area2D_is_monitorable:
-
-- :ref:`bool<class_bool>`  **is_monitorable**  **(** **)** const
-
-Return whether this area can be detected by other, monitoring, areas.
-
-.. _class_Area2D_is_monitoring:
-
-- :ref:`bool<class_bool>`  **is_monitoring**  **(** **)** const
-
-Return whether this area detects bodies/areas entering/exiting it.
-
-.. _class_Area2D_is_overriding_audio_bus:
-
-- :ref:`bool<class_bool>`  **is_overriding_audio_bus**  **(** **)** const
-
-.. _class_Area2D_overlaps_area:
-
-- :ref:`bool<class_bool>`  **overlaps_area**  **(** :ref:`Node<class_node>` area  **)** const
-
-Return whether the area passed is totally or partially inside this area.
-
-.. _class_Area2D_overlaps_body:
-
-- :ref:`bool<class_bool>`  **overlaps_body**  **(** :ref:`Node<class_node>` body  **)** const
-
-Return whether the body passed is totally or partially inside this area.
-
-.. _class_Area2D_set_angular_damp:
-
-- void  **set_angular_damp**  **(** :ref:`float<class_float>` angular_damp  **)**
-
-Set the rate at which objects stop spinning in this area, if there are not any other forces making it spin. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
-
-In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
-
-.. _class_Area2D_set_audio_bus_name:
-
-- void  **set_audio_bus_name**  **(** :ref:`String<class_string>` name  **)**
-
-.. _class_Area2D_set_audio_bus_override:
-
-- void  **set_audio_bus_override**  **(** :ref:`bool<class_bool>` enable  **)**
-
-.. _class_Area2D_set_collision_layer:
-
-- void  **set_collision_layer**  **(** :ref:`int<class_int>` collision_layer  **)**
-
-Set the physics layers this area is in.
-
-Collidable objects can exist in any of 32 different layers. These layers are not visual, but more of a tagging system instead. A collidable can use these layers/tags to select with which objects it can collide, using :ref:`set_collision_mask<class_Area2D_set_collision_mask>`.
-
-A contact is detected if object A is in any of the layers that object B scans, or object B is in any layer scanned by object A.
-
-.. _class_Area2D_set_collision_layer_bit:
-
-- void  **set_collision_layer_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
+- void **set_collision_layer_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the layer mask. This makes getting an area in/out of only one layer easier.
 
-.. _class_Area2D_set_collision_mask:
+.. _class_Area2D_method_set_collision_mask_bit:
 
-- void  **set_collision_mask**  **(** :ref:`int<class_int>` collision_mask  **)**
-
-Set the physics layers this area can scan for collisions.
-
-.. _class_Area2D_set_collision_mask_bit:
-
-- void  **set_collision_mask_bit**  **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value  **)**
+- void **set_collision_mask_bit** **(** :ref:`int<class_int>` bit, :ref:`bool<class_bool>` value **)**
 
 Set/clear individual bits on the collision mask. This makes selecting the areas scanned easier.
-
-.. _class_Area2D_set_gravity:
-
-- void  **set_gravity**  **(** :ref:`float<class_float>` gravity  **)**
-
-Set the gravity intensity. This is useful to alter the force of gravity without altering its direction.
-
-This value multiplies the gravity vector, whether it is the given vector (:ref:`set_gravity_vector<class_Area2D_set_gravity_vector>`), or a calculated one (when using a center of gravity).
-
-.. _class_Area2D_set_gravity_distance_scale:
-
-- void  **set_gravity_distance_scale**  **(** :ref:`float<class_float>` distance_scale  **)**
-
-Set the falloff factor for point gravity. The greater this value is, the faster the strength of gravity decreases with the square of distance.
-
-.. _class_Area2D_set_gravity_is_point:
-
-- void  **set_gravity_is_point**  **(** :ref:`bool<class_bool>` enable  **)**
-
-When overriding space parameters, this method sets whether this area has a center of gravity. To set/get the location of the center of gravity, use :ref:`set_gravity_vector<class_Area2D_set_gravity_vector>`/:ref:`get_gravity_vector<class_Area2D_get_gravity_vector>`.
-
-.. _class_Area2D_set_gravity_vector:
-
-- void  **set_gravity_vector**  **(** :ref:`Vector2<class_vector2>` vector  **)**
-
-Set the gravity vector. This vector does not have to be normalized.
-
-If gravity is a point (see :ref:`is_gravity_a_point<class_Area2D_is_gravity_a_point>`), this will be the attraction center.
-
-.. _class_Area2D_set_linear_damp:
-
-- void  **set_linear_damp**  **(** :ref:`float<class_float>` linear_damp  **)**
-
-Set the rate at which objects stop moving in this area, if there are not any other forces moving it. The value is a fraction of its current speed, lost per second. Thus, a value of 1.0 should mean stopping immediately, and 0.0 means the object never stops.
-
-In practice, as the fraction of speed lost gets smaller with each frame, a value of 1.0 does not mean the object will stop in exactly one second. Only when the physics calculations are done at 1 frame per second, it does stop in a second.
-
-.. _class_Area2D_set_monitorable:
-
-- void  **set_monitorable**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set whether this area can be detected by other, monitoring, areas. Only areas need to be marked as monitorable. Bodies are always so.
-
-.. _class_Area2D_set_monitoring:
-
-- void  **set_monitoring**  **(** :ref:`bool<class_bool>` enable  **)**
-
-Set whether this area can detect bodies/areas entering/exiting it.
-
-.. _class_Area2D_set_priority:
-
-- void  **set_priority**  **(** :ref:`float<class_float>` priority  **)**
-
-Set the order in which the area is processed. Greater values mean the area gets processed first. This is useful for areas which have a space override different from AREA_SPACE_OVERRIDE_DISABLED or AREA_SPACE_OVERRIDE_COMBINE, as they replace values, and are thus order-dependent.
-
-Areas with the same priority value get evaluated in an unpredictable order, and should be differentiated if evaluation order is to be important.
-
-.. _class_Area2D_set_space_override_mode:
-
-- void  **set_space_override_mode**  **(** :ref:`int<class_int>` space_override_mode  **)**
-
-Set the space override mode. This mode controls how an area affects gravity and damp.
-
-AREA_SPACE_OVERRIDE_DISABLED: This area does not affect gravity/damp. These are generally areas that exist only to detect collisions, and objects entering or exiting them.
-
-AREA_SPACE_OVERRIDE_COMBINE: This area adds its gravity/damp values to whatever has been calculated so far. This way, many overlapping areas can combine their physics to make interesting effects.
-
-AREA_SPACE_OVERRIDE_COMBINE_REPLACE: This area adds its gravity/damp values to whatever has been calculated so far. Then stops taking into account the rest of the areas, even the default one.
-
-AREA_SPACE_OVERRIDE_REPLACE: This area replaces any gravity/damp, even the default one, and stops taking into account the rest of the areas.
-
-AREA_SPACE_OVERRIDE_REPLACE_COMBINE: This area replaces any gravity/damp calculated so far, but keeps calculating the rest of the areas, down to the default one.
-
 

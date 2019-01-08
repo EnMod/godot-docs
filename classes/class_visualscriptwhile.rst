@@ -7,12 +7,29 @@
 VisualScriptWhile
 =================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Conditional loop.
 
+Description
+-----------
+
+Loops while a condition is ``true``. Execution continues out the ``exit`` Sequence port when the loop terminates.
+
+**Input Ports:**
+
+- Sequence: ``while(cond)``
+
+- Data (bool): ``cond``
+
+**Output Ports:**
+
+- Sequence: ``repeat``
+
+- Sequence: ``exit``
 

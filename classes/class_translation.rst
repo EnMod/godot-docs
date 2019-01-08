@@ -7,9 +7,9 @@
 Translation
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PHashTranslation<class_phashtranslation>`
+**Inherited By:** :ref:`PHashTranslation<class_PHashTranslation>`
 
 **Category:** Core
 
@@ -18,77 +18,85 @@ Brief Description
 
 Language Translation.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`add_message<class_Translation_add_message>`  **(** :ref:`String<class_string>` src_message, :ref:`String<class_string>` xlated_message  **)** |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`erase_message<class_Translation_erase_message>`  **(** :ref:`String<class_string>` src_message  **)**                                         |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_locale<class_Translation_get_locale>`  **(** **)** const                                                                                  |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                    | :ref:`get_message<class_Translation_get_message>`  **(** :ref:`String<class_string>` src_message  **)** const                                       |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                          | :ref:`get_message_count<class_Translation_get_message_count>`  **(** **)** const                                                                    |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`  | :ref:`get_message_list<class_Translation_get_message_list>`  **(** **)** const                                                                      |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_locale<class_Translation_set_locale>`  **(** :ref:`String<class_string>` locale  **)**                                                    |
-+------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------+--------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`locale<class_Translation_property_locale>` |
++-----------------------------+--------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`String<class_string>` **locale**
-- :ref:`PoolStringArray<class_poolstringarray>` **messages**
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`add_message<class_Translation_method_add_message>` **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)** |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                          | :ref:`erase_message<class_Translation_method_erase_message>` **(** :ref:`String<class_String>` src_message **)**                                         |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                   | :ref:`get_message<class_Translation_method_get_message>` **(** :ref:`String<class_String>` src_message **)** const                                       |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                         | :ref:`get_message_count<class_Translation_method_get_message_count>` **(** **)** const                                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>` | :ref:`get_message_list<class_Translation_method_get_message_list>` **(** **)** const                                                                     |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 Translations are resources that can be loaded/unloaded on demand. They map a string to another string.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_Translation_add_message:
+- :doc:`../tutorials/i18n/internationalizing_games`
 
-- void  **add_message**  **(** :ref:`String<class_string>` src_message, :ref:`String<class_string>` xlated_message  **)**
+- :doc:`../tutorials/i18n/locales`
 
-Add a message for translation.
+Property Descriptions
+---------------------
 
-.. _class_Translation_erase_message:
+.. _class_Translation_property_locale:
 
-- void  **erase_message**  **(** :ref:`String<class_string>` src_message  **)**
+- :ref:`String<class_String>` **locale**
 
-Erase a message.
++----------+-------------------+
+| *Setter* | set_locale(value) |
++----------+-------------------+
+| *Getter* | get_locale()      |
++----------+-------------------+
 
-.. _class_Translation_get_locale:
+The locale of the translation.
 
-- :ref:`String<class_string>`  **get_locale**  **(** **)** const
+Method Descriptions
+-------------------
 
-Return the locale of the translation.
+.. _class_Translation_method_add_message:
 
-.. _class_Translation_get_message:
+- void **add_message** **(** :ref:`String<class_String>` src_message, :ref:`String<class_String>` xlated_message **)**
 
-- :ref:`String<class_string>`  **get_message**  **(** :ref:`String<class_string>` src_message  **)** const
+Adds a message if nonexistent, followed by its translation.
 
-Return a message for translation.
+.. _class_Translation_method_erase_message:
 
-.. _class_Translation_get_message_count:
+- void **erase_message** **(** :ref:`String<class_String>` src_message **)**
 
-- :ref:`int<class_int>`  **get_message_count**  **(** **)** const
+Erases a message.
 
-.. _class_Translation_get_message_list:
+.. _class_Translation_method_get_message:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_message_list**  **(** **)** const
+- :ref:`String<class_String>` **get_message** **(** :ref:`String<class_String>` src_message **)** const
 
-Return all the messages (keys).
+Returns a message's translation.
 
-.. _class_Translation_set_locale:
+.. _class_Translation_method_get_message_count:
 
-- void  **set_locale**  **(** :ref:`String<class_string>` locale  **)**
+- :ref:`int<class_int>` **get_message_count** **(** **)** const
 
-Set the locale of the translation.
+Returns the number of existing messages.
 
+.. _class_Translation_method_get_message_list:
+
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_message_list** **(** **)** const
+
+Returns all the messages (keys).
 

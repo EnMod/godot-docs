@@ -7,7 +7,7 @@
 NavigationMeshInstance
 ======================
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,35 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`NavigationMesh<class_navigationmesh>`  | :ref:`get_navigation_mesh<class_NavigationMeshInstance_get_navigation_mesh>`  **(** **)** const                                                |
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                      | :ref:`is_enabled<class_NavigationMeshInstance_is_enabled>`  **(** **)** const                                                                  |
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_enabled<class_NavigationMeshInstance_set_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)**                                     |
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                         | :ref:`set_navigation_mesh<class_NavigationMeshInstance_set_navigation_mesh>`  **(** :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)** |
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------+---------------------------------------------------------------+
+| :ref:`bool<class_bool>`                     | :ref:`enabled<class_NavigationMeshInstance_property_enabled>` |
++---------------------------------------------+---------------------------------------------------------------+
+| :ref:`NavigationMesh<class_NavigationMesh>` | :ref:`navmesh<class_NavigationMeshInstance_property_navmesh>` |
++---------------------------------------------+---------------------------------------------------------------+
 
-Member Variables
-----------------
+Property Descriptions
+---------------------
+
+.. _class_NavigationMeshInstance_property_enabled:
 
 - :ref:`bool<class_bool>` **enabled**
-- :ref:`NavigationMesh<class_navigationmesh>` **navmesh**
 
-Member Function Description
----------------------------
++----------+--------------------+
+| *Setter* | set_enabled(value) |
++----------+--------------------+
+| *Getter* | is_enabled()       |
++----------+--------------------+
 
-.. _class_NavigationMeshInstance_get_navigation_mesh:
+.. _class_NavigationMeshInstance_property_navmesh:
 
-- :ref:`NavigationMesh<class_navigationmesh>`  **get_navigation_mesh**  **(** **)** const
+- :ref:`NavigationMesh<class_NavigationMesh>` **navmesh**
 
-.. _class_NavigationMeshInstance_is_enabled:
-
-- :ref:`bool<class_bool>`  **is_enabled**  **(** **)** const
-
-.. _class_NavigationMeshInstance_set_enabled:
-
-- void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-.. _class_NavigationMeshInstance_set_navigation_mesh:
-
-- void  **set_navigation_mesh**  **(** :ref:`NavigationMesh<class_navigationmesh>` navmesh  **)**
-
++----------+----------------------------+
+| *Setter* | set_navigation_mesh(value) |
++----------+----------------------------+
+| *Getter* | get_navigation_mesh()      |
++----------+----------------------------+
 

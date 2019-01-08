@@ -7,92 +7,102 @@
 InputEventWithModifiers
 =======================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`InputEventKey<class_inputeventkey>`, :ref:`InputEventMouse<class_inputeventmouse>`
+**Inherited By:** :ref:`InputEventGesture<class_InputEventGesture>`, :ref:`InputEventKey<class_InputEventKey>`, :ref:`InputEventMouse<class_InputEventMouse>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Base class for input events with modifiers.
+Base class for keys events with modifiers.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_alt<class_InputEventWithModifiers_get_alt>`  **(** **)** const                                   |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_command<class_InputEventWithModifiers_get_command>`  **(** **)** const                           |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_control<class_InputEventWithModifiers_get_control>`  **(** **)** const                           |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_metakey<class_InputEventWithModifiers_get_metakey>`  **(** **)** const                           |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`get_shift<class_InputEventWithModifiers_get_shift>`  **(** **)** const                               |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_alt<class_InputEventWithModifiers_set_alt>`  **(** :ref:`bool<class_bool>` enable  **)**         |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_command<class_InputEventWithModifiers_set_command>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_control<class_InputEventWithModifiers_set_control>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_metakey<class_InputEventWithModifiers_set_metakey>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_shift<class_InputEventWithModifiers_set_shift>`  **(** :ref:`bool<class_bool>` enable  **)**     |
-+--------------------------+------------------------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`alt<class_InputEventWithModifiers_property_alt>`         |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`command<class_InputEventWithModifiers_property_command>` |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`control<class_InputEventWithModifiers_property_control>` |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`meta<class_InputEventWithModifiers_property_meta>`       |
++-------------------------+----------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`shift<class_InputEventWithModifiers_property_shift>`     |
++-------------------------+----------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`bool<class_bool>` **alt** - State of the Alt modifier.
-- :ref:`bool<class_bool>` **command** - State of the Command modifier.
-- :ref:`bool<class_bool>` **control** - State of the Ctrl modifier.
-- :ref:`bool<class_bool>` **meta** - State of the Meta modifier.
-- :ref:`bool<class_bool>` **shift** - State of the Shift modifier.
+Contains keys events information with modifiers support like ``SHIFT`` or ``ALT``. See :ref:`Node._input<class_Node_method__input>`.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_InputEventWithModifiers_get_alt:
+- :doc:`../tutorials/inputs/inputevent`
 
-- :ref:`bool<class_bool>`  **get_alt**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_InputEventWithModifiers_get_command:
+.. _class_InputEventWithModifiers_property_alt:
 
-- :ref:`bool<class_bool>`  **get_command**  **(** **)** const
+- :ref:`bool<class_bool>` **alt**
 
-.. _class_InputEventWithModifiers_get_control:
++----------+----------------+
+| *Setter* | set_alt(value) |
++----------+----------------+
+| *Getter* | get_alt()      |
++----------+----------------+
 
-- :ref:`bool<class_bool>`  **get_control**  **(** **)** const
+State of the Alt modifier.
 
-.. _class_InputEventWithModifiers_get_metakey:
+.. _class_InputEventWithModifiers_property_command:
 
-- :ref:`bool<class_bool>`  **get_metakey**  **(** **)** const
+- :ref:`bool<class_bool>` **command**
 
-.. _class_InputEventWithModifiers_get_shift:
++----------+--------------------+
+| *Setter* | set_command(value) |
++----------+--------------------+
+| *Getter* | get_command()      |
++----------+--------------------+
 
-- :ref:`bool<class_bool>`  **get_shift**  **(** **)** const
+State of the Command modifier.
 
-.. _class_InputEventWithModifiers_set_alt:
+.. _class_InputEventWithModifiers_property_control:
 
-- void  **set_alt**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`bool<class_bool>` **control**
 
-.. _class_InputEventWithModifiers_set_command:
++----------+--------------------+
+| *Setter* | set_control(value) |
++----------+--------------------+
+| *Getter* | get_control()      |
++----------+--------------------+
 
-- void  **set_command**  **(** :ref:`bool<class_bool>` enable  **)**
+State of the Ctrl modifier.
 
-.. _class_InputEventWithModifiers_set_control:
+.. _class_InputEventWithModifiers_property_meta:
 
-- void  **set_control**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`bool<class_bool>` **meta**
 
-.. _class_InputEventWithModifiers_set_metakey:
++----------+--------------------+
+| *Setter* | set_metakey(value) |
++----------+--------------------+
+| *Getter* | get_metakey()      |
++----------+--------------------+
 
-- void  **set_metakey**  **(** :ref:`bool<class_bool>` enable  **)**
+State of the Meta modifier.
 
-.. _class_InputEventWithModifiers_set_shift:
+.. _class_InputEventWithModifiers_property_shift:
 
-- void  **set_shift**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`bool<class_bool>` **shift**
 
++----------+------------------+
+| *Setter* | set_shift(value) |
++----------+------------------+
+| *Getter* | get_shift()      |
++----------+------------------+
+
+State of the Shift modifier.
 

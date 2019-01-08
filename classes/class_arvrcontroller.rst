@@ -7,7 +7,7 @@
 ARVRController
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,41 +16,46 @@ Brief Description
 
 A spatial node representing a spatially tracked controller.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_controller_id<class_ARVRController_get_controller_id>`  **(** **)** const                                |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_controller_name<class_ARVRController_get_controller_name>`  **(** **)** const                            |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_hand<class_ARVRController_get_hand>`  **(** **)** const                                                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`get_is_active<class_ARVRController_get_is_active>`  **(** **)** const                                        |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`    | :ref:`get_joystick_axis<class_ARVRController_get_joystick_axis>`  **(** :ref:`int<class_int>` axis  **)** const    |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_joystick_id<class_ARVRController_get_joystick_id>`  **(** **)** const                                    |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`is_button_pressed<class_ARVRController_is_button_pressed>`  **(** :ref:`int<class_int>` button  **)** const  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_controller_id<class_ARVRController_set_controller_id>`  **(** :ref:`int<class_int>` controller_id  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`controller_id<class_ARVRController_property_controller_id>` |
++---------------------------+-------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`rumble<class_ARVRController_property_rumble>`               |
++---------------------------+-------------------------------------------------------------------+
+
+Methods
+-------
+
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`                                | :ref:`get_controller_name<class_ARVRController_method_get_controller_name>` **(** **)** const                          |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` | :ref:`get_hand<class_ARVRController_method_get_hand>` **(** **)** const                                                |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                    | :ref:`get_is_active<class_ARVRController_method_get_is_active>` **(** **)** const                                      |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                                  | :ref:`get_joystick_axis<class_ARVRController_method_get_joystick_axis>` **(** :ref:`int<class_int>` axis **)** const   |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`get_joystick_id<class_ARVRController_method_get_joystick_id>` **(** **)** const                                  |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                                      | :ref:`is_button_pressed<class_ARVRController_method_is_button_pressed>` **(** :ref:`int<class_int>` button **)** const |
++------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **button_pressed**  **(** :ref:`int<class_int>` button  **)**
-When a button on this controller is pressed, this signal is given.
+.. _class_ARVRController_signal_button_pressed:
 
--  **button_release**  **(** :ref:`int<class_int>` button  **)**
-When a button on this controller is released, this signal is given.
+- **button_pressed** **(** :ref:`int<class_int>` button **)**
 
+Emitted when a button on this controller is pressed.
 
-Member Variables
-----------------
+.. _class_ARVRController_signal_button_release:
 
-- :ref:`int<class_int>` **controller_id**
+- **button_release** **(** :ref:`int<class_int>` button **)**
+
+Emitted when a button on this controller is released.
 
 Description
 -----------
@@ -59,55 +64,77 @@ This is a helper spatial node that is linked to the tracking of controllers. It 
 
 Controllers are linked by their id. You can create controller nodes before the controllers are available. Say your game always uses two controllers (one for each hand) you can predefine the controllers with id 1 and 2 and they will become active as soon as the controllers are identified. If you expect additional controllers to be used you should react to the signals and add ARVRController nodes to your scene.
 
-The position of the controller node is automatically updated by the ARVR Server. This makes this node ideal to add child  nodes to visualise the controller.
+The position of the controller node is automatically updated by the ARVR Server. This makes this node ideal to add child nodes to visualise the controller.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ARVRController_get_controller_id:
+.. _class_ARVRController_property_controller_id:
 
-- :ref:`int<class_int>`  **get_controller_id**  **(** **)** const
+- :ref:`int<class_int>` **controller_id**
 
-Returns the controller id currently assigned to this node.
++----------+--------------------------+
+| *Setter* | set_controller_id(value) |
++----------+--------------------------+
+| *Getter* | get_controller_id()      |
++----------+--------------------------+
 
-.. _class_ARVRController_get_controller_name:
+The controller's id.
 
-- :ref:`String<class_string>`  **get_controller_name**  **(** **)** const
+A controller id of 0 is unbound and will always result in an inactive node. Controller id 1 is reserved for the first controller that identifies itself as the left hand controller and id 2 is reserved for the first controller that identifies itself as the right hand controller.
+
+For any other controller that the :ref:`ARVRServer<class_ARVRServer>` detects we continue with controller id 3.
+
+When a controller is turned off, its slot is freed. This ensures controllers will keep the same id even when controllers with lower ids are turned off.
+
+.. _class_ARVRController_property_rumble:
+
+- :ref:`float<class_float>` **rumble**
+
++----------+-------------------+
+| *Setter* | set_rumble(value) |
++----------+-------------------+
+| *Getter* | get_rumble()      |
++----------+-------------------+
+
+The degree to which the tracker rumbles. Ranges from ``0.0`` to ``1.0`` with precision ``.01``. If changed, updates :ref:`ARVRPositionalTracker.rumble<class_ARVRPositionalTracker_property_rumble>` accordingly.
+
+Method Descriptions
+-------------------
+
+.. _class_ARVRController_method_get_controller_name:
+
+- :ref:`String<class_String>` **get_controller_name** **(** **)** const
 
 If active, returns the name of the associated controller if provided by the AR/VR SDK used.
 
-.. _class_ARVRController_get_hand:
+.. _class_ARVRController_method_get_hand:
 
-- :ref:`int<class_int>`  **get_hand**  **(** **)** const
+- :ref:`TrackerHand<enum_ARVRPositionalTracker_TrackerHand>` **get_hand** **(** **)** const
 
-.. _class_ARVRController_get_is_active:
+Returns the hand holding this controller, if known. See TRACKER\_\* constants in :ref:`ARVRPositionalTracker<class_ARVRPositionalTracker>`.
 
-- :ref:`bool<class_bool>`  **get_is_active**  **(** **)** const
+.. _class_ARVRController_method_get_is_active:
 
-Returns true if the controller bound to this node is currently active and being tracked.
+- :ref:`bool<class_bool>` **get_is_active** **(** **)** const
 
-.. _class_ARVRController_get_joystick_axis:
+Returns ``true`` if the bound controller is active. ARVR systems attempt to track active controllers.
 
-- :ref:`float<class_float>`  **get_joystick_axis**  **(** :ref:`int<class_int>` axis  **)** const
+.. _class_ARVRController_method_get_joystick_axis:
+
+- :ref:`float<class_float>` **get_joystick_axis** **(** :ref:`int<class_int>` axis **)** const
 
 Returns the value of the given axis for things like triggers, touchpads, etc. that are embedded into the controller.
 
-.. _class_ARVRController_get_joystick_id:
+.. _class_ARVRController_method_get_joystick_id:
 
-- :ref:`int<class_int>`  **get_joystick_id**  **(** **)** const
+- :ref:`int<class_int>` **get_joystick_id** **(** **)** const
 
 Returns the ID of the joystick object bound to this. Every controller tracked by the ARVR Server that has buttons and axis will also be registered as a joystick within Godot. This means that all the normal joystick tracking and input mapping will work for buttons and axis found on the AR/VR controllers. This ID is purely offered as information so you can link up the controller with its joystick entry.
 
-.. _class_ARVRController_is_button_pressed:
+.. _class_ARVRController_method_is_button_pressed:
 
-- :ref:`int<class_int>`  **is_button_pressed**  **(** :ref:`int<class_int>` button  **)** const
+- :ref:`int<class_int>` **is_button_pressed** **(** :ref:`int<class_int>` button **)** const
 
-Is the given button currently pressed?
-
-.. _class_ARVRController_set_controller_id:
-
-- void  **set_controller_id**  **(** :ref:`int<class_int>` controller_id  **)**
-
-Changes the id that identifies the controller bound to this node. The first controller that the ARVR Server detects will have id 1, the second id 2, the third id 3, etc. When a controller is turned off that slot is freed ensuring that controllers will keep the same id while it is turned on even when controllers with lower ids are turned off.
-
+Returns ``true`` if the button at index ``button`` is pressed.
 

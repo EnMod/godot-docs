@@ -7,129 +7,139 @@
 AudioEffectReverb
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Adds a Reverb audio effect to an Audio bus.
 
+Simulates the sound of acoustic environments such as rooms, concert halls, caverns, or an open spaces.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_damping<class_AudioEffectReverb_get_damping>`  **(** **)** const                                                   |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_dry<class_AudioEffectReverb_get_dry>`  **(** **)** const                                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_hpf<class_AudioEffectReverb_get_hpf>`  **(** **)** const                                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_predelay_feedback<class_AudioEffectReverb_get_predelay_feedback>`  **(** **)** const                               |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_predelay_msec<class_AudioEffectReverb_get_predelay_msec>`  **(** **)** const                                       |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_room_size<class_AudioEffectReverb_get_room_size>`  **(** **)** const                                               |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_spread<class_AudioEffectReverb_get_spread>`  **(** **)** const                                                     |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_wet<class_AudioEffectReverb_get_wet>`  **(** **)** const                                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_damping<class_AudioEffectReverb_set_damping>`  **(** :ref:`float<class_float>` amount  **)**                       |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_dry<class_AudioEffectReverb_set_dry>`  **(** :ref:`float<class_float>` amount  **)**                               |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_hpf<class_AudioEffectReverb_set_hpf>`  **(** :ref:`float<class_float>` amount  **)**                               |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_predelay_feedback<class_AudioEffectReverb_set_predelay_feedback>`  **(** :ref:`float<class_float>` feedback  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_predelay_msec<class_AudioEffectReverb_set_predelay_msec>`  **(** :ref:`float<class_float>` msec  **)**             |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_room_size<class_AudioEffectReverb_set_room_size>`  **(** :ref:`float<class_float>` size  **)**                     |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_spread<class_AudioEffectReverb_set_spread>`  **(** :ref:`float<class_float>` amount  **)**                         |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_wet<class_AudioEffectReverb_set_wet>`  **(** :ref:`float<class_float>` amount  **)**                               |
-+----------------------------+------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`damping<class_AudioEffectReverb_property_damping>`                     |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`dry<class_AudioEffectReverb_property_dry>`                             |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`hipass<class_AudioEffectReverb_property_hipass>`                       |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`predelay_feedback<class_AudioEffectReverb_property_predelay_feedback>` |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`predelay_msec<class_AudioEffectReverb_property_predelay_msec>`         |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`room_size<class_AudioEffectReverb_property_room_size>`                 |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spread<class_AudioEffectReverb_property_spread>`                       |
++---------------------------+------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`wet<class_AudioEffectReverb_property_wet>`                             |
++---------------------------+------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Simulates rooms of different sizes. Its parameters can be adjusted to simulate the sound of a specific room.
+
+Property Descriptions
+---------------------
+
+.. _class_AudioEffectReverb_property_damping:
 
 - :ref:`float<class_float>` **damping**
+
++----------+--------------------+
+| *Setter* | set_damping(value) |
++----------+--------------------+
+| *Getter* | get_damping()      |
++----------+--------------------+
+
+Defines how reflective the imaginary room's walls are. Value can range from 0 to 1. Default value: ``1``.
+
+.. _class_AudioEffectReverb_property_dry:
+
 - :ref:`float<class_float>` **dry**
+
++----------+----------------+
+| *Setter* | set_dry(value) |
++----------+----------------+
+| *Getter* | get_dry()      |
++----------+----------------+
+
+Output percent of original sound. At 0, only modified sound is outputted. Value can range from 0 to 1. Default value: ``1``.
+
+.. _class_AudioEffectReverb_property_hipass:
+
 - :ref:`float<class_float>` **hipass**
+
++----------+----------------+
+| *Setter* | set_hpf(value) |
++----------+----------------+
+| *Getter* | get_hpf()      |
++----------+----------------+
+
+High-pass filter passes signals with a frequency higher than a certain cutoff frequency and attenuates signals with frequencies lower than the cutoff frequency. Value can range from 0 to 1. Default value: ``0``.
+
+.. _class_AudioEffectReverb_property_predelay_feedback:
+
 - :ref:`float<class_float>` **predelay_feedback**
+
++----------+--------------------------+
+| *Setter* | set_predelay_msec(value) |
++----------+--------------------------+
+| *Getter* | get_predelay_msec()      |
++----------+--------------------------+
+
+Output percent of predelay. Value can range from 0 to 1. Default value: ``1``.
+
+.. _class_AudioEffectReverb_property_predelay_msec:
+
 - :ref:`float<class_float>` **predelay_msec**
+
++----------+--------------------------+
+| *Setter* | set_predelay_msec(value) |
++----------+--------------------------+
+| *Getter* | get_predelay_msec()      |
++----------+--------------------------+
+
+Time between the original signal and the early reflections of the reverb signal. Default value: ``150ms``.
+
+.. _class_AudioEffectReverb_property_room_size:
+
 - :ref:`float<class_float>` **room_size**
+
++----------+----------------------+
+| *Setter* | set_room_size(value) |
++----------+----------------------+
+| *Getter* | get_room_size()      |
++----------+----------------------+
+
+Dimensions of simulated room. Bigger means more echoes. Value can range from 0 to 1. Default value: ``0.8``.
+
+.. _class_AudioEffectReverb_property_spread:
+
 - :ref:`float<class_float>` **spread**
+
++----------+-------------------+
+| *Setter* | set_spread(value) |
++----------+-------------------+
+| *Getter* | get_spread()      |
++----------+-------------------+
+
+Widens or narrows the stereo image of the reverb tail. 1 means fully widens. Value can range from 0 to 1. Default value: ``1``.
+
+.. _class_AudioEffectReverb_property_wet:
+
 - :ref:`float<class_float>` **wet**
 
-Member Function Description
----------------------------
++----------+----------------+
+| *Setter* | set_wet(value) |
++----------+----------------+
+| *Getter* | get_wet()      |
++----------+----------------+
 
-.. _class_AudioEffectReverb_get_damping:
-
-- :ref:`float<class_float>`  **get_damping**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_dry:
-
-- :ref:`float<class_float>`  **get_dry**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_hpf:
-
-- :ref:`float<class_float>`  **get_hpf**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_predelay_feedback:
-
-- :ref:`float<class_float>`  **get_predelay_feedback**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_predelay_msec:
-
-- :ref:`float<class_float>`  **get_predelay_msec**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_room_size:
-
-- :ref:`float<class_float>`  **get_room_size**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_spread:
-
-- :ref:`float<class_float>`  **get_spread**  **(** **)** const
-
-.. _class_AudioEffectReverb_get_wet:
-
-- :ref:`float<class_float>`  **get_wet**  **(** **)** const
-
-.. _class_AudioEffectReverb_set_damping:
-
-- void  **set_damping**  **(** :ref:`float<class_float>` amount  **)**
-
-.. _class_AudioEffectReverb_set_dry:
-
-- void  **set_dry**  **(** :ref:`float<class_float>` amount  **)**
-
-.. _class_AudioEffectReverb_set_hpf:
-
-- void  **set_hpf**  **(** :ref:`float<class_float>` amount  **)**
-
-.. _class_AudioEffectReverb_set_predelay_feedback:
-
-- void  **set_predelay_feedback**  **(** :ref:`float<class_float>` feedback  **)**
-
-.. _class_AudioEffectReverb_set_predelay_msec:
-
-- void  **set_predelay_msec**  **(** :ref:`float<class_float>` msec  **)**
-
-.. _class_AudioEffectReverb_set_room_size:
-
-- void  **set_room_size**  **(** :ref:`float<class_float>` size  **)**
-
-.. _class_AudioEffectReverb_set_spread:
-
-- void  **set_spread**  **(** :ref:`float<class_float>` amount  **)**
-
-.. _class_AudioEffectReverb_set_wet:
-
-- void  **set_wet**  **(** :ref:`float<class_float>` amount  **)**
-
+Output percent of modified sound. At 0, only original sound is outputted. Value can range from 0 to 1. Default value: ``0.5``.
 

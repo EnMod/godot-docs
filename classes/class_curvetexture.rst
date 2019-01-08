@@ -7,45 +7,53 @@
 CurveTexture
 ============
 
-**Inherits:** :ref:`Texture<class_texture>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Texture<class_Texture>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A texture that shows a curve.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------+-------------------------------------------------+
+| :ref:`Curve<class_Curve>` | :ref:`curve<class_CurveTexture_property_curve>` |
++---------------------------+-------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`width<class_CurveTexture_property_width>` |
++---------------------------+-------------------------------------------------+
 
-+----------------------------+----------------------------------------------------------------------------------------------+
-| :ref:`Curve<class_curve>`  | :ref:`get_curve<class_CurveTexture_get_curve>`  **(** **)** const                            |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_curve<class_CurveTexture_set_curve>`  **(** :ref:`Curve<class_curve>` curve  **)** |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_width<class_CurveTexture_set_width>`  **(** :ref:`int<class_int>` width  **)**     |
-+----------------------------+----------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Renders a given :ref:`Curve<class_Curve>` provided to it. Simplifies the task of drawing curves and/or saving them as image files.
 
-- :ref:`Curve<class_curve>` **curve**
+Property Descriptions
+---------------------
+
+.. _class_CurveTexture_property_curve:
+
+- :ref:`Curve<class_Curve>` **curve**
+
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
+
+The ``curve`` rendered onto the texture.
+
+.. _class_CurveTexture_property_width:
+
 - :ref:`int<class_int>` **width**
 
-Member Function Description
----------------------------
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
 
-.. _class_CurveTexture_get_curve:
-
-- :ref:`Curve<class_curve>`  **get_curve**  **(** **)** const
-
-.. _class_CurveTexture_set_curve:
-
-- void  **set_curve**  **(** :ref:`Curve<class_curve>` curve  **)**
-
-.. _class_CurveTexture_set_width:
-
-- void  **set_width**  **(** :ref:`int<class_int>` width  **)**
-
+The width of the texture.
 

@@ -7,71 +7,86 @@
 OccluderPolygon2D
 =================
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Defines a 2D polygon for LightOccluder2D.
 
+Properties
+----------
 
-Member Functions
-----------------
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`                          | :ref:`closed<class_OccluderPolygon2D_property_closed>`       |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` | :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`  | :ref:`polygon<class_OccluderPolygon2D_property_polygon>`     |
++--------------------------------------------------+--------------------------------------------------------------+
 
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_cull_mode<class_OccluderPolygon2D_get_cull_mode>`  **(** **)** const                                                |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_polygon<class_OccluderPolygon2D_get_polygon>`  **(** **)** const                                                    |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                          | :ref:`is_closed<class_OccluderPolygon2D_is_closed>`  **(** **)** const                                                        |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_closed<class_OccluderPolygon2D_set_closed>`  **(** :ref:`bool<class_bool>` closed  **)**                            |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_cull_mode<class_OccluderPolygon2D_set_cull_mode>`  **(** :ref:`int<class_int>` cull_mode  **)**                     |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_polygon<class_OccluderPolygon2D_set_polygon>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)** |
-+--------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_OccluderPolygon2D_CullMode:
+
+.. _class_OccluderPolygon2D_constant_CULL_DISABLED:
+
+.. _class_OccluderPolygon2D_constant_CULL_CLOCKWISE:
+
+.. _class_OccluderPolygon2D_constant_CULL_COUNTER_CLOCKWISE:
+
+enum **CullMode**:
+
+- **CULL_DISABLED** = **0** --- Culling mode for the occlusion. Disabled means no culling. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+- **CULL_CLOCKWISE** = **1** --- Culling mode for the occlusion. Sets the culling to be in clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+- **CULL_COUNTER_CLOCKWISE** = **2** --- Culling mode for the occlusion. Sets the culling to be in counter clockwise direction. See :ref:`cull_mode<class_OccluderPolygon2D_property_cull_mode>`.
+
+Description
+-----------
+
+Editor facility that helps you draw a 2D polygon used as resource for :ref:`LightOccluder2D<class_LightOccluder2D>`.
+
+Property Descriptions
+---------------------
+
+.. _class_OccluderPolygon2D_property_closed:
 
 - :ref:`bool<class_bool>` **closed**
-- :ref:`int<class_int>` **cull_mode**
-- :ref:`PoolVector2Array<class_poolvector2array>` **polygon**
 
-Numeric Constants
------------------
++----------+-------------------+
+| *Setter* | set_closed(value) |
++----------+-------------------+
+| *Getter* | is_closed()       |
++----------+-------------------+
 
-- **CULL_DISABLED** = **0**
-- **CULL_CLOCKWISE** = **1**
-- **CULL_COUNTER_CLOCKWISE** = **2**
+If ``true``, closes the polygon. A closed OccluderPolygon2D occludes the light coming from any direction. An opened OccluderPolygon2D occludes the light only at its outline's direction. Default value ``true``.
 
-Member Function Description
----------------------------
+.. _class_OccluderPolygon2D_property_cull_mode:
 
-.. _class_OccluderPolygon2D_get_cull_mode:
+- :ref:`CullMode<enum_OccluderPolygon2D_CullMode>` **cull_mode**
 
-- :ref:`int<class_int>`  **get_cull_mode**  **(** **)** const
++----------+----------------------+
+| *Setter* | set_cull_mode(value) |
++----------+----------------------+
+| *Getter* | get_cull_mode()      |
++----------+----------------------+
 
-.. _class_OccluderPolygon2D_get_polygon:
+Set the direction of the occlusion culling when not ``CULL_DISABLED``. Default value ``DISABLED``.
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_polygon**  **(** **)** const
+.. _class_OccluderPolygon2D_property_polygon:
 
-.. _class_OccluderPolygon2D_is_closed:
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **polygon**
 
-- :ref:`bool<class_bool>`  **is_closed**  **(** **)** const
++----------+--------------------+
+| *Setter* | set_polygon(value) |
++----------+--------------------+
+| *Getter* | get_polygon()      |
++----------+--------------------+
 
-.. _class_OccluderPolygon2D_set_closed:
-
-- void  **set_closed**  **(** :ref:`bool<class_bool>` closed  **)**
-
-.. _class_OccluderPolygon2D_set_cull_mode:
-
-- void  **set_cull_mode**  **(** :ref:`int<class_int>` cull_mode  **)**
-
-.. _class_OccluderPolygon2D_set_polygon:
-
-- void  **set_polygon**  **(** :ref:`PoolVector2Array<class_poolvector2array>` polygon  **)**
-
+A :ref:`Vector2<class_Vector2>` array with the index for polygon's vertices positions.
 

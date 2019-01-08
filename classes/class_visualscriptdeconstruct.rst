@@ -7,39 +7,39 @@
 VisualScriptDeconstruct
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A Visual Script node which deconstructs a base type instance into its parts.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------+----------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptDeconstruct_property_type>` |
++-----------------------------------------------------+----------------------------------------------------------+
 
-+------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_deconstruct_type<class_VisualScriptDeconstruct_get_deconstruct_type>`  **(** **)** const                       |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_deconstruct_type<class_VisualScriptDeconstruct_set_deconstruct_type>`  **(** :ref:`int<class_int>` type  **)** |
-+------------------------+--------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A Visual Script node which deconstructs a base type instance into its parts.
 
-- :ref:`Array<class_array>` **elem_cache**
-- :ref:`int<class_int>` **type**
+Property Descriptions
+---------------------
 
-Member Function Description
----------------------------
+.. _class_VisualScriptDeconstruct_property_type:
 
-.. _class_VisualScriptDeconstruct_get_deconstruct_type:
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-- :ref:`int<class_int>`  **get_deconstruct_type**  **(** **)** const
++----------+-----------------------------+
+| *Setter* | set_deconstruct_type(value) |
++----------+-----------------------------+
+| *Getter* | get_deconstruct_type()      |
++----------+-----------------------------+
 
-.. _class_VisualScriptDeconstruct_set_deconstruct_type:
-
-- void  **set_deconstruct_type**  **(** :ref:`int<class_int>` type  **)**
-
+The type to deconstruct.
 

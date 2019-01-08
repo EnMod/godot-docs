@@ -7,7 +7,7 @@
 VisualScriptOperator
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,48 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_operator<class_VisualScriptOperator_get_operator>`  **(** **)** const                     |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_typed<class_VisualScriptOperator_get_typed>`  **(** **)** const                           |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_operator<class_VisualScriptOperator_set_operator>`  **(** :ref:`int<class_int>` op  **)** |
-+------------------------+-----------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_typed<class_VisualScriptOperator_set_typed>`  **(** :ref:`int<class_int>` type  **)**     |
-+------------------------+-----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` | :ref:`operator<class_VisualScriptOperator_property_operator>` |
++-------------------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>`         | :ref:`type<class_VisualScriptOperator_property_type>`         |
++-------------------------------------------------------------+---------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`int<class_int>` **operator**
-- :ref:`int<class_int>` **type**
+**Input Ports:**
 
-Member Function Description
----------------------------
+- Data (variant): ``A``
 
-.. _class_VisualScriptOperator_get_operator:
+- Data (variant): ``B``
 
-- :ref:`int<class_int>`  **get_operator**  **(** **)** const
+**Output Ports:**
 
-.. _class_VisualScriptOperator_get_typed:
+- Data (variant): ``result``
 
-- :ref:`int<class_int>`  **get_typed**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_VisualScriptOperator_set_operator:
+.. _class_VisualScriptOperator_property_operator:
 
-- void  **set_operator**  **(** :ref:`int<class_int>` op  **)**
+- :ref:`Variant.Operator<enum_@GlobalScope_Variant.Operator>` **operator**
 
-.. _class_VisualScriptOperator_set_typed:
++----------+---------------------+
+| *Setter* | set_operator(value) |
++----------+---------------------+
+| *Getter* | get_operator()      |
++----------+---------------------+
 
-- void  **set_typed**  **(** :ref:`int<class_int>` type  **)**
+.. _class_VisualScriptOperator_property_type:
 
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
+
++----------+------------------+
+| *Setter* | set_typed(value) |
++----------+------------------+
+| *Getter* | get_typed()      |
++----------+------------------+
 

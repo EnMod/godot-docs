@@ -1,5 +1,5 @@
-Developing in C++
-=================
+Engine development
+==================
 
 .. toctree::
    :maxdepth: 1
@@ -12,4 +12,8 @@ Developing in C++
    object_class
    inheritance_class_tree
    custom_modules_in_cpp
+   binding_to_external_libraries
+   custom_resource_format_loaders
+   custom_audiostreams
+   custom_godot_servers
    creating_android_modules

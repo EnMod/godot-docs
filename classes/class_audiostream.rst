@@ -7,9 +7,9 @@
 AudioStream
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioStreamSample<class_audiostreamsample>`, :ref:`AudioStreamRandomPitch<class_audiostreamrandompitch>`, :ref:`AudioStreamOGGVorbis<class_audiostreamoggvorbis>`
+**Inherited By:** :ref:`AudioStreamMicrophone<class_AudioStreamMicrophone>`, :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`, :ref:`AudioStreamRandomPitch<class_AudioStreamRandomPitch>`, :ref:`AudioStreamSample<class_AudioStreamSample>`
 
 **Category:** Core
 
@@ -18,8 +18,29 @@ Brief Description
 
 Base class for audio streams.
 
+Methods
+-------
+
++---------------------------+--------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_length<class_AudioStream_method_get_length>` **(** **)** const |
++---------------------------+--------------------------------------------------------------------------+
+
 Description
 -----------
 
-Base class for audio streams. Audio streams are used for music playback, or other types of streamed sounds that don't fit or require more flexibility than a Sample.
+Base class for audio streams. Audio streams are used for sound effects and music playback, and support WAV (via :ref:`AudioStreamSample<class_AudioStreamSample>`) and OGG (via :ref:`AudioStreamOGGVorbis<class_AudioStreamOGGVorbis>`) file formats.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/audio/audio_streams`
+
+Method Descriptions
+-------------------
+
+.. _class_AudioStream_method_get_length:
+
+- :ref:`float<class_float>` **get_length** **(** **)** const
+
+Returns the length of the audio stream in seconds.
 

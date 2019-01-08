@@ -25,7 +25,7 @@ This makes Objects gain a lot of functionality, like for example
     obj = memnew(CustomObject);
     print_line("Object class: ", obj->get_class()); // print object class
 
-    obj2 = obj->cast_to<OtherClass>(); // converting between classes, this also works without RTTI enabled.
+    obj2 = Object::cast_to<OtherClass>(obj); // converting between classes, this also works without RTTI enabled.
 
 References:
 ~~~~~~~~~~~
@@ -199,12 +199,12 @@ example:
 
     void somefunc(Object *some_obj) {
 
-         Button *button = some_obj->cast_to<Button>();
+         Button *button = Object::cast_to<Button>(some_obj);
     }
 
 If cast fails, NULL is returned. This system uses RTTI, but it also
 works fine (although a bit slower) when RTTI is disabled. This is useful
-on platforms where a very small binary size is ideal, such as HTML5 or
+on platforms where a small binary size is ideal, such as HTML5 or
 consoles (with low memory footprint).
 
 Signals
@@ -242,7 +242,7 @@ Declaring them must be done using Ref<> template. For example:
         GDCLASS(MyReference, Reference);
     };
 
-    Ref<MyReference> myref = memnew(MyReference);
+    Ref<MyReference> myref(memnew(MyReference));
 
 ``myref`` is reference counted. It will be freed when no more Ref<>
 templates point to it.

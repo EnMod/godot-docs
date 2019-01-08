@@ -7,7 +7,7 @@
 PCKPacker
 =========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,30 +16,29 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Methods
+-------
 
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`add_file<class_PCKPacker_add_file>`  **(** :ref:`String<class_string>` pck_path, :ref:`String<class_string>` source_path  **)** |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`flush<class_PCKPacker_flush>`  **(** :ref:`bool<class_bool>` verbose  **)**                                                     |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`pck_start<class_PCKPacker_pck_start>`  **(** :ref:`String<class_string>` pck_name, :ref:`int<class_int>` alignment  **)**       |
-+------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`add_file<class_PCKPacker_method_add_file>` **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)** |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`flush<class_PCKPacker_method_flush>` **(** :ref:`bool<class_bool>` verbose **)**                                                     |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`pck_start<class_PCKPacker_method_pck_start>` **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment **)**       |
++---------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_PCKPacker_add_file:
+.. _class_PCKPacker_method_add_file:
 
-- :ref:`int<class_int>`  **add_file**  **(** :ref:`String<class_string>` pck_path, :ref:`String<class_string>` source_path  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **add_file** **(** :ref:`String<class_String>` pck_path, :ref:`String<class_String>` source_path **)**
 
-.. _class_PCKPacker_flush:
+.. _class_PCKPacker_method_flush:
 
-- :ref:`int<class_int>`  **flush**  **(** :ref:`bool<class_bool>` verbose  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **flush** **(** :ref:`bool<class_bool>` verbose **)**
 
-.. _class_PCKPacker_pck_start:
+.. _class_PCKPacker_method_pck_start:
 
-- :ref:`int<class_int>`  **pck_start**  **(** :ref:`String<class_string>` pck_name, :ref:`int<class_int>` alignment  **)**
-
+- :ref:`Error<enum_@GlobalScope_Error>` **pck_start** **(** :ref:`String<class_String>` pck_name, :ref:`int<class_int>` alignment **)**
 

@@ -7,51 +7,61 @@
 VisualScriptClassConstant
 =========================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Gets a constant from a given class.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`base_type<class_VisualScriptClassConstant_property_base_type>` |
++-----------------------------+----------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`constant<class_VisualScriptClassConstant_property_constant>`   |
++-----------------------------+----------------------------------------------------------------------+
 
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_base_type<class_VisualScriptClassConstant_get_base_type>`  **(** **)**                                             |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_class_constant<class_VisualScriptClassConstant_get_class_constant>`  **(** **)**                                   |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_base_type<class_VisualScriptClassConstant_set_base_type>`  **(** :ref:`String<class_string>` name  **)**           |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_class_constant<class_VisualScriptClassConstant_set_class_constant>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+This node returns a constant from a given class, such as :ref:`@GlobalScope.TYPE_INT<class_@GlobalScope_constant_TYPE_INT>`. See the given class' documentation for available constants.
 
-- :ref:`String<class_string>` **base_type**
-- :ref:`String<class_string>` **constant**
+**Input Ports:**
 
-Member Function Description
----------------------------
+none
 
-.. _class_VisualScriptClassConstant_get_base_type:
+**Output Ports:**
 
-- :ref:`String<class_string>`  **get_base_type**  **(** **)**
+- Data (variant): ``value``
 
-.. _class_VisualScriptClassConstant_get_class_constant:
+Property Descriptions
+---------------------
 
-- :ref:`String<class_string>`  **get_class_constant**  **(** **)**
+.. _class_VisualScriptClassConstant_property_base_type:
 
-.. _class_VisualScriptClassConstant_set_base_type:
+- :ref:`String<class_String>` **base_type**
 
-- void  **set_base_type**  **(** :ref:`String<class_string>` name  **)**
++----------+----------------------+
+| *Setter* | set_base_type(value) |
++----------+----------------------+
+| *Getter* | get_base_type()      |
++----------+----------------------+
 
-.. _class_VisualScriptClassConstant_set_class_constant:
+The constant's parent class.
 
-- void  **set_class_constant**  **(** :ref:`String<class_string>` name  **)**
+.. _class_VisualScriptClassConstant_property_constant:
 
+- :ref:`String<class_String>` **constant**
+
++----------+---------------------------+
+| *Setter* | set_class_constant(value) |
++----------+---------------------------+
+| *Getter* | get_class_constant()      |
++----------+---------------------------+
+
+The constant to return. See the given class for its available constants.
 

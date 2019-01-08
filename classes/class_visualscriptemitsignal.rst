@@ -7,38 +7,47 @@
 VisualScriptEmitSignal
 ======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Emits a specified signal.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------+-------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`signal<class_VisualScriptEmitSignal_property_signal>` |
++-----------------------------+-------------------------------------------------------------+
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_signal<class_VisualScriptEmitSignal_get_signal>`  **(** **)** const                             |
-+------------------------------+-----------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_signal<class_VisualScriptEmitSignal_set_signal>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Emits a specified signal when it is executed.
 
-- :ref:`String<class_string>` **signal**
+**Input Ports:**
 
-Member Function Description
----------------------------
+- Sequence: ``emit``
 
-.. _class_VisualScriptEmitSignal_get_signal:
+**Output Ports:**
 
-- :ref:`String<class_string>`  **get_signal**  **(** **)** const
+- Sequence
 
-.. _class_VisualScriptEmitSignal_set_signal:
+Property Descriptions
+---------------------
 
-- void  **set_signal**  **(** :ref:`String<class_string>` name  **)**
+.. _class_VisualScriptEmitSignal_property_signal:
 
+- :ref:`String<class_String>` **signal**
+
++----------+-------------------+
+| *Setter* | set_signal(value) |
++----------+-------------------+
+| *Getter* | get_signal()      |
++----------+-------------------+
+
+The signal to emit.
 

@@ -7,7 +7,7 @@
 PacketPeerUDP
 =============
 
-**Inherits:** :ref:`PacketPeer<class_packetpeer>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`PacketPeer<class_PacketPeer>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,62 +16,62 @@ Brief Description
 
 UDP packet peer.
 
-Member Functions
-----------------
+Methods
+-------
 
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`close<class_PacketPeerUDP_close>`  **(** **)**                                                                                                                        |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_packet_ip<class_PacketPeerUDP_get_packet_ip>`  **(** **)** const                                                                                                  |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_packet_port<class_PacketPeerUDP_get_packet_port>`  **(** **)** const                                                                                              |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`is_listening<class_PacketPeerUDP_is_listening>`  **(** **)** const                                                                                                    |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`listen<class_PacketPeerUDP_listen>`  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536  **)** |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`set_dest_address<class_PacketPeerUDP_set_dest_address>`  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**                                    |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`wait<class_PacketPeerUDP_wait>`  **(** **)**                                                                                                                          |
-+------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                  | :ref:`close<class_PacketPeerUDP_method_close>` **(** **)**                                                                                                                       |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`get_packet_ip<class_PacketPeerUDP_method_get_packet_ip>` **(** **)** const                                                                                                 |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`get_packet_port<class_PacketPeerUDP_method_get_packet_port>` **(** **)** const                                                                                             |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`is_listening<class_PacketPeerUDP_method_is_listening>` **(** **)** const                                                                                                   |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`listen<class_PacketPeerUDP_method_listen>` **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)** |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`set_dest_address<class_PacketPeerUDP_method_set_dest_address>` **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**                                    |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_PacketPeerUDP_method_wait>` **(** **)**                                                                                                                         |
++---------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_variant>`\ s.
+UDP packet peer. Can be used to send raw UDP packets as well as :ref:`Variant<class_Variant>`\ s.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_PacketPeerUDP_close:
+.. _class_PacketPeerUDP_method_close:
 
-- void  **close**  **(** **)**
+- void **close** **(** **)**
 
-Close the UDP socket the :ref:`PacketPeerUDP<class_packetpeerudp>` is currently listening on.
+Close the UDP socket the ``PacketPeerUDP`` is currently listening on.
 
-.. _class_PacketPeerUDP_get_packet_ip:
+.. _class_PacketPeerUDP_method_get_packet_ip:
 
-- :ref:`String<class_string>`  **get_packet_ip**  **(** **)** const
+- :ref:`String<class_String>` **get_packet_ip** **(** **)** const
 
-Return the IP of the remote peer that sent the last packet(that was received with :ref:`get_packet<class_PacketPeerUDP_get_packet>` or :ref:`get_var<class_PacketPeerUDP_get_var>`).
+Return the IP of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
-.. _class_PacketPeerUDP_get_packet_port:
+.. _class_PacketPeerUDP_method_get_packet_port:
 
-- :ref:`int<class_int>`  **get_packet_port**  **(** **)** const
+- :ref:`int<class_int>` **get_packet_port** **(** **)** const
 
-Return the port of the remote peer that sent the last packet(that was received with :ref:`get_packet<class_PacketPeerUDP_get_packet>` or :ref:`get_var<class_PacketPeerUDP_get_var>`).
+Return the port of the remote peer that sent the last packet(that was received with :ref:`PacketPeer.get_packet<class_PacketPeer_method_get_packet>` or :ref:`PacketPeer.get_var<class_PacketPeer_method_get_var>`).
 
-.. _class_PacketPeerUDP_is_listening:
+.. _class_PacketPeerUDP_method_is_listening:
 
-- :ref:`bool<class_bool>`  **is_listening**  **(** **)** const
+- :ref:`bool<class_bool>` **is_listening** **(** **)** const
 
-Return whether this :ref:`PacketPeerUDP<class_packetpeerudp>` is listening.
+Return whether this ``PacketPeerUDP`` is listening.
 
-.. _class_PacketPeerUDP_listen:
+.. _class_PacketPeerUDP_method_listen:
 
-- :ref:`int<class_int>`  **listen**  **(** :ref:`int<class_int>` port, :ref:`String<class_string>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **listen** **(** :ref:`int<class_int>` port, :ref:`String<class_String>` bind_address="*", :ref:`int<class_int>` recv_buf_size=65536 **)**
 
-Make this :ref:`PacketPeerUDP<class_packetpeerudp>` listen on the "port" binding to "bind_address" with a buffer size "recv_buf_size".
+Make this ``PacketPeerUDP`` listen on the "port" binding to "bind_address" with a buffer size "recv_buf_size".
 
 If "bind_address" is set as "\*" (default), the peer will listen on all available addresses (both IPv4 and IPv6).
 
@@ -79,16 +79,15 @@ If "bind_address" is set as "0.0.0.0" (for IPv4) or "::" (for IPv6), the peer wi
 
 If "bind_address" is set to any valid address (e.g. "192.168.1.101", "::1", etc), the peer will only listen on the interface with that addresses (or fail if no interface with the given address exists).
 
-.. _class_PacketPeerUDP_set_dest_address:
+.. _class_PacketPeerUDP_method_set_dest_address:
 
-- :ref:`int<class_int>`  **set_dest_address**  **(** :ref:`String<class_string>` host, :ref:`int<class_int>` port  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **set_dest_address** **(** :ref:`String<class_String>` host, :ref:`int<class_int>` port **)**
 
 Set the destination address and port for sending packets and variables, a hostname will be resolved using if valid.
 
-.. _class_PacketPeerUDP_wait:
+.. _class_PacketPeerUDP_method_wait:
 
-- :ref:`int<class_int>`  **wait**  **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 
-Wait for a packet to arrive on the listening port, see :ref:`listen<class_PacketPeerUDP_listen>`.
-
+Wait for a packet to arrive on the listening port, see :ref:`listen<class_PacketPeerUDP_method_listen>`.
 

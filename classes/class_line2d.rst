@@ -7,7 +7,7 @@
 Line2D
 ======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,210 +16,269 @@ Brief Description
 
 A 2D line.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`add_point<class_Line2D_add_point>`  **(** :ref:`Vector2<class_vector2>` position  **)**                                            |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_begin_cap_mode<class_Line2D_get_begin_cap_mode>`  **(** **)** const                                                            |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`                        | :ref:`get_default_color<class_Line2D_get_default_color>`  **(** **)** const                                                              |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_end_cap_mode<class_Line2D_get_end_cap_mode>`  **(** **)** const                                                                |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Gradient<class_gradient>`                  | :ref:`get_gradient<class_Line2D_get_gradient>`  **(** **)** const                                                                        |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_joint_mode<class_Line2D_get_joint_mode>`  **(** **)** const                                                                    |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_point_count<class_Line2D_get_point_count>`  **(** **)** const                                                                  |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`                    | :ref:`get_point_position<class_Line2D_get_point_position>`  **(** :ref:`int<class_int>` i  **)** const                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector2Array<class_poolvector2array>`  | :ref:`get_points<class_Line2D_get_points>`  **(** **)** const                                                                            |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_round_precision<class_Line2D_get_round_precision>`  **(** **)** const                                                          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`get_sharp_limit<class_Line2D_get_sharp_limit>`  **(** **)** const                                                                  |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`                    | :ref:`get_texture<class_Line2D_get_texture>`  **(** **)** const                                                                          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                            | :ref:`get_texture_mode<class_Line2D_get_texture_mode>`  **(** **)** const                                                                |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`                        | :ref:`get_width<class_Line2D_get_width>`  **(** **)** const                                                                              |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`remove_point<class_Line2D_remove_point>`  **(** :ref:`int<class_int>` i  **)**                                                     |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_begin_cap_mode<class_Line2D_set_begin_cap_mode>`  **(** :ref:`int<class_int>` mode  **)**                                      |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_default_color<class_Line2D_set_default_color>`  **(** :ref:`Color<class_color>` color  **)**                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_end_cap_mode<class_Line2D_set_end_cap_mode>`  **(** :ref:`int<class_int>` mode  **)**                                          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_gradient<class_Line2D_set_gradient>`  **(** :ref:`Gradient<class_gradient>` color  **)**                                       |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_joint_mode<class_Line2D_set_joint_mode>`  **(** :ref:`int<class_int>` mode  **)**                                              |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_point_position<class_Line2D_set_point_position>`  **(** :ref:`int<class_int>` i, :ref:`Vector2<class_vector2>` position  **)** |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_points<class_Line2D_set_points>`  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**                          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_round_precision<class_Line2D_set_round_precision>`  **(** :ref:`int<class_int>` precision  **)**                               |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_sharp_limit<class_Line2D_set_sharp_limit>`  **(** :ref:`float<class_float>` limit  **)**                                       |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_texture<class_Line2D_set_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**                                         |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_texture_mode<class_Line2D_set_texture_mode>`  **(** :ref:`int<class_int>` mode  **)**                                          |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_width<class_Line2D_set_width>`  **(** :ref:`float<class_float>` width  **)**                                                   |
-+--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`begin_cap_mode<class_Line2D_property_begin_cap_mode>`   |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Color<class_Color>`                           | :ref:`default_color<class_Line2D_property_default_color>`     |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`LineCapMode<enum_Line2D_LineCapMode>`         | :ref:`end_cap_mode<class_Line2D_property_end_cap_mode>`       |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Gradient<class_Gradient>`                     | :ref:`gradient<class_Line2D_property_gradient>`               |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`LineJointMode<enum_Line2D_LineJointMode>`     | :ref:`joint_mode<class_Line2D_property_joint_mode>`           |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`PoolVector2Array<class_PoolVector2Array>`     | :ref:`points<class_Line2D_property_points>`                   |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`int<class_int>`                               | :ref:`round_precision<class_Line2D_property_round_precision>` |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`sharp_limit<class_Line2D_property_sharp_limit>`         |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`Texture<class_Texture>`                       | :ref:`texture<class_Line2D_property_texture>`                 |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` | :ref:`texture_mode<class_Line2D_property_texture_mode>`       |
++-----------------------------------------------------+---------------------------------------------------------------+
+| :ref:`float<class_float>`                           | :ref:`width<class_Line2D_property_width>`                     |
++-----------------------------------------------------+---------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`int<class_int>` **begin_cap_mode**
-- :ref:`Color<class_color>` **default_color**
-- :ref:`int<class_int>` **end_cap_mode**
-- :ref:`Gradient<class_gradient>` **gradient**
-- :ref:`int<class_int>` **joint_mode**
-- :ref:`PoolVector2Array<class_poolvector2array>` **points**
-- :ref:`int<class_int>` **round_precision**
-- :ref:`float<class_float>` **sharp_limit**
-- :ref:`Texture<class_texture>` **texture**
-- :ref:`int<class_int>` **texture_mode**
-- :ref:`float<class_float>` **width**
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`add_point<class_Line2D_method_add_point>` **(** :ref:`Vector2<class_Vector2>` position **)**                                            |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`         | :ref:`get_point_count<class_Line2D_method_get_point_count>` **(** **)** const                                                                 |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`get_point_position<class_Line2D_method_get_point_position>` **(** :ref:`int<class_int>` i **)** const                                   |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`remove_point<class_Line2D_method_remove_point>` **(** :ref:`int<class_int>` i **)**                                                     |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`set_point_position<class_Line2D_method_set_point_position>` **(** :ref:`int<class_int>` i, :ref:`Vector2<class_Vector2>` position **)** |
++-------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enumerations
+------------
 
-- **LINE_JOINT_SHARP** = **0**
-- **LINE_JOINT_BEVEL** = **1**
-- **LINE_JOINT_ROUND** = **2**
-- **LINE_CAP_NONE** = **0**
-- **LINE_CAP_BOX** = **1**
-- **LINE_CAP_ROUND** = **2**
-- **LINE_TEXTURE_NONE** = **0**
-- **LINE_TEXTURE_TILE** = **1**
+.. _enum_Line2D_LineJointMode:
+
+.. _class_Line2D_constant_LINE_JOINT_SHARP:
+
+.. _class_Line2D_constant_LINE_JOINT_BEVEL:
+
+.. _class_Line2D_constant_LINE_JOINT_ROUND:
+
+enum **LineJointMode**:
+
+- **LINE_JOINT_SHARP** = **0** --- The line's joints will be pointy. If ``sharp_limit`` is greater than the rotation of a joint, it becomes a bevel joint instead.
+
+- **LINE_JOINT_BEVEL** = **1** --- The line's joints will be bevelled/chamfered.
+
+- **LINE_JOINT_ROUND** = **2** --- The line's joints will be rounded.
+
+.. _enum_Line2D_LineCapMode:
+
+.. _class_Line2D_constant_LINE_CAP_NONE:
+
+.. _class_Line2D_constant_LINE_CAP_BOX:
+
+.. _class_Line2D_constant_LINE_CAP_ROUND:
+
+enum **LineCapMode**:
+
+- **LINE_CAP_NONE** = **0** --- Don't have a line cap.
+
+- **LINE_CAP_BOX** = **1** --- Draws the line cap as a box.
+
+- **LINE_CAP_ROUND** = **2** --- Draws the line cap as a circle.
+
+.. _enum_Line2D_LineTextureMode:
+
+.. _class_Line2D_constant_LINE_TEXTURE_NONE:
+
+.. _class_Line2D_constant_LINE_TEXTURE_TILE:
+
+.. _class_Line2D_constant_LINE_TEXTURE_STRETCH:
+
+enum **LineTextureMode**:
+
+- **LINE_TEXTURE_NONE** = **0** --- Takes the left pixels of the texture and renders it over the whole line.
+
+- **LINE_TEXTURE_TILE** = **1** --- Tiles the texture over the line. The texture need to be imported with Repeat Enabled for it to work properly.
+
+- **LINE_TEXTURE_STRETCH** = **2** --- Stretches the texture across the line. Import the texture with Repeat Disabled for best results.
 
 Description
 -----------
 
 A line through several points in 2D space.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Line2D_add_point:
+.. _class_Line2D_property_begin_cap_mode:
 
-- void  **add_point**  **(** :ref:`Vector2<class_vector2>` position  **)**
+- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **begin_cap_mode**
 
-Add a point at the x/y position in the supplied :ref:`Vector2<class_vector2>`
++----------+---------------------------+
+| *Setter* | set_begin_cap_mode(value) |
++----------+---------------------------+
+| *Getter* | get_begin_cap_mode()      |
++----------+---------------------------+
 
-.. _class_Line2D_get_begin_cap_mode:
+Controls the style of the line's first point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
-- :ref:`int<class_int>`  **get_begin_cap_mode**  **(** **)** const
+.. _class_Line2D_property_default_color:
 
-.. _class_Line2D_get_default_color:
+- :ref:`Color<class_Color>` **default_color**
 
-- :ref:`Color<class_color>`  **get_default_color**  **(** **)** const
++----------+--------------------------+
+| *Setter* | set_default_color(value) |
++----------+--------------------------+
+| *Getter* | get_default_color()      |
++----------+--------------------------+
 
-.. _class_Line2D_get_end_cap_mode:
+The line's color. Will not be used if a gradient is set.
 
-- :ref:`int<class_int>`  **get_end_cap_mode**  **(** **)** const
+.. _class_Line2D_property_end_cap_mode:
 
-.. _class_Line2D_get_gradient:
+- :ref:`LineCapMode<enum_Line2D_LineCapMode>` **end_cap_mode**
 
-- :ref:`Gradient<class_gradient>`  **get_gradient**  **(** **)** const
++----------+-------------------------+
+| *Setter* | set_end_cap_mode(value) |
++----------+-------------------------+
+| *Getter* | get_end_cap_mode()      |
++----------+-------------------------+
 
-.. _class_Line2D_get_joint_mode:
+Controls the style of the line's last point. Use ``LINE_CAP_*`` constants. Default value: ``LINE_CAP_NONE``.
 
-- :ref:`int<class_int>`  **get_joint_mode**  **(** **)** const
+.. _class_Line2D_property_gradient:
 
-.. _class_Line2D_get_point_count:
+- :ref:`Gradient<class_Gradient>` **gradient**
 
-- :ref:`int<class_int>`  **get_point_count**  **(** **)** const
++----------+---------------------+
+| *Setter* | set_gradient(value) |
++----------+---------------------+
+| *Getter* | get_gradient()      |
++----------+---------------------+
 
-.. _class_Line2D_get_point_position:
+The gradient is drawn through the whole line from start to finish. The default color will not be used if a gradient is set.
 
-- :ref:`Vector2<class_vector2>`  **get_point_position**  **(** :ref:`int<class_int>` i  **)** const
+.. _class_Line2D_property_joint_mode:
 
-.. _class_Line2D_get_points:
+- :ref:`LineJointMode<enum_Line2D_LineJointMode>` **joint_mode**
 
-- :ref:`PoolVector2Array<class_poolvector2array>`  **get_points**  **(** **)** const
++----------+-----------------------+
+| *Setter* | set_joint_mode(value) |
++----------+-----------------------+
+| *Getter* | get_joint_mode()      |
++----------+-----------------------+
 
-.. _class_Line2D_get_round_precision:
+The style for the points between the start and the end.
 
-- :ref:`int<class_int>`  **get_round_precision**  **(** **)** const
+.. _class_Line2D_property_points:
 
-.. _class_Line2D_get_sharp_limit:
+- :ref:`PoolVector2Array<class_PoolVector2Array>` **points**
 
-- :ref:`float<class_float>`  **get_sharp_limit**  **(** **)** const
++----------+-------------------+
+| *Setter* | set_points(value) |
++----------+-------------------+
+| *Getter* | get_points()      |
++----------+-------------------+
 
-.. _class_Line2D_get_texture:
+The points that form the lines. The line is drawn between every point set in this array.
 
-- :ref:`Texture<class_texture>`  **get_texture**  **(** **)** const
+.. _class_Line2D_property_round_precision:
 
-.. _class_Line2D_get_texture_mode:
+- :ref:`int<class_int>` **round_precision**
 
-- :ref:`int<class_int>`  **get_texture_mode**  **(** **)** const
++----------+----------------------------+
+| *Setter* | set_round_precision(value) |
++----------+----------------------------+
+| *Getter* | get_round_precision()      |
++----------+----------------------------+
 
-.. _class_Line2D_get_width:
+The smoothness of the rounded joints and caps. This is only used if a cap or joint is set as round.
 
-- :ref:`float<class_float>`  **get_width**  **(** **)** const
+.. _class_Line2D_property_sharp_limit:
 
-.. _class_Line2D_remove_point:
+- :ref:`float<class_float>` **sharp_limit**
 
-- void  **remove_point**  **(** :ref:`int<class_int>` i  **)**
++----------+------------------------+
+| *Setter* | set_sharp_limit(value) |
++----------+------------------------+
+| *Getter* | get_sharp_limit()      |
++----------+------------------------+
 
-Remove the point at index 'i' from the line.
+The direction difference in radians between vector points. This value is only used if ``joint mode`` is set to ``LINE_JOINT_SHARP``.
 
-.. _class_Line2D_set_begin_cap_mode:
+.. _class_Line2D_property_texture:
 
-- void  **set_begin_cap_mode**  **(** :ref:`int<class_int>` mode  **)**
+- :ref:`Texture<class_Texture>` **texture**
 
-.. _class_Line2D_set_default_color:
++----------+--------------------+
+| *Setter* | set_texture(value) |
++----------+--------------------+
+| *Getter* | get_texture()      |
++----------+--------------------+
 
-- void  **set_default_color**  **(** :ref:`Color<class_color>` color  **)**
+The texture used for the line's texture. Uses ``texture_mode`` for drawing style.
 
-.. _class_Line2D_set_end_cap_mode:
+.. _class_Line2D_property_texture_mode:
 
-- void  **set_end_cap_mode**  **(** :ref:`int<class_int>` mode  **)**
+- :ref:`LineTextureMode<enum_Line2D_LineTextureMode>` **texture_mode**
 
-.. _class_Line2D_set_gradient:
++----------+-------------------------+
+| *Setter* | set_texture_mode(value) |
++----------+-------------------------+
+| *Getter* | get_texture_mode()      |
++----------+-------------------------+
 
-- void  **set_gradient**  **(** :ref:`Gradient<class_gradient>` color  **)**
+The style to render the ``texture`` on the line. Use ``LINE_TEXTURE_*`` constants. Default value: ``LINE_TEXTURE_NONE``.
 
-.. _class_Line2D_set_joint_mode:
+.. _class_Line2D_property_width:
 
-- void  **set_joint_mode**  **(** :ref:`int<class_int>` mode  **)**
+- :ref:`float<class_float>` **width**
 
-.. _class_Line2D_set_point_position:
++----------+------------------+
+| *Setter* | set_width(value) |
++----------+------------------+
+| *Getter* | get_width()      |
++----------+------------------+
 
-- void  **set_point_position**  **(** :ref:`int<class_int>` i, :ref:`Vector2<class_vector2>` position  **)**
+The line's width.
 
-.. _class_Line2D_set_points:
+Method Descriptions
+-------------------
 
-- void  **set_points**  **(** :ref:`PoolVector2Array<class_poolvector2array>` points  **)**
+.. _class_Line2D_method_add_point:
 
-.. _class_Line2D_set_round_precision:
+- void **add_point** **(** :ref:`Vector2<class_Vector2>` position **)**
 
-- void  **set_round_precision**  **(** :ref:`int<class_int>` precision  **)**
+Add a point at the ``position``. Appends the point at the end of the line.
 
-.. _class_Line2D_set_sharp_limit:
+.. _class_Line2D_method_get_point_count:
 
-- void  **set_sharp_limit**  **(** :ref:`float<class_float>` limit  **)**
+- :ref:`int<class_int>` **get_point_count** **(** **)** const
 
-.. _class_Line2D_set_texture:
+Returns the Line2D's amount of points.
 
-- void  **set_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
+.. _class_Line2D_method_get_point_position:
 
-.. _class_Line2D_set_texture_mode:
+- :ref:`Vector2<class_Vector2>` **get_point_position** **(** :ref:`int<class_int>` i **)** const
 
-- void  **set_texture_mode**  **(** :ref:`int<class_int>` mode  **)**
+Returns point ``i``'s position.
 
-.. _class_Line2D_set_width:
+.. _class_Line2D_method_remove_point:
 
-- void  **set_width**  **(** :ref:`float<class_float>` width  **)**
+- void **remove_point** **(** :ref:`int<class_int>` i **)**
 
+Remove the point at index ``i`` from the line.
+
+.. _class_Line2D_method_set_point_position:
+
+- void **set_point_position** **(** :ref:`int<class_int>` i, :ref:`Vector2<class_Vector2>` position **)**
+
+Overwrites the position in point ``i`` with the supplied ``position``.
 

@@ -7,41 +7,53 @@
 AudioEffectEQ
 =============
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioEffectEQ6<class_audioeffecteq6>`, :ref:`AudioEffectEQ21<class_audioeffecteq21>`, :ref:`AudioEffectEQ10<class_audioeffecteq10>`
+**Inherited By:** :ref:`AudioEffectEQ10<class_AudioEffectEQ10>`, :ref:`AudioEffectEQ21<class_AudioEffectEQ21>`, :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Base class for audio equalizers. Gives you control over frequencies.
 
+Use it to create a custom equalizer if :ref:`AudioEffectEQ6<class_AudioEffectEQ6>`, :ref:`AudioEffectEQ10<class_AudioEffectEQ10>` or :ref:`AudioEffectEQ21<class_AudioEffectEQ21>` don't fit your needs.
 
-Member Functions
-----------------
+Methods
+-------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_band_count<class_AudioEffectEQ_get_band_count>`  **(** **)** const                                                                    |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_band_gain_db<class_AudioEffectEQ_get_band_gain_db>`  **(** :ref:`int<class_int>` band_idx  **)** const                                |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_band_gain_db<class_AudioEffectEQ_set_band_gain_db>`  **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`get_band_count<class_AudioEffectEQ_method_get_band_count>` **(** **)** const                                                                   |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`get_band_gain_db<class_AudioEffectEQ_method_get_band_gain_db>` **(** :ref:`int<class_int>` band_idx **)** const                                |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                      | :ref:`set_band_gain_db<class_AudioEffectEQ_method_set_band_gain_db>` **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)** |
++---------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Description
+-----------
 
-.. _class_AudioEffectEQ_get_band_count:
+AudioEffectEQ gives you control over frequencies. Use it to compensate for existing deficiencies in audio. AudioEffectEQ are very useful on the Master Bus to completely master a mix and give it character. They are also very useful when a game is run on a mobile device, to adjust the mix to that kind of speakers (it can be added but disabled when headphones are plugged).
 
-- :ref:`int<class_int>`  **get_band_count**  **(** **)** const
+Method Descriptions
+-------------------
 
-.. _class_AudioEffectEQ_get_band_gain_db:
+.. _class_AudioEffectEQ_method_get_band_count:
 
-- :ref:`float<class_float>`  **get_band_gain_db**  **(** :ref:`int<class_int>` band_idx  **)** const
+- :ref:`int<class_int>` **get_band_count** **(** **)** const
 
-.. _class_AudioEffectEQ_set_band_gain_db:
+Returns the number of bands of the equalizer.
 
-- void  **set_band_gain_db**  **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db  **)**
+.. _class_AudioEffectEQ_method_get_band_gain_db:
 
+- :ref:`float<class_float>` **get_band_gain_db** **(** :ref:`int<class_int>` band_idx **)** const
+
+Returns the band's gain at the specified index, in dB.
+
+.. _class_AudioEffectEQ_method_set_band_gain_db:
+
+- void **set_band_gain_db** **(** :ref:`int<class_int>` band_idx, :ref:`float<class_float>` volume_db **)**
+
+Sets band's gain at the specified index, in dB.
 

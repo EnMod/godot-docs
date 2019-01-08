@@ -7,87 +7,104 @@
 AudioEffectFilter
 =================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioEffectHighPassFilter<class_audioeffecthighpassfilter>`, :ref:`AudioEffectBandLimitFilter<class_audioeffectbandlimitfilter>`, :ref:`AudioEffectLowShelfFilter<class_audioeffectlowshelffilter>`, :ref:`AudioEffectHighShelfFilter<class_audioeffecthighshelffilter>`, :ref:`AudioEffectBandPassFilter<class_audioeffectbandpassfilter>`, :ref:`AudioEffectNotchFilter<class_audioeffectnotchfilter>`, :ref:`AudioEffectLowPassFilter<class_audioeffectlowpassfilter>`
+**Inherited By:** :ref:`AudioEffectBandLimitFilter<class_AudioEffectBandLimitFilter>`, :ref:`AudioEffectBandPassFilter<class_AudioEffectBandPassFilter>`, :ref:`AudioEffectHighPassFilter<class_AudioEffectHighPassFilter>`, :ref:`AudioEffectHighShelfFilter<class_AudioEffectHighShelfFilter>`, :ref:`AudioEffectLowPassFilter<class_AudioEffectLowPassFilter>`, :ref:`AudioEffectLowShelfFilter<class_AudioEffectLowShelfFilter>`, :ref:`AudioEffectNotchFilter<class_AudioEffectNotchFilter>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Adds a filter to the Audio Bus.
 
+Properties
+----------
 
-Member Functions
-----------------
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` | :ref:`db<class_AudioEffectFilter_property_db>`               |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`gain<class_AudioEffectFilter_property_gain>`           |
++--------------------------------------------------+--------------------------------------------------------------+
+| :ref:`float<class_float>`                        | :ref:`resonance<class_AudioEffectFilter_property_resonance>` |
++--------------------------------------------------+--------------------------------------------------------------+
 
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_cutoff<class_AudioEffectFilter_get_cutoff>`  **(** **)** const                                   |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_db<class_AudioEffectFilter_get_db>`  **(** **)** const                                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_gain<class_AudioEffectFilter_get_gain>`  **(** **)** const                                       |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_resonance<class_AudioEffectFilter_get_resonance>`  **(** **)** const                             |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_cutoff<class_AudioEffectFilter_set_cutoff>`  **(** :ref:`float<class_float>` freq  **)**         |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_db<class_AudioEffectFilter_set_db>`  **(** :ref:`int<class_int>` amount  **)**                   |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_gain<class_AudioEffectFilter_set_gain>`  **(** :ref:`float<class_float>` amount  **)**           |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_resonance<class_AudioEffectFilter_set_resonance>`  **(** :ref:`float<class_float>` amount  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------+
+Enumerations
+------------
 
-Member Variables
-----------------
+.. _enum_AudioEffectFilter_FilterDB:
 
-- :ref:`float<class_float>` **cutoff_hz**
-- :ref:`int<class_int>` **dB**
-- :ref:`float<class_float>` **gain**
-- :ref:`float<class_float>` **resonance**
+.. _class_AudioEffectFilter_constant_FILTER_6DB:
 
-Numeric Constants
------------------
+.. _class_AudioEffectFilter_constant_FILTER_12DB:
+
+.. _class_AudioEffectFilter_constant_FILTER_18DB:
+
+.. _class_AudioEffectFilter_constant_FILTER_24DB:
+
+enum **FilterDB**:
 
 - **FILTER_6DB** = **0**
+
 - **FILTER_12DB** = **1**
+
 - **FILTER_18DB** = **2**
+
 - **FILTER_24DB** = **3**
 
-Member Function Description
----------------------------
+Description
+-----------
 
-.. _class_AudioEffectFilter_get_cutoff:
+Allows frequencies other than the :ref:`cutoff_hz<class_AudioEffectFilter_property_cutoff_hz>` to pass.
 
-- :ref:`float<class_float>`  **get_cutoff**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_AudioEffectFilter_get_db:
+.. _class_AudioEffectFilter_property_cutoff_hz:
 
-- :ref:`int<class_int>`  **get_db**  **(** **)** const
+- :ref:`float<class_float>` **cutoff_hz**
 
-.. _class_AudioEffectFilter_get_gain:
++----------+-------------------+
+| *Setter* | set_cutoff(value) |
++----------+-------------------+
+| *Getter* | get_cutoff()      |
++----------+-------------------+
 
-- :ref:`float<class_float>`  **get_gain**  **(** **)** const
+Threshold frequency for the filter.
 
-.. _class_AudioEffectFilter_get_resonance:
+.. _class_AudioEffectFilter_property_db:
 
-- :ref:`float<class_float>`  **get_resonance**  **(** **)** const
+- :ref:`FilterDB<enum_AudioEffectFilter_FilterDB>` **db**
 
-.. _class_AudioEffectFilter_set_cutoff:
++----------+---------------+
+| *Setter* | set_db(value) |
++----------+---------------+
+| *Getter* | get_db()      |
++----------+---------------+
 
-- void  **set_cutoff**  **(** :ref:`float<class_float>` freq  **)**
+.. _class_AudioEffectFilter_property_gain:
 
-.. _class_AudioEffectFilter_set_db:
+- :ref:`float<class_float>` **gain**
 
-- void  **set_db**  **(** :ref:`int<class_int>` amount  **)**
++----------+-----------------+
+| *Setter* | set_gain(value) |
++----------+-----------------+
+| *Getter* | get_gain()      |
++----------+-----------------+
 
-.. _class_AudioEffectFilter_set_gain:
+Gain amount of the frequencies after the filter.
 
-- void  **set_gain**  **(** :ref:`float<class_float>` amount  **)**
+.. _class_AudioEffectFilter_property_resonance:
 
-.. _class_AudioEffectFilter_set_resonance:
+- :ref:`float<class_float>` **resonance**
 
-- void  **set_resonance**  **(** :ref:`float<class_float>` amount  **)**
++----------+----------------------+
+| *Setter* | set_resonance(value) |
++----------+----------------------+
+| *Getter* | get_resonance()      |
++----------+----------------------+
 
+Amount of boost in the overtones near the cutoff frequency.
 

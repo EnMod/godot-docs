@@ -7,7 +7,7 @@
 BoneAttachment
 ==============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,33 +16,30 @@ Brief Description
 
 A node that will attach to a bone.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_bone_name<class_BoneAttachment_get_bone_name>`  **(** **)** const                                  |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_bone_name<class_BoneAttachment_set_bone_name>`  **(** :ref:`String<class_string>` bone_name  **)** |
-+------------------------------+--------------------------------------------------------------------------------------------------------------+
++-----------------------------+-----------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`bone_name<class_BoneAttachment_property_bone_name>` |
++-----------------------------+-----------------------------------------------------------+
 
 Description
 -----------
 
-This node must be the child of a :ref:`Skeleton<class_skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
+This node must be the child of a :ref:`Skeleton<class_Skeleton>` node. You can then select a bone for this node to attach to. The BoneAttachment node will copy the transform of the selected bone.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_BoneAttachment_get_bone_name:
+.. _class_BoneAttachment_property_bone_name:
 
-- :ref:`String<class_string>`  **get_bone_name**  **(** **)** const
+- :ref:`String<class_String>` **bone_name**
 
-Returns the name of the bone node attached to.
++----------+----------------------+
+| *Setter* | set_bone_name(value) |
++----------+----------------------+
+| *Getter* | get_bone_name()      |
++----------+----------------------+
 
-.. _class_BoneAttachment_set_bone_name:
-
-- void  **set_bone_name**  **(** :ref:`String<class_string>` bone_name  **)**
-
-Changes the name of the bone node
-
+The name of the attached bone.
 

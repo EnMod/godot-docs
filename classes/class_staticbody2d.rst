@@ -7,7 +7,7 @@
 StaticBody2D
 ============
 
-**Inherits:** :ref:`PhysicsBody2D<class_physicsbody2d>` **<** :ref:`CollisionObject2D<class_collisionobject2d>` **<** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`PhysicsBody2D<class_PhysicsBody2D>` **<** :ref:`CollisionObject2D<class_CollisionObject2D>` **<** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,93 +16,86 @@ Brief Description
 
 Static body for 2D Physics.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_bounce<class_StaticBody2D_get_bounce>`  **(** **)** const                                                                  |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_constant_angular_velocity<class_StaticBody2D_get_constant_angular_velocity>`  **(** **)** const                            |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_constant_linear_velocity<class_StaticBody2D_get_constant_linear_velocity>`  **(** **)** const                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`get_friction<class_StaticBody2D_get_friction>`  **(** **)** const                                                              |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_bounce<class_StaticBody2D_set_bounce>`  **(** :ref:`float<class_float>` bounce  **)**                                      |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_angular_velocity<class_StaticBody2D_set_constant_angular_velocity>`  **(** :ref:`float<class_float>` vel  **)**   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_linear_velocity<class_StaticBody2D_set_constant_linear_velocity>`  **(** :ref:`Vector2<class_vector2>` vel  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_friction<class_StaticBody2D_set_friction>`  **(** :ref:`float<class_float>` friction  **)**                                |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **bounce**
-- :ref:`float<class_float>` **constant_angular_velocity**
-- :ref:`Vector2<class_vector2>` **constant_linear_velocity**
-- :ref:`float<class_float>` **friction**
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`bounce<class_StaticBody2D_property_bounce>`                                       |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`constant_angular_velocity<class_StaticBody2D_property_constant_angular_velocity>` |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>`                 | :ref:`constant_linear_velocity<class_StaticBody2D_property_constant_linear_velocity>`   |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`                     | :ref:`friction<class_StaticBody2D_property_friction>`                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| :ref:`PhysicsMaterial<class_PhysicsMaterial>` | :ref:`physics_material_override<class_StaticBody2D_property_physics_material_override>` |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Static body for 2D Physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a :ref:`RigidBody2D<class_rigidbody2d>` so they are great for scenario collision.
+Static body for 2D Physics. A StaticBody2D is a body that is not intended to move. It is ideal for implementing objects in the environment, such as walls or platforms.
 
-A static body can also be animated by using simulated motion mode. This is useful for implementing functionalities such as moving platforms. When this mode is active the body can be animated and automatically computes linear and angular velocity to apply in that frame and to influence other bodies.
+Additionally, a constant linear or angular velocity can be set for the static body, which will affect colliding bodies as if it were moving (for example, a conveyor belt).
 
-Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
+Property Descriptions
+---------------------
 
-Member Function Description
----------------------------
+.. _class_StaticBody2D_property_bounce:
 
-.. _class_StaticBody2D_get_bounce:
+- :ref:`float<class_float>` **bounce**
 
-- :ref:`float<class_float>`  **get_bounce**  **(** **)** const
++----------+-------------------+
+| *Setter* | set_bounce(value) |
++----------+-------------------+
+| *Getter* | get_bounce()      |
++----------+-------------------+
 
-Return the body bounciness.
+The body's bounciness. Values range from ``0`` (no bounce) to ``1`` (full bounciness).
 
-.. _class_StaticBody2D_get_constant_angular_velocity:
+.. _class_StaticBody2D_property_constant_angular_velocity:
 
-- :ref:`float<class_float>`  **get_constant_angular_velocity**  **(** **)** const
+- :ref:`float<class_float>` **constant_angular_velocity**
 
-Return the constant angular velocity for the body.
++----------+--------------------------------------+
+| *Setter* | set_constant_angular_velocity(value) |
++----------+--------------------------------------+
+| *Getter* | get_constant_angular_velocity()      |
++----------+--------------------------------------+
 
-.. _class_StaticBody2D_get_constant_linear_velocity:
+Constant angular velocity for the body. This does not rotate the body, but affects colliding bodies, as if it were rotating.
 
-- :ref:`Vector2<class_vector2>`  **get_constant_linear_velocity**  **(** **)** const
+.. _class_StaticBody2D_property_constant_linear_velocity:
 
-Return the constant linear velocity for the body.
+- :ref:`Vector2<class_Vector2>` **constant_linear_velocity**
 
-.. _class_StaticBody2D_get_friction:
++----------+-------------------------------------+
+| *Setter* | set_constant_linear_velocity(value) |
++----------+-------------------------------------+
+| *Getter* | get_constant_linear_velocity()      |
++----------+-------------------------------------+
 
-- :ref:`float<class_float>`  **get_friction**  **(** **)** const
+Constant linear velocity for the body. This does not move the body, but affects colliding bodies, as if it were moving.
 
-Return the body friction.
+.. _class_StaticBody2D_property_friction:
 
-.. _class_StaticBody2D_set_bounce:
+- :ref:`float<class_float>` **friction**
 
-- void  **set_bounce**  **(** :ref:`float<class_float>` bounce  **)**
++----------+---------------------+
+| *Setter* | set_friction(value) |
++----------+---------------------+
+| *Getter* | get_friction()      |
++----------+---------------------+
 
-Set the body bounciness, from 0 (not bouncy) to 1 (bouncy).
+The body's friction. Values range from ``0`` (no friction) to ``1`` (full friction).
 
-.. _class_StaticBody2D_set_constant_angular_velocity:
+.. _class_StaticBody2D_property_physics_material_override:
 
-- void  **set_constant_angular_velocity**  **(** :ref:`float<class_float>` vel  **)**
+- :ref:`PhysicsMaterial<class_PhysicsMaterial>` **physics_material_override**
 
-Set a constant angular velocity for the body. This does not rotate the body, but affects other bodies touching it, as if it was rotating.
-
-.. _class_StaticBody2D_set_constant_linear_velocity:
-
-- void  **set_constant_linear_velocity**  **(** :ref:`Vector2<class_vector2>` vel  **)**
-
-Set a constant linear velocity for the body. This does not move the body, but affects other bodies touching it, as if it was moving.
-
-.. _class_StaticBody2D_set_friction:
-
-- void  **set_friction**  **(** :ref:`float<class_float>` friction  **)**
-
-Set the body friction, from 0 (frictionless) to 1 (full friction).
-
++----------+--------------------------------------+
+| *Setter* | set_physics_material_override(value) |
++----------+--------------------------------------+
+| *Getter* | get_physics_material_override()      |
++----------+--------------------------------------+
 

@@ -7,77 +7,93 @@
 JSONParseResult
 ===============
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Data class wrapper for decoded JSON.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------------+------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`error<class_JSONParseResult_property_error>`               |
++---------------------------------------+------------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`error_line<class_JSONParseResult_property_error_line>`     |
++---------------------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>`           | :ref:`error_string<class_JSONParseResult_property_error_string>` |
++---------------------------------------+------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`         | :ref:`result<class_JSONParseResult_property_result>`             |
++---------------------------------------+------------------------------------------------------------------+
 
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_error<class_JSONParseResult_get_error>`  **(** **)** const                                                   |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_error_line<class_JSONParseResult_get_error_line>`  **(** **)** const                                         |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`    | :ref:`get_error_string<class_JSONParseResult_get_error_string>`  **(** **)** const                                     |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_result<class_JSONParseResult_get_result>`  **(** **)** const                                                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error<class_JSONParseResult_set_error>`  **(** :ref:`int<class_int>` error  **)**                            |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error_line<class_JSONParseResult_set_error_line>`  **(** :ref:`int<class_int>` error_line  **)**             |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_error_string<class_JSONParseResult_set_error_string>`  **(** :ref:`String<class_string>` error_string  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_result<class_JSONParseResult_set_result>`  **(** :ref:`Variant<class_variant>` result  **)**                 |
-+--------------------------------+------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Returned by :ref:`JSON.parse<class_JSON_method_parse>`, ``JSONParseResult`` contains decoded JSON or error information if JSON source not successfully parsed. You can check if JSON source was successfully parsed with ``if json_result.error == OK``.
 
-- :ref:`int<class_int>` **error**
+Property Descriptions
+---------------------
+
+.. _class_JSONParseResult_property_error:
+
+- :ref:`Error<enum_@GlobalScope_Error>` **error**
+
++----------+------------------+
+| *Setter* | set_error(value) |
++----------+------------------+
+| *Getter* | get_error()      |
++----------+------------------+
+
+The error type if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
+
+.. _class_JSONParseResult_property_error_line:
+
 - :ref:`int<class_int>` **error_line**
-- :ref:`String<class_string>` **error_string**
-- :ref:`Variant<class_variant>` **result**
 
-Member Function Description
----------------------------
++----------+-----------------------+
+| *Setter* | set_error_line(value) |
++----------+-----------------------+
+| *Getter* | get_error_line()      |
++----------+-----------------------+
 
-.. _class_JSONParseResult_get_error:
+The line number where the error occurred if JSON source was not successfully parsed.
 
-- :ref:`int<class_int>`  **get_error**  **(** **)** const
+.. _class_JSONParseResult_property_error_string:
 
-.. _class_JSONParseResult_get_error_line:
+- :ref:`String<class_String>` **error_string**
 
-- :ref:`int<class_int>`  **get_error_line**  **(** **)** const
++----------+-------------------------+
+| *Setter* | set_error_string(value) |
++----------+-------------------------+
+| *Getter* | get_error_string()      |
++----------+-------------------------+
 
-.. _class_JSONParseResult_get_error_string:
+The error message if JSON source was not successfully parsed. See :ref:`@GlobalScope<class_@GlobalScope>` ERR\_\* constants.
 
-- :ref:`String<class_string>`  **get_error_string**  **(** **)** const
+.. _class_JSONParseResult_property_result:
 
-.. _class_JSONParseResult_get_result:
+- :ref:`Variant<class_Variant>` **result**
 
-- :ref:`Variant<class_variant>`  **get_result**  **(** **)** const
++----------+-------------------+
+| *Setter* | set_result(value) |
++----------+-------------------+
+| *Getter* | get_result()      |
++----------+-------------------+
 
-.. _class_JSONParseResult_set_error:
+A :ref:`Variant<class_Variant>` containing the parsed JSON. Use typeof() to check if it is what you expect. For example, if JSON source starts with curly braces (``{}``) a :ref:`Dictionary<class_Dictionary>` will be returned, if JSON source starts with braces (``[]``) an :ref:`Array<class_Array>` will be returned.
 
-- void  **set_error**  **(** :ref:`int<class_int>` error  **)**
+*Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert all numerical values to float types.*
 
-.. _class_JSONParseResult_set_error_line:
+Note that JSON objects do not preserve key order like Godot dictionaries, thus you should not rely on keys being in a certain order if a dictionary is constructed from JSON. In contrast, JSON arrays retain the order of their elements:*
 
-- void  **set_error_line**  **(** :ref:`int<class_int>` error_line  **)**
+::
 
-.. _class_JSONParseResult_set_error_string:
-
-- void  **set_error_string**  **(** :ref:`String<class_string>` error_string  **)**
-
-.. _class_JSONParseResult_set_result:
-
-- void  **set_result**  **(** :ref:`Variant<class_variant>` result  **)**
-
+    var p = JSON.parse('["hello", "world", "!"]')
+    if typeof(p.result) == TYPE_ARRAY:
+        print(p.result[0]) # prints 'hello'
+    else:
+        print("unexpected results")
 

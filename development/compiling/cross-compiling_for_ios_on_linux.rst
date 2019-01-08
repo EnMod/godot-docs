@@ -13,7 +13,7 @@ Disclaimer
 ----------
 
 While it is possible to compile for iOS on a Linux environment, Apple is
-very restrictive about the tools to be used (specially hardware-wise),
+very restrictive about the tools to be used (especially hardware-wise),
 allowing pretty much only their products to be used for development. So
 this is **not official**. However, a `statement from Apple in 2010
 <http://www.apple.com/pr/library/2010/09/09Statement-by-Apple-on-App-Store-Review-Guidelines.html>`__
@@ -31,7 +31,7 @@ Requirements
 -  `Clang >= 3.5 <http://clang.llvm.org>`__ for your development
    machine installed and in the ``PATH``. It has to be version >= 3.5
    to target ``arm64`` architecture.
--  `Fuse <http://fuse.sourceforge.net>`__ for mounting and umounting
+-  `Fuse <https://github.com/libfuse/libfuse>`__ for mounting and umounting
    the dmg image.
 -  `darling-dmg <https://github.com/darlinghq/darling-dmg>`__, which
    needs to be built from source. The procedure for that is explained

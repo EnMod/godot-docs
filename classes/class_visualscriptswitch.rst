@@ -7,12 +7,35 @@
 VisualScriptSwitch
 ==================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Branches program flow based on a given input's value.
 
+Description
+-----------
+
+Branches the flow based on an input's value. Use "Case Count" in the Inspector to set the number of branches and each comparison's optional type.
+
+**Input Ports:**
+
+- Sequence: ``'input' is``
+
+- Data (variant): ``=``
+
+- Data (variant): ``=`` (optional)
+
+- Data (variant): ``input``
+
+**Output Ports:**
+
+- Sequence
+
+- Sequence (optional)
+
+- Sequence: ``done``
 

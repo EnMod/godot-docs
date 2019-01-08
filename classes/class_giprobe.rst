@@ -7,7 +7,7 @@
 GIProbe
 =======
 
-**Inherits:** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,166 +16,183 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`bake<class_GIProbe_bake>`  **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false  **)** |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`debug_bake<class_GIProbe_debug_bake>`  **(** **)**                                                                                |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_bias<class_GIProbe_get_bias>`  **(** **)** const                                                                              |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_dynamic_range<class_GIProbe_get_dynamic_range>`  **(** **)** const                                                            |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_energy<class_GIProbe_get_energy>`  **(** **)** const                                                                          |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`          | :ref:`get_extents<class_GIProbe_get_extents>`  **(** **)** const                                                                        |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_normal_bias<class_GIProbe_get_normal_bias>`  **(** **)** const                                                                |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`GIProbeData<class_giprobedata>`  | :ref:`get_probe_data<class_GIProbe_get_probe_data>`  **(** **)** const                                                                  |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`              | :ref:`get_propagation<class_GIProbe_get_propagation>`  **(** **)** const                                                                |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                  | :ref:`get_subdiv<class_GIProbe_get_subdiv>`  **(** **)** const                                                                          |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_compressed<class_GIProbe_is_compressed>`  **(** **)** const                                                                    |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                | :ref:`is_interior<class_GIProbe_is_interior>`  **(** **)** const                                                                        |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_bias<class_GIProbe_set_bias>`  **(** :ref:`float<class_float>` max  **)**                                                     |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_compress<class_GIProbe_set_compress>`  **(** :ref:`bool<class_bool>` enable  **)**                                            |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_dynamic_range<class_GIProbe_set_dynamic_range>`  **(** :ref:`int<class_int>` max  **)**                                       |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_energy<class_GIProbe_set_energy>`  **(** :ref:`float<class_float>` max  **)**                                                 |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_extents<class_GIProbe_set_extents>`  **(** :ref:`Vector3<class_vector3>` extents  **)**                                       |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_interior<class_GIProbe_set_interior>`  **(** :ref:`bool<class_bool>` enable  **)**                                            |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_normal_bias<class_GIProbe_set_normal_bias>`  **(** :ref:`float<class_float>` max  **)**                                       |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_probe_data<class_GIProbe_set_probe_data>`  **(** :ref:`GIProbeData<class_giprobedata>` data  **)**                            |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_propagation<class_GIProbe_set_propagation>`  **(** :ref:`float<class_float>` max  **)**                                       |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
-| void                                   | :ref:`set_subdiv<class_GIProbe_set_subdiv>`  **(** :ref:`int<class_int>` subdiv  **)**                                                  |
-+----------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`bias<class_GIProbe_property_bias>`                   |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`compress<class_GIProbe_property_compress>`           |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`GIProbeData<class_GIProbeData>` | :ref:`data<class_GIProbe_property_data>`                   |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`int<class_int>`                 | :ref:`dynamic_range<class_GIProbe_property_dynamic_range>` |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`energy<class_GIProbe_property_energy>`               |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>`         | :ref:`extents<class_GIProbe_property_extents>`             |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`bool<class_bool>`               | :ref:`interior<class_GIProbe_property_interior>`           |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`normal_bias<class_GIProbe_property_normal_bias>`     |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`float<class_float>`             | :ref:`propagation<class_GIProbe_property_propagation>`     |
++---------------------------------------+------------------------------------------------------------+
+| :ref:`Subdiv<enum_GIProbe_Subdiv>`    | :ref:`subdiv<class_GIProbe_property_subdiv>`               |
++---------------------------------------+------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`float<class_float>` **bias**
-- :ref:`bool<class_bool>` **compress**
-- :ref:`GIProbeData<class_giprobedata>` **data**
-- :ref:`int<class_int>` **dynamic_range**
-- :ref:`float<class_float>` **energy**
-- :ref:`Vector3<class_vector3>` **extents**
-- :ref:`bool<class_bool>` **interior**
-- :ref:`float<class_float>` **normal_bias**
-- :ref:`float<class_float>` **propagation**
-- :ref:`int<class_int>` **subdiv**
++------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`bake<class_GIProbe_method_bake>` **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)** |
++------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`debug_bake<class_GIProbe_method_debug_bake>` **(** **)**                                                                               |
++------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
-Numeric Constants
------------------
+Enumerations
+------------
+
+.. _enum_GIProbe_Subdiv:
+
+.. _class_GIProbe_constant_SUBDIV_64:
+
+.. _class_GIProbe_constant_SUBDIV_128:
+
+.. _class_GIProbe_constant_SUBDIV_256:
+
+.. _class_GIProbe_constant_SUBDIV_512:
+
+.. _class_GIProbe_constant_SUBDIV_MAX:
+
+enum **Subdiv**:
 
 - **SUBDIV_64** = **0**
+
 - **SUBDIV_128** = **1**
+
 - **SUBDIV_256** = **2**
+
+- **SUBDIV_512** = **3**
+
 - **SUBDIV_MAX** = **4**
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_GIProbe_bake:
+- :doc:`../tutorials/3d/gi_probes`
 
-- void  **bake**  **(** :ref:`Node<class_node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false  **)**
+Property Descriptions
+---------------------
 
-.. _class_GIProbe_debug_bake:
+.. _class_GIProbe_property_bias:
 
-- void  **debug_bake**  **(** **)**
+- :ref:`float<class_float>` **bias**
 
-.. _class_GIProbe_get_bias:
++----------+-----------------+
+| *Setter* | set_bias(value) |
++----------+-----------------+
+| *Getter* | get_bias()      |
++----------+-----------------+
 
-- :ref:`float<class_float>`  **get_bias**  **(** **)** const
+.. _class_GIProbe_property_compress:
 
-.. _class_GIProbe_get_dynamic_range:
+- :ref:`bool<class_bool>` **compress**
 
-- :ref:`int<class_int>`  **get_dynamic_range**  **(** **)** const
++----------+---------------------+
+| *Setter* | set_compress(value) |
++----------+---------------------+
+| *Getter* | is_compressed()     |
++----------+---------------------+
 
-.. _class_GIProbe_get_energy:
+.. _class_GIProbe_property_data:
 
-- :ref:`float<class_float>`  **get_energy**  **(** **)** const
+- :ref:`GIProbeData<class_GIProbeData>` **data**
 
-.. _class_GIProbe_get_extents:
++----------+-----------------------+
+| *Setter* | set_probe_data(value) |
++----------+-----------------------+
+| *Getter* | get_probe_data()      |
++----------+-----------------------+
 
-- :ref:`Vector3<class_vector3>`  **get_extents**  **(** **)** const
+.. _class_GIProbe_property_dynamic_range:
 
-.. _class_GIProbe_get_normal_bias:
+- :ref:`int<class_int>` **dynamic_range**
 
-- :ref:`float<class_float>`  **get_normal_bias**  **(** **)** const
++----------+--------------------------+
+| *Setter* | set_dynamic_range(value) |
++----------+--------------------------+
+| *Getter* | get_dynamic_range()      |
++----------+--------------------------+
 
-.. _class_GIProbe_get_probe_data:
+.. _class_GIProbe_property_energy:
 
-- :ref:`GIProbeData<class_giprobedata>`  **get_probe_data**  **(** **)** const
+- :ref:`float<class_float>` **energy**
 
-.. _class_GIProbe_get_propagation:
++----------+-------------------+
+| *Setter* | set_energy(value) |
++----------+-------------------+
+| *Getter* | get_energy()      |
++----------+-------------------+
 
-- :ref:`float<class_float>`  **get_propagation**  **(** **)** const
+.. _class_GIProbe_property_extents:
 
-.. _class_GIProbe_get_subdiv:
+- :ref:`Vector3<class_Vector3>` **extents**
 
-- :ref:`int<class_int>`  **get_subdiv**  **(** **)** const
++----------+--------------------+
+| *Setter* | set_extents(value) |
++----------+--------------------+
+| *Getter* | get_extents()      |
++----------+--------------------+
 
-.. _class_GIProbe_is_compressed:
+.. _class_GIProbe_property_interior:
 
-- :ref:`bool<class_bool>`  **is_compressed**  **(** **)** const
+- :ref:`bool<class_bool>` **interior**
 
-.. _class_GIProbe_is_interior:
++----------+---------------------+
+| *Setter* | set_interior(value) |
++----------+---------------------+
+| *Getter* | is_interior()       |
++----------+---------------------+
 
-- :ref:`bool<class_bool>`  **is_interior**  **(** **)** const
+.. _class_GIProbe_property_normal_bias:
 
-.. _class_GIProbe_set_bias:
+- :ref:`float<class_float>` **normal_bias**
 
-- void  **set_bias**  **(** :ref:`float<class_float>` max  **)**
++----------+------------------------+
+| *Setter* | set_normal_bias(value) |
++----------+------------------------+
+| *Getter* | get_normal_bias()      |
++----------+------------------------+
 
-.. _class_GIProbe_set_compress:
+.. _class_GIProbe_property_propagation:
 
-- void  **set_compress**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`float<class_float>` **propagation**
 
-.. _class_GIProbe_set_dynamic_range:
++----------+------------------------+
+| *Setter* | set_propagation(value) |
++----------+------------------------+
+| *Getter* | get_propagation()      |
++----------+------------------------+
 
-- void  **set_dynamic_range**  **(** :ref:`int<class_int>` max  **)**
+.. _class_GIProbe_property_subdiv:
 
-.. _class_GIProbe_set_energy:
+- :ref:`Subdiv<enum_GIProbe_Subdiv>` **subdiv**
 
-- void  **set_energy**  **(** :ref:`float<class_float>` max  **)**
++----------+-------------------+
+| *Setter* | set_subdiv(value) |
++----------+-------------------+
+| *Getter* | get_subdiv()      |
++----------+-------------------+
 
-.. _class_GIProbe_set_extents:
+Method Descriptions
+-------------------
 
-- void  **set_extents**  **(** :ref:`Vector3<class_vector3>` extents  **)**
+.. _class_GIProbe_method_bake:
 
-.. _class_GIProbe_set_interior:
+- void **bake** **(** :ref:`Node<class_Node>` from_node=null, :ref:`bool<class_bool>` create_visual_debug=false **)**
 
-- void  **set_interior**  **(** :ref:`bool<class_bool>` enable  **)**
+.. _class_GIProbe_method_debug_bake:
 
-.. _class_GIProbe_set_normal_bias:
-
-- void  **set_normal_bias**  **(** :ref:`float<class_float>` max  **)**
-
-.. _class_GIProbe_set_probe_data:
-
-- void  **set_probe_data**  **(** :ref:`GIProbeData<class_giprobedata>` data  **)**
-
-.. _class_GIProbe_set_propagation:
-
-- void  **set_propagation**  **(** :ref:`float<class_float>` max  **)**
-
-.. _class_GIProbe_set_subdiv:
-
-- void  **set_subdiv**  **(** :ref:`int<class_int>` subdiv  **)**
-
+- void **debug_bake** **(** **)**
 

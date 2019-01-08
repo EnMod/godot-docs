@@ -7,47 +7,39 @@
 Path2D
 ======
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Container for a :ref:`Curve2D<class_curve2d>`.
+Contains a :ref:`Curve2D<class_Curve2D>` path for :ref:`PathFollow2D<class_PathFollow2D>` nodes to follow.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+--------------------------------------------------------------------------------------------+
-| :ref:`Curve2D<class_curve2d>`  | :ref:`get_curve<class_Path2D_get_curve>`  **(** **)** const                                |
-+--------------------------------+--------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_curve<class_Path2D_set_curve>`  **(** :ref:`Curve2D<class_curve2d>` curve  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Curve2D<class_curve2d>` **curve**
++-------------------------------+-------------------------------------------+
+| :ref:`Curve2D<class_Curve2D>` | :ref:`curve<class_Path2D_property_curve>` |
++-------------------------------+-------------------------------------------+
 
 Description
 -----------
 
-This class is a container/Node-ification of a :ref:`Curve2D<class_curve2d>`, so it can have :ref:`Node2D<class_node2d>` properties and :ref:`Node<class_node>` info.
+Can have :ref:`PathFollow2D<class_PathFollow2D>` child-nodes moving along the :ref:`Curve2D<class_Curve2D>`. See :ref:`PathFollow2D<class_PathFollow2D>` for more information on this usage.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Path2D_get_curve:
+.. _class_Path2D_property_curve:
 
-- :ref:`Curve2D<class_curve2d>`  **get_curve**  **(** **)** const
+- :ref:`Curve2D<class_Curve2D>` **curve**
 
-Returns the :ref:`Curve2D<class_curve2d>` contained.
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
 
-.. _class_Path2D_set_curve:
-
-- void  **set_curve**  **(** :ref:`Curve2D<class_curve2d>` curve  **)**
-
-Sets the :ref:`Curve2D<class_curve2d>`.
-
+A :ref:`Curve2D<class_Curve2D>` describing the path.
 

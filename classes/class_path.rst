@@ -7,47 +7,44 @@
 Path
 ====
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Container for a :ref:`Curve3D<class_curve3d>`.
+Container for a :ref:`Curve3D<class_Curve3D>`.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+------------------------------------------------------------------------------------------+
-| :ref:`Curve3D<class_curve3d>`  | :ref:`get_curve<class_Path_get_curve>`  **(** **)** const                                |
-+--------------------------------+------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_curve<class_Path_set_curve>`  **(** :ref:`Curve3D<class_curve3d>` curve  **)** |
-+--------------------------------+------------------------------------------------------------------------------------------+
++-------------------------------+-----------------------------------------+
+| :ref:`Curve3D<class_Curve3D>` | :ref:`curve<class_Path_property_curve>` |
++-------------------------------+-----------------------------------------+
 
-Member Variables
-----------------
+Signals
+-------
 
-- :ref:`Curve3D<class_curve3d>` **curve**
+.. _class_Path_signal_curve_changed:
+
+- **curve_changed** **(** **)**
 
 Description
 -----------
 
-This class is a container/Node-ification of a :ref:`Curve3D<class_curve3d>`, so it can have :ref:`Spatial<class_spatial>` properties and :ref:`Node<class_node>` info.
+This class is a container/Node-ification of a :ref:`Curve3D<class_Curve3D>`, so it can have :ref:`Spatial<class_Spatial>` properties and :ref:`Node<class_Node>` info.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_Path_get_curve:
+.. _class_Path_property_curve:
 
-- :ref:`Curve3D<class_curve3d>`  **get_curve**  **(** **)** const
+- :ref:`Curve3D<class_Curve3D>` **curve**
 
-Returns the :ref:`Curve3D<class_curve3d>` contained.
-
-.. _class_Path_set_curve:
-
-- void  **set_curve**  **(** :ref:`Curve3D<class_curve3d>` curve  **)**
-
-Sets the :ref:`Curve3D<class_curve3d>`.
-
++----------+------------------+
+| *Setter* | set_curve(value) |
++----------+------------------+
+| *Getter* | get_curve()      |
++----------+------------------+
 

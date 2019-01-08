@@ -7,7 +7,7 @@
 InputEventMouseMotion
 =====================
 
-**Inherits:** :ref:`InputEventMouse<class_inputeventmouse>` **<** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEventMouse<class_InputEventMouse>` **<** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,49 @@ Brief Description
 
 Input event type for mouse motion events.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_relative<class_InputEventMouseMotion_get_relative>`  **(** **)** const                                   |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`get_speed<class_InputEventMouseMotion_get_speed>`  **(** **)** const                                         |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_relative<class_InputEventMouseMotion_set_relative>`  **(** :ref:`Vector2<class_vector2>` relative  **)** |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_speed<class_InputEventMouseMotion_set_speed>`  **(** :ref:`Vector2<class_vector2>` speed  **)**          |
-+--------------------------------+--------------------------------------------------------------------------------------------------------------------+
++-------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`relative<class_InputEventMouseMotion_property_relative>` |
++-------------------------------+----------------------------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`speed<class_InputEventMouseMotion_property_speed>`       |
++-------------------------------+----------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`Vector2<class_vector2>` **relative** - Position of the mouse pointer relative to the previous mouse position.
-- :ref:`Vector2<class_vector2>` **speed** - Speed of the mouse pointer.
+Contains mouse motion information. Supports relative, absolute positions and speed. See :ref:`Node._input<class_Node_method__input>`.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_InputEventMouseMotion_get_relative:
+- :doc:`../tutorials/inputs/mouse_and_input_coordinates`
 
-- :ref:`Vector2<class_vector2>`  **get_relative**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_InputEventMouseMotion_get_speed:
+.. _class_InputEventMouseMotion_property_relative:
 
-- :ref:`Vector2<class_vector2>`  **get_speed**  **(** **)** const
+- :ref:`Vector2<class_Vector2>` **relative**
 
-.. _class_InputEventMouseMotion_set_relative:
++----------+---------------------+
+| *Setter* | set_relative(value) |
++----------+---------------------+
+| *Getter* | get_relative()      |
++----------+---------------------+
 
-- void  **set_relative**  **(** :ref:`Vector2<class_vector2>` relative  **)**
+Mouse position relative to the previous position (position at the last frame).
 
-.. _class_InputEventMouseMotion_set_speed:
+.. _class_InputEventMouseMotion_property_speed:
 
-- void  **set_speed**  **(** :ref:`Vector2<class_vector2>` speed  **)**
+- :ref:`Vector2<class_Vector2>` **speed**
 
++----------+------------------+
+| *Setter* | set_speed(value) |
++----------+------------------+
+| *Getter* | get_speed()      |
++----------+------------------+
+
+Mouse speed.
 

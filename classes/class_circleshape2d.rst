@@ -7,7 +7,7 @@
 CircleShape2D
 =============
 
-**Inherits:** :ref:`Shape2D<class_shape2d>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape2D<class_Shape2D>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,30 @@ Brief Description
 
 Circular shape for 2D collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_CircleShape2D_get_radius>`  **(** **)** const                             |
-+----------------------------+--------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_CircleShape2D_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **radius** - The circle's radius.
++---------------------------+----------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CircleShape2D_property_radius>` |
++---------------------------+----------------------------------------------------+
 
 Description
 -----------
 
 Circular shape for 2D collisions. This shape is useful for modeling balls or small characters and its collision detection with everything else is very fast.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_CircleShape2D_get_radius:
+.. _class_CircleShape2D_property_radius:
 
-- :ref:`float<class_float>`  **get_radius**  **(** **)** const
+- :ref:`float<class_float>` **radius**
 
-Return the radius of the circle shape.
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
 
-.. _class_CircleShape2D_set_radius:
-
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
-
-Set the radius of the circle shape.
-
+The circle's radius.
 

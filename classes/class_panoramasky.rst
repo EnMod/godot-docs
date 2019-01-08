@@ -7,38 +7,39 @@
 PanoramaSky
 ===========
 
-**Inherits:** :ref:`Sky<class_sky>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Sky<class_Sky>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+A type of :ref:`Sky<class_Sky>` used to draw a background texture.
 
+Properties
+----------
 
-Member Functions
-----------------
++-------------------------------+------------------------------------------------------+
+| :ref:`Texture<class_Texture>` | :ref:`panorama<class_PanoramaSky_property_panorama>` |
++-------------------------------+------------------------------------------------------+
 
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| :ref:`Texture<class_texture>`  | :ref:`get_panorama<class_PanoramaSky_get_panorama>`  **(** **)** const                                  |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_panorama<class_PanoramaSky_set_panorama>`  **(** :ref:`Texture<class_texture>` texture  **)** |
-+--------------------------------+---------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+A resource referenced in an :ref:`Environment<class_Environment>` that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines except it uses a equirectangular sky map instead of a cube map.
 
-- :ref:`Texture<class_texture>` **panorama**
+Property Descriptions
+---------------------
 
-Member Function Description
----------------------------
+.. _class_PanoramaSky_property_panorama:
 
-.. _class_PanoramaSky_get_panorama:
+- :ref:`Texture<class_Texture>` **panorama**
 
-- :ref:`Texture<class_texture>`  **get_panorama**  **(** **)** const
++----------+---------------------+
+| *Setter* | set_panorama(value) |
++----------+---------------------+
+| *Getter* | get_panorama()      |
++----------+---------------------+
 
-.. _class_PanoramaSky_set_panorama:
-
-- void  **set_panorama**  **(** :ref:`Texture<class_texture>` texture  **)**
-
+:ref:`Texture<class_Texture>` to be applied to the PanoramaSky.
 

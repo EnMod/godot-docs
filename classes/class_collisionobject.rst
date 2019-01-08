@@ -7,176 +7,220 @@
 CollisionObject
 ===============
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PhysicsBody<class_physicsbody>`, :ref:`Area<class_area>`
+**Inherited By:** :ref:`Area<class_Area>`, :ref:`PhysicsBody<class_PhysicsBody>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Base node for collision objects.
 
+Properties
+----------
 
-Member Functions
-----------------
++-------------------------+------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`input_capture_on_drag<class_CollisionObject_property_input_capture_on_drag>` |
++-------------------------+------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`input_ray_pickable<class_CollisionObject_property_input_ray_pickable>`       |
++-------------------------+------------------------------------------------------------------------------------+
 
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`_input_event<class_CollisionObject__input_event>`  **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)** virtual |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`create_shape_owner<class_CollisionObject_create_shape_owner>`  **(** :ref:`Object<class_object>` owner  **)**                                                                                                                                                                    |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`get_capture_input_on_drag<class_CollisionObject_get_capture_input_on_drag>`  **(** **)** const                                                                                                                                                                                   |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`              | :ref:`get_rid<class_CollisionObject_get_rid>`  **(** **)** const                                                                                                                                                                                                                       |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`          | :ref:`get_shape_owners<class_CollisionObject_get_shape_owners>`  **(** **)**                                                                                                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_ray_pickable<class_CollisionObject_is_ray_pickable>`  **(** **)** const                                                                                                                                                                                                       |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`            | :ref:`is_shape_owner_disabled<class_CollisionObject_is_shape_owner_disabled>`  **(** :ref:`int<class_int>` owner_id  **)** const                                                                                                                                                       |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`remove_shape_owner<class_CollisionObject_remove_shape_owner>`  **(** :ref:`int<class_int>` owner_id  **)**                                                                                                                                                                       |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_capture_input_on_drag<class_CollisionObject_set_capture_input_on_drag>`  **(** :ref:`bool<class_bool>` enable  **)**                                                                                                                                                         |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_ray_pickable<class_CollisionObject_set_ray_pickable>`  **(** :ref:`bool<class_bool>` ray_pickable  **)**                                                                                                                                                                     |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`shape_find_owner<class_CollisionObject_shape_find_owner>`  **(** :ref:`int<class_int>` shape_index  **)** const                                                                                                                                                                  |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`shape_owner_add_shape<class_CollisionObject_shape_owner_add_shape>`  **(** :ref:`int<class_int>` owner_id, :ref:`Shape<class_shape>` shape  **)**                                                                                                                                |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`shape_owner_clear_shapes<class_CollisionObject_shape_owner_clear_shapes>`  **(** :ref:`int<class_int>` owner_id  **)**                                                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Object<class_object>`        | :ref:`shape_owner_get_owner<class_CollisionObject_shape_owner_get_owner>`  **(** :ref:`int<class_int>` owner_id  **)** const                                                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Shape<class_shape>`          | :ref:`shape_owner_get_shape<class_CollisionObject_shape_owner_get_shape>`  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)** const                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`shape_owner_get_shape_count<class_CollisionObject_shape_owner_get_shape_count>`  **(** :ref:`int<class_int>` owner_id  **)** const                                                                                                                                               |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`shape_owner_get_shape_index<class_CollisionObject_shape_owner_get_shape_index>`  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)** const                                                                                                               |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`shape_owner_get_transform<class_CollisionObject_shape_owner_get_transform>`  **(** :ref:`int<class_int>` owner_id  **)** const                                                                                                                                                   |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`shape_owner_remove_shape<class_CollisionObject_shape_owner_remove_shape>`  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)**                                                                                                                           |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`shape_owner_set_disabled<class_CollisionObject_shape_owner_set_disabled>`  **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled  **)**                                                                                                                         |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`shape_owner_set_transform<class_CollisionObject_shape_owner_set_transform>`  **(** :ref:`int<class_int>` owner_id, :ref:`Transform<class_transform>` transform  **)**                                                                                                            |
-+------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+Methods
+-------
+
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`_input_event<class_CollisionObject_method__input_event>` **(** :ref:`Object<class_Object>` camera, :ref:`InputEvent<class_InputEvent>` event, :ref:`Vector3<class_Vector3>` click_position, :ref:`Vector3<class_Vector3>` click_normal, :ref:`int<class_int>` shape_idx **)** virtual |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`create_shape_owner<class_CollisionObject_method_create_shape_owner>` **(** :ref:`Object<class_Object>` owner **)**                                                                                                                                                                    |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`get_rid<class_CollisionObject_method_get_rid>` **(** **)** const                                                                                                                                                                                                                      |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`get_shape_owners<class_CollisionObject_method_get_shape_owners>` **(** **)**                                                                                                                                                                                                          |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`is_shape_owner_disabled<class_CollisionObject_method_is_shape_owner_disabled>` **(** :ref:`int<class_int>` owner_id **)** const                                                                                                                                                       |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`remove_shape_owner<class_CollisionObject_method_remove_shape_owner>` **(** :ref:`int<class_int>` owner_id **)**                                                                                                                                                                       |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`shape_find_owner<class_CollisionObject_method_shape_find_owner>` **(** :ref:`int<class_int>` shape_index **)** const                                                                                                                                                                  |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`shape_owner_add_shape<class_CollisionObject_method_shape_owner_add_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`Shape<class_Shape>` shape **)**                                                                                                                                |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`shape_owner_clear_shapes<class_CollisionObject_method_shape_owner_clear_shapes>` **(** :ref:`int<class_int>` owner_id **)**                                                                                                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Object<class_Object>`       | :ref:`shape_owner_get_owner<class_CollisionObject_method_shape_owner_get_owner>` **(** :ref:`int<class_int>` owner_id **)** const                                                                                                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Shape<class_Shape>`         | :ref:`shape_owner_get_shape<class_CollisionObject_method_shape_owner_get_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const                                                                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`shape_owner_get_shape_count<class_CollisionObject_method_shape_owner_get_shape_count>` **(** :ref:`int<class_int>` owner_id **)** const                                                                                                                                               |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`shape_owner_get_shape_index<class_CollisionObject_method_shape_owner_get_shape_index>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const                                                                                                               |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`shape_owner_get_transform<class_CollisionObject_method_shape_owner_get_transform>` **(** :ref:`int<class_int>` owner_id **)** const                                                                                                                                                   |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`shape_owner_remove_shape<class_CollisionObject_method_shape_owner_remove_shape>` **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)**                                                                                                                           |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`shape_owner_set_disabled<class_CollisionObject_method_shape_owner_set_disabled>` **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**                                                                                                                         |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`shape_owner_set_transform<class_CollisionObject_method_shape_owner_set_transform>` **(** :ref:`int<class_int>` owner_id, :ref:`Transform<class_Transform>` transform **)**                                                                                                            |
++-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signals
 -------
 
--  **input_event**  **(** :ref:`Object<class_object>` camera, :ref:`Object<class_object>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)**
--  **mouse_entered**  **(** **)**
--  **mouse_exited**  **(** **)**
+.. _class_CollisionObject_signal_input_event:
 
-Member Variables
-----------------
+- **input_event** **(** :ref:`Node<class_Node>` camera, :ref:`InputEvent<class_InputEvent>` event, :ref:`Vector3<class_Vector3>` click_position, :ref:`Vector3<class_Vector3>` click_normal, :ref:`int<class_int>` shape_idx **)**
+
+Emitted when :ref:`_input_event<class_CollisionObject_method__input_event>` receives an event. See its description for details.
+
+.. _class_CollisionObject_signal_mouse_entered:
+
+- **mouse_entered** **(** **)**
+
+Emitted when the mouse pointer enters any of this object's shapes.
+
+.. _class_CollisionObject_signal_mouse_exited:
+
+- **mouse_exited** **(** **)**
+
+Emitted when the mouse pointer exits all this object's shapes.
+
+Description
+-----------
+
+CollisionObject is the base class for physics objects. It can hold any number of collision :ref:`Shape<class_Shape>`\ s. Each shape must be assigned to a *shape owner*. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the ``shape_owner_*`` methods.
+
+Property Descriptions
+---------------------
+
+.. _class_CollisionObject_property_input_capture_on_drag:
 
 - :ref:`bool<class_bool>` **input_capture_on_drag**
+
++----------+----------------------------------+
+| *Setter* | set_capture_input_on_drag(value) |
++----------+----------------------------------+
+| *Getter* | get_capture_input_on_drag()      |
++----------+----------------------------------+
+
+If ``true``, the ``CollisionObject`` will continue to receive input events as the mouse is dragged across its shapes. Default value: ``false``.
+
+.. _class_CollisionObject_property_input_ray_pickable:
+
 - :ref:`bool<class_bool>` **input_ray_pickable**
 
-Member Function Description
----------------------------
++----------+-------------------------+
+| *Setter* | set_ray_pickable(value) |
++----------+-------------------------+
+| *Getter* | is_ray_pickable()       |
++----------+-------------------------+
 
-.. _class_CollisionObject__input_event:
+If ``true``, the :ref:`CollisionObject<class_CollisionObject>`'s shapes will respond to :ref:`RayCast<class_RayCast>`\ s. Default value: ``true``.
 
-- void  **_input_event**  **(** :ref:`Object<class_object>` camera, :ref:`InputEvent<class_inputevent>` event, :ref:`Vector3<class_vector3>` click_position, :ref:`Vector3<class_vector3>` click_normal, :ref:`int<class_int>` shape_idx  **)** virtual
+Method Descriptions
+-------------------
 
-.. _class_CollisionObject_create_shape_owner:
+.. _class_CollisionObject_method__input_event:
 
-- :ref:`int<class_int>`  **create_shape_owner**  **(** :ref:`Object<class_object>` owner  **)**
+- void **_input_event** **(** :ref:`Object<class_Object>` camera, :ref:`InputEvent<class_InputEvent>` event, :ref:`Vector3<class_Vector3>` click_position, :ref:`Vector3<class_Vector3>` click_normal, :ref:`int<class_int>` shape_idx **)** virtual
 
-Creates new holder for the shapes. Argument is a :ref:`CollisionShape<class_collisionshape>` node. It will return owner_id which usually you will want to save for later use.
+Accepts unhandled :ref:`InputEvent<class_InputEvent>`\ s. ``click_position`` is the clicked location in world space and ``click_normal`` is the normal vector extending from the clicked surface of the :ref:`Shape<class_Shape>` at ``shape_idx``. Connect to the ``input_event`` signal to easily pick up these events.
 
-.. _class_CollisionObject_get_capture_input_on_drag:
+.. _class_CollisionObject_method_create_shape_owner:
 
-- :ref:`bool<class_bool>`  **get_capture_input_on_drag**  **(** **)** const
+- :ref:`int<class_int>` **create_shape_owner** **(** :ref:`Object<class_Object>` owner **)**
 
-.. _class_CollisionObject_get_rid:
+Creates a new shape owner for the given object. Returns ``owner_id`` of the new owner for future reference.
 
-- :ref:`RID<class_rid>`  **get_rid**  **(** **)** const
+.. _class_CollisionObject_method_get_rid:
 
-.. _class_CollisionObject_get_shape_owners:
+- :ref:`RID<class_RID>` **get_rid** **(** **)** const
 
-- :ref:`Array<class_array>`  **get_shape_owners**  **(** **)**
+Returns the object's :ref:`RID<class_RID>`.
 
-Shape owner is a node which is holding concrete shape resources. This method will return an array which is holding an integer numbers that are representing unique ID of each owner. You can use those ids when you are using others shape_owner methods.
+.. _class_CollisionObject_method_get_shape_owners:
 
-.. _class_CollisionObject_is_ray_pickable:
+- :ref:`Array<class_Array>` **get_shape_owners** **(** **)**
 
-- :ref:`bool<class_bool>`  **is_ray_pickable**  **(** **)** const
+Returns an :ref:`Array<class_Array>` of ``owner_id`` identifiers. You can use these ids in other methods that take ``owner_id`` as an argument.
 
-.. _class_CollisionObject_is_shape_owner_disabled:
+.. _class_CollisionObject_method_is_shape_owner_disabled:
 
-- :ref:`bool<class_bool>`  **is_shape_owner_disabled**  **(** :ref:`int<class_int>` owner_id  **)** const
+- :ref:`bool<class_bool>` **is_shape_owner_disabled** **(** :ref:`int<class_int>` owner_id **)** const
 
-.. _class_CollisionObject_remove_shape_owner:
+If ``true``, the shape owner and its shapes are disabled.
 
-- void  **remove_shape_owner**  **(** :ref:`int<class_int>` owner_id  **)**
+.. _class_CollisionObject_method_remove_shape_owner:
 
-.. _class_CollisionObject_set_capture_input_on_drag:
+- void **remove_shape_owner** **(** :ref:`int<class_int>` owner_id **)**
 
-- void  **set_capture_input_on_drag**  **(** :ref:`bool<class_bool>` enable  **)**
+Removes the given shape owner.
 
-.. _class_CollisionObject_set_ray_pickable:
+.. _class_CollisionObject_method_shape_find_owner:
 
-- void  **set_ray_pickable**  **(** :ref:`bool<class_bool>` ray_pickable  **)**
+- :ref:`int<class_int>` **shape_find_owner** **(** :ref:`int<class_int>` shape_index **)** const
 
-.. _class_CollisionObject_shape_find_owner:
+Returns the ``owner_id`` of the given shape.
 
-- :ref:`int<class_int>`  **shape_find_owner**  **(** :ref:`int<class_int>` shape_index  **)** const
+.. _class_CollisionObject_method_shape_owner_add_shape:
 
-.. _class_CollisionObject_shape_owner_add_shape:
+- void **shape_owner_add_shape** **(** :ref:`int<class_int>` owner_id, :ref:`Shape<class_Shape>` shape **)**
 
-- void  **shape_owner_add_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`Shape<class_shape>` shape  **)**
+Adds a :ref:`Shape<class_Shape>` to the shape owner.
 
-.. _class_CollisionObject_shape_owner_clear_shapes:
+.. _class_CollisionObject_method_shape_owner_clear_shapes:
 
-- void  **shape_owner_clear_shapes**  **(** :ref:`int<class_int>` owner_id  **)**
+- void **shape_owner_clear_shapes** **(** :ref:`int<class_int>` owner_id **)**
 
-Will remove all the shapes associated with given owner.
+Removes all shapes from the shape owner.
 
-.. _class_CollisionObject_shape_owner_get_owner:
+.. _class_CollisionObject_method_shape_owner_get_owner:
 
-- :ref:`Object<class_object>`  **shape_owner_get_owner**  **(** :ref:`int<class_int>` owner_id  **)** const
+- :ref:`Object<class_Object>` **shape_owner_get_owner** **(** :ref:`int<class_int>` owner_id **)** const
 
-.. _class_CollisionObject_shape_owner_get_shape:
+Returns the parent object of the given shape owner.
 
-- :ref:`Shape<class_shape>`  **shape_owner_get_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)** const
+.. _class_CollisionObject_method_shape_owner_get_shape:
 
-Will return a :ref:`Shape<class_shape>`. First argument owner_id is an integer that can be obtained from :ref:`get_shape_owners<class_CollisionObject_get_shape_owners>`. Shape_id is a position of the shape inside owner; it's a value in range from 0 to :ref:`shape_owner_get_shape_count<class_CollisionObject_shape_owner_get_shape_count>`.
+- :ref:`Shape<class_Shape>` **shape_owner_get_shape** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
 
-.. _class_CollisionObject_shape_owner_get_shape_count:
+Returns the :ref:`Shape<class_Shape>` with the given id from the given shape owner.
 
-- :ref:`int<class_int>`  **shape_owner_get_shape_count**  **(** :ref:`int<class_int>` owner_id  **)** const
+.. _class_CollisionObject_method_shape_owner_get_shape_count:
 
-Returns number of shapes to which given owner is associated to.
+- :ref:`int<class_int>` **shape_owner_get_shape_count** **(** :ref:`int<class_int>` owner_id **)** const
 
-.. _class_CollisionObject_shape_owner_get_shape_index:
+Returns the number of shapes the given shape owner contains.
 
-- :ref:`int<class_int>`  **shape_owner_get_shape_index**  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)** const
+.. _class_CollisionObject_method_shape_owner_get_shape_index:
 
-.. _class_CollisionObject_shape_owner_get_transform:
+- :ref:`int<class_int>` **shape_owner_get_shape_index** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)** const
 
-- :ref:`Transform<class_transform>`  **shape_owner_get_transform**  **(** :ref:`int<class_int>` owner_id  **)** const
+Returns the child index of the :ref:`Shape<class_Shape>` with the given id from the given shape owner.
 
-Will return :ref:`Transform<class_transform>` of an owner node.
+.. _class_CollisionObject_method_shape_owner_get_transform:
 
-.. _class_CollisionObject_shape_owner_remove_shape:
+- :ref:`Transform<class_Transform>` **shape_owner_get_transform** **(** :ref:`int<class_int>` owner_id **)** const
 
-- void  **shape_owner_remove_shape**  **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id  **)**
+Returns the shape owner's :ref:`Transform<class_Transform>`.
 
-Removes related shape from the owner.
+.. _class_CollisionObject_method_shape_owner_remove_shape:
 
-.. _class_CollisionObject_shape_owner_set_disabled:
+- void **shape_owner_remove_shape** **(** :ref:`int<class_int>` owner_id, :ref:`int<class_int>` shape_id **)**
 
-- void  **shape_owner_set_disabled**  **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled  **)**
+Removes a shape from the given shape owner.
 
-.. _class_CollisionObject_shape_owner_set_transform:
+.. _class_CollisionObject_method_shape_owner_set_disabled:
 
-- void  **shape_owner_set_transform**  **(** :ref:`int<class_int>` owner_id, :ref:`Transform<class_transform>` transform  **)**
+- void **shape_owner_set_disabled** **(** :ref:`int<class_int>` owner_id, :ref:`bool<class_bool>` disabled **)**
 
+If ``true``, disables the given shape owner.
+
+.. _class_CollisionObject_method_shape_owner_set_transform:
+
+- void **shape_owner_set_transform** **(** :ref:`int<class_int>` owner_id, :ref:`Transform<class_Transform>` transform **)**
+
+Sets the :ref:`Transform<class_Transform>` of the given shape owner.
 

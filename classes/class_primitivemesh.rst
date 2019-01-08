@@ -7,51 +7,79 @@
 PrimitiveMesh
 =============
 
-**Inherits:** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PlaneMesh<class_planemesh>`, :ref:`CubeMesh<class_cubemesh>`, :ref:`SphereMesh<class_spheremesh>`, :ref:`CylinderMesh<class_cylindermesh>`, :ref:`CapsuleMesh<class_capsulemesh>`, :ref:`QuadMesh<class_quadmesh>`, :ref:`PrismMesh<class_prismmesh>`
+**Inherited By:** :ref:`CapsuleMesh<class_CapsuleMesh>`, :ref:`CubeMesh<class_CubeMesh>`, :ref:`CylinderMesh<class_CylinderMesh>`, :ref:`PlaneMesh<class_PlaneMesh>`, :ref:`PrismMesh<class_PrismMesh>`, :ref:`QuadMesh<class_QuadMesh>`, :ref:`SphereMesh<class_SphereMesh>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_material>` to a primitive mesh.
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Material<class_material>`  | :ref:`get_material<class_PrimitiveMesh_get_material>`  **(** **)** const                                     |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`        | :ref:`get_mesh_arrays<class_PrimitiveMesh_get_mesh_arrays>`  **(** **)** const                               |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_material<class_PrimitiveMesh_set_material>`  **(** :ref:`Material<class_material>` material  **)** |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------+
++---------------------------------+--------------------------------------------------------------+
+| :ref:`AABB<class_AABB>`         | :ref:`custom_aabb<class_PrimitiveMesh_property_custom_aabb>` |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`bool<class_bool>`         | :ref:`flip_faces<class_PrimitiveMesh_property_flip_faces>`   |
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Material<class_Material>` | :ref:`material<class_PrimitiveMesh_property_material>`       |
++---------------------------------+--------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`Material<class_material>` **material** - The current [Material] of the primitive mesh.
++---------------------------+--------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>` | :ref:`get_mesh_arrays<class_PrimitiveMesh_method_get_mesh_arrays>` **(** **)** const |
++---------------------------+--------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Base class for all primitive meshes. Handles applying a :ref:`Material<class_material>` to a primitive mesh.
+Base class for all primitive meshes. Handles applying a :ref:`Material<class_Material>` to a primitive mesh.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_PrimitiveMesh_get_material:
+.. _class_PrimitiveMesh_property_custom_aabb:
 
-- :ref:`Material<class_material>`  **get_material**  **(** **)** const
+- :ref:`AABB<class_AABB>` **custom_aabb**
 
-.. _class_PrimitiveMesh_get_mesh_arrays:
++----------+------------------------+
+| *Setter* | set_custom_aabb(value) |
++----------+------------------------+
+| *Getter* | get_custom_aabb()      |
++----------+------------------------+
 
-- :ref:`Array<class_array>`  **get_mesh_arrays**  **(** **)** const
+.. _class_PrimitiveMesh_property_flip_faces:
 
-.. _class_PrimitiveMesh_set_material:
+- :ref:`bool<class_bool>` **flip_faces**
 
-- void  **set_material**  **(** :ref:`Material<class_material>` material  **)**
++----------+-----------------------+
+| *Setter* | set_flip_faces(value) |
++----------+-----------------------+
+| *Getter* | get_flip_faces()      |
++----------+-----------------------+
 
+.. _class_PrimitiveMesh_property_material:
+
+- :ref:`Material<class_Material>` **material**
+
++----------+---------------------+
+| *Setter* | set_material(value) |
++----------+---------------------+
+| *Getter* | get_material()      |
++----------+---------------------+
+
+The current :ref:`Material<class_Material>` of the primitive mesh.
+
+Method Descriptions
+-------------------
+
+.. _class_PrimitiveMesh_method_get_mesh_arrays:
+
+- :ref:`Array<class_Array>` **get_mesh_arrays** **(** **)** const
 

@@ -41,12 +41,12 @@ Memory model
 
 PC is a wonderful architecture. Computers often have gigabytes of RAM,
 terabytes of storage and gigahertz of CPU, and when an application needs
-more resources the OS will just swap out the inactive ones. Other
+more resources the OS will swap out the inactive ones. Other
 architectures (like mobile or consoles) are in general more limited.
 
 The most common memory model is the heap, where an application will
 request a region of memory, and the underlying OS will try to fit it
-somewhere and return it. This often works best and is very flexible,
+somewhere and return it. This often works best and is flexible,
 but over time and with abuse, this can lead to segmentation.
 
 Segmentation slowly creates holes that are too small for most common
@@ -59,7 +59,7 @@ However, in many studies and tests, it is shown that given enough
 memory, if the maximum allocation size is below a given threshold in
 proportion to the maximum heap size and proportion of memory intended to
 be unused, segmentation will not be a problem over time as it will
-remain constant. In other words, just leave 10-20% of your memory free
+remain constant. In other words, leave 10-20% of your memory free
 and perform all small allocations and you are fine.
 
 Godot ensures that all objects that can be allocated dynamically are
@@ -73,7 +73,7 @@ of the game, the programmer can configure the dynamic memory pool size.
 Allocating memory
 -----------------
 
-Godot has many tools for tracking memory usage in a game, specially
+Godot has many tools for tracking memory usage in a game, especially
 during debug. Because of this, the regular C and C++ library calls
 should not be used. Instead, a few other ones are provided.
 
@@ -85,7 +85,7 @@ For C-style allocation, Godot provides a few macros:
     memrealloc()
     memfree()
 
-These are equivalent to the usual malloc, realloc, free of the standard
+These are equivalent to the usual malloc, realloc, free of the standard C
 library.
 
 For C++-style allocation, special macros are provided:
@@ -103,31 +103,30 @@ which are equivalent to new, delete, new[] and delete[].
 memnew/memdelete also use a little C++ magic and notify Objects right
 after they are created, and right before they are deleted.
 
-For dynamic memory, the DVector<> template is provided. Just use it
-like:
+For dynamic memory, the PoolVector<> template is provided. PoolVector is a
+standard vector class, and is very similar to vector in the C++ standard library.
+To create a PoolVector buffer, use this:
 
 .. code:: cpp
 
-    DVector<int>
+    PoolVector<int> data;
 
-DVector is just a standard vector class, it can be accessed using the []
-operator, but that's probably slow for large amount of accesses (as it
-has to lock internally). A few helpers exist for this:
+PoolVector can be accessed using the [] operator and a few helpers exist for this:
 
 .. code:: cpp
 
-    DVector<int>::Read r = dvector.read()
+    PoolVector<int>::Read r = data.read()
     int someint = r[4]
 
-and
-
 .. code:: cpp
 
-    DVector<int>::Write w = dvector.write()
-    w[4]=22;
+    PoolVector<int>::Write w = data.write()
+    w[4] = 22;
 
-respectively. These allow fast read/write from DVectors and keep it
-locked until they go out of scope.
+These operations allow fast read/write from PoolVectors and keep it
+locked until they go out of scope. However, PoolVectors should be used
+for small, dynamic memory operations, as read() and write() are too slow for a
+large amount of accesses.
 
 References:
 ~~~~~~~~~~~
@@ -145,7 +144,7 @@ Godot provides also a set of common containers:
 -  Set
 -  Map
 
-They are very simple and aim to be as minimal as possible, as templates
+They are simple and aim to be as minimal as possible, as templates
 in C++ are often inlined and make the binary size much fatter, both in
 debug symbols and code. List, Set and Map can be iterated using
 pointers, like this:
@@ -189,10 +188,10 @@ StringName
 
 StringNames are like a String, but they are unique. Creating a
 StringName from a string results in a unique internal pointer for all
-equal strings. StringNames are really useful for using strings as
+equal strings. StringNames are useful for using strings as
 identifier, as comparing them is basically comparing a pointer.
 
-Creation of a StringName (specially a new one) is slow, but comparison
+Creation of a StringName (especially a new one) is slow, but comparison
 is fast.
 
 References:
@@ -204,12 +203,12 @@ Math types
 ----------
 
 There are several linear math types available in the core/math
-directory, they are basically just that.
+directory.
 
 References:
 ~~~~~~~~~~~
 
--  `core/math <https://github.com/godotengine/godot/blob/master/core/math>`__
+-  `core/math <https://github.com/godotengine/godot/tree/master/core/math>`__
 
 NodePath
 --------
@@ -220,7 +219,7 @@ referencing them fast.
 References:
 ~~~~~~~~~~~
 
--  `core/path_db.h <https://github.com/godotengine/godot/blob/master/core/path_db.h>`__
+-  `core/node_path.h <https://github.com/godotengine/godot/blob/master/core/node_path.h>`__
 
 RID
 ---

@@ -7,57 +7,43 @@
 ColorRect
 =========
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Colored rect for canvas.
+Colored rectangle.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_frame_color<class_ColorRect_get_frame_color>`  **(** **)** const                            |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_frame_color<class_ColorRect_set_frame_color>`  **(** :ref:`Color<class_color>` color  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Color<class_color>` **color**
++---------------------------+----------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_ColorRect_property_color>` |
++---------------------------+----------------------------------------------+
 
 Description
 -----------
 
-An object that is represented on the canvas as a rect with color. :ref:`Color<class_color>` is used to set or get color info for the rect.
+Displays a colored rectangle.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ColorRect_get_frame_color:
+.. _class_ColorRect_property_color:
 
-- :ref:`Color<class_color>`  **get_frame_color**  **(** **)** const
+- :ref:`Color<class_Color>` **color**
 
-Return the color in RGBA format.
++----------+------------------------+
+| *Setter* | set_frame_color(value) |
++----------+------------------------+
+| *Getter* | get_frame_color()      |
++----------+------------------------+
 
-::
-
-    var cr = get_node("colorrect_node")
-    var c = cr.get_frame_color() # Default color is white
-
-.. _class_ColorRect_set_frame_color:
-
-- void  **set_frame_color**  **(** :ref:`Color<class_color>` color  **)**
-
-Set new color to ColorRect.
+The fill color.
 
 ::
 
-    var cr = get_node("colorrect_node")
-    cr.set_frame_color(Color(1, 0, 0, 1)) # Set color rect node to red
-
+    $ColorRect.color = Color(1, 0, 0, 1) # Set ColorRect's color to red.
 

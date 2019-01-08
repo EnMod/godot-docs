@@ -7,9 +7,9 @@
 PacketPeer
 ==========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`PacketPeerStream<class_packetpeerstream>`, :ref:`PacketPeerUDP<class_packetpeerudp>`, :ref:`NetworkedMultiplayerPeer<class_networkedmultiplayerpeer>`
+**Inherited By:** :ref:`NetworkedMultiplayerPeer<class_NetworkedMultiplayerPeer>`, :ref:`PacketPeerGDNative<class_PacketPeerGDNative>`, :ref:`PacketPeerStream<class_PacketPeerStream>`, :ref:`PacketPeerUDP<class_PacketPeerUDP>`, :ref:`WebSocketPeer<class_WebSocketPeer>`
 
 **Category:** Core
 
@@ -18,77 +18,84 @@ Brief Description
 
 Abstraction and base class for packet-based protocols.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_available_packet_count<class_PacketPeer_get_available_packet_count>`  **(** **)** const                         |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolByteArray<class_poolbytearray>`  | :ref:`get_packet<class_PacketPeer_get_packet>`  **(** **)** const                                                         |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`get_packet_error<class_PacketPeer_get_packet_error>`  **(** **)** const                                             |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`              | :ref:`get_var<class_PacketPeer_get_var>`  **(** **)** const                                                               |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                    | :ref:`is_object_decoding_allowed<class_PacketPeer_is_object_decoding_allowed>`  **(** **)** const                         |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`put_packet<class_PacketPeer_put_packet>`  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)**             |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`                      | :ref:`put_var<class_PacketPeer_put_var>`  **(** :ref:`Variant<class_variant>` var  **)**                                  |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-| void                                       | :ref:`set_allow_object_decoding<class_PacketPeer_set_allow_object_decoding>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`allow_object_decoding<class_PacketPeer_property_allow_object_decoding>` |
++-------------------------+-------------------------------------------------------------------------------+
+
+Methods
+-------
+
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                     | :ref:`get_available_packet_count<class_PacketPeer_method_get_available_packet_count>` **(** **)** const            |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolByteArray<class_PoolByteArray>` | :ref:`get_packet<class_PacketPeer_method_get_packet>` **(** **)**                                                  |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`get_packet_error<class_PacketPeer_method_get_packet_error>` **(** **)** const                                |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>`             | :ref:`get_var<class_PacketPeer_method_get_var>` **(** **)**                                                        |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_packet<class_PacketPeer_method_put_packet>` **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)** |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>`     | :ref:`put_var<class_PacketPeer_method_put_var>` **(** :ref:`Variant<class_Variant>` var **)**                      |
++-------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 PacketPeer is an abstraction and base class for packet-based protocols (such as UDP). It provides an API for sending and receiving packets both as raw data or variables. This makes it easy to transfer data over a protocol, without having to encode data as low level bytes or having to worry about network ordering.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_PacketPeer_get_available_packet_count:
+.. _class_PacketPeer_property_allow_object_decoding:
 
-- :ref:`int<class_int>`  **get_available_packet_count**  **(** **)** const
+- :ref:`bool<class_bool>` **allow_object_decoding**
+
++----------+----------------------------------+
+| *Setter* | set_allow_object_decoding(value) |
++----------+----------------------------------+
+| *Getter* | is_object_decoding_allowed()     |
++----------+----------------------------------+
+
+Method Descriptions
+-------------------
+
+.. _class_PacketPeer_method_get_available_packet_count:
+
+- :ref:`int<class_int>` **get_available_packet_count** **(** **)** const
 
 Return the number of packets currently available in the ring-buffer.
 
-.. _class_PacketPeer_get_packet:
+.. _class_PacketPeer_method_get_packet:
 
-- :ref:`PoolByteArray<class_poolbytearray>`  **get_packet**  **(** **)** const
+- :ref:`PoolByteArray<class_PoolByteArray>` **get_packet** **(** **)**
 
 Get a raw packet.
 
-.. _class_PacketPeer_get_packet_error:
+.. _class_PacketPeer_method_get_packet_error:
 
-- :ref:`int<class_int>`  **get_packet_error**  **(** **)** const
+- :ref:`Error<enum_@GlobalScope_Error>` **get_packet_error** **(** **)** const
 
-Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_get_packet>` and :ref:`get_var<class_PacketPeer_get_var>`).
+Return the error state of the last packet received (via :ref:`get_packet<class_PacketPeer_method_get_packet>` and :ref:`get_var<class_PacketPeer_method_get_var>`).
 
-.. _class_PacketPeer_get_var:
+.. _class_PacketPeer_method_get_var:
 
-- :ref:`Variant<class_variant>`  **get_var**  **(** **)** const
+- :ref:`Variant<class_Variant>` **get_var** **(** **)**
 
 Get a Variant.
 
-.. _class_PacketPeer_is_object_decoding_allowed:
+.. _class_PacketPeer_method_put_packet:
 
-- :ref:`bool<class_bool>`  **is_object_decoding_allowed**  **(** **)** const
-
-.. _class_PacketPeer_put_packet:
-
-- :ref:`int<class_int>`  **put_packet**  **(** :ref:`PoolByteArray<class_poolbytearray>` buffer  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_packet** **(** :ref:`PoolByteArray<class_PoolByteArray>` buffer **)**
 
 Send a raw packet.
 
-.. _class_PacketPeer_put_var:
+.. _class_PacketPeer_method_put_var:
 
-- :ref:`int<class_int>`  **put_var**  **(** :ref:`Variant<class_variant>` var  **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **put_var** **(** :ref:`Variant<class_Variant>` var **)**
 
 Send a Variant as a packet.
-
-.. _class_PacketPeer_set_allow_object_decoding:
-
-- void  **set_allow_object_decoding**  **(** :ref:`bool<class_bool>` enable  **)**
-
 

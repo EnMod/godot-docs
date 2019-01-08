@@ -7,7 +7,7 @@
 ReferenceRect
 =============
 
-**Inherits:** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,8 +16,28 @@ Brief Description
 
 Reference frame for GUI.
 
+Properties
+----------
+
++---------------------------+----------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_ReferenceRect_property_border_color>` |
++---------------------------+----------------------------------------------------------------+
+
 Description
 -----------
 
 Reference frame for GUI. It's just like an empty control, except a red box is displayed while editing around its size at all times.
+
+Property Descriptions
+---------------------
+
+.. _class_ReferenceRect_property_border_color:
+
+- :ref:`Color<class_Color>` **border_color**
+
++----------+-------------------------+
+| *Setter* | set_border_color(value) |
++----------+-------------------------+
+| *Getter* | get_border_color()      |
++----------+-------------------------+
 

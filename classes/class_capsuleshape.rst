@@ -7,7 +7,7 @@
 CapsuleShape
 ============
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,55 +16,44 @@ Brief Description
 
 Capsule shape for collisions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_height<class_CapsuleShape_get_height>`  **(** **)** const                             |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_radius<class_CapsuleShape_get_radius>`  **(** **)** const                             |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_height<class_CapsuleShape_set_height>`  **(** :ref:`float<class_float>` height  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_radius<class_CapsuleShape_set_radius>`  **(** :ref:`float<class_float>` radius  **)** |
-+----------------------------+-------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **height** - The capsule's height.
-- :ref:`float<class_float>` **radius** - The capsule's radius.
++---------------------------+---------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`height<class_CapsuleShape_property_height>` |
++---------------------------+---------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`radius<class_CapsuleShape_property_radius>` |
++---------------------------+---------------------------------------------------+
 
 Description
 -----------
 
 Capsule shape for collisions.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_CapsuleShape_get_height:
+.. _class_CapsuleShape_property_height:
 
-- :ref:`float<class_float>`  **get_height**  **(** **)** const
+- :ref:`float<class_float>` **height**
 
-Return the capsule height.
++----------+-------------------+
+| *Setter* | set_height(value) |
++----------+-------------------+
+| *Getter* | get_height()      |
++----------+-------------------+
 
-.. _class_CapsuleShape_get_radius:
+The capsule's height.
 
-- :ref:`float<class_float>`  **get_radius**  **(** **)** const
+.. _class_CapsuleShape_property_radius:
 
-Return the capsule radius.
+- :ref:`float<class_float>` **radius**
 
-.. _class_CapsuleShape_set_height:
++----------+-------------------+
+| *Setter* | set_radius(value) |
++----------+-------------------+
+| *Getter* | get_radius()      |
++----------+-------------------+
 
-- void  **set_height**  **(** :ref:`float<class_float>` height  **)**
-
-Set the capsule height.
-
-.. _class_CapsuleShape_set_radius:
-
-- void  **set_radius**  **(** :ref:`float<class_float>` radius  **)**
-
-Set the capsule radius.
-
+The capsule's radius.
 

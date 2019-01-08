@@ -7,7 +7,7 @@
 PopupPanel
 ==========
 
-**Inherits:** :ref:`Popup<class_popup>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Popup<class_Popup>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,8 +16,15 @@ Brief Description
 
 Class for displaying popups with a panel background.
 
+Theme Properties
+----------------
+
++---------------------------------+-------+
+| :ref:`StyleBox<class_StyleBox>` | panel |
++---------------------------------+-------+
+
 Description
 -----------
 
-Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_popup>`, since it provides a configurable background. If you are making windows, better check :ref:`WindowDialog<class_windowdialog>`.
+Class for displaying popups with a panel background. In some cases it might be simpler to use than :ref:`Popup<class_Popup>`, since it provides a configurable background. If you are making windows, better check :ref:`WindowDialog<class_WindowDialog>`.
 

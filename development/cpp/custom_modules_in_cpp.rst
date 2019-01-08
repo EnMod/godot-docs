@@ -12,8 +12,9 @@ functionality at every level without modifying the core, which can be
 split for use and reuse in different modules.
 
 Modules are located in the ``modules/`` subdirectory of the build system.
-By default, two modules exist, GDScript (which, yes, is not part of the
-core engine), and the GridMap. As many new modules as desired can be
+By default, many different modules exist, such as GDScript (which, yes,
+is not part of the base engine), the Mono runtime, a regular expressions
+module, and others. As many new modules as desired can be
 created and combined, and the SCons build system will take care of it
 transparently.
 
@@ -24,7 +25,7 @@ While it's recommended that most of a game is written in scripting (as
 it is an enormous time saver), it's perfectly possible to use C++
 instead. Adding C++ modules can be useful in the following scenarios:
 
--  Binding an external library to Godot (like Bullet, Physx, FMOD, etc).
+-  Binding an external library to Godot (like PhysX, FMOD, etc).
 -  Optimize critical parts of a game.
 -  Adding new functionality to the engine and/or editor.
 -  Porting an existing game.
@@ -59,7 +60,7 @@ Inside we will create a simple summator class:
     #ifndef SUMMATOR_H
     #define SUMMATOR_H
 
-    #include "reference.h"
+    #include "core/reference.h"
 
     class Summator : public Reference {
         GDCLASS(Summator, Reference);
@@ -136,7 +137,8 @@ With the following contents:
     /* register_types.cpp */
 
     #include "register_types.h"
-    #include "class_db.h"
+
+    #include "core/class_db.h"
     #include "summator.h"
 
     void register_summator_types() {
@@ -156,7 +158,7 @@ this module:
     # SCsub
     Import('env')
 
-    env.add_source_files(env.modules_sources,"*.cpp") # just add all cpp files to the build
+    env.add_source_files(env.modules_sources,"*.cpp") # Add all cpp files to the build
 
 With multiple sources, you can also add each file individually to a Python
 string list:
@@ -166,7 +168,7 @@ string list:
     src_list = ["summator.cpp", "other.cpp", "etc.cpp"]
     env.add_source_files(env.modules_sources, src_list)
 
-This allows for powerful possibilities using Python to contruct the file list
+This allows for powerful possibilities using Python to construct the file list
 using loops and logic statements. Look at some of the other modules that ship
 with Godot by default for examples.
 
@@ -198,7 +200,7 @@ python script that must be named ``config.py``:
 
     # config.py
 
-    def can_build(platform):
+    def can_build(env, platform):
         return True
 
     def configure(env):
@@ -226,8 +228,7 @@ your module will be included.
 Using the module
 ----------------
 
-Using your newly created module is very easy, from any script you can
-now do:
+You can now use your newly created module from any script:
 
 ::
 
@@ -239,6 +240,11 @@ now do:
     s.reset()
 
 And the output will be ``60``.
+
+.. seealso:: The previous Summator example is great for small, custom modules,
+  but what if you want to use a larger, external library?  Refer to
+  :ref:`doc_binding_to_external_libraries` for details about binding to
+  external libraries.
 
 Improving the build system for development
 ------------------------------------------
@@ -275,7 +281,7 @@ library that will be dynamically loaded when starting our game's binary.
 
     # Now define the shared library. Note that by default it would be built
     # into the module's folder, however it's better to output it into `bin`
-    # next to the godot binary.
+    # next to the Godot binary.
     shared_lib = module_env.SharedLibrary(target='#bin/summator', source=sources)
 
     # Finally notify the main env it has our shared lirary as a new dependency.
@@ -300,7 +306,7 @@ during runtime with the ``LD_LIBRARY_PATH`` environ variable:
 you won't be able to play you project from within the editor.
 
 On top of that, it would be nice to be able to select whether to compile our
-module as shared library (for development) or as a part of the godot binary
+module as shared library (for development) or as a part of the Godot binary
 (for release). To do that we can define a custom flag to be passed to SCons
 using the `ARGUMENT` command:
 
@@ -337,21 +343,82 @@ shared module as target in the scons command:
 
 ::
 
-    user@host:~/godot$ scons summator_shared=yes bin/summator.x11.tools.64.so
+    user@host:~/godot$ scons summator_shared=yes platform=x11 bin/libsummator.x11.tools.64.so
 
+Writing custom documentation
+----------------------------
+
+Writing documentation may seem like a boring task, but it is highly recommended
+to document your newly created module in order to make it easier for users to
+benefit from it. Not to mention that the code you've written one year ago may
+become indistinguishable from the code that was written by someone else, so be
+kind to your future self!
+
+There are several steps in order to setup custom docs for the module:
+
+1. Make a new directory in the root of the module. The directory name can be
+   anything, but we'll be using the ``doc_classes`` name throughout this section.
+
+2. Append the following code snippet to ``config.py``:
+
+   .. code:: python
+
+       def get_doc_classes():
+           return [
+               "ClassName",
+           ]
+
+       def get_doc_path():
+           return "doc_classes"
+
+The ``get_doc_classes()`` method is necessary for the build system to
+know which documentation classes of the module must be merged, since the module
+may contain several classes. Replace ``ClassName`` with the name of the class
+you want to write documentation for. If you need docs for more than one class,
+append those as well.
+
+The ``get_doc_path()`` method is used by the build system to determine
+the location of the docs. In our case, they will be located in the ``doc_classes``
+directory.
+
+3. Run command:
+
+   ::
+
+      godot --doctool <path>
+
+This will dump the engine API reference to the given ``<path>`` in XML format.
+Notice that you'll need to configure your ``PATH`` to locate Godot's executable,
+and make sure that you have write access rights. If not, you might encounter an
+error similar to the following:
+
+.. code-block:: console
+
+    ERROR: Can't write doc file: docs/doc/classes/@GDScript.xml
+       At: editor/doc/doc_data.cpp:956
+
+4. Get generated doc file from ``godot/doc/classes/ClassName.xml``
+
+5. Copy this file to ``doc_classes``, optionally edit it, then compile the engine.
+
+The build system will fetch the documentation files from the ``doc_classes`` directory
+and merge them with the base types. Once the compilation process is finished,
+the docs will become accessible within the engine's built-in documentation system.
+
+In order to keep documentation up-to-date, all you'll have to do is simply modify
+one of the ``ClassName.xml`` files and recompile the engine from now on.
 
 Summing up
 ----------
 
-As you see, it's really easy to develop Godot in C++. Just write your
-stuff normally and remember to:
+Remember to:
 
--  use ``OBJ_TYPE`` macro for inheritance, so Godot can wrap it
+-  use ``GDCLASS`` macro for inheritance, so Godot can wrap it
 -  use ``_bind_methods`` to bind your functions to scripting, and to
    allow them to work as callbacks for signals.
 
 But this is not all, depending what you do, you will be greeted with
-some surprises.
+some (hopefully positive) surprises.
 
 -  If you inherit from :ref:`class_Node` (or any derived node type, such as
    Sprite), your new class will appear in the editor, in the inheritance

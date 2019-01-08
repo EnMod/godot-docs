@@ -7,7 +7,7 @@
 YSort
 =====
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,38 +16,30 @@ Brief Description
 
 Sort all child nodes based on their Y positions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------+-----------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`  | :ref:`is_sort_enabled<class_YSort_is_sort_enabled>`  **(** **)** const                              |
-+--------------------------+-----------------------------------------------------------------------------------------------------+
-| void                     | :ref:`set_sort_enabled<class_YSort_set_sort_enabled>`  **(** :ref:`bool<class_bool>` enabled  **)** |
-+--------------------------+-----------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **sort_enabled**
++-------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`sort_enabled<class_YSort_property_sort_enabled>` |
++-------------------------+--------------------------------------------------------+
 
 Description
 -----------
 
-Sort all child nodes based on their Y positions. The child node must inherit from :ref:`CanvasItem<class_canvasitem>` for it to be sorted. Nodes that have a higher Y position will be drawn later, so they will appear on top of nodes that have a lower Y position.
+Sort all child nodes based on their Y positions. The child node must inherit from :ref:`CanvasItem<class_CanvasItem>` for it to be sorted. Nodes that have a higher Y position will be drawn later, so they will appear on top of nodes that have a lower Y position.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_YSort_is_sort_enabled:
+.. _class_YSort_property_sort_enabled:
 
-- :ref:`bool<class_bool>`  **is_sort_enabled**  **(** **)** const
+- :ref:`bool<class_bool>` **sort_enabled**
 
-Returns true if the children nodes are being sorted.
++----------+-------------------------+
+| *Setter* | set_sort_enabled(value) |
++----------+-------------------------+
+| *Getter* | is_sort_enabled()       |
++----------+-------------------------+
 
-.. _class_YSort_set_sort_enabled:
-
-- void  **set_sort_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
-
-Set whether the children nodes are sorted or not. (default true)
-
+If ``true``, child nodes are sorted, otherwise sorting is disabled. Default: ``true``.
 

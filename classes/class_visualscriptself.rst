@@ -7,12 +7,25 @@
 VisualScriptSelf
 ================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Outputs a reference to the current instance.
 
+Description
+-----------
+
+Provides a reference to the node running the visual script.
+
+**Input Ports:**
+
+none
+
+**Output Ports:**
+
+- Data (object): ``instance``
 

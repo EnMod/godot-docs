@@ -7,38 +7,51 @@
 VisualScriptSequence
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Executes a series of Sequence ports.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------+---------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`steps<class_VisualScriptSequence_property_steps>` |
++-----------------------+---------------------------------------------------------+
 
-+------------------------+--------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_steps<class_VisualScriptSequence_get_steps>`  **(** **)** const                        |
-+------------------------+--------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_steps<class_VisualScriptSequence_set_steps>`  **(** :ref:`int<class_int>` steps  **)** |
-+------------------------+--------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Steps through a series of one or more output Sequence ports. The ``current`` data port outputs the currently executing item.
+
+**Input Ports:**
+
+- Sequence: ``in order``
+
+**Output Ports:**
+
+- Sequence: ``1``
+
+- Sequence: ``2 - n`` (optional)
+
+- Data (int): ``current``
+
+Property Descriptions
+---------------------
+
+.. _class_VisualScriptSequence_property_steps:
 
 - :ref:`int<class_int>` **steps**
 
-Member Function Description
----------------------------
++----------+------------------+
+| *Setter* | set_steps(value) |
++----------+------------------+
+| *Getter* | get_steps()      |
++----------+------------------+
 
-.. _class_VisualScriptSequence_get_steps:
-
-- :ref:`int<class_int>`  **get_steps**  **(** **)** const
-
-.. _class_VisualScriptSequence_set_steps:
-
-- void  **set_steps**  **(** :ref:`int<class_int>` steps  **)**
-
+The number of steps in the sequence.
 

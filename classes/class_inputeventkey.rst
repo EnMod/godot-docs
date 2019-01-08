@@ -7,7 +7,7 @@
 InputEventKey
 =============
 
-**Inherits:** :ref:`InputEventWithModifiers<class_inputeventwithmodifiers>` **<** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEventWithModifiers<class_InputEventWithModifiers>` **<** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,62 +16,93 @@ Brief Description
 
 Input event type for keyboard events.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_scancode<class_InputEventKey_get_scancode>`  **(** **)** const                               |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_scancode_with_modifiers<class_InputEventKey_get_scancode_with_modifiers>`  **(** **)** const |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`get_unicode<class_InputEventKey_get_unicode>`  **(** **)** const                                 |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_echo<class_InputEventKey_set_echo>`  **(** :ref:`bool<class_bool>` echo  **)**               |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_pressed<class_InputEventKey_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**      |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_scancode<class_InputEventKey_set_scancode>`  **(** :ref:`int<class_int>` scancode  **)**     |
-+------------------------+--------------------------------------------------------------------------------------------------------+
-| void                   | :ref:`set_unicode<class_InputEventKey_set_unicode>`  **(** :ref:`int<class_int>` unicode  **)**        |
-+------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`echo<class_InputEventKey_property_echo>`         |
++-------------------------+--------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`pressed<class_InputEventKey_property_pressed>`   |
++-------------------------+--------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`scancode<class_InputEventKey_property_scancode>` |
++-------------------------+--------------------------------------------------------+
+| :ref:`int<class_int>`   | :ref:`unicode<class_InputEventKey_property_unicode>`   |
++-------------------------+--------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`bool<class_bool>` **echo** - Echo state of the key, i.e. whether it's a repeat event or not.
-- :ref:`bool<class_bool>` **pressed** - Pressed state of the key.
-- :ref:`int<class_int>` **scancode** - Scancode of the key, one of the KEY_* constants in [@Global Scope].
-- :ref:`int<class_int>` **unicode** - Unicode identifier of the key (when relevant).
++-----------------------+--------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_scancode_with_modifiers<class_InputEventKey_method_get_scancode_with_modifiers>` **(** **)** const |
++-----------------------+--------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Description
+-----------
 
-.. _class_InputEventKey_get_scancode:
+Stores key presses on the keyboard. Supports key presses, key releases and :ref:`echo<class_InputEventKey_property_echo>` events.
 
-- :ref:`int<class_int>`  **get_scancode**  **(** **)** const
+Tutorials
+---------
 
-.. _class_InputEventKey_get_scancode_with_modifiers:
+- :doc:`../tutorials/inputs/inputevent`
 
-- :ref:`int<class_int>`  **get_scancode_with_modifiers**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_InputEventKey_get_unicode:
+.. _class_InputEventKey_property_echo:
 
-- :ref:`int<class_int>`  **get_unicode**  **(** **)** const
+- :ref:`bool<class_bool>` **echo**
 
-.. _class_InputEventKey_set_echo:
++----------+-----------------+
+| *Setter* | set_echo(value) |
++----------+-----------------+
+| *Getter* | is_echo()       |
++----------+-----------------+
 
-- void  **set_echo**  **(** :ref:`bool<class_bool>` echo  **)**
+If ``true``, the key was already pressed before this event. It means the user is holding the key down.
 
-.. _class_InputEventKey_set_pressed:
+.. _class_InputEventKey_property_pressed:
 
-- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
+- :ref:`bool<class_bool>` **pressed**
 
-.. _class_InputEventKey_set_scancode:
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
 
-- void  **set_scancode**  **(** :ref:`int<class_int>` scancode  **)**
+If ``true``, the key's state is pressed. If ``false``, the key's state is released.
 
-.. _class_InputEventKey_set_unicode:
+.. _class_InputEventKey_property_scancode:
 
-- void  **set_unicode**  **(** :ref:`int<class_int>` unicode  **)**
+- :ref:`int<class_int>` **scancode**
 
++----------+---------------------+
+| *Setter* | set_scancode(value) |
++----------+---------------------+
+| *Getter* | get_scancode()      |
++----------+---------------------+
+
+Key scancode, one of the ``KEY_*`` constants in :ref:`@GlobalScope<class_@GlobalScope>`.
+
+.. _class_InputEventKey_property_unicode:
+
+- :ref:`int<class_int>` **unicode**
+
++----------+--------------------+
+| *Setter* | set_unicode(value) |
++----------+--------------------+
+| *Getter* | get_unicode()      |
++----------+--------------------+
+
+Key unicode identifier when relevant.
+
+Method Descriptions
+-------------------
+
+.. _class_InputEventKey_method_get_scancode_with_modifiers:
+
+- :ref:`int<class_int>` **get_scancode_with_modifiers** **(** **)** const
+
+Returns the scancode combined with modifier keys such as ``Shift`` or ``Alt``. See also :ref:`InputEventWithModifiers<class_InputEventWithModifiers>`.
 

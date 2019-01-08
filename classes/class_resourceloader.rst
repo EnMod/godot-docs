@@ -7,7 +7,7 @@
 ResourceLoader
 ==============
 
-**Inherits:** :ref:`Object<class_object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,59 +16,70 @@ Brief Description
 
 Resource Loader.
 
-Member Functions
-----------------
+Methods
+-------
 
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_dependencies<class_ResourceLoader_get_dependencies>`  **(** :ref:`String<class_string>` path  **)**                                                             |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolStringArray<class_poolstringarray>`                      | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_get_recognized_extensions_for_type>`  **(** :ref:`String<class_string>` type  **)**                         |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                                            | :ref:`has<class_ResourceLoader_has>`  **(** :ref:`String<class_string>` path  **)**                                                                                       |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`                                    | :ref:`load<class_ResourceLoader_load>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)** |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  | :ref:`load_interactive<class_ResourceLoader_load_interactive>`  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**                   |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                                               | :ref:`set_abort_on_missing_resources<class_ResourceLoader_set_abort_on_missing_resources>`  **(** :ref:`bool<class_bool>` abort  **)**                                    |
-+--------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`exists<class_ResourceLoader_method_exists>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                                     |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_dependencies<class_ResourceLoader_method_get_dependencies>` **(** :ref:`String<class_String>` path **)**                                                           |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PoolStringArray<class_PoolStringArray>`                     | :ref:`get_recognized_extensions_for_type<class_ResourceLoader_method_get_recognized_extensions_for_type>` **(** :ref:`String<class_String>` type **)**                       |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`has<class_ResourceLoader_method_has>` **(** :ref:`String<class_String>` path **)**                                                                                     |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                                           | :ref:`has_cached<class_ResourceLoader_method_has_cached>` **(** :ref:`String<class_String>` path **)**                                                                       |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Resource<class_Resource>`                                   | :ref:`load<class_ResourceLoader_method_load>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)** |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` | :ref:`load_interactive<class_ResourceLoader_method_load_interactive>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**                 |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                                              | :ref:`set_abort_on_missing_resources<class_ResourceLoader_method_set_abort_on_missing_resources>` **(** :ref:`bool<class_bool>` abort **)**                                  |
++-------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
-Resource Loader. This is a static object accessible as :ref:`ResourceLoader<class_resourceloader>`. GDScript has a simplified load() function, though.
+Resource Loader. This is a static object accessible as ``ResourceLoader``. GDScript has a simplified load() function, though.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_ResourceLoader_get_dependencies:
+.. _class_ResourceLoader_method_exists:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_dependencies**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`bool<class_bool>` **exists** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
 
-.. _class_ResourceLoader_get_recognized_extensions_for_type:
+.. _class_ResourceLoader_method_get_dependencies:
 
-- :ref:`PoolStringArray<class_poolstringarray>`  **get_recognized_extensions_for_type**  **(** :ref:`String<class_string>` type  **)**
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_dependencies** **(** :ref:`String<class_String>` path **)**
+
+.. _class_ResourceLoader_method_get_recognized_extensions_for_type:
+
+- :ref:`PoolStringArray<class_PoolStringArray>` **get_recognized_extensions_for_type** **(** :ref:`String<class_String>` type **)**
 
 Return the list of recognized extensions for a resource type.
 
-.. _class_ResourceLoader_has:
+.. _class_ResourceLoader_method_has:
 
-- :ref:`bool<class_bool>`  **has**  **(** :ref:`String<class_string>` path  **)**
+- :ref:`bool<class_bool>` **has** **(** :ref:`String<class_String>` path **)**
 
-.. _class_ResourceLoader_load:
+.. _class_ResourceLoader_method_has_cached:
 
-- :ref:`Resource<class_resource>`  **load**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint="", :ref:`bool<class_bool>` p_no_cache=false  **)**
+- :ref:`bool<class_bool>` **has_cached** **(** :ref:`String<class_String>` path **)**
 
-.. _class_ResourceLoader_load_interactive:
+.. _class_ResourceLoader_method_load:
 
-- :ref:`ResourceInteractiveLoader<class_resourceinteractiveloader>`  **load_interactive**  **(** :ref:`String<class_string>` path, :ref:`String<class_string>` type_hint=""  **)**
+- :ref:`Resource<class_Resource>` **load** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="", :ref:`bool<class_bool>` no_cache=false **)**
+
+.. _class_ResourceLoader_method_load_interactive:
+
+- :ref:`ResourceInteractiveLoader<class_ResourceInteractiveLoader>` **load_interactive** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` type_hint="" **)**
 
 Load a resource interactively, the returned object allows to load with high granularity.
 
-.. _class_ResourceLoader_set_abort_on_missing_resources:
+.. _class_ResourceLoader_method_set_abort_on_missing_resources:
 
-- void  **set_abort_on_missing_resources**  **(** :ref:`bool<class_bool>` abort  **)**
+- void **set_abort_on_missing_resources** **(** :ref:`bool<class_bool>` abort **)**
 
 Change the behavior on missing sub-resources. Default is to abort load.
-
 

@@ -7,46 +7,97 @@
 MenuButton
 ==========
 
-**Inherits:** :ref:`Button<class_button>` **<** :ref:`BaseButton<class_basebutton>` **<** :ref:`Control<class_control>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Button<class_Button>` **<** :ref:`BaseButton<class_BaseButton>` **<** :ref:`Control<class_Control>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked.
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked.
 
-Member Functions
+Properties
+----------
+
++-------------------------+-------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`switch_on_hover<class_MenuButton_property_switch_on_hover>` |
++-------------------------+-------------------------------------------------------------------+
+
+Methods
+-------
+
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| :ref:`PopupMenu<class_PopupMenu>` | :ref:`get_popup<class_MenuButton_method_get_popup>` **(** **)** const                                                    |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+| void                              | :ref:`set_disable_shortcuts<class_MenuButton_method_set_disable_shortcuts>` **(** :ref:`bool<class_bool>` disabled **)** |
++-----------------------------------+--------------------------------------------------------------------------------------------------------------------------+
+
+Theme Properties
 ----------------
 
-+------------------------------------+-----------------------------------------------------------+
-| :ref:`PopupMenu<class_popupmenu>`  | :ref:`get_popup<class_MenuButton_get_popup>`  **(** **)** |
-+------------------------------------+-----------------------------------------------------------+
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | disabled            |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | focus               |
++---------------------------------+---------------------+
+| :ref:`Font<class_Font>`         | font                |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color          |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_disabled |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_hover    |
++---------------------------------+---------------------+
+| :ref:`Color<class_Color>`       | font_color_pressed  |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | hover               |
++---------------------------------+---------------------+
+| :ref:`int<class_int>`           | hseparation         |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | normal              |
++---------------------------------+---------------------+
+| :ref:`StyleBox<class_StyleBox>` | pressed             |
++---------------------------------+---------------------+
 
 Signals
 -------
 
--  **about_to_show**  **(** **)**
-Emitted when :ref:`PopupMenu<class_popupmenu>` of this MenuButton is about to show.
+.. _class_MenuButton_signal_about_to_show:
 
+- **about_to_show** **(** **)**
 
-Member Variables
-----------------
-
-- :ref:`Array<class_array>` **items**
+Emitted when :ref:`PopupMenu<class_PopupMenu>` of this MenuButton is about to show.
 
 Description
 -----------
 
-Special button that brings up a :ref:`PopupMenu<class_popupmenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
+Special button that brings up a :ref:`PopupMenu<class_PopupMenu>` when clicked. That's pretty much all it does, as it's just a helper class when building GUIs.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_MenuButton_get_popup:
+.. _class_MenuButton_property_switch_on_hover:
 
-- :ref:`PopupMenu<class_popupmenu>`  **get_popup**  **(** **)**
+- :ref:`bool<class_bool>` **switch_on_hover**
 
-Return the :ref:`PopupMenu<class_popupmenu>` contained in this button.
++----------+----------------------------+
+| *Setter* | set_switch_on_hover(value) |
++----------+----------------------------+
+| *Getter* | is_switch_on_hover()       |
++----------+----------------------------+
 
+If ``true``, when the cursor hovers above another MenuButton within the same parent which also has ``switch_on_hover`` enabled, it will close the current MenuButton and open the other one.
+
+Method Descriptions
+-------------------
+
+.. _class_MenuButton_method_get_popup:
+
+- :ref:`PopupMenu<class_PopupMenu>` **get_popup** **(** **)** const
+
+Return the :ref:`PopupMenu<class_PopupMenu>` contained in this button.
+
+.. _class_MenuButton_method_set_disable_shortcuts:
+
+- void **set_disable_shortcuts** **(** :ref:`bool<class_bool>` disabled **)**
 

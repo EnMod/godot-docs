@@ -7,47 +7,41 @@
 MultiMeshInstance
 =================
 
-**Inherits:** :ref:`GeometryInstance<class_geometryinstance>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`GeometryInstance<class_GeometryInstance>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Node that instances a :ref:`MultiMesh<class_multimesh>`.
+Node that instances a :ref:`MultiMesh<class_MultiMesh>`.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`MultiMesh<class_multimesh>`  | :ref:`get_multimesh<class_MultiMeshInstance_get_multimesh>`  **(** **)** const                                        |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_multimesh<class_MultiMeshInstance_set_multimesh>`  **(** :ref:`MultiMesh<class_multimesh>` multimesh  **)** |
-+------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`MultiMesh<class_multimesh>` **multimesh**
++-----------------------------------+--------------------------------------------------------------+
+| :ref:`MultiMesh<class_MultiMesh>` | :ref:`multimesh<class_MultiMeshInstance_property_multimesh>` |
++-----------------------------------+--------------------------------------------------------------+
 
 Description
 -----------
 
-MultiMeshInstance is a :ref:`Node<class_node>` that takes a :ref:`MultiMesh<class_multimesh>` resource and adds it to the current scenario by creating an instance of it (yes, this is an instance of instances).
+``MultiMeshInstance`` is a specialized node to instance :ref:`GeometryInstance<class_GeometryInstance>`\ s based on a :ref:`MultiMesh<class_MultiMesh>` resource.
 
-Member Function Description
----------------------------
+This is useful to optimize the rendering of a high amount of instances of a given mesh (for example tree in a forest or grass strands).
 
-.. _class_MultiMeshInstance_get_multimesh:
+Property Descriptions
+---------------------
 
-- :ref:`MultiMesh<class_multimesh>`  **get_multimesh**  **(** **)** const
+.. _class_MultiMeshInstance_property_multimesh:
 
-Return the :ref:`MultiMesh<class_multimesh>` that is used for instancing.
+- :ref:`MultiMesh<class_MultiMesh>` **multimesh**
 
-.. _class_MultiMeshInstance_set_multimesh:
++----------+----------------------+
+| *Setter* | set_multimesh(value) |
++----------+----------------------+
+| *Getter* | get_multimesh()      |
++----------+----------------------+
 
-- void  **set_multimesh**  **(** :ref:`MultiMesh<class_multimesh>` multimesh  **)**
-
-Set the :ref:`MultiMesh<class_multimesh>` to be instanced.
-
+The :ref:`MultiMesh<class_MultiMesh>` resource that will be used and shared among all instances of the ``MultiMeshInstance``.
 

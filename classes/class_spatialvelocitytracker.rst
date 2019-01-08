@@ -7,7 +7,7 @@
 SpatialVelocityTracker
 ======================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,42 +16,49 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector3<class_vector3>`  | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_get_tracked_linear_velocity>`  **(** **)** const             |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`        | :ref:`is_tracking_fixed_step<class_SpatialVelocityTracker_is_tracking_fixed_step>`  **(** **)** const                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`reset<class_SpatialVelocityTracker_reset>`  **(** :ref:`Vector3<class_vector3>` position  **)**                       |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_track_fixed_step<class_SpatialVelocityTracker_set_track_fixed_step>`  **(** :ref:`bool<class_bool>` enable  **)** |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`update_position<class_SpatialVelocityTracker_update_position>`  **(** :ref:`Vector3<class_vector3>` position  **)**   |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
++-------------------------+-------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>` | :ref:`track_physics_step<class_SpatialVelocityTracker_property_track_physics_step>` |
++-------------------------+-------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Methods
+-------
 
-.. _class_SpatialVelocityTracker_get_tracked_linear_velocity:
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector3<class_Vector3>` | :ref:`get_tracked_linear_velocity<class_SpatialVelocityTracker_method_get_tracked_linear_velocity>` **(** **)** const          |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`reset<class_SpatialVelocityTracker_method_reset>` **(** :ref:`Vector3<class_Vector3>` position **)**                     |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| void                          | :ref:`update_position<class_SpatialVelocityTracker_method_update_position>` **(** :ref:`Vector3<class_Vector3>` position **)** |
++-------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-- :ref:`Vector3<class_vector3>`  **get_tracked_linear_velocity**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_SpatialVelocityTracker_is_tracking_fixed_step:
+.. _class_SpatialVelocityTracker_property_track_physics_step:
 
-- :ref:`bool<class_bool>`  **is_tracking_fixed_step**  **(** **)** const
+- :ref:`bool<class_bool>` **track_physics_step**
 
-.. _class_SpatialVelocityTracker_reset:
++----------+-------------------------------+
+| *Setter* | set_track_physics_step(value) |
++----------+-------------------------------+
+| *Getter* | is_tracking_physics_step()    |
++----------+-------------------------------+
 
-- void  **reset**  **(** :ref:`Vector3<class_vector3>` position  **)**
+Method Descriptions
+-------------------
 
-.. _class_SpatialVelocityTracker_set_track_fixed_step:
+.. _class_SpatialVelocityTracker_method_get_tracked_linear_velocity:
 
-- void  **set_track_fixed_step**  **(** :ref:`bool<class_bool>` enable  **)**
+- :ref:`Vector3<class_Vector3>` **get_tracked_linear_velocity** **(** **)** const
 
-.. _class_SpatialVelocityTracker_update_position:
+.. _class_SpatialVelocityTracker_method_reset:
 
-- void  **update_position**  **(** :ref:`Vector3<class_vector3>` position  **)**
+- void **reset** **(** :ref:`Vector3<class_Vector3>` position **)**
 
+.. _class_SpatialVelocityTracker_method_update_position:
+
+- void **update_position** **(** :ref:`Vector3<class_Vector3>` position **)**
 

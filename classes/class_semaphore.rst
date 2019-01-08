@@ -7,7 +7,7 @@
 Semaphore
 =========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,33 +16,32 @@ Brief Description
 
 A synchronization Semaphore.
 
-Member Functions
-----------------
+Methods
+-------
 
-+------------------------+------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`post<class_Semaphore_post>`  **(** **)** |
-+------------------------+------------------------------------------------+
-| :ref:`int<class_int>`  | :ref:`wait<class_Semaphore_wait>`  **(** **)** |
-+------------------------+------------------------------------------------+
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`post<class_Semaphore_method_post>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
+| :ref:`Error<enum_@GlobalScope_Error>` | :ref:`wait<class_Semaphore_method_wait>` **(** **)** |
++---------------------------------------+------------------------------------------------------+
 
 Description
 -----------
 
-A synchronization Semaphore. Element used in multi-threadding. Initialized to zero on creation.
+A synchronization Semaphore. Element used to synchronize multiple :ref:`Thread<class_Thread>`\ s. Initialized to zero on creation. Be careful to avoid deadlocks. For a binary version, see :ref:`Mutex<class_Mutex>`.
 
-Member Function Description
----------------------------
+Method Descriptions
+-------------------
 
-.. _class_Semaphore_post:
+.. _class_Semaphore_method_post:
 
-- :ref:`int<class_int>`  **post**  **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **post** **(** **)**
 
-Lowers the :ref:`Semaphore<class_semaphore>`, allowing one more thread in.
+Lowers the ``Semaphore``, allowing one more thread in. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 
-.. _class_Semaphore_wait:
+.. _class_Semaphore_method_wait:
 
-- :ref:`int<class_int>`  **wait**  **(** **)**
+- :ref:`Error<enum_@GlobalScope_Error>` **wait** **(** **)**
 
-Tries to wait for the :ref:`Semaphore<class_semaphore>`, if its value is zero, blocks until non-zero.
-
+Tries to wait for the ``Semaphore``, if its value is zero, blocks until non-zero. Returns ``OK`` on success, ``ERR_BUSY`` otherwise.
 

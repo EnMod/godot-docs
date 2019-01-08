@@ -7,38 +7,41 @@
 AudioEffectPitchShift
 =====================
 
-**Inherits:** :ref:`AudioEffect<class_audioeffect>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`AudioEffect<class_AudioEffect>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Adds a Pitch shift audio effect to an Audio bus.
 
+Raises or lowers the pitch of original sound.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_pitch_scale<class_AudioEffectPitchShift_get_pitch_scale>`  **(** **)** const                           |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_pitch_scale<class_AudioEffectPitchShift_set_pitch_scale>`  **(** :ref:`float<class_float>` rate  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------------------------+
++---------------------------+----------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`pitch_scale<class_AudioEffectPitchShift_property_pitch_scale>` |
++---------------------------+----------------------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
+
+Allows modulation of pitch independently of tempo. All frequencies can be increased/decreased with minimal effect on transients.
+
+Property Descriptions
+---------------------
+
+.. _class_AudioEffectPitchShift_property_pitch_scale:
 
 - :ref:`float<class_float>` **pitch_scale**
 
-Member Function Description
----------------------------
++----------+------------------------+
+| *Setter* | set_pitch_scale(value) |
++----------+------------------------+
+| *Getter* | get_pitch_scale()      |
++----------+------------------------+
 
-.. _class_AudioEffectPitchShift_get_pitch_scale:
-
-- :ref:`float<class_float>`  **get_pitch_scale**  **(** **)** const
-
-.. _class_AudioEffectPitchShift_set_pitch_scale:
-
-- void  **set_pitch_scale**  **(** :ref:`float<class_float>` rate  **)**
-
+Pitch value. Can range from 0 (-1 octave) to 16 (+16 octaves).
 

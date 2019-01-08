@@ -7,51 +7,65 @@
 VisualScriptLocalVarSet
 =======================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Changes a local variable's value.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------+------------------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptLocalVarSet_property_type>`         |
++-----------------------------------------------------+------------------------------------------------------------------+
+| :ref:`String<class_String>`                         | :ref:`var_name<class_VisualScriptLocalVarSet_property_var_name>` |
++-----------------------------------------------------+------------------------------------------------------------------+
 
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_var_name<class_VisualScriptLocalVarSet_get_var_name>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`        | :ref:`get_var_type<class_VisualScriptLocalVarSet_get_var_type>`  **(** **)** const                             |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_var_name<class_VisualScriptLocalVarSet_set_var_name>`  **(** :ref:`String<class_string>` name  **)** |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_var_type<class_VisualScriptLocalVarSet_set_var_type>`  **(** :ref:`int<class_int>` type  **)**       |
-+------------------------------+----------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Changes a local variable's value to the given input. The new value is also provided on an output Data port.
 
-- :ref:`int<class_int>` **type**
-- :ref:`String<class_string>` **var_name**
+**Input Ports:**
 
-Member Function Description
----------------------------
+- Sequence
 
-.. _class_VisualScriptLocalVarSet_get_var_name:
+- Data (variant): ``set``
 
-- :ref:`String<class_string>`  **get_var_name**  **(** **)** const
+**Output Ports:**
 
-.. _class_VisualScriptLocalVarSet_get_var_type:
+- Sequence
 
-- :ref:`int<class_int>`  **get_var_type**  **(** **)** const
+- Data (variant): ``get``
 
-.. _class_VisualScriptLocalVarSet_set_var_name:
+Property Descriptions
+---------------------
 
-- void  **set_var_name**  **(** :ref:`String<class_string>` name  **)**
+.. _class_VisualScriptLocalVarSet_property_type:
 
-.. _class_VisualScriptLocalVarSet_set_var_type:
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-- void  **set_var_type**  **(** :ref:`int<class_int>` type  **)**
++----------+---------------------+
+| *Setter* | set_var_type(value) |
++----------+---------------------+
+| *Getter* | get_var_type()      |
++----------+---------------------+
 
+The local variable's type.
+
+.. _class_VisualScriptLocalVarSet_property_var_name:
+
+- :ref:`String<class_String>` **var_name**
+
++----------+---------------------+
+| *Setter* | set_var_name(value) |
++----------+---------------------+
+| *Getter* | get_var_name()      |
++----------+---------------------+
+
+The local variable's name.
 

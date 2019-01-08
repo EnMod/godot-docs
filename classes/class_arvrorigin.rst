@@ -7,7 +7,7 @@
 ARVROrigin
 ==========
 
-**Inherits:** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,19 +16,12 @@ Brief Description
 
 Our origin point in AR/VR.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_world_scale<class_ARVROrigin_get_world_scale>`  **(** **)** const                                  |
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_world_scale<class_ARVROrigin_set_world_scale>`  **(** :ref:`float<class_float>` world_scale  **)** |
-+----------------------------+--------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **world_scale**
++---------------------------+-----------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`world_scale<class_ARVROrigin_property_world_scale>` |
++---------------------------+-----------------------------------------------------------+
 
 Description
 -----------
@@ -41,23 +34,20 @@ It is the position of this node that you update when you're character needs to m
 
 So say that your character is driving a car, the ARVROrigin node should be a child node of this car. If you implement a teleport system to move your character, you change the position of this node. Etc.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ARVROrigin_get_world_scale:
+.. _class_ARVROrigin_property_world_scale:
 
-- :ref:`float<class_float>`  **get_world_scale**  **(** **)** const
+- :ref:`float<class_float>` **world_scale**
 
-Get the world scale applied to our positioning.
++----------+------------------------+
+| *Setter* | set_world_scale(value) |
++----------+------------------------+
+| *Getter* | get_world_scale()      |
++----------+------------------------+
 
-.. _class_ARVROrigin_set_world_scale:
+Allows you to adjust the scale to your game's units. Most AR/VR platforms assume a scale of 1 game world unit = 1 meter in the real world.
 
-- void  **set_world_scale**  **(** :ref:`float<class_float>` world_scale  **)**
-
-Changes the world scaling factor.
-
-Most AR/VR platforms will assume a unit size of 1 unit in your game world = 1 meter in the real world. This scale allows you to adjust this to the unit system you use in your game. 
-
-Note that this method is a passthrough to the ARVRServer itself.
-
+Note that this method is a passthrough to the :ref:`ARVRServer<class_ARVRServer>` itself.
 

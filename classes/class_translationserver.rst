@@ -7,57 +7,88 @@
 TranslationServer
 =================
 
-**Inherits:** :ref:`Object<class_object>`
+**Inherits:** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Server that manages all translations.
+
+Methods
+-------
+
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`add_translation<class_TranslationServer_method_add_translation>` **(** :ref:`Translation<class_Translation>` translation **)**       |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`clear<class_TranslationServer_method_clear>` **(** **)**                                                                             |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_locale<class_TranslationServer_method_get_locale>` **(** **)** const                                                             |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`get_locale_name<class_TranslationServer_method_get_locale_name>` **(** :ref:`String<class_String>` locale **)** const                |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`remove_translation<class_TranslationServer_method_remove_translation>` **(** :ref:`Translation<class_Translation>` translation **)** |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| void                        | :ref:`set_locale<class_TranslationServer_method_set_locale>` **(** :ref:`String<class_String>` locale **)**                                |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`translate<class_TranslationServer_method_translate>` **(** :ref:`String<class_String>` message **)** const                           |
++-----------------------------+--------------------------------------------------------------------------------------------------------------------------------------------+
+
+Description
+-----------
+
 Server that manages all translations. Translations can be set to it and removed from it.
 
-Member Functions
-----------------
+Tutorials
+---------
 
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`add_translation<class_TranslationServer_add_translation>`  **(** :ref:`Translation<class_translation>` translation  **)**       |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`clear<class_TranslationServer_clear>`  **(** **)**                                                                              |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_locale<class_TranslationServer_get_locale>`  **(** **)** const                                                              |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`remove_translation<class_TranslationServer_remove_translation>`  **(** :ref:`Translation<class_translation>` translation  **)** |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_locale<class_TranslationServer_set_locale>`  **(** :ref:`String<class_string>` locale  **)**                                |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`translate<class_TranslationServer_translate>`  **(** :ref:`String<class_string>` message  **)** const                           |
-+------------------------------+---------------------------------------------------------------------------------------------------------------------------------------+
+- :doc:`../tutorials/i18n/internationalizing_games`
 
-Member Function Description
----------------------------
+- :doc:`../tutorials/i18n/locales`
 
-.. _class_TranslationServer_add_translation:
+Method Descriptions
+-------------------
 
-- void  **add_translation**  **(** :ref:`Translation<class_translation>` translation  **)**
+.. _class_TranslationServer_method_add_translation:
 
-.. _class_TranslationServer_clear:
+- void **add_translation** **(** :ref:`Translation<class_Translation>` translation **)**
 
-- void  **clear**  **(** **)**
+Adds a :ref:`Translation<class_Translation>` resource.
 
-.. _class_TranslationServer_get_locale:
+.. _class_TranslationServer_method_clear:
 
-- :ref:`String<class_string>`  **get_locale**  **(** **)** const
+- void **clear** **(** **)**
 
-.. _class_TranslationServer_remove_translation:
+Clears the server from all translations.
 
-- void  **remove_translation**  **(** :ref:`Translation<class_translation>` translation  **)**
+.. _class_TranslationServer_method_get_locale:
 
-.. _class_TranslationServer_set_locale:
+- :ref:`String<class_String>` **get_locale** **(** **)** const
 
-- void  **set_locale**  **(** :ref:`String<class_string>` locale  **)**
+Returns the current locale of the game.
 
-.. _class_TranslationServer_translate:
+.. _class_TranslationServer_method_get_locale_name:
 
-- :ref:`String<class_string>`  **translate**  **(** :ref:`String<class_string>` message  **)** const
+- :ref:`String<class_String>` **get_locale_name** **(** :ref:`String<class_String>` locale **)** const
 
+Returns a locale's language and its variant (e.g. "en_US" would return "English (United States)").
+
+.. _class_TranslationServer_method_remove_translation:
+
+- void **remove_translation** **(** :ref:`Translation<class_Translation>` translation **)**
+
+Removes the given translation from the server.
+
+.. _class_TranslationServer_method_set_locale:
+
+- void **set_locale** **(** :ref:`String<class_String>` locale **)**
+
+Sets the locale of the game.
+
+.. _class_TranslationServer_method_translate:
+
+- :ref:`String<class_String>` **translate** **(** :ref:`String<class_String>` message **)** const
+
+Returns the current locale's translation for the given message (key).
 

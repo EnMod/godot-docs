@@ -7,43 +7,39 @@
 ConvexPolygonShape
 ==================
 
-**Inherits:** :ref:`Shape<class_shape>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Shape<class_Shape>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Convex Polygon Shape.
+Convex polygon shape for 3D physics.
 
-Member Functions
-----------------
+Properties
+----------
 
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PoolVector3Array<class_poolvector3array>`  | :ref:`get_points<class_ConvexPolygonShape_get_points>`  **(** **)** const                                                   |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-| void                                             | :ref:`set_points<class_ConvexPolygonShape_set_points>`  **(** :ref:`PoolVector3Array<class_poolvector3array>` points  **)** |
-+--------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`PoolVector3Array<class_poolvector3array>` **points**
++-------------------------------------------------+---------------------------------------------------------+
+| :ref:`PoolVector3Array<class_PoolVector3Array>` | :ref:`points<class_ConvexPolygonShape_property_points>` |
++-------------------------------------------------+---------------------------------------------------------+
 
 Description
 -----------
 
-Convex polygon shape resource, which can be set into a :ref:`PhysicsBody<class_physicsbody>` or area.
+Convex polygon shape resource, which can be added to a :ref:`PhysicsBody<class_PhysicsBody>` or area.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_ConvexPolygonShape_get_points:
+.. _class_ConvexPolygonShape_property_points:
 
-- :ref:`PoolVector3Array<class_poolvector3array>`  **get_points**  **(** **)** const
+- :ref:`PoolVector3Array<class_PoolVector3Array>` **points**
 
-.. _class_ConvexPolygonShape_set_points:
++----------+-------------------+
+| *Setter* | set_points(value) |
++----------+-------------------+
+| *Getter* | get_points()      |
++----------+-------------------+
 
-- void  **set_points**  **(** :ref:`PoolVector3Array<class_poolvector3array>` points  **)**
-
+The list of 3D points forming the convex polygon shape.
 

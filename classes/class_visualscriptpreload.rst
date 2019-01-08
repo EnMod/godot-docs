@@ -7,38 +7,47 @@
 VisualScriptPreload
 ===================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
+Properties
+----------
 
-Member Functions
-----------------
++---------------------------------+--------------------------------------------------------------+
+| :ref:`Resource<class_Resource>` | :ref:`resource<class_VisualScriptPreload_property_resource>` |
++---------------------------------+--------------------------------------------------------------+
 
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Resource<class_resource>`  | :ref:`get_preload<class_VisualScriptPreload_get_preload>`  **(** **)** const                                     |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
-| void                             | :ref:`set_preload<class_VisualScriptPreload_set_preload>`  **(** :ref:`Resource<class_resource>` resource  **)** |
-+----------------------------------+------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+Creates a new :ref:`Resource<class_Resource>` or loads one from the filesystem.
 
-- :ref:`Resource<class_resource>` **resource**
+**Input Ports:**
 
-Member Function Description
----------------------------
+none
 
-.. _class_VisualScriptPreload_get_preload:
+**Output Ports:**
 
-- :ref:`Resource<class_resource>`  **get_preload**  **(** **)** const
+- Data (object): ``res``
 
-.. _class_VisualScriptPreload_set_preload:
+Property Descriptions
+---------------------
 
-- void  **set_preload**  **(** :ref:`Resource<class_resource>` resource  **)**
+.. _class_VisualScriptPreload_property_resource:
 
+- :ref:`Resource<class_Resource>` **resource**
+
++----------+--------------------+
+| *Setter* | set_preload(value) |
++----------+--------------------+
+| *Getter* | get_preload()      |
++----------+--------------------+
+
+The :ref:`Resource<class_Resource>` to load.
 

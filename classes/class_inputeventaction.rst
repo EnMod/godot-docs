@@ -7,7 +7,7 @@
 InputEventAction
 ================
 
-**Inherits:** :ref:`InputEvent<class_inputevent>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`InputEvent<class_InputEvent>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,36 +16,49 @@ Brief Description
 
 Input event type for actions.
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_action<class_InputEventAction_get_action>`  **(** **)** const                               |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_action<class_InputEventAction_set_action>`  **(** :ref:`String<class_string>` action  **)** |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
-| void                         | :ref:`set_pressed<class_InputEventAction_set_pressed>`  **(** :ref:`bool<class_bool>` pressed  **)**  |
-+------------------------------+-------------------------------------------------------------------------------------------------------+
++-----------------------------+---------------------------------------------------------+
+| :ref:`String<class_String>` | :ref:`action<class_InputEventAction_property_action>`   |
++-----------------------------+---------------------------------------------------------+
+| :ref:`bool<class_bool>`     | :ref:`pressed<class_InputEventAction_property_pressed>` |
++-----------------------------+---------------------------------------------------------+
 
-Member Variables
-----------------
+Description
+-----------
 
-- :ref:`String<class_string>` **action**
+Contains a generic action which can be targeted from several type of inputs. Actions can be created from the project settings menu ``Project > Project Settings > Input Map``. See :ref:`Node._input<class_Node_method__input>`.
+
+Tutorials
+---------
+
+- `#actions <../tutorials/inputs/inputevent.html#actions>`_ in :doc:`../tutorials/inputs/inputevent`
+
+Property Descriptions
+---------------------
+
+.. _class_InputEventAction_property_action:
+
+- :ref:`String<class_String>` **action**
+
++----------+-------------------+
+| *Setter* | set_action(value) |
++----------+-------------------+
+| *Getter* | get_action()      |
++----------+-------------------+
+
+The action's name. Actions are accessed via this :ref:`String<class_String>`.
+
+.. _class_InputEventAction_property_pressed:
+
 - :ref:`bool<class_bool>` **pressed**
 
-Member Function Description
----------------------------
++----------+--------------------+
+| *Setter* | set_pressed(value) |
++----------+--------------------+
+| *Getter* | is_pressed()       |
++----------+--------------------+
 
-.. _class_InputEventAction_get_action:
-
-- :ref:`String<class_string>`  **get_action**  **(** **)** const
-
-.. _class_InputEventAction_set_action:
-
-- void  **set_action**  **(** :ref:`String<class_string>` action  **)**
-
-.. _class_InputEventAction_set_pressed:
-
-- void  **set_pressed**  **(** :ref:`bool<class_bool>` pressed  **)**
-
+If ``true``, the action's state is pressed. If ``false``, the action's state is released.
 

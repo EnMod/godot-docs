@@ -7,47 +7,39 @@
 CanvasModulate
 ==============
 
-**Inherits:** :ref:`Node2D<class_node2d>` **<** :ref:`CanvasItem<class_canvasitem>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Node2D<class_Node2D>` **<** :ref:`CanvasItem<class_CanvasItem>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Tint the entire canvas
+Tint the entire canvas.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_color<class_CanvasModulate_get_color>`  **(** **)** const                            |
-+----------------------------+------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_color<class_CanvasModulate_set_color>`  **(** :ref:`Color<class_color>` color  **)** |
-+----------------------------+------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Color<class_color>` **color**
++---------------------------+---------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`color<class_CanvasModulate_property_color>` |
++---------------------------+---------------------------------------------------+
 
 Description
 -----------
 
-CanvasModulate tints the canvas elements using its assigned color
+``CanvasModulate`` tints the canvas elements using its assigned ``color``.
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_CanvasModulate_get_color:
+.. _class_CanvasModulate_property_color:
 
-- :ref:`Color<class_color>`  **get_color**  **(** **)** const
+- :ref:`Color<class_Color>` **color**
 
-Gets the canvas tint color
++----------+------------------+
+| *Setter* | set_color(value) |
++----------+------------------+
+| *Getter* | get_color()      |
++----------+------------------+
 
-.. _class_CanvasModulate_set_color:
-
-- void  **set_color**  **(** :ref:`Color<class_color>` color  **)**
-
-Sets the canvas tint color
-
+The tint color to apply.
 

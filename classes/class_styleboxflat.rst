@@ -7,7 +7,7 @@
 StyleBoxFlat
 ============
 
-**Inherits:** :ref:`StyleBox<class_stylebox>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`StyleBox<class_StyleBox>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,249 +16,381 @@ Brief Description
 
 Customizable Stylebox with a given set of parameters. (no texture required)
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_aa_size<class_StyleBoxFlat_get_aa_size>`  **(** **)** const                                                                                                                                                                                                 |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_bg_color<class_StyleBoxFlat_get_bg_color>`  **(** **)** const                                                                                                                                                                                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`get_border_blend<class_StyleBoxFlat_get_border_blend>`  **(** **)** const                                                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_border_color<class_StyleBoxFlat_get_border_color>`  **(** **)** const                                                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_border_width<class_StyleBoxFlat_get_border_width>`  **(** :ref:`int<class_int>` margin  **)** const                                                                                                                                                         |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_border_width_min<class_StyleBoxFlat_get_border_width_min>`  **(** **)** const                                                                                                                                                                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_corner_detail<class_StyleBoxFlat_get_corner_detail>`  **(** **)** const                                                                                                                                                                                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_corner_radius<class_StyleBoxFlat_get_corner_radius>`  **(** :ref:`int<class_int>` corner  **)** const                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`  | :ref:`get_expand_margin<class_StyleBoxFlat_get_expand_margin>`  **(** :ref:`int<class_int>` margin  **)** const                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Color<class_color>`  | :ref:`get_shadow_color<class_StyleBoxFlat_get_shadow_color>`  **(** **)** const                                                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`      | :ref:`get_shadow_size<class_StyleBoxFlat_get_shadow_size>`  **(** **)** const                                                                                                                                                                                         |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_anti_aliased<class_StyleBoxFlat_is_anti_aliased>`  **(** **)** const                                                                                                                                                                                         |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`    | :ref:`is_draw_center_enabled<class_StyleBoxFlat_is_draw_center_enabled>`  **(** **)** const                                                                                                                                                                           |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_aa_size<class_StyleBoxFlat_set_aa_size>`  **(** :ref:`int<class_int>` size  **)**                                                                                                                                                                           |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_anti_aliased<class_StyleBoxFlat_set_anti_aliased>`  **(** :ref:`bool<class_bool>` anti_aliased  **)**                                                                                                                                                       |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_bg_color<class_StyleBoxFlat_set_bg_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                                                                    |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_border_blend<class_StyleBoxFlat_set_border_blend>`  **(** :ref:`bool<class_bool>` blend  **)**                                                                                                                                                              |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_border_color<class_StyleBoxFlat_set_border_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_border_width<class_StyleBoxFlat_set_border_width>`  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` width  **)**                                                                                                                                  |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_border_width_all<class_StyleBoxFlat_set_border_width_all>`  **(** :ref:`int<class_int>` width  **)**                                                                                                                                                        |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_corner_detail<class_StyleBoxFlat_set_corner_detail>`  **(** :ref:`int<class_int>` detail  **)**                                                                                                                                                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_corner_radius<class_StyleBoxFlat_set_corner_radius>`  **(** :ref:`int<class_int>` corner, :ref:`int<class_int>` radius  **)**                                                                                                                               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_corner_radius_all<class_StyleBoxFlat_set_corner_radius_all>`  **(** :ref:`int<class_int>` radius  **)**                                                                                                                                                     |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_corner_radius_individual<class_StyleBoxFlat_set_corner_radius_individual>`  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_botton_right, :ref:`int<class_int>` radius_bottom_left  **)** |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_draw_center<class_StyleBoxFlat_set_draw_center>`  **(** :ref:`bool<class_bool>` draw_center  **)**                                                                                                                                                          |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_expand_margin<class_StyleBoxFlat_set_expand_margin>`  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)**                                                                                                                             |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_expand_margin_all<class_StyleBoxFlat_set_expand_margin_all>`  **(** :ref:`float<class_float>` size  **)**                                                                                                                                                   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_expand_margin_individual<class_StyleBoxFlat_set_expand_margin_individual>`  **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom  **)**               |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_color<class_StyleBoxFlat_set_shadow_color>`  **(** :ref:`Color<class_color>` color  **)**                                                                                                                                                            |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                       | :ref:`set_shadow_size<class_StyleBoxFlat_set_shadow_size>`  **(** :ref:`int<class_int>` size  **)**                                                                                                                                                                   |
-+----------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`anti_aliasing<class_StyleBoxFlat_property_anti_aliasing>`                           |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`anti_aliasing_size<class_StyleBoxFlat_property_anti_aliasing_size>`                 |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`bg_color<class_StyleBoxFlat_property_bg_color>`                                     |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`border_blend<class_StyleBoxFlat_property_border_blend>`                             |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`border_color<class_StyleBoxFlat_property_border_color>`                             |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`border_width_bottom<class_StyleBoxFlat_property_border_width_bottom>`               |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`border_width_left<class_StyleBoxFlat_property_border_width_left>`                   |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`border_width_right<class_StyleBoxFlat_property_border_width_right>`                 |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`border_width_top<class_StyleBoxFlat_property_border_width_top>`                     |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`corner_detail<class_StyleBoxFlat_property_corner_detail>`                           |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`corner_radius_bottom_left<class_StyleBoxFlat_property_corner_radius_bottom_left>`   |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`corner_radius_bottom_right<class_StyleBoxFlat_property_corner_radius_bottom_right>` |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`corner_radius_top_left<class_StyleBoxFlat_property_corner_radius_top_left>`         |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`corner_radius_top_right<class_StyleBoxFlat_property_corner_radius_top_right>`       |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`   | :ref:`draw_center<class_StyleBoxFlat_property_draw_center>`                               |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`expand_margin_bottom<class_StyleBoxFlat_property_expand_margin_bottom>`             |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`expand_margin_left<class_StyleBoxFlat_property_expand_margin_left>`                 |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`expand_margin_right<class_StyleBoxFlat_property_expand_margin_right>`               |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`expand_margin_top<class_StyleBoxFlat_property_expand_margin_top>`                   |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`Color<class_Color>` | :ref:`shadow_color<class_StyleBoxFlat_property_shadow_color>`                             |
++---------------------------+-------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`     | :ref:`shadow_size<class_StyleBoxFlat_property_shadow_size>`                               |
++---------------------------+-------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`bool<class_bool>` **anti_aliasing** - Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticable when using rounded corners.
-- :ref:`int<class_int>` **anti_aliasing_size** - This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
-- :ref:`Color<class_color>` **bg_color** - The background color of the stylebox.
-- :ref:`bool<class_bool>` **border_blend** - When set to true, the border will fade into the background color.
-- :ref:`Color<class_color>` **border_color** - Sets the color of the border.
-- :ref:`int<class_int>` **border_width_bottom** - Border width for the bottom border.
-- :ref:`int<class_int>` **border_width_left** - Border width for the left border.
-- :ref:`int<class_int>` **border_width_right** - Border width for the right border.
-- :ref:`int<class_int>` **border_width_top** - Border width for the top border.
-- :ref:`int<class_int>` **corner_detail** - This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius ([method set_corner_radius]) into account.
-			For corner radius smaller than 10: 4-5 should be enough
-			For corner radius smaller than 30: 8-12 should be enough ...
-- :ref:`int<class_int>` **corner_radius_bottom_left** - The corner radius of the bottom left corner. When set to 0 the corner is not rounded.
-- :ref:`int<class_int>` **corner_radius_bottom_right** - The corner radius of the bottom right corner. When set to 0 the corner is not rounded.
-- :ref:`int<class_int>` **corner_radius_top_left** - The corner radius of the top left corner. When set to 0 the corner is not rounded.
-- :ref:`int<class_int>` **corner_radius_top_right** - The corner radius of the top right corner. When set to 0 the corner is not rounded.
-- :ref:`bool<class_bool>` **draw_center** - Toggels drawing of the inner part of the stylebox.
-- :ref:`float<class_float>` **expand_margin_bottom** - Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with border_width_bottom. To draw a border outside the control rect.
-- :ref:`float<class_float>` **expand_margin_left** - Expands the stylebox outside of the control rect on the left edge. Useful in combination with border_width_left. To draw a border outside the control rect.
-- :ref:`float<class_float>` **expand_margin_right** - Expands the stylebox outside of the control rect on the right edge. Useful in combination with border_width_right. To draw a border outside the control rect.
-- :ref:`float<class_float>` **expand_margin_top** - Expands the stylebox outside of the control rect on the top edge. Useful in combination with border_width_top. To draw a border outside the control rect.
-- :ref:`Color<class_color>` **shadow_color** - The color of the shadow. (This has no effect when shadow_size < 1)
-- :ref:`int<class_int>` **shadow_size** - The shadow size in pixels.
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>` | :ref:`get_border_width_min<class_StyleBoxFlat_method_get_border_width_min>` **(** **)** const                                                                                                                                                                              |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_border_width_all<class_StyleBoxFlat_method_set_border_width_all>` **(** :ref:`int<class_int>` width **)**                                                                                                                                                        |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>` **(** :ref:`int<class_int>` radius **)**                                                                                                                                                     |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_corner_radius_individual<class_StyleBoxFlat_method_set_corner_radius_individual>` **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)** |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_expand_margin_all<class_StyleBoxFlat_method_set_expand_margin_all>` **(** :ref:`float<class_float>` size **)**                                                                                                                                                   |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                  | :ref:`set_expand_margin_individual<class_StyleBoxFlat_method_set_expand_margin_individual>` **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**               |
++-----------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Description
 -----------
 
 This stylebox can be used to achieve all kinds of looks without the need of a texture. Those properties are customizable:
 
- - Color
+- Color
 
- - Border width (individual width for each border)
+- Border width (individual width for each border)
 
- - Rounded corners (individual radius for each corner)
+- Rounded corners (individual radius for each corner)
 
- - Shadow
+- Shadow
 
- About corner radius:
-
- 	Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
+Setting corner radius to high values is allowed. As soon as corners would overlap the stylebox will switch to a relative system. Example:
 
 ::
 
     height = 30
     corner_radius_top_left = 50
-    corner_raidus_bottom_left = 100
+    corner_radius_bottom_left = 100
 
 The relative system now would take the 1:2 ratio of the two left corners to calculate the actual corner width. Both corners added will **never** be more than the height. Result:
 
 ::
 
     corner_radius_top_left: 10
-    corner_raidus_bottom_left: 20
+    corner_radius_bottom_left: 20
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_StyleBoxFlat_get_aa_size:
+.. _class_StyleBoxFlat_property_anti_aliasing:
 
-- :ref:`int<class_int>`  **get_aa_size**  **(** **)** const
+- :ref:`bool<class_bool>` **anti_aliasing**
 
-.. _class_StyleBoxFlat_get_bg_color:
++----------+-------------------------+
+| *Setter* | set_anti_aliased(value) |
++----------+-------------------------+
+| *Getter* | is_anti_aliased()       |
++----------+-------------------------+
 
-- :ref:`Color<class_color>`  **get_bg_color**  **(** **)** const
+Anti Aliasing draws a small ring around edges. This ring fades to transparent. As a result edges look much smoother. This is only noticeable when using rounded corners.
 
-.. _class_StyleBoxFlat_get_border_blend:
+.. _class_StyleBoxFlat_property_anti_aliasing_size:
 
-- :ref:`bool<class_bool>`  **get_border_blend**  **(** **)** const
+- :ref:`int<class_int>` **anti_aliasing_size**
 
-.. _class_StyleBoxFlat_get_border_color:
++----------+--------------------+
+| *Setter* | set_aa_size(value) |
++----------+--------------------+
+| *Getter* | get_aa_size()      |
++----------+--------------------+
 
-- :ref:`Color<class_color>`  **get_border_color**  **(** **)** const
+This changes the size of the faded ring. Higher values can be used to achieve a "blurry" effect.
 
-.. _class_StyleBoxFlat_get_border_width:
+.. _class_StyleBoxFlat_property_bg_color:
 
-- :ref:`int<class_int>`  **get_border_width**  **(** :ref:`int<class_int>` margin  **)** const
+- :ref:`Color<class_Color>` **bg_color**
 
-.. _class_StyleBoxFlat_get_border_width_min:
++----------+---------------------+
+| *Setter* | set_bg_color(value) |
++----------+---------------------+
+| *Getter* | get_bg_color()      |
++----------+---------------------+
 
-- :ref:`int<class_int>`  **get_border_width_min**  **(** **)** const
+The background color of the stylebox.
 
-.. _class_StyleBoxFlat_get_corner_detail:
+.. _class_StyleBoxFlat_property_border_blend:
 
-- :ref:`int<class_int>`  **get_corner_detail**  **(** **)** const
+- :ref:`bool<class_bool>` **border_blend**
 
-.. _class_StyleBoxFlat_get_corner_radius:
++----------+-------------------------+
+| *Setter* | set_border_blend(value) |
++----------+-------------------------+
+| *Getter* | get_border_blend()      |
++----------+-------------------------+
 
-- :ref:`int<class_int>`  **get_corner_radius**  **(** :ref:`int<class_int>` corner  **)** const
+When set to true, the border will fade into the background color.
 
-.. _class_StyleBoxFlat_get_expand_margin:
+.. _class_StyleBoxFlat_property_border_color:
 
-- :ref:`float<class_float>`  **get_expand_margin**  **(** :ref:`int<class_int>` margin  **)** const
+- :ref:`Color<class_Color>` **border_color**
 
-.. _class_StyleBoxFlat_get_shadow_color:
++----------+-------------------------+
+| *Setter* | set_border_color(value) |
++----------+-------------------------+
+| *Getter* | get_border_color()      |
++----------+-------------------------+
 
-- :ref:`Color<class_color>`  **get_shadow_color**  **(** **)** const
+Sets the color of the border.
 
-.. _class_StyleBoxFlat_get_shadow_size:
+.. _class_StyleBoxFlat_property_border_width_bottom:
 
-- :ref:`int<class_int>`  **get_shadow_size**  **(** **)** const
+- :ref:`int<class_int>` **border_width_bottom**
 
-.. _class_StyleBoxFlat_is_anti_aliased:
++----------+-------------------------+
+| *Setter* | set_border_width(value) |
++----------+-------------------------+
+| *Getter* | get_border_width()      |
++----------+-------------------------+
 
-- :ref:`bool<class_bool>`  **is_anti_aliased**  **(** **)** const
+Border width for the bottom border.
 
-.. _class_StyleBoxFlat_is_draw_center_enabled:
+.. _class_StyleBoxFlat_property_border_width_left:
 
-- :ref:`bool<class_bool>`  **is_draw_center_enabled**  **(** **)** const
+- :ref:`int<class_int>` **border_width_left**
 
-.. _class_StyleBoxFlat_set_aa_size:
++----------+-------------------------+
+| *Setter* | set_border_width(value) |
++----------+-------------------------+
+| *Getter* | get_border_width()      |
++----------+-------------------------+
 
-- void  **set_aa_size**  **(** :ref:`int<class_int>` size  **)**
+Border width for the left border.
 
-.. _class_StyleBoxFlat_set_anti_aliased:
+.. _class_StyleBoxFlat_property_border_width_right:
 
-- void  **set_anti_aliased**  **(** :ref:`bool<class_bool>` anti_aliased  **)**
+- :ref:`int<class_int>` **border_width_right**
 
-.. _class_StyleBoxFlat_set_bg_color:
++----------+-------------------------+
+| *Setter* | set_border_width(value) |
++----------+-------------------------+
+| *Getter* | get_border_width()      |
++----------+-------------------------+
 
-- void  **set_bg_color**  **(** :ref:`Color<class_color>` color  **)**
+Border width for the right border.
 
-.. _class_StyleBoxFlat_set_border_blend:
+.. _class_StyleBoxFlat_property_border_width_top:
 
-- void  **set_border_blend**  **(** :ref:`bool<class_bool>` blend  **)**
+- :ref:`int<class_int>` **border_width_top**
 
-.. _class_StyleBoxFlat_set_border_color:
++----------+-------------------------+
+| *Setter* | set_border_width(value) |
++----------+-------------------------+
+| *Getter* | get_border_width()      |
++----------+-------------------------+
 
-- void  **set_border_color**  **(** :ref:`Color<class_color>` color  **)**
+Border width for the top border.
 
-.. _class_StyleBoxFlat_set_border_width:
+.. _class_StyleBoxFlat_property_corner_detail:
 
-- void  **set_border_width**  **(** :ref:`int<class_int>` margin, :ref:`int<class_int>` width  **)**
+- :ref:`int<class_int>` **corner_detail**
 
-.. _class_StyleBoxFlat_set_border_width_all:
++----------+--------------------------+
+| *Setter* | set_corner_detail(value) |
++----------+--------------------------+
+| *Getter* | get_corner_detail()      |
++----------+--------------------------+
 
-- void  **set_border_width_all**  **(** :ref:`int<class_int>` width  **)**
+This sets the amount of vertices used for each corner. Higher values result in rounder corners but take more processing power to compute. When choosing a value you should take the corner radius (:ref:`set_corner_radius_all<class_StyleBoxFlat_method_set_corner_radius_all>`) into account.
 
-.. _class_StyleBoxFlat_set_corner_detail:
+For corner radius smaller than 10, 4-5 should be enough.
 
-- void  **set_corner_detail**  **(** :ref:`int<class_int>` detail  **)**
+For corner radius smaller than 30, 8-12 should be enough.
 
-.. _class_StyleBoxFlat_set_corner_radius:
+.. _class_StyleBoxFlat_property_corner_radius_bottom_left:
 
-- void  **set_corner_radius**  **(** :ref:`int<class_int>` corner, :ref:`int<class_int>` radius  **)**
+- :ref:`int<class_int>` **corner_radius_bottom_left**
 
-.. _class_StyleBoxFlat_set_corner_radius_all:
++----------+--------------------------+
+| *Setter* | set_corner_radius(value) |
++----------+--------------------------+
+| *Getter* | get_corner_radius()      |
++----------+--------------------------+
 
-- void  **set_corner_radius_all**  **(** :ref:`int<class_int>` radius  **)**
+The corner radius of the bottom left corner. When set to 0 the corner is not rounded.
 
-.. _class_StyleBoxFlat_set_corner_radius_individual:
+.. _class_StyleBoxFlat_property_corner_radius_bottom_right:
 
-- void  **set_corner_radius_individual**  **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_botton_right, :ref:`int<class_int>` radius_bottom_left  **)**
+- :ref:`int<class_int>` **corner_radius_bottom_right**
 
-.. _class_StyleBoxFlat_set_draw_center:
++----------+--------------------------+
+| *Setter* | set_corner_radius(value) |
++----------+--------------------------+
+| *Getter* | get_corner_radius()      |
++----------+--------------------------+
 
-- void  **set_draw_center**  **(** :ref:`bool<class_bool>` draw_center  **)**
+The corner radius of the bottom right corner. When set to 0 the corner is not rounded.
 
-.. _class_StyleBoxFlat_set_expand_margin:
+.. _class_StyleBoxFlat_property_corner_radius_top_left:
 
-- void  **set_expand_margin**  **(** :ref:`int<class_int>` margin, :ref:`float<class_float>` size  **)**
+- :ref:`int<class_int>` **corner_radius_top_left**
 
-.. _class_StyleBoxFlat_set_expand_margin_all:
++----------+--------------------------+
+| *Setter* | set_corner_radius(value) |
++----------+--------------------------+
+| *Getter* | get_corner_radius()      |
++----------+--------------------------+
 
-- void  **set_expand_margin_all**  **(** :ref:`float<class_float>` size  **)**
+The corner radius of the top left corner. When set to 0 the corner is not rounded.
 
-.. _class_StyleBoxFlat_set_expand_margin_individual:
+.. _class_StyleBoxFlat_property_corner_radius_top_right:
 
-- void  **set_expand_margin_individual**  **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom  **)**
+- :ref:`int<class_int>` **corner_radius_top_right**
 
-.. _class_StyleBoxFlat_set_shadow_color:
++----------+--------------------------+
+| *Setter* | set_corner_radius(value) |
++----------+--------------------------+
+| *Getter* | get_corner_radius()      |
++----------+--------------------------+
 
-- void  **set_shadow_color**  **(** :ref:`Color<class_color>` color  **)**
+The corner radius of the top right corner. When set to 0 the corner is not rounded.
 
-.. _class_StyleBoxFlat_set_shadow_size:
+.. _class_StyleBoxFlat_property_draw_center:
 
-- void  **set_shadow_size**  **(** :ref:`int<class_int>` size  **)**
+- :ref:`bool<class_bool>` **draw_center**
 
++----------+--------------------------+
+| *Setter* | set_draw_center(value)   |
++----------+--------------------------+
+| *Getter* | is_draw_center_enabled() |
++----------+--------------------------+
+
+Toggels drawing of the inner part of the stylebox.
+
+.. _class_StyleBoxFlat_property_expand_margin_bottom:
+
+- :ref:`float<class_float>` **expand_margin_bottom**
+
++----------+--------------------------+
+| *Setter* | set_expand_margin(value) |
++----------+--------------------------+
+| *Getter* | get_expand_margin()      |
++----------+--------------------------+
+
+Expands the stylebox outside of the control rect on the bottom edge. Useful in combination with border_width_bottom. To draw a border outside the control rect.
+
+.. _class_StyleBoxFlat_property_expand_margin_left:
+
+- :ref:`float<class_float>` **expand_margin_left**
+
++----------+--------------------------+
+| *Setter* | set_expand_margin(value) |
++----------+--------------------------+
+| *Getter* | get_expand_margin()      |
++----------+--------------------------+
+
+Expands the stylebox outside of the control rect on the left edge. Useful in combination with border_width_left. To draw a border outside the control rect.
+
+.. _class_StyleBoxFlat_property_expand_margin_right:
+
+- :ref:`float<class_float>` **expand_margin_right**
+
++----------+--------------------------+
+| *Setter* | set_expand_margin(value) |
++----------+--------------------------+
+| *Getter* | get_expand_margin()      |
++----------+--------------------------+
+
+Expands the stylebox outside of the control rect on the right edge. Useful in combination with border_width_right. To draw a border outside the control rect.
+
+.. _class_StyleBoxFlat_property_expand_margin_top:
+
+- :ref:`float<class_float>` **expand_margin_top**
+
++----------+--------------------------+
+| *Setter* | set_expand_margin(value) |
++----------+--------------------------+
+| *Getter* | get_expand_margin()      |
++----------+--------------------------+
+
+Expands the stylebox outside of the control rect on the top edge. Useful in combination with border_width_top. To draw a border outside the control rect.
+
+.. _class_StyleBoxFlat_property_shadow_color:
+
+- :ref:`Color<class_Color>` **shadow_color**
+
++----------+-------------------------+
+| *Setter* | set_shadow_color(value) |
++----------+-------------------------+
+| *Getter* | get_shadow_color()      |
++----------+-------------------------+
+
+The color of the shadow. (This has no effect when shadow_size < 1)
+
+.. _class_StyleBoxFlat_property_shadow_size:
+
+- :ref:`int<class_int>` **shadow_size**
+
++----------+------------------------+
+| *Setter* | set_shadow_size(value) |
++----------+------------------------+
+| *Getter* | get_shadow_size()      |
++----------+------------------------+
+
+The shadow size in pixels.
+
+Method Descriptions
+-------------------
+
+.. _class_StyleBoxFlat_method_get_border_width_min:
+
+- :ref:`int<class_int>` **get_border_width_min** **(** **)** const
+
+.. _class_StyleBoxFlat_method_set_border_width_all:
+
+- void **set_border_width_all** **(** :ref:`int<class_int>` width **)**
+
+.. _class_StyleBoxFlat_method_set_corner_radius_all:
+
+- void **set_corner_radius_all** **(** :ref:`int<class_int>` radius **)**
+
+.. _class_StyleBoxFlat_method_set_corner_radius_individual:
+
+- void **set_corner_radius_individual** **(** :ref:`int<class_int>` radius_top_left, :ref:`int<class_int>` radius_top_right, :ref:`int<class_int>` radius_bottom_right, :ref:`int<class_int>` radius_bottom_left **)**
+
+.. _class_StyleBoxFlat_method_set_expand_margin_all:
+
+- void **set_expand_margin_all** **(** :ref:`float<class_float>` size **)**
+
+.. _class_StyleBoxFlat_method_set_expand_margin_individual:
+
+- void **set_expand_margin_individual** **(** :ref:`float<class_float>` size_left, :ref:`float<class_float>` size_top, :ref:`float<class_float>` size_right, :ref:`float<class_float>` size_bottom **)**
 

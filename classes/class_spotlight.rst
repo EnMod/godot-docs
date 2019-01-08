@@ -7,25 +7,78 @@
 SpotLight
 =========
 
-**Inherits:** :ref:`Light<class_light>` **<** :ref:`VisualInstance<class_visualinstance>` **<** :ref:`Spatial<class_spatial>` **<** :ref:`Node<class_node>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Light<class_Light>` **<** :ref:`VisualInstance<class_VisualInstance>` **<** :ref:`Spatial<class_Spatial>` **<** :ref:`Node<class_Node>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
-Spotlight :ref:`Light<class_light>`, such as a reflector spotlight or a lantern.
+Spotlight :ref:`Light<class_Light>`, such as a reflector spotlight or a lantern.
 
-Member Variables
-----------------
+Properties
+----------
 
-- :ref:`float<class_float>` **spot_angle**
-- :ref:`float<class_float>` **spot_angle_attenuation**
-- :ref:`float<class_float>` **spot_attenuation**
-- :ref:`float<class_float>` **spot_range**
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle<class_SpotLight_property_spot_angle>`                         |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_angle_attenuation<class_SpotLight_property_spot_angle_attenuation>` |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_attenuation<class_SpotLight_property_spot_attenuation>`             |
++---------------------------+--------------------------------------------------------------------------------+
+| :ref:`float<class_float>` | :ref:`spot_range<class_SpotLight_property_spot_range>`                         |
++---------------------------+--------------------------------------------------------------------------------+
 
 Description
 -----------
 
-A SpotLight light is a type of :ref:`Light<class_light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_light>`. TODO: Image of a spotlight.
+A SpotLight light is a type of :ref:`Light<class_Light>` node that emits lights in a specific direction, in the shape of a cone. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of :ref:`Light<class_Light>`. TODO: Image of a spotlight.
+
+Tutorials
+---------
+
+- :doc:`../tutorials/3d/lights_and_shadows`
+
+Property Descriptions
+---------------------
+
+.. _class_SpotLight_property_spot_angle:
+
+- :ref:`float<class_float>` **spot_angle**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+.. _class_SpotLight_property_spot_angle_attenuation:
+
+- :ref:`float<class_float>` **spot_angle_attenuation**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+.. _class_SpotLight_property_spot_attenuation:
+
+- :ref:`float<class_float>` **spot_attenuation**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
+
+.. _class_SpotLight_property_spot_range:
+
+- :ref:`float<class_float>` **spot_range**
+
++----------+------------------+
+| *Setter* | set_param(value) |
++----------+------------------+
+| *Getter* | get_param()      |
++----------+------------------+
 

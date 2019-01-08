@@ -7,7 +7,7 @@
 QuadMesh
 ========
 
-**Inherits:** :ref:`PrimitiveMesh<class_primitivemesh>` **<** :ref:`Mesh<class_mesh>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`PrimitiveMesh<class_PrimitiveMesh>` **<** :ref:`Mesh<class_Mesh>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,8 +16,28 @@ Brief Description
 
 Class representing a square mesh.
 
+Properties
+----------
+
++-------------------------------+-------------------------------------------+
+| :ref:`Vector2<class_Vector2>` | :ref:`size<class_QuadMesh_property_size>` |
++-------------------------------+-------------------------------------------+
+
 Description
 -----------
 
-Class representing a square mesh with size (2,2,0). Consider using a :ref:`PlaneMesh<class_planemesh>` if you require a differently sized plane.
+Class representing a square mesh with size (2,2,0). Consider using a :ref:`PlaneMesh<class_PlaneMesh>` if you require a differently sized plane.
+
+Property Descriptions
+---------------------
+
+.. _class_QuadMesh_property_size:
+
+- :ref:`Vector2<class_Vector2>` **size**
+
++----------+-----------------+
+| *Setter* | set_size(value) |
++----------+-----------------+
+| *Getter* | get_size()      |
++----------+-----------------+
 

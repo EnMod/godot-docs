@@ -7,7 +7,7 @@
 World
 =====
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,65 +16,85 @@ Brief Description
 
 Class that has everything pertaining to a world.
 
-Member Functions
-----------------
+Properties
+----------
 
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  | :ref:`get_direct_space_state<class_World_get_direct_space_state>`  **(** **)**                                                |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`                          | :ref:`get_environment<class_World_get_environment>`  **(** **)** const                                                        |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Environment<class_environment>`                          | :ref:`get_fallback_environment<class_World_get_fallback_environment>`  **(** **)** const                                      |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_scenario<class_World_get_scenario>`  **(** **)** const                                                              |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`                                          | :ref:`get_space<class_World_get_space>`  **(** **)** const                                                                    |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`set_environment<class_World_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)**                   |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-| void                                                           | :ref:`set_fallback_environment<class_World_set_fallback_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
-+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`Environment<class_environment>` **environment**
-- :ref:`Environment<class_environment>` **fallback_environment**
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` | :ref:`direct_space_state<class_World_property_direct_space_state>`     |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`environment<class_World_property_environment>`                   |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`Environment<class_Environment>`                         | :ref:`fallback_environment<class_World_property_fallback_environment>` |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`scenario<class_World_property_scenario>`                         |
++---------------------------------------------------------------+------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`                                         | :ref:`space<class_World_property_space>`                               |
++---------------------------------------------------------------+------------------------------------------------------------------------+
 
 Description
 -----------
 
 Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
 
-Member Function Description
----------------------------
+Tutorials
+---------
 
-.. _class_World_get_direct_space_state:
+- :doc:`../tutorials/physics/ray-casting`
 
-- :ref:`PhysicsDirectSpaceState<class_physicsdirectspacestate>`  **get_direct_space_state**  **(** **)**
+Property Descriptions
+---------------------
 
-.. _class_World_get_environment:
+.. _class_World_property_direct_space_state:
 
-- :ref:`Environment<class_environment>`  **get_environment**  **(** **)** const
+- :ref:`PhysicsDirectSpaceState<class_PhysicsDirectSpaceState>` **direct_space_state**
 
-.. _class_World_get_fallback_environment:
++----------+--------------------------+
+| *Getter* | get_direct_space_state() |
++----------+--------------------------+
 
-- :ref:`Environment<class_environment>`  **get_fallback_environment**  **(** **)** const
+The World's physics direct space state, used for making various queries. Might be used only during ``_physics_process``.
 
-.. _class_World_get_scenario:
+.. _class_World_property_environment:
 
-- :ref:`RID<class_rid>`  **get_scenario**  **(** **)** const
+- :ref:`Environment<class_Environment>` **environment**
 
-.. _class_World_get_space:
++----------+------------------------+
+| *Setter* | set_environment(value) |
++----------+------------------------+
+| *Getter* | get_environment()      |
++----------+------------------------+
 
-- :ref:`RID<class_rid>`  **get_space**  **(** **)** const
+The World's :ref:`Environment<class_Environment>`.
 
-.. _class_World_set_environment:
+.. _class_World_property_fallback_environment:
 
-- void  **set_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+- :ref:`Environment<class_Environment>` **fallback_environment**
 
-.. _class_World_set_fallback_environment:
++----------+---------------------------------+
+| *Setter* | set_fallback_environment(value) |
++----------+---------------------------------+
+| *Getter* | get_fallback_environment()      |
++----------+---------------------------------+
 
-- void  **set_fallback_environment**  **(** :ref:`Environment<class_environment>` env  **)**
+The World's fallback_environment will be used if the World's :ref:`Environment<class_Environment>` fails or is missing.
 
+.. _class_World_property_scenario:
+
+- :ref:`RID<class_RID>` **scenario**
+
++----------+----------------+
+| *Getter* | get_scenario() |
++----------+----------------+
+
+The World's visual scenario.
+
+.. _class_World_property_space:
+
+- :ref:`RID<class_RID>` **space**
+
++----------+-------------+
+| *Getter* | get_space() |
++----------+-------------+
+
+The World's physics space.
 

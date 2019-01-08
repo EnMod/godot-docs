@@ -7,51 +7,61 @@
 VisualScriptConstant
 ====================
 
-**Inherits:** :ref:`VisualScriptNode<class_visualscriptnode>` **<** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`VisualScriptNode<class_VisualScriptNode>` **<** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
 Brief Description
 -----------------
 
+Gets a contant's value.
 
+Properties
+----------
 
-Member Functions
-----------------
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` | :ref:`type<class_VisualScriptConstant_property_type>`   |
++-----------------------------------------------------+---------------------------------------------------------+
+| :ref:`Variant<class_Variant>`                       | :ref:`value<class_VisualScriptConstant_property_value>` |
++-----------------------------------------------------+---------------------------------------------------------+
 
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`          | :ref:`get_constant_type<class_VisualScriptConstant_get_constant_type>`  **(** **)** const                                  |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`get_constant_value<class_VisualScriptConstant_get_constant_value>`  **(** **)** const                                |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_type<class_VisualScriptConstant_set_constant_type>`  **(** :ref:`int<class_int>` type  **)**            |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-| void                           | :ref:`set_constant_value<class_VisualScriptConstant_set_constant_value>`  **(** :ref:`Variant<class_variant>` value  **)** |
-+--------------------------------+----------------------------------------------------------------------------------------------------------------------------+
+Description
+-----------
 
-Member Variables
-----------------
+This node returns a constant's value.
 
-- :ref:`int<class_int>` **type**
-- :ref:`Variant<class_variant>` **value**
+**Input Ports:**
 
-Member Function Description
----------------------------
+none
 
-.. _class_VisualScriptConstant_get_constant_type:
+**Output Ports:**
 
-- :ref:`int<class_int>`  **get_constant_type**  **(** **)** const
+- Data (variant): ``get``
 
-.. _class_VisualScriptConstant_get_constant_value:
+Property Descriptions
+---------------------
 
-- :ref:`Variant<class_variant>`  **get_constant_value**  **(** **)** const
+.. _class_VisualScriptConstant_property_type:
 
-.. _class_VisualScriptConstant_set_constant_type:
+- :ref:`Variant.Type<enum_@GlobalScope_Variant.Type>` **type**
 
-- void  **set_constant_type**  **(** :ref:`int<class_int>` type  **)**
++----------+--------------------------+
+| *Setter* | set_constant_type(value) |
++----------+--------------------------+
+| *Getter* | get_constant_type()      |
++----------+--------------------------+
 
-.. _class_VisualScriptConstant_set_constant_value:
+The constant's type.
 
-- void  **set_constant_value**  **(** :ref:`Variant<class_variant>` value  **)**
+.. _class_VisualScriptConstant_property_value:
 
+- :ref:`Variant<class_Variant>` **value**
+
++----------+---------------------------+
+| *Setter* | set_constant_value(value) |
++----------+---------------------------+
+| *Getter* | get_constant_value()      |
++----------+---------------------------+
+
+The constant's value.
 

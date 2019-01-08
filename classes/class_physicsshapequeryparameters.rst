@@ -7,7 +7,7 @@
 PhysicsShapeQueryParameters
 ===========================
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,90 +16,109 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_collision_layer<class_PhysicsShapeQueryParameters_get_collision_layer>`  **(** **)** const                                     |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Array<class_array>`          | :ref:`get_exclude<class_PhysicsShapeQueryParameters_get_exclude>`  **(** **)** const                                                     |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`          | :ref:`get_margin<class_PhysicsShapeQueryParameters_get_margin>`  **(** **)** const                                                       |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`int<class_int>`              | :ref:`get_object_type_mask<class_PhysicsShapeQueryParameters_get_object_type_mask>`  **(** **)** const                                   |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`RID<class_rid>`              | :ref:`get_shape_rid<class_PhysicsShapeQueryParameters_get_shape_rid>`  **(** **)** const                                                 |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Transform<class_transform>`  | :ref:`get_transform<class_PhysicsShapeQueryParameters_get_transform>`  **(** **)** const                                                 |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_collision_layer<class_PhysicsShapeQueryParameters_set_collision_layer>`  **(** :ref:`int<class_int>` collision_layer  **)**    |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_exclude<class_PhysicsShapeQueryParameters_set_exclude>`  **(** :ref:`Array<class_array>` exclude  **)**                        |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_margin<class_PhysicsShapeQueryParameters_set_margin>`  **(** :ref:`float<class_float>` margin  **)**                           |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_object_type_mask<class_PhysicsShapeQueryParameters_set_object_type_mask>`  **(** :ref:`int<class_int>` object_type_mask  **)** |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape<class_PhysicsShapeQueryParameters_set_shape>`  **(** :ref:`Resource<class_resource>` shape  **)**                        |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_shape_rid<class_PhysicsShapeQueryParameters_set_shape_rid>`  **(** :ref:`RID<class_rid>` shape  **)**                          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
-| void                               | :ref:`set_transform<class_PhysicsShapeQueryParameters_set_transform>`  **(** :ref:`Transform<class_transform>` transform  **)**          |
-+------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`collide_with_areas<class_PhysicsShapeQueryParameters_property_collide_with_areas>`   |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`           | :ref:`collide_with_bodies<class_PhysicsShapeQueryParameters_property_collide_with_bodies>` |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`             | :ref:`collision_mask<class_PhysicsShapeQueryParameters_property_collision_mask>`           |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Array<class_Array>`         | :ref:`exclude<class_PhysicsShapeQueryParameters_property_exclude>`                         |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`float<class_float>`         | :ref:`margin<class_PhysicsShapeQueryParameters_property_margin>`                           |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`RID<class_RID>`             | :ref:`shape_rid<class_PhysicsShapeQueryParameters_property_shape_rid>`                     |
++-----------------------------------+--------------------------------------------------------------------------------------------+
+| :ref:`Transform<class_Transform>` | :ref:`transform<class_PhysicsShapeQueryParameters_property_transform>`                     |
++-----------------------------------+--------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Methods
+-------
 
-.. _class_PhysicsShapeQueryParameters_get_collision_layer:
++------+------------------------------------------------------------------------------------------------------------------------+
+| void | :ref:`set_shape<class_PhysicsShapeQueryParameters_method_set_shape>` **(** :ref:`Resource<class_Resource>` shape **)** |
++------+------------------------------------------------------------------------------------------------------------------------+
 
-- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
+Property Descriptions
+---------------------
 
-.. _class_PhysicsShapeQueryParameters_get_exclude:
+.. _class_PhysicsShapeQueryParameters_property_collide_with_areas:
 
-- :ref:`Array<class_array>`  **get_exclude**  **(** **)** const
+- :ref:`bool<class_bool>` **collide_with_areas**
 
-.. _class_PhysicsShapeQueryParameters_get_margin:
++----------+---------------------------------+
+| *Setter* | set_collide_with_areas(value)   |
++----------+---------------------------------+
+| *Getter* | is_collide_with_areas_enabled() |
++----------+---------------------------------+
 
-- :ref:`float<class_float>`  **get_margin**  **(** **)** const
+.. _class_PhysicsShapeQueryParameters_property_collide_with_bodies:
 
-.. _class_PhysicsShapeQueryParameters_get_object_type_mask:
+- :ref:`bool<class_bool>` **collide_with_bodies**
 
-- :ref:`int<class_int>`  **get_object_type_mask**  **(** **)** const
++----------+----------------------------------+
+| *Setter* | set_collide_with_bodies(value)   |
++----------+----------------------------------+
+| *Getter* | is_collide_with_bodies_enabled() |
++----------+----------------------------------+
 
-.. _class_PhysicsShapeQueryParameters_get_shape_rid:
+.. _class_PhysicsShapeQueryParameters_property_collision_mask:
 
-- :ref:`RID<class_rid>`  **get_shape_rid**  **(** **)** const
+- :ref:`int<class_int>` **collision_mask**
 
-.. _class_PhysicsShapeQueryParameters_get_transform:
++----------+---------------------------+
+| *Setter* | set_collision_mask(value) |
++----------+---------------------------+
+| *Getter* | get_collision_mask()      |
++----------+---------------------------+
 
-- :ref:`Transform<class_transform>`  **get_transform**  **(** **)** const
+.. _class_PhysicsShapeQueryParameters_property_exclude:
 
-.. _class_PhysicsShapeQueryParameters_set_collision_layer:
+- :ref:`Array<class_Array>` **exclude**
 
-- void  **set_collision_layer**  **(** :ref:`int<class_int>` collision_layer  **)**
++----------+--------------------+
+| *Setter* | set_exclude(value) |
++----------+--------------------+
+| *Getter* | get_exclude()      |
++----------+--------------------+
 
-.. _class_PhysicsShapeQueryParameters_set_exclude:
+.. _class_PhysicsShapeQueryParameters_property_margin:
 
-- void  **set_exclude**  **(** :ref:`Array<class_array>` exclude  **)**
+- :ref:`float<class_float>` **margin**
 
-.. _class_PhysicsShapeQueryParameters_set_margin:
++----------+-------------------+
+| *Setter* | set_margin(value) |
++----------+-------------------+
+| *Getter* | get_margin()      |
++----------+-------------------+
 
-- void  **set_margin**  **(** :ref:`float<class_float>` margin  **)**
+.. _class_PhysicsShapeQueryParameters_property_shape_rid:
 
-.. _class_PhysicsShapeQueryParameters_set_object_type_mask:
+- :ref:`RID<class_RID>` **shape_rid**
 
-- void  **set_object_type_mask**  **(** :ref:`int<class_int>` object_type_mask  **)**
++----------+----------------------+
+| *Setter* | set_shape_rid(value) |
++----------+----------------------+
+| *Getter* | get_shape_rid()      |
++----------+----------------------+
 
-.. _class_PhysicsShapeQueryParameters_set_shape:
+.. _class_PhysicsShapeQueryParameters_property_transform:
 
-- void  **set_shape**  **(** :ref:`Resource<class_resource>` shape  **)**
+- :ref:`Transform<class_Transform>` **transform**
 
-.. _class_PhysicsShapeQueryParameters_set_shape_rid:
++----------+----------------------+
+| *Setter* | set_transform(value) |
++----------+----------------------+
+| *Getter* | get_transform()      |
++----------+----------------------+
 
-- void  **set_shape_rid**  **(** :ref:`RID<class_rid>` shape  **)**
+Method Descriptions
+-------------------
 
-.. _class_PhysicsShapeQueryParameters_set_transform:
+.. _class_PhysicsShapeQueryParameters_method_set_shape:
 
-- void  **set_transform**  **(** :ref:`Transform<class_transform>` transform  **)**
-
+- void **set_shape** **(** :ref:`Resource<class_Resource>` shape **)**
 

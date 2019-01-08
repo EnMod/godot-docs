@@ -7,9 +7,9 @@
 AudioEffect
 ===========
 
-**Inherits:** :ref:`Resource<class_resource>` **<** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Resource<class_Resource>` **<** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
-**Inherited By:** :ref:`AudioEffectCompressor<class_audioeffectcompressor>`, :ref:`AudioEffectLimiter<class_audioeffectlimiter>`, :ref:`AudioEffectAmplify<class_audioeffectamplify>`, :ref:`AudioEffectFilter<class_audioeffectfilter>`, :ref:`AudioEffectDistortion<class_audioeffectdistortion>`, :ref:`AudioEffectDelay<class_audioeffectdelay>`, :ref:`AudioEffectStereoEnhance<class_audioeffectstereoenhance>`, :ref:`AudioEffectReverb<class_audioeffectreverb>`, :ref:`AudioEffectPanner<class_audioeffectpanner>`, :ref:`AudioEffectEQ<class_audioeffecteq>`, :ref:`AudioEffectPitchShift<class_audioeffectpitchshift>`, :ref:`AudioEffectChorus<class_audioeffectchorus>`, :ref:`AudioEffectPhaser<class_audioeffectphaser>`
+**Inherited By:** :ref:`AudioEffectAmplify<class_AudioEffectAmplify>`, :ref:`AudioEffectChorus<class_AudioEffectChorus>`, :ref:`AudioEffectCompressor<class_AudioEffectCompressor>`, :ref:`AudioEffectDelay<class_AudioEffectDelay>`, :ref:`AudioEffectDistortion<class_AudioEffectDistortion>`, :ref:`AudioEffectEQ<class_AudioEffectEQ>`, :ref:`AudioEffectFilter<class_AudioEffectFilter>`, :ref:`AudioEffectLimiter<class_AudioEffectLimiter>`, :ref:`AudioEffectPanner<class_AudioEffectPanner>`, :ref:`AudioEffectPhaser<class_AudioEffectPhaser>`, :ref:`AudioEffectPitchShift<class_AudioEffectPitchShift>`, :ref:`AudioEffectRecord<class_AudioEffectRecord>`, :ref:`AudioEffectReverb<class_AudioEffectReverb>`, :ref:`AudioEffectStereoEnhance<class_AudioEffectStereoEnhance>`
 
 **Category:** Core
 

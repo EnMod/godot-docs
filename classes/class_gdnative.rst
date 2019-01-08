@@ -7,7 +7,7 @@
 GDNative
 ========
 
-**Inherits:** :ref:`Reference<class_reference>` **<** :ref:`Object<class_object>`
+**Inherits:** :ref:`Reference<class_Reference>` **<** :ref:`Object<class_Object>`
 
 **Category:** Core
 
@@ -16,47 +16,49 @@ Brief Description
 
 
 
-Member Functions
-----------------
+Properties
+----------
 
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`                  | :ref:`call_native<class_GDNative_call_native>`  **(** :ref:`String<class_string>` procedure_name, :ref:`String<class_string>` arguments, :ref:`Array<class_array>` arg2  **)** |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`GDNativeLibrary<class_gdnativelibrary>`  | :ref:`get_library<class_GDNative_get_library>`  **(** **)**                                                                                                                    |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`initialize<class_GDNative_initialize>`  **(** **)**                                                                                                                      |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| void                                           | :ref:`set_library<class_GDNative_set_library>`  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)**                                                             |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                        | :ref:`terminate<class_GDNative_terminate>`  **(** **)**                                                                                                                        |
-+------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------+
+| :ref:`GDNativeLibrary<class_GDNativeLibrary>` | :ref:`library<class_GDNative_property_library>` |
++-----------------------------------------------+-------------------------------------------------+
 
-Member Variables
-----------------
+Methods
+-------
 
-- :ref:`GDNativeLibrary<class_gdnativelibrary>` **library**
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Variant<class_Variant>` | :ref:`call_native<class_GDNative_method_call_native>` **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)** |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`initialize<class_GDNative_method_initialize>` **(** **)**                                                                                                                             |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`       | :ref:`terminate<class_GDNative_method_terminate>` **(** **)**                                                                                                                               |
++-------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Member Function Description
----------------------------
+Property Descriptions
+---------------------
 
-.. _class_GDNative_call_native:
+.. _class_GDNative_property_library:
 
-- :ref:`Variant<class_variant>`  **call_native**  **(** :ref:`String<class_string>` procedure_name, :ref:`String<class_string>` arguments, :ref:`Array<class_array>` arg2  **)**
+- :ref:`GDNativeLibrary<class_GDNativeLibrary>` **library**
 
-.. _class_GDNative_get_library:
++----------+--------------------+
+| *Setter* | set_library(value) |
++----------+--------------------+
+| *Getter* | get_library()      |
++----------+--------------------+
 
-- :ref:`GDNativeLibrary<class_gdnativelibrary>`  **get_library**  **(** **)**
+Method Descriptions
+-------------------
 
-.. _class_GDNative_initialize:
+.. _class_GDNative_method_call_native:
 
-- :ref:`bool<class_bool>`  **initialize**  **(** **)**
+- :ref:`Variant<class_Variant>` **call_native** **(** :ref:`String<class_String>` calling_type, :ref:`String<class_String>` procedure_name, :ref:`Array<class_Array>` arguments **)**
 
-.. _class_GDNative_set_library:
+.. _class_GDNative_method_initialize:
 
-- void  **set_library**  **(** :ref:`GDNativeLibrary<class_gdnativelibrary>` library  **)**
+- :ref:`bool<class_bool>` **initialize** **(** **)**
 
-.. _class_GDNative_terminate:
+.. _class_GDNative_method_terminate:
 
-- :ref:`bool<class_bool>`  **terminate**  **(** **)**
-
+- :ref:`bool<class_bool>` **terminate** **(** **)**
 
